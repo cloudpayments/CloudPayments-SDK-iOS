@@ -1,0 +1,13 @@
+platform :ios, '12.0'
+use_frameworks!
+
+target 'demo' do
+#    pod 'Alamofire'
+#    pod 'AlamofireObjectMapper'
+    pod 'SwiftyJSON'
+    pod 'CardIO'
+
+#    pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "Swift"
+    pod 'Cloudpayments', :path => "../sdk"
+
+end

@@ -1,0 +1,6 @@
+framework module Cloudpayments {
+  umbrella header "Cloudpayments-umbrella.h"
+
+  export *
+  module * { export * }
+}
