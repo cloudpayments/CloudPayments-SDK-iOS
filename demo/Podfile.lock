@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (5.0.0-rc.2)
+  - AlamofireObjectMapper (6.2.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - ObjectMapper (~> 3.5.1)
+  - Cloudpayments-SDK-iOS (2.0.0):
+    - Alamofire (= 5.0.0-rc.2)
+    - AlamofireObjectMapper
+  - ObjectMapper (3.5.3)
+  - SwiftyJSON (5.0.0)
+
+DEPENDENCIES:
+  - Cloudpayments-SDK-iOS (from `../sdk`)
+  - SwiftyJSON
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - AlamofireObjectMapper
+    - ObjectMapper
+    - SwiftyJSON
+
+EXTERNAL SOURCES:
+  Cloudpayments-SDK-iOS:
+    :path: "../sdk"
+
+SPEC CHECKSUMS:
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
+  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
+  Cloudpayments-SDK-iOS: 99f475276312c6eea43b5a2a0cdc5e816de0d77d
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
+
+PODFILE CHECKSUM: 394a6ab44b647ee87ab58f21c07951b0d96ed718
+
+COCOAPODS: 1.9.3
