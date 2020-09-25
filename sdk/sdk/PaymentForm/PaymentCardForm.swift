@@ -18,7 +18,7 @@ public class PaymentCardForm: PaymentForm {
     @IBOutlet private weak var payButton: Button!
     @IBOutlet private weak var helperSafeAreaBottomView: UIView!
     
-    var onPayClicked: ((_ cryptogram: String) -> ())?
+    var onPayClicked: ((_ cryptogram: String, _ email: String?) -> ())?
     
     @discardableResult
     public override class func present(with paymentData: PaymentData, from: UIViewController) -> PaymentForm? {
@@ -30,7 +30,7 @@ public class PaymentCardForm: PaymentForm {
         
         controller.paymentData = paymentData
 
-        controller.show(inViewController: from)
+        controller.show(inViewController: from, completion: nil)
         
         return controller
     }
@@ -47,7 +47,7 @@ public class PaymentCardForm: PaymentForm {
         self.payButton.onAction = {
             if let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: self.paymentData.publicId) {
                 self.dismiss(animated: true) {
-                    self.onPayClicked?(cryptogram)
+                    self.onPayClicked?(cryptogram, self.emailTextField.text)
                 }
             }
         }

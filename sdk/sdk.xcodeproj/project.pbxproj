@@ -17,6 +17,8 @@
 		83171F0325124A1B00ACE6B1 /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83171F012512490800ACE6B1 /* PaymentForm.storyboard */; };
 		83171F0525124C0100ACE6B1 /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83171F0425124C0100ACE6B1 /* PaymentOptionsForm.swift */; };
 		83171F0725124F7600ACE6B1 /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83171F0625124F7600ACE6B1 /* PaymentCardForm.swift */; };
+		831D5C35251E0BA700C5D8F9 /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D5C34251E0BA700C5D8F9 /* ThreeDsData.swift */; };
+		831D5C4B251E117D00C5D8F9 /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D5C4A251E117D00C5D8F9 /* CloudpaymentsError.swift */; };
 		83205AB82514F61500F4BA98 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83205AB72514F61500F4BA98 /* UnderlineTextField.swift */; };
 		83205ABB2514F75600F4BA98 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83205ABA2514F75600F4BA98 /* UIColor+Assets.swift */; };
 		83604A90251CD33000A0E7AE /* ThreeDsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83604A8F251CD33000A0E7AE /* ThreeDsResponse.swift */; };
@@ -31,7 +33,7 @@
 		8387198A251A01FC00797EDA /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83871984251A01FC00797EDA /* BankInfo.swift */; };
 		83871994251A061500797EDA /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83871993251A061500797EDA /* Transaction.swift */; };
 		83DFE5F125095CE200DD6128 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFE5EB25095CE200DD6128 /* Card.swift */; };
-		83DFE5F425095CE200DD6128 /* ThreeDSHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFE5EE25095CE200DD6128 /* ThreeDSHandler.swift */; };
+		83DFE5F425095CE200DD6128 /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFE5EE25095CE200DD6128 /* ThreeDsProcessor.swift */; };
 		83DFE5F525095CE200DD6128 /* PKPayment+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFE5EF25095CE200DD6128 /* PKPayment+Convert.swift */; };
 		83DFE5F625095CE200DD6128 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DFE5F025095CE200DD6128 /* RSAUtils.swift */; };
 		83ECD16C25135BAB008F088C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECD16B25135BAB008F088C /* Button.swift */; };
@@ -54,6 +56,8 @@
 		83171F012512490800ACE6B1 /* PaymentForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentForm.storyboard; sourceTree = "<group>"; };
 		83171F0425124C0100ACE6B1 /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		83171F0625124F7600ACE6B1 /* PaymentCardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
+		831D5C34251E0BA700C5D8F9 /* ThreeDsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
+		831D5C4A251E117D00C5D8F9 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		83205AB72514F61500F4BA98 /* UnderlineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		83205ABA2514F75600F4BA98 /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		83205ABD25151E8400F4BA98 /* IQKeyboardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,7 +73,7 @@
 		83871984251A01FC00797EDA /* BankInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		83871993251A061500797EDA /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		83DFE5EB25095CE200DD6128 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		83DFE5EE25095CE200DD6128 /* ThreeDSHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDSHandler.swift; sourceTree = "<group>"; };
+		83DFE5EE25095CE200DD6128 /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
 		83DFE5EF25095CE200DD6128 /* PKPayment+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PKPayment+Convert.swift"; sourceTree = "<group>"; };
 		83DFE5F025095CE200DD6128 /* RSAUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
 		83ECD16B25135BAB008F088C /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 			children = (
 				83871983251A01FC00797EDA /* BankApi.swift */,
 				83871980251A01FC00797EDA /* CloudpaymentsApi.swift */,
+				831D5C4A251E117D00C5D8F9 /* CloudpaymentsError.swift */,
 				83871981251A01FC00797EDA /* HTTP.swift */,
 				8387198D251A02B900797EDA /* Models */,
 			);
@@ -212,7 +217,8 @@
 		83DFE5FA2509616D00DD6128 /* D3DS */ = {
 			isa = PBXGroup;
 			children = (
-				83DFE5EE25095CE200DD6128 /* ThreeDSHandler.swift */,
+				83DFE5EE25095CE200DD6128 /* ThreeDsProcessor.swift */,
+				831D5C34251E0BA700C5D8F9 /* ThreeDsData.swift */,
 			);
 			path = D3DS;
 			sourceTree = "<group>";
@@ -353,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83171EFB2512423E00ACE6B1 /* String+Extensions.swift in Sources */,
+				831D5C4B251E117D00C5D8F9 /* CloudpaymentsError.swift in Sources */,
 				83171EF42512337700ACE6B1 /* PaymentForm.swift in Sources */,
 				83871986251A01FC00797EDA /* TransactionResponse.swift in Sources */,
 				83604A93251CD4FE00A0E7AE /* EmptyResponse.swift in Sources */,
@@ -367,6 +374,7 @@
 				830043082518DC0F00178DC2 /* BaseViewController.swift in Sources */,
 				830043052518D7C200178DC2 /* UIViewController+Extensions.swift in Sources */,
 				83171EFD2512427900ACE6B1 /* Bundle+Extenstions.swift in Sources */,
+				831D5C35251E0BA700C5D8F9 /* ThreeDsData.swift in Sources */,
 				83DFE5F525095CE200DD6128 /* PKPayment+Convert.swift in Sources */,
 				837EBC70251A09C60085FEFA /* Currency.swift in Sources */,
 				83ECD16C25135BAB008F088C /* Button.swift in Sources */,
@@ -376,7 +384,7 @@
 				83205ABB2514F75600F4BA98 /* UIColor+Assets.swift in Sources */,
 				83DFE5F625095CE200DD6128 /* RSAUtils.swift in Sources */,
 				83205AB82514F61500F4BA98 /* UnderlineTextField.swift in Sources */,
-				83DFE5F425095CE200DD6128 /* ThreeDSHandler.swift in Sources */,
+				83DFE5F425095CE200DD6128 /* ThreeDsProcessor.swift in Sources */,
 				83871988251A01FC00797EDA /* HTTP.swift in Sources */,
 				83ECD1712513A3DF008F088C /* FormPresentationController.swift in Sources */,
 				83171F0725124F7600ACE6B1 /* PaymentCardForm.swift in Sources */,

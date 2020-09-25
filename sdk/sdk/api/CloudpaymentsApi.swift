@@ -24,7 +24,7 @@ public class CloudpaymentsApi {
     }
     
     
-    public func charge(cardCryptogramPacket: String, cardHolderName: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
+    public func charge(cardCryptogramPacket: String, cardHolderName: String?, email: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
         self.threeDsCompletion = nil
         
         let parameters: Parameters = [
@@ -33,13 +33,14 @@ public class CloudpaymentsApi {
             "IpAddress" : "", // IP адрес плательщика (Обязательный)
             "Name" : cardHolderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
             "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
+            "Email" : email ?? "" // E-mail, на который будет отправлена квитанция об оплате
         ]
         
         let request = HTTPRequest(resource: .charge, method: .post, parameters: parameters)
         makeObjectRequest(request, completion: completion)
     }
     
-    public func auth(cardCryptogramPacket: String, cardHolderName: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
+    public func auth(cardCryptogramPacket: String, cardHolderName: String?, email: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
         self.threeDsCompletion = nil
         
         let parameters: Parameters = [
@@ -48,6 +49,7 @@ public class CloudpaymentsApi {
             "IpAddress" : "",
             "Name" : cardHolderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
             "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
+            "Email" : email ?? "" // E-mail, на который будет отправлена квитанция об оплате
         ]
         
         let request = HTTPRequest(resource: .auth, method: .post, parameters: parameters)
@@ -123,13 +125,39 @@ public class CloudpaymentsApi {
 extension CloudpaymentsApi {
     
     func makeObjectRequest<T: BaseMappable>(_ request: HTTPRequest, completion: HTTPRequestCompletion<T>?) {
+        let url = (try? request.resource.asURL())?.absoluteString ?? ""
+        
+        print("--------------------------")
+        print("sending request: \(url)")
+        print("parameters: \(request.parameters as NSDictionary?)")
+        print("--------------------------")
+        
         validatedDataRequest(from: request).responseObject { (dataResponse) in
+//            if let data = dataResponse.data, let dataStr = String.init(data: data, encoding: .utf8) {
+//                print("--------------------------")
+//                print("response for (\(url): \(dataStr)")
+//                print("--------------------------")
+//            }
+            
             completion?(dataResponse.value, dataResponse.error)
         }
     }
     
     func makeArrayRequest<T: BaseMappable>(_ request: HTTPRequest, completion: HTTPRequestCompletion<[T]>?) {
+        let url = (try? request.resource.asURL())?.absoluteString ?? ""
+        
+        print("--------------------------")
+        print("sending request: \(url)")
+        print("parameters: \(request.parameters as NSDictionary?)")
+        print("--------------------------")
+        
         validatedDataRequest(from: request).responseArray(completionHandler: { (dataResponse) in
+//            if let data = dataResponse.data, let dataStr = String.init(data: data, encoding: .utf8) {
+//                print("--------------------------")
+//                print("response for (\(url): \(dataStr)")
+//                print("--------------------------")
+//            }
+            
             completion?(dataResponse.value, dataResponse.error)
         })
     }

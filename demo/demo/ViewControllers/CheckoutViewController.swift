@@ -8,7 +8,7 @@ import PassKit
 import Cloudpayments_SDK_iOS
 import WebKit
 
-class CheckoutViewController: UIViewController, D3DSDelegate {
+class CheckoutViewController: UIViewController, ThreeDsDelegate {
     func willPresentWebView(_ webView: WKWebView) {
         self.view.addSubview(webView)
     }
@@ -31,7 +31,7 @@ class CheckoutViewController: UIViewController, D3DSDelegate {
     @IBOutlet weak var textCardHolderName: UITextField!
     @IBOutlet weak var buttonApplePay: UIButton!
     
-    var threeDSHandler: ThreeDSHandler = ThreeDSHandler.init()
+    var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
         
     var total = 0;
 
@@ -141,9 +141,10 @@ class CheckoutViewController: UIViewController, D3DSDelegate {
         request.countryCode = "RU" // Код страны
         request.currencyCode = "RUB" // Код валюты
         request.paymentSummaryItems = paymentItems
-        let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
-        applePayController?.delegate = self
-        self.present(applePayController!, animated: true, completion: nil)
+        if let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request) {
+            applePayController.delegate = self
+            self.present(applePayController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -223,8 +224,8 @@ private extension CheckoutViewController {
                 let acsUrl = transactionResponse.transaction!.acsUrl
                                
                 // Показываем 3DS форму
-                
-                threeDSHandler.make3DSPayment(with: self, acsUrl: acsUrl, paReq: paReq, transactionId: transactionId)
+                let data = ThreeDsData.init(transactionId: transactionId, paReq: paReq, acsUrl: acsUrl)
+                threeDsProcessor.make3DSPayment(with: data, delegate: self)
             } else {
                 self.showAlert(title: .informationWord, message: transactionResponse.transaction?.cardHolderMessage)
             }

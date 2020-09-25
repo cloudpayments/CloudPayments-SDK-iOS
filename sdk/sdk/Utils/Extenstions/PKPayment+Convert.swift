@@ -39,7 +39,7 @@ extension PKPayment {
             "paymentMethod": paymentMethodDictionary
         ]
         
-        guard let cardCryptogramPacketData = try? JSONSerialization.data(withJSONObject: cryptogramDictionary, options: .prettyPrinted) else {
+        guard let cardCryptogramPacketData = try? JSONSerialization.data(withJSONObject: cryptogramDictionary) else {
             return nil
         }
         

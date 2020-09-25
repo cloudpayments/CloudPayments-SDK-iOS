@@ -10,26 +10,26 @@ import Foundation
 import WebKit
 import Alamofire
 
-public protocol D3DSDelegate: class {
+public protocol ThreeDsDelegate: class {
     func willPresentWebView(_ webView: WKWebView)
     func onAuthotizationCompleted(with md: String, paRes: String)
     func onAuthorizationFailed(with html: String)
 }
 
-public class ThreeDSHandler: NSObject, WKNavigationDelegate {
+public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
     private static let POST_BACK_URL = "https://demo.cloudpayments.ru/WebFormPost/GetWebViewData"
     
-    private weak var delegate: D3DSDelegate?
+    private weak var delegate: ThreeDsDelegate?
     
-    public func make3DSPayment(with viewController: UIViewController & D3DSDelegate, acsUrl: String, paReq: String, transactionId: String) {
-        self.delegate = viewController
+    public func make3DSPayment(with data: ThreeDsData, delegate: ThreeDsDelegate) {
+        self.delegate = delegate
         
-        if let url = URL.init(string: acsUrl) {
+        if let url = URL.init(string: data.acsUrl) {
             var request = URLRequest.init(url: url)
             request.httpMethod = "POST"
             request.cachePolicy = .reloadIgnoringCacheData
             
-            let requestBody = String.init(format: "MD=%@&PaReq=%@&TermUrl=%@", transactionId, paReq, ThreeDSHandler.POST_BACK_URL).replacingOccurrences(of: "+", with: "%2B")
+            let requestBody = String.init(format: "MD=%@&PaReq=%@&TermUrl=%@", data.transactionId, data.paReq, ThreeDsProcessor.POST_BACK_URL).replacingOccurrences(of: "+", with: "%2B")
             request.httpBody = requestBody.data(using: .utf8)
             
             URLCache.shared.removeCachedResponse(for: request)
@@ -37,7 +37,7 @@ public class ThreeDSHandler: NSObject, WKNavigationDelegate {
             AF.request(request)
                 .response(completionHandler: { (dataResponse) in
                     if let httpResponse = dataResponse.response, (httpResponse.statusCode == 200 || httpResponse.statusCode == 201), let data = dataResponse.value {
-                        let webView = WKWebView.init(frame: viewController.view.frame)
+                        let webView = WKWebView.init()
                         webView.navigationDelegate = self
                         if let mimeType = httpResponse.mimeType, let textEncodingName = httpResponse.textEncodingName, let url = httpResponse.url {
                             webView.load(data!, mimeType: mimeType, characterEncodingName: textEncodingName, baseURL: url)
@@ -58,7 +58,7 @@ public class ThreeDSHandler: NSObject, WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         let url = webView.url
         
-        if url?.absoluteString.elementsEqual(ThreeDSHandler.POST_BACK_URL) == true {
+        if url?.absoluteString.elementsEqual(ThreeDsProcessor.POST_BACK_URL) == true {
             webView.evaluateJavaScript("document.documentElement.outerHTML.toString()") { (result, error) in
                 var str = result as? String ?? ""
                 repeat {
