@@ -10,15 +10,19 @@ import Foundation
 import UIKit
 
 extension UIImage {
+    public class func named(_ name: String) -> UIImage {
+        return UIImage.init(named: name, in: Bundle.mainSdk, compatibleWith: nil)!
+    }
+    
     public class var iconProgress: UIImage {
-        return UIImage.init(named: "ic_progress", in: Bundle.mainSdk, compatibleWith: nil)!
+        return self.named("ic_progress")
     }
     
     public class var iconSuccess: UIImage {
-        return UIImage.init(named: "ic_success", in: Bundle.mainSdk, compatibleWith: nil)!
+        return self.named("ic_success")
     }
     
     public class var iconFailed: UIImage {
-        return UIImage.init(named: "ic_failed", in: Bundle.mainSdk, compatibleWith: nil)!
+        return self.named("ic_failed")
     }
 }

@@ -14,10 +14,9 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     @IBOutlet private weak var applePayContainer: UIView!
     @IBOutlet private weak var payWithCardButton: Button!
     
-    private let applePayMerchantID = "merchant.ru.cloudpayments" // Ваш ID для Apple Pay
     private var supportedPaymentNetworks: [PKPaymentNetwork] {
         get {
-            var arr: [PKPaymentNetwork] = [.visa, .masterCard]
+            var arr: [PKPaymentNetwork] = [.visa, .masterCard, .JCB]
             if #available(iOS 12.0, *) {
                 arr.append(.maestro)
             }
@@ -85,7 +84,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
         let amount = Double(self.paymentData.amount) ?? 0.0
         
         let request = PKPaymentRequest()
-        request.merchantIdentifier = self.applePayMerchantID
+        request.merchantIdentifier = self.paymentData.applePayMerchantId
         request.supportedNetworks = self.supportedPaymentNetworks
         request.merchantCapabilities = PKMerchantCapability.capability3DS
         request.countryCode = "RU"

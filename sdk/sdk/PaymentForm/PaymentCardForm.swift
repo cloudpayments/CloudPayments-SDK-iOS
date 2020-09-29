@@ -16,6 +16,7 @@ public class PaymentCardForm: PaymentForm {
     @IBOutlet private weak var emailTextField: UnderlineTextField!
     @IBOutlet private weak var receiptButton: Button!
     @IBOutlet private weak var payButton: Button!
+    @IBOutlet private weak var cardTypeIcon: UIImageView!
     @IBOutlet private weak var helperSafeAreaBottomView: UIView!
     
     var onPayClicked: ((_ cryptogram: String, _ email: String?) -> ())?
@@ -71,6 +72,9 @@ public class PaymentCardForm: PaymentForm {
                 if cardNumber.cardNumberIsValid() {
                     self.cardExpDateTextField.becomeFirstResponder()
                 }
+                
+                let cardType = Card.cardType(from: cardNumber)
+                self.cardTypeIcon.image = cardType.getIcon()
                 
                 self.validate()
             }

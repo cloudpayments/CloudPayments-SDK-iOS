@@ -66,7 +66,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
         
-        let paymentData = PaymentData.init(publicId: Constants.merchantPulicId, amount: String(totalAmount))
+        let paymentData = PaymentData.init(publicId: Constants.merchantPulicId)
+            .setAmount(String(totalAmount))
+            .setCurrency(.ruble)
         PaymentForm.present(with: paymentData, from: self)
     }
 }

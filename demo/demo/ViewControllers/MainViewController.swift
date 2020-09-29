@@ -100,14 +100,14 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     @objc
     func openCart() {
-//        if CartManager.shared.products.count > 0 {
+        if CartManager.shared.products.count > 0 {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let cartViewController = storyBoard.instantiateViewController(withIdentifier: "cartViewController") as! CartViewController
             self.navigationController?.pushViewController(cartViewController, animated: true)
-//        } else {
-//            let alertController = UIAlertController(title: "Корзина пуста", message: "Добавьте один или несколько товаров чтобы продолжить", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-//            self.present(alertController, animated: true, completion: nil)
-//        }
+        } else {
+            let alertController = UIAlertController(title: "Корзина пуста", message: "Добавьте один или несколько товаров чтобы продолжить", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 }

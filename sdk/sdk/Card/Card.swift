@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public enum CardType: String {
     case unknown = "Unknown"
@@ -15,9 +16,39 @@ public enum CardType: String {
     case maestro = "Maestro"
     case mir = "MIR"
     case jcb = "JCB"
+    case americanExpress = "AmericanExpress"
+    case troy = "Troy"
     
     public func toString() -> String {
         return self.rawValue
+    }
+    
+    public func getIcon() -> UIImage? {
+        let iconName: String?
+        switch self {
+        case .visa:
+            iconName = "ic_visa"
+        case .masterCard:
+            iconName = "ic_master_card"
+        case .maestro:
+            iconName = "ic_maestro"
+        case .mir:
+            iconName = "ic_mir"
+        case .jcb:
+            iconName = "ic_jcb"
+        case .americanExpress:
+            iconName = "ic_american_express"
+        case .troy:
+            iconName = "ic_troy"
+        default:
+            iconName = nil
+        }
+        
+        guard iconName != nil else {
+            return nil
+        }
+        
+        return UIImage.named(iconName!)
     }
 }
 
@@ -58,9 +89,11 @@ public struct Card {
         let firstTwo = String(cleanCardNumber[..<indexTwo])
         let firstTwoNum = Int(firstTwo) ?? 0
         
-        if firstTwoNum == 50 {
+        if firstTwoNum == 35 {
             return .jcb
-        } else if firstTwoNum == 50 || (firstTwoNum >= 56 && firstTwoNum <= 58) {
+        } else if firstTwoNum == 34 || firstTwoNum == 37 {
+            return .americanExpress
+        } else if firstTwoNum == 50 || (firstTwoNum >= 56 && firstTwoNum <= 69) {
             return .maestro
         } else if (firstTwoNum >= 51 && firstTwoNum <= 55) {
             return .masterCard
@@ -81,7 +114,15 @@ public struct Card {
         if firstFourNum >= 2221 && firstFourNum <= 2720 {
             return .masterCard
         }
+        
+        let indexSix = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
+        let firstSix = String(cleanCardNumber[..<indexSix])
+        let firstSixNum = Int(firstSix) ?? 0
 
+        if firstSixNum >= 979200 && firstSixNum <= 979289 {
+            return .troy
+        }
+        
         return .unknown
     }
     
