@@ -23,6 +23,26 @@ public class CloudpaymentsApi {
         handler.api = self
     }
     
+    public class func getBankInfo(cardNumber: String, completion: ((_ bankInfo: BankInfo?, _ error: CloudpaymentsError?) -> ())?) {
+        let cleanCardNumber = Card.cleanCreditCardNo(cardNumber)
+        guard cleanCardNumber.count >= 6 else {
+            completion?(nil, CloudpaymentsError.init(message: "You must specify at least the first 6 digits of the card number"))
+            return
+        }
+        
+        let firstSixIndex = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
+        let firstSixDigits = String(cleanCardNumber[..<firstSixIndex])
+        
+        AF.request(String.init(format: "https://widget.cloudpayments.ru/Home/BinInfo?firstSixDigits=%@", firstSixDigits), method: .get, parameters: nil, headers: nil).responseObject { (response: DataResponse<BankInfoResponse, AFError>) in
+            if let bankInfo = response.value?.bankInfo {
+                completion?(bankInfo, nil)
+            } else if let message = response.error?.localizedDescription {
+                completion?(nil, CloudpaymentsError.init(message: message))
+            } else {
+                completion?(nil, CloudpaymentsError.defaultCardError)
+            }
+        }
+    }
     
     public func charge(cardCryptogramPacket: String, cardHolderName: String?, email: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
         self.threeDsCompletion = nil

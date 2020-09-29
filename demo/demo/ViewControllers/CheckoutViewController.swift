@@ -69,9 +69,9 @@ class CheckoutViewController: UIViewController, ThreeDsDelegate {
             return
         }
         
-        BankApi.getBankInfo(cardNumber: cardNumber) { (info, error) in
+        CloudpaymentsApi.getBankInfo(cardNumber: cardNumber) { (info, error) in
             if let error = error {
-                print("error: \(error.errorMessage)")
+                print("error: \(error.message)")
             } else {
                 if let bankName = info?.bankName {
                     print("BankName: \(bankName)")

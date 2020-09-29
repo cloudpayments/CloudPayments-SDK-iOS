@@ -7,136 +7,128 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00B6C7C42F0045DED27FBF6D5C9CDC12 /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F75B74111E58685AF5A84E2CB365FA2 /* Bundle+Extenstions.swift */; };
 		00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBFED53D3097E526992A83CCC5A583D /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1393A7673A070E2F4B38C8B7251A5F4F /* Protector.swift */; };
-		0564209A2840F8A0BBFD9591737D8CB5 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22215C99BE08503BFE2BA64D55B7FC05 /* TransactionResponse.swift */; };
 		06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB905FD8BDF18E6A115CF1EB97013A48 /* Validation.swift */; };
 		0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA1AC5EC0908D9D7576C71ABD49D50A /* CachedResponseHandler.swift */; };
 		0C02ABEC760BF80131B37D63C73BE26B /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C84F870D8F078F93E6A0D688B209339 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70562C860964CE7138AFB176A6F1214E /* ServerTrustEvaluation.swift */; };
-		0E660C505E28C39C56412E04BB55B5DF /* Cloudpayments-SDK-iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF855BA3DA8951F3B3E472F53EDE55E /* Cloudpayments-SDK-iOS.bundle */; };
 		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
 		1270F4E601423EF36FE824207169002A /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF57CEEA7078580E8E4D63AB510A14E /* CodableTransform.swift */; };
-		1336FFCD8C90E4809EA705FB181514CB /* PaymentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC23F1E05F315D3541BF5C39F9A698C /* PaymentForm.swift */; };
 		13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868FEB103FD753D8C06C2A5E0CDD09DD /* ResponseSerialization.swift */; };
+		13AC07F7194155057F9937A7AE7A5EDF /* Cloudpayments-SDK-iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9FF855BA3DA8951F3B3E472F53EDE55E /* Cloudpayments-SDK-iOS.bundle */; };
+		13F3B2F58F07F53D206CA87BEA909917 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553C9E984EF011D965CC49F217511CB2 /* UnderlineTextField.swift */; };
 		14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A2C80D539BEDC3CA76CA873E7A71D8 /* ParameterEncoding.swift */; };
+		167F1B12BDD12B182900F73806BF1F7F /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFD003016A1DB37A7FCAE0FD012BBA1F /* PaymentForm.storyboard */; };
 		17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E75273F4435EE20FD76BEEA65B9FA66 /* AFError.swift */; };
+		18662497A2E118EA38ED31058DFE03FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
 		1942F7D3B7722A5637C3FC0BE44B1E6C /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB34ECAD584C61DE5640FA788042230D /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19A14163D1B85BA2674C47C08DD42F3B /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5617B2269F5250BEEF2D0795CEB9E420 /* EnumOperators.swift */; };
 		1A6FB23F6D6908396FB5FE61D9A76FB5 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0517DB073C2C2FFFDA16A86C494AEF /* URLTransform.swift */; };
 		1C4E35F55A6329617D438B149650AD87 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4744CC0ABDBC63C8CE91E93390C69052 /* Mappable.swift */; };
-		2614D3EAC209F9952F0AEAEFEBED10DE /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C894DF888E7662B4CCA70E182F3DB5A /* PaymentOptionsForm.swift */; };
+		1D4E06ECE16DF368CF9340A1C668357A /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */; };
+		202210D8F29D6F664B5191A4D2F357F8 /* PaymentProcessForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B433D2FC876D92A0401A75FBA6FA8CB /* PaymentProcessForm.swift */; };
+		26DEA821D3FEAFCC3DBD41C92B79BAFB /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11AC677B6DD7872943BFE0ECDD833233 /* UIColor+Assets.swift */; };
+		277924A2F25CB687FD24D8F558AC479B /* PaymentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8580BC65C830795EDDCC56E211E184 /* PaymentForm.swift */; };
 		28FB7D2AE173D7A32B3866FC2CBF587B /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 487118F701740F0DC4711FFA69F06CB8 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 353CCDFE642682884193C1A4009F2504 /* SwiftyJSON-dummy.m */; };
-		3006BDA317FD800CC05EFE403808DC35 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B0486214535D8BB09D9E1118DBF750 /* UIColor+Assets.swift */; };
-		316BD31C1881C3066EFF305703194761 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
-		33A316DEB611DC8AFF064C000BE5BDDA /* EmptyResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D504CF3BD0ACA47BEE36124ECF73775 /* EmptyResponse.swift */; };
-		3466544DC6E98517DED9A2DAD82FDADF /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740455928CD4D59A339C74B7BF1CC978 /* RSAUtils.swift */; };
-		35C16C734EA810FDE155795820A78EB9 /* CloudpaymentsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EB1AC2FB5D71020829287BADA1DF1B /* CloudpaymentsApi.swift */; };
-		37D272128118E213C7F2DAAC3120D9E3 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BA0B417F0B8E8EAFF9A8AAA8BE86E5 /* UIView+Constraints.swift */; };
+		34F369384902844433633B0D21B97B29 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = A859E517CDF49C2EC79927617D20E50D /* UIImage+Assets.swift */; };
+		3513B2E00AD7893C2A47D326C1A4706F /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8446ACE861A976345DC8BE89FA85F758 /* String+Extensions.swift */; };
 		38BF4EEFE885A6E3BA892C96F24F8723 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93DE8DA1346DBE136045C8E3BCA36BC2 /* IntegerOperators.swift */; };
 		3ED195CB9490C34BF16A5D8DE9FDB42C /* Pods-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5DC5ABE867DFAFEEFE65EB904EC044 /* Pods-demo-dummy.m */; };
 		4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04ABF6C239F6F833E26A85C8A3840586 /* Result+Alamofire.swift */; };
-		40FF175AD35AD586120AFF676AE9C74A /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB049A373809EBD3180A0253324CD605 /* CloudpaymentsError.swift */; };
 		42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C012972D20A4C2BDB622C5EB50C5E024 /* SessionDelegate.swift */; };
 		43D2607D4FC1D4991DB364E719510F1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
 		44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0D7D2BF954AB44BA406F4C4A4AB41B /* AlamofireExtended.swift */; };
 		464450D037D17ED5EE2322E180A6A9F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
+		48B3FEA79237233FA9848D58AAFE4B55 /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5662600E5E1397483AB81DC61B041C16 /* PaymentOptionsForm.swift */; };
 		48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4774BF9A2DF04DA4BA612534490891 /* RequestTaskMap.swift */; };
-		496E1EDBD0830290E553AA23B1B4255C /* PKPayment+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5257F3DA38234C4B18AD0CFCCAA6EB18 /* PKPayment+Convert.swift */; };
+		4B3BCD534EE32B5709C7C17862DFBF05 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB0EE00B0B39F792C8ECF72042E124D /* UIViewController+Extensions.swift */; };
 		4C6D5D1CC894D8853ACBF2FB5FE40EC5 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 242E1552F9E2A8670C47FA500DF1F1BF /* EnumTransform.swift */; };
-		4D946D6C50F283A502C1DDEB31D9BFD4 /* FormPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1901215B4BF63C242F81999DF37384 /* FormPresentationController.swift */; };
+		4DDB6773DC92CED4286E60186B779FD8 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C4C0E799468AF56DC65A1EBC07C89 /* RSAUtils.swift */; };
+		4E95237DD61266DB59E35F80FE9C0D87 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33758953688466A9D397028AC863FDAC /* UIView+Constraints.swift */; };
 		536AE5E0C47A0C546EF96C64C2BC819A /* AlamofireObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E03D9A921CB47B2533A9066E1C9F8698 /* AlamofireObjectMapper-dummy.m */; };
+		54F13813DDCF7A9A47733E9F8511A238 /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F951AB1F6FEE3E2058BF9BA8BA9A4136 /* CloudpaymentsError.swift */; };
 		56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FF94F917FE6429226A835F934F0C058 /* HTTPHeaders.swift */; };
 		5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA4D7C448F24FC288F9108281890018 /* MultipartFormData.swift */; };
 		5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BBFAA651F831D840149937C0CAFE9F /* URLEncodedFormEncoder.swift */; };
 		5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF71A553B782DB4B2D9182845B6006C /* ParameterEncoder.swift */; };
-		607F2202F320ECC897195C2819765EEF /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967DC7053F79267091F9EA58F1FD1209 /* BankInfo.swift */; };
 		61CFA5456E6B3B612AFBE85C6C9D4D10 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BECAA454C35C706347E3CBBFB9D0BD /* HexColorTransform.swift */; };
-		65496FAD231CA8E5310DF570F7D721B6 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53103DF9E601212B64F5AA4DD7E29E7 /* Currency.swift */; };
 		69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A8572B0A7DF7D1BCEEC0EADF104CF /* Session.swift */; };
 		6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7622FCD139572EA51936AF644D5473 /* Request.swift */; };
+		6B68ACD755B0050E23C0899C73E6DEAB /* PKPayment+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03DC1429C533BD04C96DF6ECE59DDC51 /* PKPayment+Convert.swift */; };
+		6BE61FE13607A509284B04406829583F /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2480A5D2A067B59DC4BBCDC7C75486E3 /* PaymentData.swift */; };
 		70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5C9F985E4F8960ED3C5897F76E69CF /* URLConvertible+URLRequestConvertible.swift */; };
 		72E902B0D6D593657CC38405EE1118A1 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E24249CD037730890B05013CEFFDE3 /* TransformOf.swift */; };
-		78815A63879116040C9A2172F254C617 /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED372CBA6CFC8160D61B715BDFB64B5C /* PaymentCardForm.swift */; };
+		79D650FB862ACFDA7F3C1E2FCD8E596E /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DF1EAC55AC4635C848E06CB94AD88F /* TransactionResponse.swift */; };
+		79DA9B163D559BF1C2875483ECC9D287 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
 		7AA1A5A48A4182B11CFA792714C82631 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB8E5B33F3104AE333B37CC10897E37 /* TransformType.swift */; };
 		7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D242817A4DFFA796E4A0C1CBD3F525A /* SwiftyJSON.swift */; };
-		7C441EAA97396931691014A5EB081D4C /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232245E342E0A518E3432B7DF4CE3113 /* PaymentData.swift */; };
 		7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F75E4FB9B8AF436A719B4364C65EFF /* NetworkReachabilityManager.swift */; };
+		7F8296D9897141CBBF7F140DB2A4BD1A /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167B632ACA7E83E2CFE8874F7C576AD9 /* Button.swift */; };
 		7FBF6626FC5EFF4FBDE27F192BD0FE1C /* AlamofireObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E21AC9806C36A929CD6F0518AEF1543 /* AlamofireObjectMapper.swift */; };
-		8A3FA6EFE8930731DF5C563C4430AF24 /* Cloudpayments-SDK-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 746D3855275157B48F6C81EE953F0104 /* Cloudpayments-SDK-iOS-dummy.m */; };
-		9088326C1ACB8B4204610665122F13B3 /* UnderlineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8A3CB2059A5DC7ED8200D58E8221C1 /* UnderlineTextField.swift */; };
 		9143E20A63CFBC740AECDCFE909F5A33 /* FromJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45372B82BB0221130445FB5F41682A0 /* FromJSON.swift */; };
 		91BA956F3C83DD73EDC9E6842FAFA5C1 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB8A154309C40E5CE2E6F5F8C2C0057 /* NSDecimalNumberTransform.swift */; };
+		923368AE061D313EB871C4BAAC3FC832 /* BankInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4D288BE943404A00CEAC2E75A25900 /* BankInfoResponse.swift */; };
 		92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70FEE57AB89CA19FF117F8FC592487F6 /* OperationQueue+Alamofire.swift */; };
-		92898BE693C050659881BE540007FEBD /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 722E00A50528616DD2F3BED74AD463F0 /* PaymentForm.storyboard */; };
 		937FC411CB6833D68407CFC5F97CE68D /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2ECF67DE292E088418AE827A09203 /* TransformOperators.swift */; };
-		959B14456FB58246E611D566FFD7FAD0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B636EFBF33874B68A3A3FA7C6091B0 /* Transaction.swift */; };
+		96E9E9AB0AB7B1B18944771E5761F218 /* Cloudpayments-SDK-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7CC95FBB79E7B139B75AC1AA8459E41 /* Cloudpayments-SDK-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13A7CABF091D977EB79872FB3A2D0A0 /* CFNetwork.framework */; };
+		9AA3C8D72E23DA5CC4DF93A41A14DBA7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F5719568B868B2F659AFE2D7EC4B /* HTTP.swift */; };
 		A18477E61881F5B1F0FCA4CA2667DCBC /* DataTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C987B7E60F8FA70147CDD3C4CDB30D97 /* DataTransform.swift */; };
-		A40C853EFA9DB495BA3B673200FBD3CA /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59354623D7CB8C0D7909B0E8C69A8C1D /* UIViewController+Extensions.swift */; };
 		A5AA0CB9BFE983E769FEBB95186787A4 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577F7D7FC6322BABCDD2D4B21D050FF4 /* MapError.swift */; };
 		A68986E13F5E041F5BA4A6AA4D5B9455 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D42E9073DACDF4446ACCEF6D1D3C7184 /* CustomDateFormatTransform.swift */; };
 		AB8E2E1B150FD7C2D1336F2DD8B48853 /* DateFormatterTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D85FA295FE74AE3A9AD2EFB55B3A99 /* DateFormatterTransform.swift */; };
+		ACD874244DDDA829AD52D2D05C8F8640 /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AF5B69D67FE467E22435FA5183846C /* PaymentCardForm.swift */; };
+		AD97D3CA7DD5A655EF819237DA4224DD /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C5120BDA0580ACDEB8EB7C85DC0D99F /* ThreeDsData.swift */; };
 		AD9899986955B2EC1EC20818C860C971 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D336DC87981F53EE8A7BB3AA67680060 /* RequestInterceptor.swift */; };
+		ADDA2ABD7F8B3ACCD5D8ABBCFF3A3094 /* CloudpaymentsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4410733612D19FAB193A42F0167E2997 /* CloudpaymentsApi.swift */; };
 		AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D84831F3D986B5EEAB3D07C6BE8B70 /* URLSessionConfiguration+Alamofire.swift */; };
-		B09EB8615A5321E7841BF25F3A0AF9E2 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0C8D6E252C0D690F65F9A9964AF7D2 /* Button.swift */; };
 		B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E2949FAF14F260A9F0319D78F59D8144 /* Alamofire-dummy.m */; };
 		B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550DAEB8AA048C4576874E640581C7F /* HTTPMethod.swift */; };
 		B28A92AA7D5CE9A97C4AABBFADA59EDD /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9664FBA7D90992E03D9B912650D4E1F7 /* DateTransform.swift */; };
 		B4762756F64C661592645D32D87ECA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
+		B4E04A8F5513EA03CE703319920D5AE6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9C3B977FBE85329B38817D9B7A3E7C /* BaseViewController.swift */; };
 		B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC544A3DE644A9E69EF99761272EC893 /* Alamofire.swift */; };
-		B8B8C810BFF7B0B593B1552E202BE6E2 /* Cloudpayments-SDK-iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CFDC4ED58C00E6D30EC01782FF2492A /* Cloudpayments-SDK-iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B7972B9F58395F9FDC031DD9F3123386 /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CFE98CAB1C0C077483B528B7D770D0 /* Bundle+Extenstions.swift */; };
 		BA945FFC614C7B1F7B0265ED9B01047C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
 		BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6151897D8979F09C5C8D2ACE9BFB24C4 /* Foundation.framework */; };
-		C05FF156076AB5C0C2FD7AD7B5340679 /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841BBD4F9617A152B7F10EB407A90631 /* ThreeDsData.swift */; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF99B9CC37C13518F9C1ADD94A452629 /* ImmutableMappable.swift */; };
 		C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD01C575E0B887497F92E43410F8FB02 /* RedirectHandler.swift */; };
 		C7369563F6946D8984124E1A546B6425 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB805A92C4DB8F68AC7D5C1CB6B1707C /* Notifications.swift */; };
-		CA9DE36D2CCE207E8A0932A28509B1B9 /* PaymentProcessForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA5BE6D88332A384F8094653ED2F0 /* PaymentProcessForm.swift */; };
+		C83AAE96FADCF369CB41307ED6A16193 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C6FD8512B187ECAD59D594E4B7BBC5 /* Currency.swift */; };
 		CACBD166E573774FB5613C34AA6DA7A7 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912F9B0A9B68C63279372384A1D20C53 /* EventMonitor.swift */; };
-		CC01F358D30438206B634A31A30BDEA6 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007C4BBDB24E92ACBD637271983DF58D /* HTTP.swift */; };
-		CD04C08AAE8A2853C0D14EC23D55746D /* ThreeDsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB51F2C4FA90580867CCEE1AC437720 /* ThreeDsResponse.swift */; };
-		CD793D580E745C5564EB9D2CB440B5C3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73062053BE92FBE8E627AAF96034312B /* String+Extensions.swift */; };
+		CB98E97AF54409B4CB85C667AED28165 /* FormPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B90D4EA427746965484D10F7509D27 /* FormPresentationController.swift */; };
 		CD7E9B96B8B49215D4E1F99DE1F2821C /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAF15924B579A4016E6CE67E0742B25 /* Map.swift */; };
-		CDBA04411778BF1ADABFD95C54DACC13 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86751C9E6DE3E67990E60C6AA104891F /* UIImage+Assets.swift */; };
-		CE3E2B360AB43CF0A77EE0003693D5E8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF18173855A646C03CA57B4BC23EFB28 /* Card.swift */; };
+		CF47BF3D14B04C0CAC3924CEA7204D5E /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239FDD44E573C4ACD15427C92E1DD20C /* BankInfo.swift */; };
 		CFD70C4512BE496D2CFA66C1F07D0743 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38BF9120BF496B6F2BFBA5A3BF60CD9C /* ObjectMapper-dummy.m */; };
-		D1769B2A1280A94C3C1ECC8C0F3AB753 /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200B0BEAEBD6B0F0F06B1BB5F6C6A841 /* ThreeDsProcessor.swift */; };
 		D298E3A34E428388DEF4B1708F23BE55 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED10A50D7F04301AE1DEBECC2D4F543E /* Operators.swift */; };
+		D55B00C1EB5A1D7743FAA6BE627526CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB56307FEBCF5CC65D57B24AAC65C7B4 /* Assets.xcassets */; };
 		D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8D29B6AB2C133B22A3C434BDFBE6A2 /* RetryPolicy.swift */; };
 		D77545145A5D9E4053D6A121CED76362 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7616A5F11138FFEB1F7FBC8653E7BE /* ToJSON.swift */; };
-		D788AA69ED12F9E6C8DDE0472037F857 /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */; };
-		DCBD4CEE1C58EA4F76D0D411479554DE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */; };
-		DE78085748908D72E2E642D946B18918 /* BankApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA7445192473B015E3B38772878A849 /* BankApi.swift */; };
 		E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96970644FF36F9E4E3796ADADA2D396F /* MultipartUpload.swift */; };
 		E0C1244422C284ED4A6CA575318EE275 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB258C9F02F6E85F3CAB35D8A1AA328 /* ISO8601DateTransform.swift */; };
+		E4AE1B8A291371D0E037AAF9B8324E8E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CBF0269CC5B7C0D8DAE79626A858D2 /* Card.swift */; };
 		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65588476EFD9DEFFBC3E135FA831795 /* URLRequest+Alamofire.swift */; };
+		E8DF6673881D4A9E46FF3EDFD96BF574 /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225B571BB2F7A48168CF96195F864E80 /* ThreeDsProcessor.swift */; };
+		E95E721B99EC77F58DF94DE0B6FD2169 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88482588D5FF84F3B4C8A7C790CDDB6D /* Transaction.swift */; };
 		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD4F38B7D7471CDD4D77025E9F23DC /* DispatchQueue+Alamofire.swift */; };
 		EC6CE7FC643CB3F5F24E4E2221F4E4CB /* Pods-demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 919022BC48F9439E29669B27B83A8482 /* Pods-demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE97F345DCB9A549EF71232B8B19C421 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6715A4681A08140FD0A7BBDB858511 /* DictionaryTransform.swift */; };
 		F2D4806385A7E84C6FFCFEB93C089B0F /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D0772EFFF32650A35E2B347394BCFE /* Mapper.swift */; };
+		F31AF6B845EA87FAE7765D42A69689A8 /* Cloudpayments-SDK-iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D103A3A0C843B04CB997F0A909A58D7A /* Cloudpayments-SDK-iOS-dummy.m */; };
 		F3C822A5B0B643213C171930EF0FD33C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */; };
+		F4AD253A822BE93F1119CE5B9B5C0195 /* ThreeDsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2C86FB7021F6835417C50270E66FE /* ThreeDsResponse.swift */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB7FA06B67F711EC37EF165D523AC1 /* Response.swift */; };
-		F860763DE4F5D80AB452985DC91534D0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1207EF4CF6CCC23969A40563D247E803 /* BaseViewController.swift */; };
-		FD755934EEB959F1646AEA3E5622FEAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07D19902EC0A5101437C86C86DDCAD2A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		29055FB1B6151C254D9E1E4DCD954224 /* PBXContainerItemProxy */ = {
+		01CB59D4C6CCC9958F7E5DD8C08D9C15 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F64080413BB03C0B16BFEB621E6E0F2;
-			remoteInfo = AlamofireObjectMapper;
-		};
-		3377A723C89D477E2E150F5FDA0545A4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 483D0B0F3EF9B996ACA27CC2C70F9DCD;
-			remoteInfo = "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS";
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
 		};
 		3A5A6A671762924E01F33B6042FB17F3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -144,6 +136,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
+		};
+		4755D2DF549611EE6733E5EBC4EF9E52 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F64080413BB03C0B16BFEB621E6E0F2;
+			remoteInfo = AlamofireObjectMapper;
 		};
 		47F5F0707772E1EECB2EDDD3FEC9E1E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -173,13 +172,6 @@
 			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
 			remoteInfo = Alamofire;
 		};
-		7384890BD6DAA64C2374FB12ED0E810E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
 		D79264CA123269B8D847C21BE62063DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -194,61 +186,75 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
+		FD060E1435A38BC57DA6D868A98F1FAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 483D0B0F3EF9B996ACA27CC2C70F9DCD;
+			remoteInfo = "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		005A8572B0A7DF7D1BCEEC0EADF104CF /* Session.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Session.swift; path = Source/Session.swift; sourceTree = "<group>"; };
-		007C4BBDB24E92ACBD637271983DF58D /* HTTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		021C113F335FADA828B42B8B825F14DD /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
+		03DC1429C533BD04C96DF6ECE59DDC51 /* PKPayment+Convert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PKPayment+Convert.swift"; sourceTree = "<group>"; };
 		04ABF6C239F6F833E26A85C8A3840586 /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
 		056C11651D9181CFD60992F50710A1E6 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
-		0659E05379E9059789890A18FE7D690A /* Cloudpayments-SDK-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Cloudpayments-SDK-iOS.modulemap"; sourceTree = "<group>"; };
-		07D19902EC0A5101437C86C86DDCAD2A /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
-		081246C0A692F4E1DF742711C4BAFF34 /* Cloudpayments-SDK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Cloudpayments-SDK-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		08B32BD683EEA11688DA814C30F517C9 /* ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist"; sourceTree = "<group>"; };
 		0CA4D7C448F24FC288F9108281890018 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		0E4BE68F66A71E2AB1A67A51D2DE42F8 /* ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist"; sourceTree = "<group>"; };
-		1207EF4CF6CCC23969A40563D247E803 /* BaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		0F10F5719568B868B2F659AFE2D7EC4B /* HTTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		105342CDB19CEA546B9D34A3658901D1 /* Cloudpayments-SDK-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cloudpayments-SDK-iOS-Info.plist"; sourceTree = "<group>"; };
+		11AC677B6DD7872943BFE0ECDD833233 /* UIColor+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
+		124597B66B4074749F34B333A2C4F30F /* Cloudpayments-SDK-iOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "Cloudpayments-SDK-iOS.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1393A7673A070E2F4B38C8B7251A5F4F /* Protector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Protector.swift; path = Source/Protector.swift; sourceTree = "<group>"; };
+		14CBF0269CC5B7C0D8DAE79626A858D2 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		167B632ACA7E83E2CFE8874F7C576AD9 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		171784CD7F89555EFD77B2A0479363CA /* Pods-demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-demo-Info.plist"; sourceTree = "<group>"; };
 		1C7622FCD139572EA51936AF644D5473 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		1CC7E2332DA2E8368ED1FC38029E1982 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		1D4774BF9A2DF04DA4BA612534490891 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		1E8D29B6AB2C133B22A3C434BDFBE6A2 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		1EA1AC5EC0908D9D7576C71ABD49D50A /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
-		200B0BEAEBD6B0F0F06B1BB5F6C6A841 /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
-		22215C99BE08503BFE2BA64D55B7FC05 /* TransactionResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
-		232245E342E0A518E3432B7DF4CE3113 /* PaymentData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
+		225B571BB2F7A48168CF96195F864E80 /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
+		239FDD44E573C4ACD15427C92E1DD20C /* BankInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		242E1552F9E2A8670C47FA500DF1F1BF /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
+		2480A5D2A067B59DC4BBCDC7C75486E3 /* PaymentData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
+		27C6FD8512B187ECAD59D594E4B7BBC5 /* Currency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		2BAF15924B579A4016E6CE67E0742B25 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
-		2F75B74111E58685AF5A84E2CB365FA2 /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
+		2E9C3B977FBE85329B38817D9B7A3E7C /* BaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2F8580BC65C830795EDDCC56E211E184 /* PaymentForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentForm.swift; sourceTree = "<group>"; };
+		31DF1EAC55AC4635C848E06CB94AD88F /* TransactionResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
 		32FB7FA06B67F711EC37EF165D523AC1 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
+		33758953688466A9D397028AC863FDAC /* UIView+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		353CCDFE642682884193C1A4009F2504 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		356558394008DF1C6F71682332AAAB07 /* ObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.release.xcconfig; sourceTree = "<group>"; };
 		38BF9120BF496B6F2BFBA5A3BF60CD9C /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		3BB8E5B33F3104AE333B37CC10897E37 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
 		3BD0A0CD1E9C3C592C40EB2B3DBFD31C /* Cloudpayments_SDK_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cloudpayments_SDK_iOS.framework; path = "Cloudpayments-SDK-iOS.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E75273F4435EE20FD76BEEA65B9FA66 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
+		4410733612D19FAB193A42F0167E2997 /* CloudpaymentsApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsApi.swift; sourceTree = "<group>"; };
 		45FACB2E58CCEEC4209D8A8C137B706F /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4744CC0ABDBC63C8CE91E93390C69052 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
-		47B0486214535D8BB09D9E1118DBF750 /* UIColor+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
+		47F437B85B316A4CA73A604A52C56B19 /* Cloudpayments-SDK-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Cloudpayments-SDK-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		487118F701740F0DC4711FFA69F06CB8 /* AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		4AF57CEEA7078580E8E4D63AB510A14E /* CodableTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableTransform.swift; path = Sources/CodableTransform.swift; sourceTree = "<group>"; };
 		4BB8A154309C40E5CE2E6F5F8C2C0057 /* NSDecimalNumberTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NSDecimalNumberTransform.swift; path = Sources/NSDecimalNumberTransform.swift; sourceTree = "<group>"; };
 		4CA906A2BB947B1798CE8EC75C58A0B1 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D242817A4DFFA796E4A0C1CBD3F525A /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON/SwiftyJSON.swift; sourceTree = "<group>"; };
-		4D504CF3BD0ACA47BEE36124ECF73775 /* EmptyResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EmptyResponse.swift; sourceTree = "<group>"; };
+		4D8AE51F188AAF06348060F2C6F5F074 /* Cloudpayments-SDK-iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Cloudpayments-SDK-iOS.modulemap"; sourceTree = "<group>"; };
 		4D8B0BDECA7B8FFDBB70607DD04B44B9 /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		4E631522FC1204EB6DC69DC780D2F570 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		4F0517DB073C2C2FFFDA16A86C494AEF /* URLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLTransform.swift; path = Sources/URLTransform.swift; sourceTree = "<group>"; };
 		4FE45AE5DAA8B1DF7D6099181AD9FA0A /* Pods-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		50D85FA295FE74AE3A9AD2EFB55B3A99 /* DateFormatterTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateFormatterTransform.swift; path = Sources/DateFormatterTransform.swift; sourceTree = "<group>"; };
 		51ABB25EBCD5A196F3C82F0BAB4291EE /* SwiftyJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.debug.xcconfig; sourceTree = "<group>"; };
-		5257F3DA38234C4B18AD0CFCCAA6EB18 /* PKPayment+Convert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PKPayment+Convert.swift"; sourceTree = "<group>"; };
 		5532288CFF2FBEDBE196374738D37885 /* AlamofireObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.release.xcconfig; sourceTree = "<group>"; };
+		553C9E984EF011D965CC49F217511CB2 /* UnderlineTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
 		5617B2269F5250BEEF2D0795CEB9E420 /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		564918F7EDE94BCE2999E0FD73447574 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		5662600E5E1397483AB81DC61B041C16 /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		577F7D7FC6322BABCDD2D4B21D050FF4 /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
-		59354623D7CB8C0D7909B0E8C69A8C1D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		59D84831F3D986B5EEAB3D07C6BE8B70 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLSessionConfiguration+Alamofire.swift"; path = "Source/URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBFED53D3097E526992A83CCC5A583D /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
@@ -257,31 +263,26 @@
 		620C2E500E91AE09F121C9670613B82F /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_demo.framework; path = "Pods-demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64BECAA454C35C706347E3CBBFB9D0BD /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
 		65017762322A7E72DA4FA8AC9CC3D5FD /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		6676A87D2166E82331AF77DBCB21010F /* Cloudpayments-SDK-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-SDK-iOS-prefix.pch"; sourceTree = "<group>"; };
 		6A663172E4DFE8753EA4BE72AE708CC0 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C5120BDA0580ACDEB8EB7C85DC0D99F /* ThreeDsData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
 		6FB258C9F02F6E85F3CAB35D8A1AA328 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		70562C860964CE7138AFB176A6F1214E /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		70FEE57AB89CA19FF117F8FC592487F6 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		722E00A50528616DD2F3BED74AD463F0 /* PaymentForm.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = PaymentForm.storyboard; path = Resources/PaymentForm.storyboard; sourceTree = "<group>"; };
 		72F75E4FB9B8AF436A719B4364C65EFF /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		73062053BE92FBE8E627AAF96034312B /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		740455928CD4D59A339C74B7BF1CC978 /* RSAUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
-		746D3855275157B48F6C81EE953F0104 /* Cloudpayments-SDK-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cloudpayments-SDK-iOS-dummy.m"; sourceTree = "<group>"; };
 		7806CA98F691DB69CD0E4F74459F2E66 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		7BA7445192473B015E3B38772878A849 /* BankApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankApi.swift; sourceTree = "<group>"; };
-		7C4B39B7525CF5647B60A3F0BEE65552 /* Cloudpayments-SDK-iOS.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "Cloudpayments-SDK-iOS.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		7C5DC5ABE867DFAFEEFE65EB904EC044 /* Pods-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-demo-dummy.m"; sourceTree = "<group>"; };
 		7C84F870D8F078F93E6A0D688B209339 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
-		7C894DF888E7662B4CCA70E182F3DB5A /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		8304FA02D2A592F4996BA412884CCA37 /* Pods-demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-demo.modulemap"; sourceTree = "<group>"; };
-		841BBD4F9617A152B7F10EB407A90631 /* ThreeDsData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
+		8446ACE861A976345DC8BE89FA85F758 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		84BBFAA651F831D840149937C0CAFE9F /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		85F2ECF67DE292E088418AE827A09203 /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
-		86751C9E6DE3E67990E60C6AA104891F /* UIImage+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		86822384CD379FCE373C2F755839B8DE /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireObjectMapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		868FEB103FD753D8C06C2A5E0CDD09DD /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		89B25A2DA4B4146C20186071116CAF8A /* Cloudpayments-SDK-iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cloudpayments-SDK-iOS-Info.plist"; sourceTree = "<group>"; };
+		87AF5B69D67FE467E22435FA5183846C /* PaymentCardForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
+		88482588D5FF84F3B4C8A7C790CDDB6D /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		8A4D288BE943404A00CEAC2E75A25900 /* BankInfoResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfoResponse.swift; sourceTree = "<group>"; };
 		8C0E6E14E9070EE3D1E15A9CE8647C42 /* SwiftyJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.release.xcconfig; sourceTree = "<group>"; };
-		8CFDC4ED58C00E6D30EC01782FF2492A /* Cloudpayments-SDK-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-SDK-iOS-umbrella.h"; sourceTree = "<group>"; };
 		8E21AC9806C36A929CD6F0518AEF1543 /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireObjectMapper.swift; path = AlamofireObjectMapper/AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		90D0772EFFF32650A35E2B347394BCFE /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		912F9B0A9B68C63279372384A1D20C53 /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
@@ -290,19 +291,19 @@
 		93DE8DA1346DBE136045C8E3BCA36BC2 /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
 		95A2C80D539BEDC3CA76CA873E7A71D8 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		9664FBA7D90992E03D9B912650D4E1F7 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
-		967DC7053F79267091F9EA58F1FD1209 /* BankInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		96970644FF36F9E4E3796ADADA2D396F /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
-		9A0C8D6E252C0D690F65F9A9964AF7D2 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		9B433D2FC876D92A0401A75FBA6FA8CB /* PaymentProcessForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentProcessForm.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FB51F2C4FA90580867CCEE1AC437720 /* ThreeDsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsResponse.swift; sourceTree = "<group>"; };
 		9FF137B845F4783BCEFE94C9E260446B /* AlamofireObjectMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.debug.xcconfig; sourceTree = "<group>"; };
 		9FF855BA3DA8951F3B3E472F53EDE55E /* Cloudpayments-SDK-iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "Cloudpayments-SDK-iOS.bundle"; path = "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13A7CABF091D977EB79872FB3A2D0A0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		A53103DF9E601212B64F5AA4DD7E29E7 /* Currency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		A6BA0B417F0B8E8EAFF9A8AAA8BE86E5 /* UIView+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
-		A81D2CFAA5F7AB45997221268A6DEB9F /* Cloudpayments-SDK-iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-SDK-iOS-prefix.pch"; sourceTree = "<group>"; };
+		A60C4C0E799468AF56DC65A1EBC07C89 /* RSAUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
+		A84203087835478E057883AFE1F2D023 /* Cloudpayments-SDK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Cloudpayments-SDK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A859E517CDF49C2EC79927617D20E50D /* UIImage+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		AA6F28936150B774D174F70EC133595F /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
+		AAB0EE00B0B39F792C8ECF72042E124D /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		AD0FE056A4D62357ADF7BBB3D29B2E52 /* Pods-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-demo-frameworks.sh"; sourceTree = "<group>"; };
+		AFD2C86FB7021F6835417C50270E66FE /* ThreeDsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsResponse.swift; sourceTree = "<group>"; };
 		B8050D39A9EFDB142EBF69088091429F /* SwiftyJSON-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftyJSON-Info.plist"; sourceTree = "<group>"; };
 		B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA5C9F985E4F8960ED3C5897F76E69CF /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
@@ -311,40 +312,37 @@
 		BD01C575E0B887497F92E43410F8FB02 /* RedirectHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RedirectHandler.swift; path = Source/RedirectHandler.swift; sourceTree = "<group>"; };
 		BD6715A4681A08140FD0A7BBDB858511 /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
 		BDAF70CA7610B1A336679EA97932E52E /* AlamofireObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-prefix.pch"; sourceTree = "<group>"; };
+		BFD003016A1DB37A7FCAE0FD012BBA1F /* PaymentForm.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = PaymentForm.storyboard; path = Resources/PaymentForm.storyboard; sourceTree = "<group>"; };
 		C012972D20A4C2BDB622C5EB50C5E024 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		C3B90D4EA427746965484D10F7509D27 /* FormPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormPresentationController.swift; sourceTree = "<group>"; };
 		C3D099E81A4C4BDCFC975E0EE449AADE /* ObjectMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.debug.xcconfig; sourceTree = "<group>"; };
 		C65588476EFD9DEFFBC3E135FA831795 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		C96F823863A3186EC1BBC88AE7A79574 /* Cloudpayments-SDK-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Cloudpayments-SDK-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		C987B7E60F8FA70147CDD3C4CDB30D97 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
 		CA65AEC0E916AFED012A7CEAF6B83019 /* ObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ObjectMapper.modulemap; sourceTree = "<group>"; };
-		CB049A373809EBD3180A0253324CD605 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		CB905FD8BDF18E6A115CF1EB97013A48 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		CFC23F1E05F315D3541BF5C39F9A698C /* PaymentForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentForm.swift; sourceTree = "<group>"; };
+		D103A3A0C843B04CB997F0A909A58D7A /* Cloudpayments-SDK-iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cloudpayments-SDK-iOS-dummy.m"; sourceTree = "<group>"; };
 		D336DC87981F53EE8A7BB3AA67680060 /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
-		D3B636EFBF33874B68A3A3FA7C6091B0 /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		D42E9073DACDF4446ACCEF6D1D3C7184 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
-		D67DA5BE6D88332A384F8094653ED2F0 /* PaymentProcessForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentProcessForm.swift; sourceTree = "<group>"; };
-		DB8A3CB2059A5DC7ED8200D58E8221C1 /* UnderlineTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UnderlineTextField.swift; sourceTree = "<group>"; };
-		DC1901215B4BF63C242F81999DF37384 /* FormPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormPresentationController.swift; sourceTree = "<group>"; };
 		DD7616A5F11138FFEB1F7FBC8653E7BE /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
 		E03D9A921CB47B2533A9066E1C9F8698 /* AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		E23C076BA70925415F490FEDB215DA92 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2949FAF14F260A9F0319D78F59D8144 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
 		E45372B82BB0221130445FB5F41682A0 /* FromJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FromJSON.swift; path = Sources/FromJSON.swift; sourceTree = "<group>"; };
-		E7EB1AC2FB5D71020829287BADA1DF1B /* CloudpaymentsApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsApi.swift; sourceTree = "<group>"; };
+		E7CC95FBB79E7B139B75AC1AA8459E41 /* Cloudpayments-SDK-iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-SDK-iOS-umbrella.h"; sourceTree = "<group>"; };
 		E865ECBFCE7F5DC47E08F4DD1DDCFE2B /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		E8BD4F38B7D7471CDD4D77025E9F23DC /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		EA96317F8DBE2C7048B863DEF1B67E14 /* Pods-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-demo-acknowledgements.plist"; sourceTree = "<group>"; };
+		EB56307FEBCF5CC65D57B24AAC65C7B4 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		EB805A92C4DB8F68AC7D5C1CB6B1707C /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		ECB7C7474B63740D107962587EF79D8D /* AlamofireObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireObjectMapper.modulemap; sourceTree = "<group>"; };
 		ECF71A553B782DB4B2D9182845B6006C /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		ED10A50D7F04301AE1DEBECC2D4F543E /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
-		ED372CBA6CFC8160D61B715BDFB64B5C /* PaymentCardForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
-		EF18173855A646C03CA57B4BC23EFB28 /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		EF99B9CC37C13518F9C1ADD94A452629 /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
+		F1CFE98CAB1C0C077483B528B7D770D0 /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
 		F50871C3623F44520EDE9058E420E97D /* AlamofireObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		F550DAEB8AA048C4576874E640581C7F /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
 		F8902595241BD4B8CE4D288E0E1D2983 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
+		F951AB1F6FEE3E2058BF9BA8BA9A4136 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		FB34ECAD584C61DE5640FA788042230D /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -357,22 +355,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		580B98C11ECFA9D16B2AD42A06FD0484 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8B0D8633F410345F93419B8C3D7B6916 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */,
 				BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9F5DFD342B02782A767A35F89D38E934 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DCBD4CEE1C58EA4F76D0D411479554DE /* Alamofire.framework in Frameworks */,
-				D788AA69ED12F9E6C8DDE0472037F857 /* AlamofireObjectMapper.framework in Frameworks */,
-				316BD31C1881C3066EFF305703194761 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,10 +387,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B210D1DE222489D5A0B7E459DC2196C7 /* Frameworks */ = {
+		D6ADB2805C60065FD2B4CB3E8AAA4610 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DA9B163D559BF1C2875483ECC9D287 /* Alamofire.framework in Frameworks */,
+				1D4E06ECE16DF368CF9340A1C668357A /* AlamofireObjectMapper.framework in Frameworks */,
+				18662497A2E118EA38ED31058DFE03FA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,23 +410,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09514D9C20C3F2F70FED151532916CEC /* Cloudpayments-SDK-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				78601D812B26BF519A658A1452E1EC85 /* api */,
-				B943746B3EAD4FE4680D550CDF929E6A /* Base */,
-				9181D4F85626F85D2138F7A250480BB0 /* Card */,
-				F69288ACEF668CD8BAED613955C694F5 /* D3DS */,
-				EF635322935093CBC7AD050D1A276689 /* PaymentForm */,
-				4D9A5411A29E63E8FD516255BBABC14E /* Pod */,
-				3FCE9B47ECB58456898F3164E277105C /* Resources */,
-				7F984B254CAE9C02AA551E6EE19DE590 /* Support Files */,
-				E27EEB8313F1A8C1A511C463CA9F0BF2 /* Utils */,
-			);
-			name = "Cloudpayments-SDK-iOS";
-			path = ../../sdk;
-			sourceTree = "<group>";
-		};
 		0A9D030D25BDC0C78A31ECE19F8FD1DC /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,17 +418,6 @@
 			);
 			name = SwiftyJSON;
 			path = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		0CA2EC39ED95BC9224CE15EA8D6412A1 /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				9A0C8D6E252C0D690F65F9A9964AF7D2 /* Button.swift */,
-				DC1901215B4BF63C242F81999DF37384 /* FormPresentationController.swift */,
-				DB8A3CB2059A5DC7ED8200D58E8221C1 /* UnderlineTextField.swift */,
-			);
-			name = UIKit;
-			path = UIKit;
 			sourceTree = "<group>";
 		};
 		130AA81CE9E56973576CAC0AC3415EC7 /* Support Files */ = {
@@ -465,6 +435,16 @@
 			path = "../Target Support Files/AlamofireObjectMapper";
 			sourceTree = "<group>";
 		};
+		1A7FBF21980FF208F43F776D7071D41A /* D3DS */ = {
+			isa = PBXGroup;
+			children = (
+				6C5120BDA0580ACDEB8EB7C85DC0D99F /* ThreeDsData.swift */,
+				225B571BB2F7A48168CF96195F864E80 /* ThreeDsProcessor.swift */,
+			);
+			name = D3DS;
+			path = sdk/D3DS;
+			sourceTree = "<group>";
+		};
 		24B711761BD3BBBBE0FEDCEDC1779FCA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -474,6 +454,51 @@
 				9F1423108D491C3FD139D9FD5E5EBD86 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2820BB4445A078D97476E43C74E6B4C6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D8AE51F188AAF06348060F2C6F5F074 /* Cloudpayments-SDK-iOS.modulemap */,
+				D103A3A0C843B04CB997F0A909A58D7A /* Cloudpayments-SDK-iOS-dummy.m */,
+				105342CDB19CEA546B9D34A3658901D1 /* Cloudpayments-SDK-iOS-Info.plist */,
+				6676A87D2166E82331AF77DBCB21010F /* Cloudpayments-SDK-iOS-prefix.pch */,
+				E7CC95FBB79E7B139B75AC1AA8459E41 /* Cloudpayments-SDK-iOS-umbrella.h */,
+				A84203087835478E057883AFE1F2D023 /* Cloudpayments-SDK-iOS.debug.xcconfig */,
+				47F437B85B316A4CA73A604A52C56B19 /* Cloudpayments-SDK-iOS.release.xcconfig */,
+				08B32BD683EEA11688DA814C30F517C9 /* ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../demo/Pods/Target Support Files/Cloudpayments-SDK-iOS";
+			sourceTree = "<group>";
+		};
+		30E74538B041B596CF4155110A14A90B /* Cloudpayments-SDK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6849DC340ECEEF49845FD36B95C69AFE /* api */,
+				6EF8BCB59A23FC6070EB3E46C9756E24 /* Base */,
+				7E8F0DDDF44F41CE096E8C7D2DAA88A5 /* Card */,
+				1A7FBF21980FF208F43F776D7071D41A /* D3DS */,
+				37DB738BAEB708637E8DA249FFC6E169 /* PaymentForm */,
+				9AA25FDFE16E8D991EB93182E635464E /* Pod */,
+				47A6033B1F88D51A7E92149F40883F15 /* Resources */,
+				2820BB4445A078D97476E43C74E6B4C6 /* Support Files */,
+				DFAF68F2A915C4CE7AD583820C8C0D91 /* Utils */,
+			);
+			name = "Cloudpayments-SDK-iOS";
+			path = ../../sdk;
+			sourceTree = "<group>";
+		};
+		37DB738BAEB708637E8DA249FFC6E169 /* PaymentForm */ = {
+			isa = PBXGroup;
+			children = (
+				87AF5B69D67FE467E22435FA5183846C /* PaymentCardForm.swift */,
+				2F8580BC65C830795EDDCC56E211E184 /* PaymentForm.swift */,
+				5662600E5E1397483AB81DC61B041C16 /* PaymentOptionsForm.swift */,
+				9B433D2FC876D92A0401A75FBA6FA8CB /* PaymentProcessForm.swift */,
+			);
+			name = PaymentForm;
+			path = sdk/PaymentForm;
 			sourceTree = "<group>";
 		};
 		3C0D4FE7B9D1E4094AB645628519A213 /* Alamofire */ = {
@@ -517,57 +542,57 @@
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
-		3FCE9B47ECB58456898F3164E277105C /* Resources */ = {
+		44DF8C826B35C69AD5612412754B67BD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				07D19902EC0A5101437C86C86DDCAD2A /* Assets.xcassets */,
-				722E00A50528616DD2F3BED74AD463F0 /* PaymentForm.storyboard */,
+				239FDD44E573C4ACD15427C92E1DD20C /* BankInfo.swift */,
+				8A4D288BE943404A00CEAC2E75A25900 /* BankInfoResponse.swift */,
+				27C6FD8512B187ECAD59D594E4B7BBC5 /* Currency.swift */,
+				2480A5D2A067B59DC4BBCDC7C75486E3 /* PaymentData.swift */,
+				AFD2C86FB7021F6835417C50270E66FE /* ThreeDsResponse.swift */,
+				88482588D5FF84F3B4C8A7C790CDDB6D /* Transaction.swift */,
+				31DF1EAC55AC4635C848E06CB94AD88F /* TransactionResponse.swift */,
 			);
-			name = Resources;
+			name = Models;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		4D9A5411A29E63E8FD516255BBABC14E /* Pod */ = {
+		47A6033B1F88D51A7E92149F40883F15 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7C4B39B7525CF5647B60A3F0BEE65552 /* Cloudpayments-SDK-iOS.podspec */,
+				EB56307FEBCF5CC65D57B24AAC65C7B4 /* Assets.xcassets */,
+				BFD003016A1DB37A7FCAE0FD012BBA1F /* PaymentForm.storyboard */,
 			);
-			name = Pod;
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		5577E9845ED7023AEF13971DBF75A770 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				09514D9C20C3F2F70FED151532916CEC /* Cloudpayments-SDK-iOS */,
+				30E74538B041B596CF4155110A14A90B /* Cloudpayments-SDK-iOS */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		56A44DE675CC1F6DC5D952678EF8000E /* Extenstions */ = {
+		6849DC340ECEEF49845FD36B95C69AFE /* api */ = {
 			isa = PBXGroup;
 			children = (
-				2F75B74111E58685AF5A84E2CB365FA2 /* Bundle+Extenstions.swift */,
-				5257F3DA38234C4B18AD0CFCCAA6EB18 /* PKPayment+Convert.swift */,
-				73062053BE92FBE8E627AAF96034312B /* String+Extensions.swift */,
-				47B0486214535D8BB09D9E1118DBF750 /* UIColor+Assets.swift */,
-				86751C9E6DE3E67990E60C6AA104891F /* UIImage+Assets.swift */,
-				A6BA0B417F0B8E8EAFF9A8AAA8BE86E5 /* UIView+Constraints.swift */,
-				59354623D7CB8C0D7909B0E8C69A8C1D /* UIViewController+Extensions.swift */,
-			);
-			name = Extenstions;
-			path = Extenstions;
-			sourceTree = "<group>";
-		};
-		78601D812B26BF519A658A1452E1EC85 /* api */ = {
-			isa = PBXGroup;
-			children = (
-				7BA7445192473B015E3B38772878A849 /* BankApi.swift */,
-				E7EB1AC2FB5D71020829287BADA1DF1B /* CloudpaymentsApi.swift */,
-				CB049A373809EBD3180A0253324CD605 /* CloudpaymentsError.swift */,
-				007C4BBDB24E92ACBD637271983DF58D /* HTTP.swift */,
-				F438CAD25584E642C6D36F6F520389B6 /* Models */,
+				4410733612D19FAB193A42F0167E2997 /* CloudpaymentsApi.swift */,
+				F951AB1F6FEE3E2058BF9BA8BA9A4136 /* CloudpaymentsError.swift */,
+				0F10F5719568B868B2F659AFE2D7EC4B /* HTTP.swift */,
+				44DF8C826B35C69AD5612412754B67BD /* Models */,
 			);
 			name = api;
 			path = sdk/api;
+			sourceTree = "<group>";
+		};
+		6EF8BCB59A23FC6070EB3E46C9756E24 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2E9C3B977FBE85329B38817D9B7A3E7C /* BaseViewController.swift */,
+			);
+			name = Base;
+			path = sdk/Base;
 			sourceTree = "<group>";
 		};
 		7B2E4B2E6CB6E45A164FB8BE431A7763 /* Support Files */ = {
@@ -585,20 +610,13 @@
 			path = "../Target Support Files/ObjectMapper";
 			sourceTree = "<group>";
 		};
-		7F984B254CAE9C02AA551E6EE19DE590 /* Support Files */ = {
+		7E8F0DDDF44F41CE096E8C7D2DAA88A5 /* Card */ = {
 			isa = PBXGroup;
 			children = (
-				0659E05379E9059789890A18FE7D690A /* Cloudpayments-SDK-iOS.modulemap */,
-				746D3855275157B48F6C81EE953F0104 /* Cloudpayments-SDK-iOS-dummy.m */,
-				89B25A2DA4B4146C20186071116CAF8A /* Cloudpayments-SDK-iOS-Info.plist */,
-				A81D2CFAA5F7AB45997221268A6DEB9F /* Cloudpayments-SDK-iOS-prefix.pch */,
-				8CFDC4ED58C00E6D30EC01782FF2492A /* Cloudpayments-SDK-iOS-umbrella.h */,
-				C96F823863A3186EC1BBC88AE7A79574 /* Cloudpayments-SDK-iOS.debug.xcconfig */,
-				081246C0A692F4E1DF742711C4BAFF34 /* Cloudpayments-SDK-iOS.release.xcconfig */,
-				0E4BE68F66A71E2AB1A67A51D2DE42F8 /* ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist */,
+				14CBF0269CC5B7C0D8DAE79626A858D2 /* Card.swift */,
 			);
-			name = "Support Files";
-			path = "../demo/Pods/Target Support Files/Cloudpayments-SDK-iOS";
+			name = Card;
+			path = sdk/Card;
 			sourceTree = "<group>";
 		};
 		833DBFD7EB627F7D4FA771C6606C982A /* Products */ = {
@@ -615,13 +633,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9181D4F85626F85D2138F7A250480BB0 /* Card */ = {
+		9AA25FDFE16E8D991EB93182E635464E /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				EF18173855A646C03CA57B4BC23EFB28 /* Card.swift */,
+				124597B66B4074749F34B333A2C4F30F /* Cloudpayments-SDK-iOS.podspec */,
 			);
-			name = Card;
-			path = sdk/Card;
+			name = Pod;
 			sourceTree = "<group>";
 		};
 		9F1423108D491C3FD139D9FD5E5EBD86 /* iOS */ = {
@@ -641,13 +658,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		B943746B3EAD4FE4680D550CDF929E6A /* Base */ = {
+		BCFA77670B5EE4C8A26354D4F80AA5D7 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1207EF4CF6CCC23969A40563D247E803 /* BaseViewController.swift */,
+				167B632ACA7E83E2CFE8874F7C576AD9 /* Button.swift */,
+				C3B90D4EA427746965484D10F7509D27 /* FormPresentationController.swift */,
+				553C9E984EF011D965CC49F217511CB2 /* UnderlineTextField.swift */,
 			);
-			name = Base;
-			path = sdk/Base;
+			name = UIKit;
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 		C1AE2731E2DB77A60CE27F840D6D131C /* AlamofireObjectMapper */ = {
@@ -658,6 +677,21 @@
 			);
 			name = AlamofireObjectMapper;
 			path = AlamofireObjectMapper;
+			sourceTree = "<group>";
+		};
+		C2A56131EAD7FC8AE0685CFB731C3B8C /* Extenstions */ = {
+			isa = PBXGroup;
+			children = (
+				F1CFE98CAB1C0C077483B528B7D770D0 /* Bundle+Extenstions.swift */,
+				03DC1429C533BD04C96DF6ECE59DDC51 /* PKPayment+Convert.swift */,
+				8446ACE861A976345DC8BE89FA85F758 /* String+Extensions.swift */,
+				11AC677B6DD7872943BFE0ECDD833233 /* UIColor+Assets.swift */,
+				A859E517CDF49C2EC79927617D20E50D /* UIImage+Assets.swift */,
+				33758953688466A9D397028AC863FDAC /* UIView+Constraints.swift */,
+				AAB0EE00B0B39F792C8ECF72042E124D /* UIViewController+Extensions.swift */,
+			);
+			name = Extenstions;
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		C52D7AFAEE72807B40F0BA3A543A7634 /* Support Files */ = {
@@ -719,6 +753,17 @@
 			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
+		DFAF68F2A915C4CE7AD583820C8C0D91 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A60C4C0E799468AF56DC65A1EBC07C89 /* RSAUtils.swift */,
+				C2A56131EAD7FC8AE0685CFB731C3B8C /* Extenstions */,
+				BCFA77670B5EE4C8A26354D4F80AA5D7 /* UIKit */,
+			);
+			name = Utils;
+			path = sdk/Utils;
+			sourceTree = "<group>";
+		};
 		E262B94BAE71BB1A18A14547EDE81AA0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,17 +773,6 @@
 				0A9D030D25BDC0C78A31ECE19F8FD1DC /* SwiftyJSON */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		E27EEB8313F1A8C1A511C463CA9F0BF2 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				740455928CD4D59A339C74B7BF1CC978 /* RSAUtils.swift */,
-				56A44DE675CC1F6DC5D952678EF8000E /* Extenstions */,
-				0CA2EC39ED95BC9224CE15EA8D6412A1 /* UIKit */,
-			);
-			name = Utils;
-			path = sdk/Utils;
 			sourceTree = "<group>";
 		};
 		EF41902416C1299960E4A549ADAFBC94 /* ObjectMapper */ = {
@@ -774,54 +808,9 @@
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
-		EF635322935093CBC7AD050D1A276689 /* PaymentForm */ = {
-			isa = PBXGroup;
-			children = (
-				ED372CBA6CFC8160D61B715BDFB64B5C /* PaymentCardForm.swift */,
-				CFC23F1E05F315D3541BF5C39F9A698C /* PaymentForm.swift */,
-				7C894DF888E7662B4CCA70E182F3DB5A /* PaymentOptionsForm.swift */,
-				D67DA5BE6D88332A384F8094653ED2F0 /* PaymentProcessForm.swift */,
-			);
-			name = PaymentForm;
-			path = sdk/PaymentForm;
-			sourceTree = "<group>";
-		};
-		F438CAD25584E642C6D36F6F520389B6 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				967DC7053F79267091F9EA58F1FD1209 /* BankInfo.swift */,
-				A53103DF9E601212B64F5AA4DD7E29E7 /* Currency.swift */,
-				4D504CF3BD0ACA47BEE36124ECF73775 /* EmptyResponse.swift */,
-				232245E342E0A518E3432B7DF4CE3113 /* PaymentData.swift */,
-				9FB51F2C4FA90580867CCEE1AC437720 /* ThreeDsResponse.swift */,
-				D3B636EFBF33874B68A3A3FA7C6091B0 /* Transaction.swift */,
-				22215C99BE08503BFE2BA64D55B7FC05 /* TransactionResponse.swift */,
-			);
-			name = Models;
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F69288ACEF668CD8BAED613955C694F5 /* D3DS */ = {
-			isa = PBXGroup;
-			children = (
-				841BBD4F9617A152B7F10EB407A90631 /* ThreeDsData.swift */,
-				200B0BEAEBD6B0F0F06B1BB5F6C6A841 /* ThreeDsProcessor.swift */,
-			);
-			name = D3DS;
-			path = sdk/D3DS;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		187DB78BDE90CEC9C68F4967CBC50C79 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8B8C810BFF7B0B593B1552E202BE6E2 /* Cloudpayments-SDK-iOS-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3A636DC07487F1F2EE61A8AF38FA1666 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -843,6 +832,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC6CE7FC643CB3F5F24E4E2221F4E4CB /* Pods-demo-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		816E240C07117EA468E89B7D52FC9F46 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				96E9E9AB0AB7B1B18944771E5761F218 /* Cloudpayments-SDK-iOS-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,19 +905,19 @@
 		};
 		32C6A122AF541569D8B2F220CC074EC0 /* Cloudpayments-SDK-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FFE63C835F24D686EE34A0F9FB20EFC /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS" */;
+			buildConfigurationList = DF3703028FB665356F0541F2937D65B6 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS" */;
 			buildPhases = (
-				187DB78BDE90CEC9C68F4967CBC50C79 /* Headers */,
-				3ED25D3137AA27F7C4363E56DA67B61C /* Sources */,
-				9F5DFD342B02782A767A35F89D38E934 /* Frameworks */,
-				98A8DF7F0DF3C4B300089794160CA943 /* Resources */,
+				816E240C07117EA468E89B7D52FC9F46 /* Headers */,
+				C53CE63388517D9798C83DC79B453896 /* Sources */,
+				D6ADB2805C60065FD2B4CB3E8AAA4610 /* Frameworks */,
+				98385767C4F46E5B465EC0E898943C65 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6BE822FBF96E0793D0C74169CB8C7D7C /* PBXTargetDependency */,
-				43F67C5B3BBE33D51D9329FF313B2B1C /* PBXTargetDependency */,
-				389540C5E76AC6289D7425A898BDA505 /* PBXTargetDependency */,
+				8F431A68FC43C8EA351F7A7228A0F3C7 /* PBXTargetDependency */,
+				E3981F1719818E9F69F013F85DFD0EE1 /* PBXTargetDependency */,
+				2F2679A0258BBC130AB6CC9ED21814D0 /* PBXTargetDependency */,
 			);
 			name = "Cloudpayments-SDK-iOS";
 			productName = "Cloudpayments-SDK-iOS";
@@ -949,11 +946,11 @@
 		};
 		483D0B0F3EF9B996ACA27CC2C70F9DCD /* Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8B833EFEE94E51E66F15D507CA27D4B9 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS" */;
+			buildConfigurationList = 0A780425246607B31C0344DFCE416717 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS" */;
 			buildPhases = (
-				D115EE8D4F5772E6784AA960E83D1457 /* Sources */,
-				B210D1DE222489D5A0B7E459DC2196C7 /* Frameworks */,
-				98683CFC3F817E01DD393555FEC74AFC /* Resources */,
+				D9CBC2E59F9FD3F7B9C43771051712F5 /* Sources */,
+				580B98C11ECFA9D16B2AD42A06FD0484 /* Frameworks */,
+				263A519756BDD3CF2B49505ADC97A443 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1048,6 +1045,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		263A519756BDD3CF2B49505ADC97A443 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D55B00C1EB5A1D7743FAA6BE627526CA /* Assets.xcassets in Resources */,
+				167F1B12BDD12B182900F73806BF1F7F /* PaymentForm.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		28FC0024B79C28A420D7C4FEBB9E3AEB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1062,20 +1068,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		98683CFC3F817E01DD393555FEC74AFC /* Resources */ = {
+		98385767C4F46E5B465EC0E898943C65 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD755934EEB959F1646AEA3E5622FEAE /* Assets.xcassets in Resources */,
-				92898BE693C050659881BE540007FEBD /* PaymentForm.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		98A8DF7F0DF3C4B300089794160CA943 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0E660C505E28C39C56412E04BB55B5DF /* Cloudpayments-SDK-iOS.bundle in Resources */,
+				13AC07F7194155057F9937A7AE7A5EDF /* Cloudpayments-SDK-iOS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,44 +1092,6 @@
 			files = (
 				2BF6FBC0A64BF107C5D64C61F1397770 /* SwiftyJSON-dummy.m in Sources */,
 				7B4CE5C84161E2BFE477F42DFD634382 /* SwiftyJSON.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3ED25D3137AA27F7C4363E56DA67B61C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE78085748908D72E2E642D946B18918 /* BankApi.swift in Sources */,
-				607F2202F320ECC897195C2819765EEF /* BankInfo.swift in Sources */,
-				F860763DE4F5D80AB452985DC91534D0 /* BaseViewController.swift in Sources */,
-				00B6C7C42F0045DED27FBF6D5C9CDC12 /* Bundle+Extenstions.swift in Sources */,
-				B09EB8615A5321E7841BF25F3A0AF9E2 /* Button.swift in Sources */,
-				CE3E2B360AB43CF0A77EE0003693D5E8 /* Card.swift in Sources */,
-				8A3FA6EFE8930731DF5C563C4430AF24 /* Cloudpayments-SDK-iOS-dummy.m in Sources */,
-				35C16C734EA810FDE155795820A78EB9 /* CloudpaymentsApi.swift in Sources */,
-				40FF175AD35AD586120AFF676AE9C74A /* CloudpaymentsError.swift in Sources */,
-				65496FAD231CA8E5310DF570F7D721B6 /* Currency.swift in Sources */,
-				33A316DEB611DC8AFF064C000BE5BDDA /* EmptyResponse.swift in Sources */,
-				4D946D6C50F283A502C1DDEB31D9BFD4 /* FormPresentationController.swift in Sources */,
-				CC01F358D30438206B634A31A30BDEA6 /* HTTP.swift in Sources */,
-				78815A63879116040C9A2172F254C617 /* PaymentCardForm.swift in Sources */,
-				7C441EAA97396931691014A5EB081D4C /* PaymentData.swift in Sources */,
-				1336FFCD8C90E4809EA705FB181514CB /* PaymentForm.swift in Sources */,
-				2614D3EAC209F9952F0AEAEFEBED10DE /* PaymentOptionsForm.swift in Sources */,
-				CA9DE36D2CCE207E8A0932A28509B1B9 /* PaymentProcessForm.swift in Sources */,
-				496E1EDBD0830290E553AA23B1B4255C /* PKPayment+Convert.swift in Sources */,
-				3466544DC6E98517DED9A2DAD82FDADF /* RSAUtils.swift in Sources */,
-				CD793D580E745C5564EB9D2CB440B5C3 /* String+Extensions.swift in Sources */,
-				C05FF156076AB5C0C2FD7AD7B5340679 /* ThreeDsData.swift in Sources */,
-				D1769B2A1280A94C3C1ECC8C0F3AB753 /* ThreeDsProcessor.swift in Sources */,
-				CD04C08AAE8A2853C0D14EC23D55746D /* ThreeDsResponse.swift in Sources */,
-				959B14456FB58246E611D566FFD7FAD0 /* Transaction.swift in Sources */,
-				0564209A2840F8A0BBFD9591737D8CB5 /* TransactionResponse.swift in Sources */,
-				3006BDA317FD800CC05EFE403808DC35 /* UIColor+Assets.swift in Sources */,
-				CDBA04411778BF1ADABFD95C54DACC13 /* UIImage+Assets.swift in Sources */,
-				37D272128118E213C7F2DAAC3120D9E3 /* UIView+Constraints.swift in Sources */,
-				A40C853EFA9DB495BA3B673200FBD3CA /* UIViewController+Extensions.swift in Sources */,
-				9088326C1ACB8B4204610665122F13B3 /* UnderlineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1217,7 +1176,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D115EE8D4F5772E6784AA960E83D1457 /* Sources */ = {
+		C53CE63388517D9798C83DC79B453896 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF47BF3D14B04C0CAC3924CEA7204D5E /* BankInfo.swift in Sources */,
+				923368AE061D313EB871C4BAAC3FC832 /* BankInfoResponse.swift in Sources */,
+				B4E04A8F5513EA03CE703319920D5AE6 /* BaseViewController.swift in Sources */,
+				B7972B9F58395F9FDC031DD9F3123386 /* Bundle+Extenstions.swift in Sources */,
+				7F8296D9897141CBBF7F140DB2A4BD1A /* Button.swift in Sources */,
+				E4AE1B8A291371D0E037AAF9B8324E8E /* Card.swift in Sources */,
+				F31AF6B845EA87FAE7765D42A69689A8 /* Cloudpayments-SDK-iOS-dummy.m in Sources */,
+				ADDA2ABD7F8B3ACCD5D8ABBCFF3A3094 /* CloudpaymentsApi.swift in Sources */,
+				54F13813DDCF7A9A47733E9F8511A238 /* CloudpaymentsError.swift in Sources */,
+				C83AAE96FADCF369CB41307ED6A16193 /* Currency.swift in Sources */,
+				CB98E97AF54409B4CB85C667AED28165 /* FormPresentationController.swift in Sources */,
+				9AA3C8D72E23DA5CC4DF93A41A14DBA7 /* HTTP.swift in Sources */,
+				ACD874244DDDA829AD52D2D05C8F8640 /* PaymentCardForm.swift in Sources */,
+				6BE61FE13607A509284B04406829583F /* PaymentData.swift in Sources */,
+				277924A2F25CB687FD24D8F558AC479B /* PaymentForm.swift in Sources */,
+				48B3FEA79237233FA9848D58AAFE4B55 /* PaymentOptionsForm.swift in Sources */,
+				202210D8F29D6F664B5191A4D2F357F8 /* PaymentProcessForm.swift in Sources */,
+				6B68ACD755B0050E23C0899C73E6DEAB /* PKPayment+Convert.swift in Sources */,
+				4DDB6773DC92CED4286E60186B779FD8 /* RSAUtils.swift in Sources */,
+				3513B2E00AD7893C2A47D326C1A4706F /* String+Extensions.swift in Sources */,
+				AD97D3CA7DD5A655EF819237DA4224DD /* ThreeDsData.swift in Sources */,
+				E8DF6673881D4A9E46FF3EDFD96BF574 /* ThreeDsProcessor.swift in Sources */,
+				F4AD253A822BE93F1119CE5B9B5C0195 /* ThreeDsResponse.swift in Sources */,
+				E95E721B99EC77F58DF94DE0B6FD2169 /* Transaction.swift in Sources */,
+				79D650FB862ACFDA7F3C1E2FCD8E596E /* TransactionResponse.swift in Sources */,
+				26DEA821D3FEAFCC3DBD41C92B79BAFB /* UIColor+Assets.swift in Sources */,
+				34F369384902844433633B0D21B97B29 /* UIImage+Assets.swift in Sources */,
+				4E95237DD61266DB59E35F80FE9C0D87 /* UIView+Constraints.swift in Sources */,
+				4B3BCD534EE32B5709C7C17862DFBF05 /* UIViewController+Extensions.swift in Sources */,
+				13F3B2F58F07F53D206CA87BEA909917 /* UnderlineTextField.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9CBC2E59F9FD3F7B9C43771051712F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1235,11 +1231,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		389540C5E76AC6289D7425A898BDA505 /* PBXTargetDependency */ = {
+		2F2679A0258BBC130AB6CC9ED21814D0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS";
 			target = 483D0B0F3EF9B996ACA27CC2C70F9DCD /* Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS */;
-			targetProxy = 3377A723C89D477E2E150F5FDA0545A4 /* PBXContainerItemProxy */;
+			targetProxy = FD060E1435A38BC57DA6D868A98F1FAA /* PBXContainerItemProxy */;
 		};
 		3FA7CF69E5D685AA30D537C8CB679E2D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1247,23 +1243,17 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 5ECF06DB1D5F0B0EB4082D2C0AE76ED0 /* PBXContainerItemProxy */;
 		};
-		43F67C5B3BBE33D51D9329FF313B2B1C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = AlamofireObjectMapper;
-			target = 3F64080413BB03C0B16BFEB621E6E0F2 /* AlamofireObjectMapper */;
-			targetProxy = 29055FB1B6151C254D9E1E4DCD954224 /* PBXContainerItemProxy */;
-		};
 		51524FF662BEF73D5E4D633223A6DEFA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Cloudpayments-SDK-iOS";
 			target = 32C6A122AF541569D8B2F220CC074EC0 /* Cloudpayments-SDK-iOS */;
 			targetProxy = 47F5F0707772E1EECB2EDDD3FEC9E1E9 /* PBXContainerItemProxy */;
 		};
-		6BE822FBF96E0793D0C74169CB8C7D7C /* PBXTargetDependency */ = {
+		8F431A68FC43C8EA351F7A7228A0F3C7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 7384890BD6DAA64C2374FB12ED0E810E /* PBXContainerItemProxy */;
+			targetProxy = 01CB59D4C6CCC9958F7E5DD8C08D9C15 /* PBXContainerItemProxy */;
 		};
 		A3672D7FE3F1DD35223FB696C9699C42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1282,6 +1272,12 @@
 			name = Alamofire;
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 3A5A6A671762924E01F33B6042FB17F3 /* PBXContainerItemProxy */;
+		};
+		E3981F1719818E9F69F013F85DFD0EE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AlamofireObjectMapper;
+			target = 3F64080413BB03C0B16BFEB621E6E0F2 /* AlamofireObjectMapper */;
+			targetProxy = 4755D2DF549611EE6733E5EBC4EF9E52 /* PBXContainerItemProxy */;
 		};
 		EC5BC751E345C999F28EFAFA9D51EC07 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1506,43 +1502,6 @@
 			};
 			name = Release;
 		};
-		2847D9CE90479F69D16304EEC232BC34 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 081246C0A692F4E1DF742711C4BAFF34 /* Cloudpayments-SDK-iOS.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS.modulemap";
-				PRODUCT_MODULE_NAME = Cloudpayments_SDK_iOS;
-				PRODUCT_NAME = Cloudpayments_SDK_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		30BCDDAB4BD9D09CE8926BA8D71F05BC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FF137B845F4783BCEFE94C9E260446B /* AlamofireObjectMapper.debug.xcconfig */;
@@ -1579,6 +1538,60 @@
 			};
 			name = Debug;
 		};
+		3689DC4508F0A14ED4D12DD1A08F6BC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47F437B85B316A4CA73A604A52C56B19 /* Cloudpayments-SDK-iOS.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Cloudpayments_SDK_iOS;
+				PRODUCT_NAME = Cloudpayments_SDK_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		46E8803D9E5C37DCCE9D5C8DAEF3090E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84203087835478E057883AFE1F2D023 /* Cloudpayments-SDK-iOS.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments-SDK-iOS";
+				IBSC_MODULE = Cloudpayments_SDK_iOS;
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = "Cloudpayments-SDK-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		5D23732FD72E16D22E1ADB1C1194BEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C3D099E81A4C4BDCFC975E0EE449AADE /* ObjectMapper.debug.xcconfig */;
@@ -1611,23 +1624,6 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		6ABDDA61ACE4FD52EB8C9948D521D8F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C96F823863A3186EC1BBC88AE7A79574 /* Cloudpayments-SDK-iOS.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments-SDK-iOS";
-				IBSC_MODULE = Cloudpayments_SDK_iOS;
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = "Cloudpayments-SDK-iOS";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -1698,6 +1694,42 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.1;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A638D8CE3B32F6B44FEDE3F1AD52FC96 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A84203087835478E057883AFE1F2D023 /* Cloudpayments-SDK-iOS.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS.modulemap";
+				PRODUCT_MODULE_NAME = Cloudpayments_SDK_iOS;
+				PRODUCT_NAME = Cloudpayments_SDK_iOS;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1805,59 +1837,6 @@
 			};
 			name = Debug;
 		};
-		E044F9B18FB636AB67CADF8D3304F65D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 081246C0A692F4E1DF742711C4BAFF34 /* Cloudpayments-SDK-iOS.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments-SDK-iOS";
-				IBSC_MODULE = Cloudpayments_SDK_iOS;
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = "Cloudpayments-SDK-iOS";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		E37AD9EE77657076412BFBE00F6D6D64 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C96F823863A3186EC1BBC88AE7A79574 /* Cloudpayments-SDK-iOS.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Cloudpayments-SDK-iOS/Cloudpayments-SDK-iOS.modulemap";
-				PRODUCT_MODULE_NAME = Cloudpayments_SDK_iOS;
-				PRODUCT_NAME = Cloudpayments_SDK_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		EA332EEFC0454F2F3DCD331244F93648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 356558394008DF1C6F71682332AAAB07 /* ObjectMapper.release.xcconfig */;
@@ -1894,9 +1873,35 @@
 			};
 			name = Release;
 		};
+		F81093592CBBC2049EF48F9D8210A202 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47F437B85B316A4CA73A604A52C56B19 /* Cloudpayments-SDK-iOS.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments-SDK-iOS";
+				IBSC_MODULE = Cloudpayments_SDK_iOS;
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments-SDK-iOS/ResourceBundle-Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = "Cloudpayments-SDK-iOS";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0A780425246607B31C0344DFCE416717 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46E8803D9E5C37DCCE9D5C8DAEF3090E /* Debug */,
+				F81093592CBBC2049EF48F9D8210A202 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		22148808CA3FDF62D9C9AE13FDC8E411 /* Build configuration list for PBXNativeTarget "AlamofireObjectMapper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1951,20 +1956,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8B833EFEE94E51E66F15D507CA27D4B9 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS-Cloudpayments-SDK-iOS" */ = {
+		DF3703028FB665356F0541F2937D65B6 /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6ABDDA61ACE4FD52EB8C9948D521D8F3 /* Debug */,
-				E044F9B18FB636AB67CADF8D3304F65D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9FFE63C835F24D686EE34A0F9FB20EFC /* Build configuration list for PBXNativeTarget "Cloudpayments-SDK-iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E37AD9EE77657076412BFBE00F6D6D64 /* Debug */,
-				2847D9CE90479F69D16304EEC232BC34 /* Release */,
+				A638D8CE3B32F6B44FEDE3F1AD52FC96 /* Debug */,
+				3689DC4508F0A14ED4D12DD1A08F6BC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

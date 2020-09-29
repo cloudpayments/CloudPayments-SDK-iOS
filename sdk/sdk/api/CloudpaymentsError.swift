@@ -9,6 +9,8 @@
 import Foundation
 
 public class CloudpaymentsError: Error {
+    static let defaultCardError = CloudpaymentsError.init(message: "Unable to determine bank")
+    
     public let message: String
     
     public init(message: String) {

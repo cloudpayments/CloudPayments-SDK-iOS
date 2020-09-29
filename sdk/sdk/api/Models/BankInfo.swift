@@ -7,13 +7,18 @@
 //
 
 import Foundation
+import ObjectMapper
 
-public struct BankInfo {
+public struct BankInfo: Mappable {
     public private(set) var bankName: String?
     public private(set) var logoUrl: String?
     
-    public init(bankName: String?, logoUrl: String?) {
-        self.bankName = bankName
-        self.logoUrl = logoUrl
+    public init?(map: Map) {
+        
+    }
+    
+    public mutating func mapping(map: Map) {
+        bankName <- map["BankName"]
+        logoUrl <- map["LogoUrl"]
     }
 }
