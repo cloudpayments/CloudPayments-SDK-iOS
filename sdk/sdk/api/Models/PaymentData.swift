@@ -13,6 +13,7 @@ public class PaymentData {
     private (set) var amount: String = "0"
     private (set) var currency: Currency = .ruble
     private (set) var applePayMerchantId = "merchant.ru.cloudpayments"
+    private (set) var scanner: PaymentCardScanner? = nil
     
     var cryptogram: String?
     
@@ -32,6 +33,11 @@ public class PaymentData {
     
     public func setApplePayMerchantId(_ applePayMerchantId: String) -> PaymentData {
         self.applePayMerchantId = applePayMerchantId
+        return self
+    }
+    
+    public func setScanner(_ scanner: PaymentCardScanner) -> PaymentData {
+        self.scanner = scanner
         return self
     }
 }

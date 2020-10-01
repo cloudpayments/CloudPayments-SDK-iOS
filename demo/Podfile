@@ -5,6 +5,7 @@ target 'demo' do
 #    pod 'Alamofire'
 #    pod 'AlamofireObjectMapper'
     pod 'SwiftyJSON'
+    pod 'CardIO'
 
 #    pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "Swift"
     pod 'Cloudpayments-SDK-iOS', :path => "../sdk"

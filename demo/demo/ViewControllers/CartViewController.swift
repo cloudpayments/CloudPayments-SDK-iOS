@@ -10,9 +10,10 @@ import UIKit
 import Cloudpayments_SDK_iOS
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelTotal: UILabel!
+    
+    private var scannerCompletion: ((_ number: String?, _ month: UInt?, _ year: UInt?, _ cvv: String?) -> ())?
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CartManager.shared.products.count
@@ -55,6 +56,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         labelTotal.text = "Итого: \(total) Руб."
+        
+        CardIOUtilities.preloadCardIO()
     }
     
     @IBAction func onPay(_ sender: UIButton) {
@@ -69,6 +72,27 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let paymentData = PaymentData.init(publicId: Constants.merchantPulicId)
             .setAmount(String(totalAmount))
             .setCurrency(.ruble)
+            .setScanner(self)
         PaymentForm.present(with: paymentData, from: self)
+    }
+}
+
+extension CartViewController: CardIOPaymentViewControllerDelegate {
+    func userDidCancel(_ paymentViewController: CardIOPaymentViewController!) {
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func userDidProvide(_ cardInfo: CardIOCreditCardInfo!, in paymentViewController: CardIOPaymentViewController!) {
+        self.scannerCompletion?(cardInfo.cardNumber, cardInfo.expiryMonth, cardInfo.expiryYear, cardInfo.cvv)
+        paymentViewController.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension CartViewController: PaymentCardScanner {
+    func startScanner(completion: @escaping (String?, UInt?, UInt?, String?) -> Void) -> UIViewController? {
+        self.scannerCompletion = completion
+        
+        let scanController = CardIOPaymentViewController.init(paymentDelegate: self)
+        return scanController
     }
 }

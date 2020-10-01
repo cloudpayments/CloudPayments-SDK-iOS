@@ -74,20 +74,28 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="cc-number"/>
                                                     </textField>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-mV-dfw">
+                                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jcy-mV-dfw">
                                                         <rect key="frame" x="350" y="0.0" width="32" height="32"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="jcy-mV-dfw" secondAttribute="height" multiplier="1:1" id="P4Q-4t-p8L"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jxq-Fb-tgZ" customClass="Button" customModule="sdk" customModuleProvider="target">
+                                                        <rect key="frame" x="350" y="0.0" width="32" height="32"/>
+                                                        <state key="normal" image="ic_scan"/>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="jcy-mV-dfw" firstAttribute="centerY" secondItem="h4y-G1-6qY" secondAttribute="centerY" id="0ON-RT-8T0"/>
                                                     <constraint firstAttribute="trailing" secondItem="jQn-IO-Zsi" secondAttribute="trailing" id="5bw-vK-Eup"/>
+                                                    <constraint firstItem="Jxq-Fb-tgZ" firstAttribute="top" secondItem="jcy-mV-dfw" secondAttribute="top" id="9Dp-6u-5lE"/>
+                                                    <constraint firstItem="Jxq-Fb-tgZ" firstAttribute="bottom" secondItem="jcy-mV-dfw" secondAttribute="bottom" id="I0m-ow-YSy"/>
+                                                    <constraint firstItem="Jxq-Fb-tgZ" firstAttribute="leading" secondItem="jcy-mV-dfw" secondAttribute="leading" id="IZa-4u-aNp"/>
                                                     <constraint firstItem="jQn-IO-Zsi" firstAttribute="leading" secondItem="h4y-G1-6qY" secondAttribute="leading" id="N5L-Af-mNK"/>
                                                     <constraint firstItem="jQn-IO-Zsi" firstAttribute="top" secondItem="h4y-G1-6qY" secondAttribute="top" id="QLS-UA-8h5"/>
                                                     <constraint firstItem="jcy-mV-dfw" firstAttribute="height" secondItem="h4y-G1-6qY" secondAttribute="height" id="XXf-Sa-Vei"/>
+                                                    <constraint firstItem="Jxq-Fb-tgZ" firstAttribute="trailing" secondItem="jcy-mV-dfw" secondAttribute="trailing" id="Zlu-KE-xoG"/>
                                                     <constraint firstAttribute="bottom" secondItem="jQn-IO-Zsi" secondAttribute="bottom" id="qon-hL-Zsh"/>
                                                     <constraint firstAttribute="trailing" secondItem="jcy-mV-dfw" secondAttribute="trailing" id="y3i-xN-9cP"/>
                                                 </constraints>
@@ -214,6 +222,7 @@
                         <outlet property="helperSafeAreaBottomView" destination="FxB-PV-tsd" id="mCU-qR-R8E"/>
                         <outlet property="payButton" destination="oJC-RS-URc" id="C7O-pD-Kez"/>
                         <outlet property="receiptButton" destination="Ifs-Ae-5W0" id="Jha-my-ioJ"/>
+                        <outlet property="scanButton" destination="Jxq-Fb-tgZ" id="OpO-Dv-DSf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ddg-dy-BI5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -506,6 +515,7 @@
         <image name="ic_checkbox_unselected" width="16" height="16"/>
         <image name="ic_close" width="14" height="14"/>
         <image name="ic_progress" width="77" height="77"/>
+        <image name="ic_scan" width="20" height="20"/>
         <image name="ic_secured_by_cp" width="175" height="14"/>
         <namedColor name="color_border">
             <color red="0.75294117647058822" green="0.78823529411764703" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -15,6 +15,7 @@ public class PaymentCardForm: PaymentForm {
     @IBOutlet private weak var cardCvcTextField: UnderlineTextField!
     @IBOutlet private weak var emailTextField: UnderlineTextField!
     @IBOutlet private weak var receiptButton: Button!
+    @IBOutlet private weak var scanButton: Button!
     @IBOutlet private weak var payButton: Button!
     @IBOutlet private weak var cardTypeIcon: UIImageView!
     @IBOutlet private weak var helperSafeAreaBottomView: UIView!
@@ -53,6 +54,27 @@ public class PaymentCardForm: PaymentForm {
             }
         }
         
+        if self.paymentData.scanner == nil {
+            self.scanButton.isHidden = true
+        } else {
+            self.scanButton.onAction = {
+                if let controller = self.paymentData.scanner?.startScanner(completion: { number, month, year, cvv in
+                    self.cardNumberTextField.text = number?.formattedCardNumber()
+                    if let month = month, let year = year {
+                        let y = year % 100
+                        self.cardExpDateTextField.text = String(format: "%02d/%02d", month, y)
+                    }
+                    self.cardCvcTextField.text = cvv
+                    
+                    self.validate()
+                    
+                    self.updatePaymentSystemIcon(cardNumber: number)
+                }) {
+                    self.present(controller, animated: true, completion: nil)
+                }
+            }
+        }
+        
         self.configureTextFields()
         self.hideKeyboardWhenTappedAround()
         self.validate()
@@ -73,8 +95,7 @@ public class PaymentCardForm: PaymentForm {
                     self.cardExpDateTextField.becomeFirstResponder()
                 }
                 
-                let cardType = Card.cardType(from: cardNumber)
-                self.cardTypeIcon.image = cardType.getIcon()
+                self.updatePaymentSystemIcon(cardNumber: cardNumber)
                 
                 self.validate()
             }
@@ -140,6 +161,23 @@ public class PaymentCardForm: PaymentForm {
         let cardCvcIsValid = self.cardCvcTextField.text?.formattedCardCVV().count == 3
         
         self.payButton.isEnabled = cardNumberIsValid && cardExpIsValid && cardCvcIsValid
+    }
+    
+    private func updatePaymentSystemIcon(cardNumber: String?){
+        if let number = cardNumber {
+            let cardType = Card.cardType(from: number)
+            if cardType != .unknown {
+                self.cardTypeIcon.image = cardType.getIcon()
+                self.cardTypeIcon.isHidden = false
+                self.scanButton.isHidden = true
+            } else {
+                self.cardTypeIcon.isHidden = true
+                self.scanButton.isHidden = self.paymentData.scanner == nil
+            }
+        } else {
+            self.cardTypeIcon.isHidden = true
+            self.scanButton.isHidden = self.paymentData.scanner == nil
+        }
     }
     
     @objc internal override func onKeyboardWillShow(_ notification: Notification) {
