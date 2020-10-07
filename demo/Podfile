@@ -1,4 +1,4 @@
-platform :ios, '11.0'
+platform :ios, '12.0'
 use_frameworks!
 
 target 'demo' do
@@ -8,6 +8,6 @@ target 'demo' do
     pod 'CardIO'
 
 #    pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "Swift"
-    pod 'Cloudpayments-SDK-iOS', :path => "../sdk"
+    pod 'Cloudpayments', :path => "../sdk"
 
 end

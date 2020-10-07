@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Cloudpayments_SDK_iOSVersionNumber;
-FOUNDATION_EXPORT const unsigned char Cloudpayments_SDK_iOSVersionString[];
+FOUNDATION_EXPORT double CloudpaymentsVersionNumber;
+FOUNDATION_EXPORT const unsigned char CloudpaymentsVersionString[];
 

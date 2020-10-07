@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Cloudpayments_SDK_iOS
+import Cloudpayments
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!

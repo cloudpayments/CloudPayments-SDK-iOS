@@ -1,6 +1,0 @@
-framework module Cloudpayments_SDK_iOS {
-  umbrella header "Cloudpayments-SDK-iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}

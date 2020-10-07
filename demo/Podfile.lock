@@ -4,7 +4,7 @@ PODS:
     - Alamofire (= 5.0.0-rc.2)
     - ObjectMapper (~> 3.5.1)
   - CardIO (5.4.1)
-  - Cloudpayments-SDK-iOS (2.0.0):
+  - Cloudpayments (1.0.0):
     - Alamofire (= 5.0.0-rc.2)
     - AlamofireObjectMapper
   - ObjectMapper (3.5.3)
@@ -12,7 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - CardIO
-  - Cloudpayments-SDK-iOS (from `../sdk`)
+  - Cloudpayments (from `../sdk`)
   - SwiftyJSON
 
 SPEC REPOS:
@@ -24,17 +24,17 @@ SPEC REPOS:
     - SwiftyJSON
 
 EXTERNAL SOURCES:
-  Cloudpayments-SDK-iOS:
+  Cloudpayments:
     :path: "../sdk"
 
 SPEC CHECKSUMS:
   Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  Cloudpayments-SDK-iOS: cfc2121f354daab7b7695e0a2f9e0fa07fa0fab7
+  Cloudpayments: 491321dc242030583f9f5d20fa3442ddd2c252d6
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 614a68f83b26381f11f54d5c1dda2bd538f1b1ce
+PODFILE CHECKSUM: 057db1ab9cf9430d229b18271300fa8c6690ba4f
 
 COCOAPODS: 1.9.3

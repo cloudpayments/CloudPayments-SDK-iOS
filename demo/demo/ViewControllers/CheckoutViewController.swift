@@ -5,7 +5,7 @@
 
 import UIKit
 import PassKit
-import Cloudpayments_SDK_iOS
+import Cloudpayments
 import WebKit
 
 class CheckoutViewController: UIViewController, ThreeDsDelegate {

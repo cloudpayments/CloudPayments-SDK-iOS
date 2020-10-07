@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |spec|
 
-  spec.name         = "Cloudpayments-SDK-iOS"
-  spec.version      = "2.0.0"
+  spec.name         = "Cloudpayments"
+  spec.version      = "1.0.0"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -17,18 +17,18 @@ Pod::Spec.new do |spec|
 
   spec.license      = "{ :type => 'Apache 2.0' }"
 
-  spec.author             = { "a.ignatov" => "a.ignatov@cloudpayments.ru" }
+  spec.author       = { "Anton Ignatov" => "a.ignatov@cloudpayments.ru",
+			"Sergey Iskhakov" => "s.iskhakov@cloudpayments.ru" }
 	
   spec.platform     = :ios
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "12.0"
 
-  spec.source       = { :git => "https://github.com/cloudpayments/SDK-iOS/SDK-iOS.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/cloudpayments/CloudPayments-SDK-iOS-V2.git", :tag => "#{spec.version}" }
   spec.source_files  = 'sdk/**/*.swift'
 
-  spec.resource_bundles = { 'Cloudpayments-SDK-iOS' => ['Resources/**/*.{json,png,jpeg,jpg,storyboard,xib,xcassets}']} 
+  spec.resource_bundles = { 'Cloudpayments' => ['Resources/**/*.{json,png,jpeg,jpg,storyboard,xib,xcassets}']} 
   
   spec.requires_arc = true
-  spec.static_framework = true
   
   spec.dependency 'Alamofire', '= 5.0.0-rc.2'
   spec.dependency 'AlamofireObjectMapper'
