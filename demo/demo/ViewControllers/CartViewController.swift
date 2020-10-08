@@ -72,8 +72,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         let paymentData = PaymentData.init(publicId: Constants.merchantPulicId)
             .setAmount(String(totalAmount))
             .setCurrency(.ruble)
-            .setScanner(self)
-        PaymentForm.present(with: paymentData, from: self)
+        
+        let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, scanner: self)
+        
+        PaymentForm.present(with: configuration, from: self)
     }
 }
 
@@ -94,5 +96,11 @@ extension CartViewController: PaymentCardScanner {
         
         let scanController = CardIOPaymentViewController.init(paymentDelegate: self)
         return scanController
+    }
+}
+
+extension CartViewController: PaymentDelegate {
+    func onPaymentFinished() {
+        self.navigationController?.popViewController(animated: true)
     }
 }

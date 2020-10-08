@@ -23,14 +23,14 @@ public class PaymentCardForm: PaymentForm {
     var onPayClicked: ((_ cryptogram: String, _ email: String?) -> ())?
     
     @discardableResult
-    public override class func present(with paymentData: PaymentData, from: UIViewController) -> PaymentForm? {
+    public override class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
         guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentForm") as? PaymentForm else {
             return nil
         }
         
-        controller.paymentData = paymentData
+        controller.configuration = configuration
 
         controller.show(inViewController: from, completion: nil)
         
@@ -45,20 +45,22 @@ public class PaymentCardForm: PaymentForm {
             self.emailTextField.isHidden = !self.receiptButton.isSelected
         }
         
-        self.payButton.setTitle("Оплатить \(self.paymentData.amount) \(self.paymentData.currency.currencySign())", for: .normal)
+        let paymentData = self.configuration.paymentData
+        
+        self.payButton.setTitle("Оплатить \(paymentData.amount) \(paymentData.currency.currencySign())", for: .normal)
         self.payButton.onAction = {
-            if let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: self.paymentData.publicId) {
+            if let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: paymentData.publicId) {
                 self.dismiss(animated: true) {
                     self.onPayClicked?(cryptogram, self.emailTextField.text)
                 }
             }
         }
         
-        if self.paymentData.scanner == nil {
+        if self.configuration.scanner == nil {
             self.scanButton.isHidden = true
         } else {
             self.scanButton.onAction = {
-                if let controller = self.paymentData.scanner?.startScanner(completion: { number, month, year, cvv in
+                if let controller = self.configuration.scanner?.startScanner(completion: { number, month, year, cvv in
                     self.cardNumberTextField.text = number?.formattedCardNumber()
                     if let month = month, let year = year {
                         let y = year % 100
@@ -172,11 +174,11 @@ public class PaymentCardForm: PaymentForm {
                 self.scanButton.isHidden = true
             } else {
                 self.cardTypeIcon.isHidden = true
-                self.scanButton.isHidden = self.paymentData.scanner == nil
+                self.scanButton.isHidden = self.configuration.scanner == nil
             }
         } else {
             self.cardTypeIcon.isHidden = true
-            self.scanButton.isHidden = self.paymentData.scanner == nil
+            self.scanButton.isHidden = self.configuration.scanner == nil
         }
     }
     

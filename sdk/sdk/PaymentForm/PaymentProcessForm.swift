@@ -59,14 +59,14 @@ public class PaymentProcessForm: PaymentForm {
     private var email: String?
     
     @discardableResult
-    public class func present(with paymentData: PaymentData, cryptogram: String?, email: String?, state: State = .inProgress, from: UIViewController) -> PaymentForm? {
+    public class func present(with configuration: PaymentConfiguration, cryptogram: String?, email: String?, state: State = .inProgress, from: UIViewController) -> PaymentForm? {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
         guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentProcessForm") as? PaymentProcessForm else {
             return nil
         }
         
-        controller.paymentData = paymentData
+        controller.configuration = configuration
         controller.cryptogram = cryptogram
         controller.email = email
         controller.state = state
@@ -115,14 +115,16 @@ public class PaymentProcessForm: PaymentForm {
         
         if self.state == .succeeded {
             self.actionButton.onAction = {
-                self.dismiss(animated: true, completion: nil)
+                self.dismiss(animated: true) {
+                    self.configuration.paymentDelegate.paymentFinished()
+                }
             }
         } else if self.state == .failed {
             self.actionButton.onAction = {
                 let parent = self.presentingViewController
                 self.dismiss(animated: true) {
                     if let parent = parent {
-                        PaymentForm.present(with: self.paymentData, from: parent)
+                        PaymentForm.present(with: self.configuration, from: parent)
                     }
                 }
             }
