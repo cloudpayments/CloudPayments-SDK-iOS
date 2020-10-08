@@ -28,18 +28,16 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     private var applePaymentSucceeded: Bool?
     
     var onCardOptionSelected: (() -> ())?
-    var onApplePaySelected: ((_ cryptogram: String) -> ())?
 
     @discardableResult
-    public override class func present(with paymentData: PaymentData, from: UIViewController) -> PaymentForm? {
+    public override class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
         guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentOptionsForm") as? PaymentOptionsForm else {
             return nil
         }
         
-        controller.paymentData = paymentData
-        
+        controller.configuration = configuration
 
         controller.show(inViewController: from, completion: nil)
         
@@ -81,14 +79,16 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     @objc private func onApplePay(_ sender: UIButton) {
-        let amount = Double(self.paymentData.amount) ?? 0.0
+        let paymentData = self.configuration.paymentData
+        
+        let amount = Double(paymentData.amount) ?? 0.0
         
         let request = PKPaymentRequest()
-        request.merchantIdentifier = self.paymentData.applePayMerchantId
+        request.merchantIdentifier = paymentData.applePayMerchantId
         request.supportedNetworks = self.supportedPaymentNetworks
         request.merchantCapabilities = PKMerchantCapability.capability3DS
         request.countryCode = "RU"
-        request.currencyCode = self.paymentData.currency.rawValue
+        request.currencyCode = paymentData.currency.rawValue
         request.paymentSummaryItems = [PKPaymentSummaryItem(label: "К оплате", amount: NSDecimalNumber.init(value: amount))]
         if let applePayController = PKPaymentAuthorizationViewController(paymentRequest:
                 request) {
@@ -124,7 +124,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
                 let parent = self.presentingViewController
                 self.dismiss(animated: true) {
                     if parent != nil {
-                        PaymentProcessForm.present(with: self.paymentData, cryptogram: nil, email: nil, state: state, from: parent!)
+                        PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!)
                     }
                 }
             }

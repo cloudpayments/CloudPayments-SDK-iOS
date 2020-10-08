@@ -20,41 +20,40 @@ public class PaymentForm: BaseViewController {
     @IBOutlet weak var threeDsFormView: UIView?
     @IBOutlet weak var threeDsContainerView: UIView?
     
-    lazy var network: CloudpaymentsApi = CloudpaymentsApi.init(publicId: self.paymentData.publicId)
+    var configuration: PaymentConfiguration!
+    
+    lazy var network: CloudpaymentsApi = CloudpaymentsApi.init(publicId: self.configuration.paymentData.publicId)
     lazy var customTransitionDelegateInstance = FormTransitioningDelegate(viewController: self)
     
-    lazy var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
-    var threeDsCallbackId: String = ""
-    var paymentData: PaymentData!
+    private lazy var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
+    private var threeDsCallbackId: String = ""
     
     private var threeDsCompletion: PaymentCallback?
     
     @discardableResult
-    public class func present(with paymentData: PaymentData, from: UIViewController) -> PaymentForm? {
+    public class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
         if PKPaymentAuthorizationViewController.canMakePayments() {
-            if let controller = PaymentOptionsForm.present(with: paymentData, from: from) as? PaymentOptionsForm {
+            if let controller = PaymentOptionsForm.present(with: configuration, from: from) as? PaymentOptionsForm {
                 controller.onCardOptionSelected = {
-                    self.showCardForm(with: paymentData, from: from)
-                }
-                controller.onApplePaySelected = { cryptogram in
+                    self.showCardForm(with: configuration, from: from)
                 }
                 return controller
             }
         } else {
-            return self.showCardForm(with: paymentData, from: from)
+            return self.showCardForm(with: configuration, from: from)
         }
         
         return nil
     }
     
     @discardableResult
-    private class func showCardForm(with paymentData: PaymentData, from: UIViewController) -> PaymentForm? {
-        guard let controller = PaymentCardForm.present(with: paymentData, from: from) as? PaymentCardForm else {
+    private class func showCardForm(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
+        guard let controller = PaymentCardForm.present(with: configuration, from: from) as? PaymentCardForm else {
             return nil
         }
         
         controller.onPayClicked = { cryptogram, email in
-            PaymentProcessForm.present(with: paymentData, cryptogram: cryptogram, email: email, from: from)
+            PaymentProcessForm.present(with: configuration, cryptogram: cryptogram, email: email, from: from)
         }
         return controller
     }
@@ -99,7 +98,8 @@ public class PaymentForm: BaseViewController {
     }
     
     internal func charge(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
-        network.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: self.paymentData.amount, currency: self.paymentData.currency) { [weak self] response, error in
+        let paymentData = self.configuration.paymentData
+        network.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: paymentData.amount, currency: paymentData.currency) { [weak self] response, error in
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
@@ -109,7 +109,9 @@ public class PaymentForm: BaseViewController {
     }
     
     internal func auth(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
-        network.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: self.paymentData.amount, currency: self.paymentData.currency) { [weak self] response, error in
+        let paymentData = self.configuration.paymentData
+        
+        network.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: paymentData.amount, currency: paymentData.currency) { [weak self] response, error in
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
