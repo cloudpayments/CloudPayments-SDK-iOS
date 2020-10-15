@@ -9,6 +9,14 @@
 import Foundation
 
 class BaseViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
+    }
+    
     @IBAction func onPhoneClicked(_ sender: UIButton) {
         let URLString = "tel://" + Constants.salesPhone
         let url = URL.init(string: URLString)

@@ -19,6 +19,10 @@ public class BaseViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardWillShow(_:)), name: UITextField.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onKeyboardWillHide(_:)), name: UITextField.keyboardWillHideNotification, object: nil)
+        
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        }
     }
     
     @objc internal func onKeyboardWillShow(_ notification: Notification) {
