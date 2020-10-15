@@ -8,11 +8,15 @@ PODS:
     - Alamofire (= 5.0.0-rc.2)
     - AlamofireObjectMapper
   - ObjectMapper (3.5.3)
+  - SDWebImage (5.9.2):
+    - SDWebImage/Core (= 5.9.2)
+  - SDWebImage/Core (5.9.2)
   - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
   - CardIO
   - Cloudpayments (from `../sdk`)
+  - SDWebImage
   - SwiftyJSON
 
 SPEC REPOS:
@@ -21,6 +25,7 @@ SPEC REPOS:
     - AlamofireObjectMapper
     - CardIO
     - ObjectMapper
+    - SDWebImage
     - SwiftyJSON
 
 EXTERNAL SOURCES:
@@ -33,8 +38,9 @@ SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cloudpayments: 491321dc242030583f9f5d20fa3442ddd2c252d6
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  SDWebImage: 0b42b8719ab0c5257177d5894306e8a336b21cbb
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 057db1ab9cf9430d229b18271300fa8c6690ba4f
+PODFILE CHECKSUM: ec5876afc571bcadd8e5652430139cb2f1051071
 
 COCOAPODS: 1.9.3

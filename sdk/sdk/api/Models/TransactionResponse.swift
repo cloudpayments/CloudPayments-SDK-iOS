@@ -1,12 +1,9 @@
 import ObjectMapper
 
 public struct TransactionResponse: Mappable {
-    
-    private(set) var success = Bool()
-    
-    private(set) var message = String()
-    
-    private(set) var transaction: Transaction?
+    public private(set) var success = Bool()
+    public private(set) var message = String()
+    public private(set) var transaction: Transaction?
     
     public init?(map: Map) {
         

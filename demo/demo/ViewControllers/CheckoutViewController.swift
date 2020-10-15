@@ -8,45 +8,34 @@ import PassKit
 import Cloudpayments
 import WebKit
 
-class CheckoutViewController: UIViewController, ThreeDsDelegate {
-    func willPresentWebView(_ webView: WKWebView) {
-        self.view.addSubview(webView)
-    }
-    
-    //MARK: - D3DSDelegate -
-    
-    func onAuthotizationCompleted(with md: String, paRes: String) {
-        post3ds(transactionId: md, paRes: paRes)
-    }
-    
-    func onAuthorizationFailed(with html: String) {
-        self.showAlert(title: .errorWord, message: html)
-        print("error: \(html)")
-    }
-    
+class CheckoutViewController: BaseViewController {
     @IBOutlet weak var labelTotal: UILabel!
     @IBOutlet weak var textCardNumber: UITextField!
     @IBOutlet weak var textExpDate: UITextField!
     @IBOutlet weak var textCvcCode: UITextField!
     @IBOutlet weak var textCardHolderName: UITextField!
     @IBOutlet weak var buttonApplePay: UIButton!
+    @IBOutlet weak var progressView: UIView!
+    @IBOutlet weak var threeDsFormView: UIView!
+    @IBOutlet weak var threeDsContainerView: UIView!
     
     var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
-        
-    var total = 0;
+    var total = 0
 
-    private let network = NetworkService()
+    private let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)
+    private var transactionResponse: TransactionResponse?
+    private var paymentCompletion: ((_ succeeded: Bool, _ message: String?) ->())?
     
     // APPLE PAY
-    let applePayMerchantID = "merchant.com.YOURDOMAIN" // Ваш ID для Apple Pay
-    let paymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard] // Платежные системы для Apple Pay
+    
+    let paymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .JCB, .amex, .maestro] // Платежные системы для Apple Pay
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         for product in CartManager.shared.products {
             
-            if let price = Int(product.price) {
+            if let priceStr = product.price, let price = Int(priceStr) {
                 total += price
             }
         }
@@ -55,6 +44,8 @@ class CheckoutViewController: UIViewController, ThreeDsDelegate {
         
         buttonApplePay.isHidden = !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: paymentNetworks) // Проверяем возможно ли использовать Apple Pay
     }
+    
+    //MARK: - Actions -
     
     @IBAction func onPayClick(_ sender: Any) {
         
@@ -121,7 +112,20 @@ class CheckoutViewController: UIViewController, ThreeDsDelegate {
         // (charge (для одностадийного платежа) или auth (для двухстадийного))
  
         //charge(cardCryptogramPacket: packet, cardHolderName: holderName)
-        auth(cardCryptogramPacket: packet, cardHolderName: holderName)
+        self.progressView.isHidden = false
+        self.view.endEditing(true)
+        auth(cardCryptogramPacket: packet, cardHolderName: holderName){ [weak self] (status, message) in
+            self?.progressView.isHidden = true
+            
+            if status {
+                self?.showAlert(title: .successWord, message: message, completion: {
+                    CartManager.shared.products.removeAll()
+                    self?.navigationController?.popToRootViewController(animated: true)
+                })
+            } else {
+                self?.showAlert(title: .errorWord, message: message)
+            }
+        }
     }
     
     @IBAction func onApplePayClick(_ sender: Any) {
@@ -129,13 +133,13 @@ class CheckoutViewController: UIViewController, ThreeDsDelegate {
         // Получение информации о товарах выбранных пользователем
         var paymentItems: [PKPaymentSummaryItem] = []
         for product in CartManager.shared.products {
-            let paymentItem = PKPaymentSummaryItem.init(label: product.name, amount: NSDecimalNumber(value: Int(product.price)!))
+            let paymentItem = PKPaymentSummaryItem.init(label: product.name ?? "Продукт", amount: NSDecimalNumber(value: Int(product.price ?? "0")!))
             paymentItems.append(paymentItem)
         }
            
         // Формируем запрос для Apple Pay
         let request = PKPaymentRequest()
-        request.merchantIdentifier = applePayMerchantID
+        request.merchantIdentifier = Constants.applePayMerchantID
         request.supportedNetworks = paymentNetworks
         request.merchantCapabilities = PKMerchantCapability.capability3DS // Возможно использование 3DS
         request.countryCode = "RU" // Код страны
@@ -146,8 +150,23 @@ class CheckoutViewController: UIViewController, ThreeDsDelegate {
             self.present(applePayController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func onCloseThreeDs(_ sender: UIButton) {
+        self.hideThreeDs()
+        self.progressView.isHidden = true
+    }
+    
+    func hideThreeDs() {
+        UIView.animate(withDuration: 0.25) {
+            self.threeDsFormView.alpha = 0
+        } completion: { (status) in
+            self.threeDsFormView.isHidden = true
+        }
+    }
 }
 
+
+//MARK: - PKPaymentAuthorizationViewControllerDelegate -
 // Обработка результата для Apple Pay
 // ВНИМАНИЕ! Нельзя тестировать Apple Pay в симуляторе, так как в симуляторе payment.token.paymentData всегда nil
 extension CheckoutViewController: PKPaymentAuthorizationViewControllerDelegate {
@@ -162,7 +181,15 @@ extension CheckoutViewController: PKPaymentAuthorizationViewControllerDelegate {
         // Используя методы API выполняем оплату по криптограмме
         // (charge (для одностадийного платежа) или auth (для двухстадийного))
         //charge(cardCryptogramPacket: cryptogram, cardHolderName: "")
-        auth(cardCryptogramPacket: cryptogram, cardHolderName: "")
+        
+        
+        auth(cardCryptogramPacket: cryptogram, cardHolderName: "") { [weak self] (status, message) in
+            if status {
+                self?.showAlert(title: .successWord, message: message)
+            } else {
+                self?.showAlert(title: .errorWord, message: message)
+            }
+        }
       
     }
     
@@ -171,54 +198,90 @@ extension CheckoutViewController: PKPaymentAuthorizationViewControllerDelegate {
     }
 }
 
-// MARK: - Private methods
+//MARK: - ThreeDsDelegate -
+
+extension CheckoutViewController: ThreeDsDelegate {
+    func willPresentWebView(_ webView: WKWebView) {
+        webView.frame = self.threeDsContainerView.bounds
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        self.threeDsContainerView.addSubview(webView)
+        
+        NSLayoutConstraint.activate([
+            webView.leadingAnchor.constraint(equalTo: self.threeDsContainerView.leadingAnchor),
+            webView.trailingAnchor.constraint(equalTo: self.threeDsContainerView.trailingAnchor),
+            webView.topAnchor.constraint(equalTo: self.threeDsContainerView.topAnchor),
+            webView.bottomAnchor.constraint(equalTo: self.threeDsContainerView.bottomAnchor)
+        ])
+        
+        self.threeDsFormView.alpha = 0
+        self.threeDsFormView.isHidden = false
+        
+        UIView.animate(withDuration: 0.25) {
+            self.threeDsFormView.alpha = 1
+        }
+    }
+
+    func onAuthotizationCompleted(with md: String, paRes: String) {
+        hideThreeDs()
+        post3ds(transactionId: md, paRes: paRes)
+    }
+
+    func onAuthorizationFailed(with html: String) {
+        hideThreeDs()
+        self.paymentCompletion?(false, html)
+        self.paymentCompletion = nil
+        print("error: \(html)")
+    }
+
+}
+
+
+// MARK: - Private methods -
+
 private extension CheckoutViewController {
 
-    func charge(cardCryptogramPacket: String, cardHolderName: String) {
+    func charge(cardCryptogramPacket: String, cardHolderName: String, completion: ((_ succeeded: Bool, _ message: String?) ->())?) {
+        self.transactionResponse = nil
+        self.paymentCompletion = nil
         
-        network.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, amount: total) { [weak self] result in
-            
-            switch result {
-            case .success(let transactionResponse):
+        api.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, email: nil, amount: String(total)) { [weak self] (response, error) in
+            if let response = response {
                 print("success")
-                self?.checkTransactionResponse(transactionResponse: transactionResponse)
-            case .failure(let error):
+                self?.checkTransactionResponse(transactionResponse: response, completion: completion)
+            } else if let error = error {
                 print("error: \(error.localizedDescription)")
-                self?.showAlert(title: .errorWord, message: error.localizedDescription)
+                completion?(false, error.localizedDescription)
             }
         }
     }
     
-    func auth(cardCryptogramPacket: String, cardHolderName: String) {
+    func auth(cardCryptogramPacket: String, cardHolderName: String, completion: ((_ succeeded: Bool, _ message: String?) ->())?) {
+        self.transactionResponse = nil
+        self.paymentCompletion = nil
         
-        network.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, amount: total) { [weak self] result in
-            
-            switch result {
-            case .success(let transactionResponse):
+        api.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, email: nil, amount: String(total)) { [weak self] (response, error) in
+            if let response = response {
                 print("success")
-                self?.checkTransactionResponse(transactionResponse: transactionResponse)
-            case .failure(let error):
+                self?.checkTransactionResponse(transactionResponse: response, completion: completion)
+            } else if let error = error {
                 print("error: \(error.localizedDescription)")
-                self?.showAlert(title: .errorWord, message: error.localizedDescription)
+                completion?(false, error.localizedDescription)
             }
         }
     }
     
     // Проверяем необходимо ли подтверждение с использованием 3DS
-    func checkTransactionResponse(transactionResponse: TransactionResponse) {
+    func checkTransactionResponse(transactionResponse: TransactionResponse, completion: ((_ succeeded: Bool, _ message: String?) ->())?) {
         if (transactionResponse.success) {
-            
-            // Показываем результат
-            self.showAlert(title: .informationWord, message: transactionResponse.transaction?.cardHolderMessage)
+            completion?(true, transactionResponse.transaction?.cardHolderMessage)
         } else {
-            
             if (!transactionResponse.message.isEmpty) {
-                self.showAlert(title: .errorWord, message: transactionResponse.message)
-                return
-            }
-            if (transactionResponse.transaction?.paReq != nil && transactionResponse.transaction?.acsUrl != nil) {
+                completion?(false, transactionResponse.message)
+            } else if (transactionResponse.transaction?.paReq != nil && transactionResponse.transaction?.acsUrl != nil) {
+                self.transactionResponse = transactionResponse
+                self.paymentCompletion = completion
                 
-                let transactionId = String(describing: transactionResponse.transaction?.transactionId ?? 0)
+                let transactionId = String(transactionResponse.transaction?.transactionId ?? 0)
                 
                 let paReq = transactionResponse.transaction!.paReq
                 let acsUrl = transactionResponse.transaction!.acsUrl
@@ -227,40 +290,18 @@ private extension CheckoutViewController {
                 let data = ThreeDsData.init(transactionId: transactionId, paReq: paReq, acsUrl: acsUrl)
                 threeDsProcessor.make3DSPayment(with: data, delegate: self)
             } else {
-                self.showAlert(title: .informationWord, message: transactionResponse.transaction?.cardHolderMessage)
+                completion?(false, transactionResponse.transaction?.cardHolderMessage)
             }
         }
     }
     
     func post3ds(transactionId: String, paRes: String) {
-        
-        network.post3ds(transactionId: transactionId, paRes: paRes) { [weak self] result in
-            
-            switch result {
-            case .success(let transactionResponse):
-                print("success")
-                self?.checkTransactionResponse(transactionResponse: transactionResponse)
-            case .failure(let error):
-                print("error: \(error.localizedDescription)")
-                self?.showAlert(title: .errorWord, message: error.localizedDescription)
+        if let threeDsCallbackId = self.transactionResponse?.transaction?.threeDsCallbackId {
+            api.post3ds(transactionId: transactionId, threeDsCallbackId: threeDsCallbackId, paRes: paRes) { [weak self] (response) in
+                self?.paymentCompletion?(response.success, response.cardHolderMessage)
+                self?.paymentCompletion = nil
             }
         }
-    }
-    
-    // MARK: - Utilities
-    
-    func parse(response: String?) -> [AnyHashable: Any]? {
-        guard let response = response else {
-            return nil
-        }
-        
-        let pairs = response.components(separatedBy: "&")
-        let elements = pairs.map { $0.components(separatedBy: "=") }
-        let dict = elements.reduce(into: [String: String]()) {
-            $0[$1[0].removingPercentEncoding!] = $1[1].removingPercentEncoding
-        }
-        
-        return dict
     }
 }
 

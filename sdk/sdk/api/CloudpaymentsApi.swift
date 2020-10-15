@@ -15,7 +15,7 @@ public class CloudpaymentsApi {
     
     lazy var redirectHandler = self
     
-    required init(publicId: String) {
+    public required init(publicId: String) {
         let handler = ThreeDsRedirectHandler(threeDsSuccessURL: threeDsSuccessURL, threeDsFailURL: threeDsFailURL)
         self.session = Session.init(redirectHandler: handler)
         self.publicId = publicId
