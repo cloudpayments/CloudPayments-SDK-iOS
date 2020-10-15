@@ -51,7 +51,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     private func initializeApplePay() {
-        if PKPaymentAuthorizationViewController.canMakePayments() {
+        if !self.configuration.paymentData.applePayMerchantId.isEmpty && PKPaymentAuthorizationViewController.canMakePayments() {
             let button: PKPaymentButton!
             if PKPaymentAuthorizationController.canMakePayments(usingNetworks: self.supportedPaymentNetworks) {
                 button = PKPaymentButton.init(paymentButtonType: .plain, paymentButtonStyle: .black)
