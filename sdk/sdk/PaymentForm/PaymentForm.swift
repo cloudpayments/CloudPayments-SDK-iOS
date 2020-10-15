@@ -130,7 +130,7 @@ public class PaymentForm: BaseViewController {
             } else if (transactionResponse.transaction?.paReq != nil && transactionResponse.transaction?.acsUrl != nil) {
                 self.threeDsCallbackId = transactionResponse.transaction?.threeDsCallbackId ?? ""
                 
-                let transactionId = String(describing: transactionResponse.transaction?.transactionId ?? 0)
+                let transactionId = String(transactionResponse.transaction?.transactionId ?? 0)
                 
                 let paReq = transactionResponse.transaction!.paReq
                 let acsUrl = transactionResponse.transaction!.acsUrl

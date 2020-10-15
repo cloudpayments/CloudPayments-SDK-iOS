@@ -115,6 +115,10 @@ public struct Card {
             return .masterCard
         }
         
+        guard cleanCardNumber.count >= 6 else {
+            return .unknown
+        }
+        
         let indexSix = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
         let firstSix = String(cleanCardNumber[..<indexSix])
         let firstSixNum = Int(firstSix) ?? 0

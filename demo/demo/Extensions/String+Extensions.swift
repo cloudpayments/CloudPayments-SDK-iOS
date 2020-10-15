@@ -3,6 +3,7 @@ extension String {
     static let oneStagePayment = "Одностадийная оплата"
     static let twoStagePayment = "Двухстадийная оплата"
     static let errorWord = "Ошибка"
+    static let successWord = "Успешно"
     static let enterCardNumber = "Введите номер карты"
     static let enterCorrectCardNumber = "Введите корректный номер карты"
     static let enterExpirationDate = "Введите дату окончания действия карты в формате MM/YY"

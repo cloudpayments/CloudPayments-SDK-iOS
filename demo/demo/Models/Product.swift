@@ -7,18 +7,25 @@
 //
 
 import Foundation
+import ObjectMapper
 
-class Product {
+class Product: Mappable {
+    var id: Int?
+    var name: String?
+    var price: String?
+    var image: String?
     
-    var id: Int
-    var name: String
-    var price: String
-    var image: String
+    required init?(map: Map) {
+        
+    }
     
-    init(id: Int, name: String, price: String, image: String) {
-        self.id = id
-        self.name = name
-        self.price = price
-        self.image = image
+    func mapping(map: Map) {
+        id <- map["dict"]
+        name <- map["name"]
+        price <- map["price"]
+        
+        if let images = map.JSON["images"] as? [[String : AnyObject]], !images.isEmpty {
+            image = images.first?["src"] as? String
+        }
     }
 }

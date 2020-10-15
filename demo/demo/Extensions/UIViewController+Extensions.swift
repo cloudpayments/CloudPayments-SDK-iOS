@@ -12,13 +12,17 @@ extension UIViewController {
     }
     
     /* Shows default OK action if actions is nil */
-    func showAlert(title: String?, message: String?, actions: [UIAlertAction]? = nil) {
+    func showAlert(title: String?, message: String?, actions: [UIAlertAction]? = nil, completion: (() -> ())? = nil) {
         let alert = UIAlertController(title: title ?? "", message: message, preferredStyle: .alert)
         
         var alertActions = actions ?? []
         
         if alertActions.isEmpty {
-            alertActions.append(UIAlertAction(title: "OK", style: .default))
+            alertActions.append(UIAlertAction.init(title: "OK", style: .default, handler: { (action) in
+                alert.dismiss(animated: true) {
+                    completion?()
+                }
+            }))
         }
         
         alertActions.forEach { alert.addAction($0) }
