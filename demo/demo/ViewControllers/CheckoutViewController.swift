@@ -19,7 +19,7 @@ class CheckoutViewController: BaseViewController {
     @IBOutlet weak var threeDsFormView: UIView!
     @IBOutlet weak var threeDsContainerView: UIView!
     
-    var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
+    var threeDsProcessor = ThreeDsProcessor()
     var total = 0
 
     private let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)

@@ -12,7 +12,7 @@ public class PaymentData {
     let publicId: String
     private (set) var amount: String = "0"
     private (set) var currency: Currency = .ruble
-    private (set) var applePayMerchantId = "merchant.ru.cloudpayments"
+    private (set) var applePayMerchantId = ""
     
     var cryptogram: String?
     

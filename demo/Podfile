@@ -5,7 +5,7 @@ target 'demo' do
     pod 'CardIO'
     pod 'SDWebImage'
 
-#    pod 'SDK-iOS', :git =>  "https://github.com/cloudpayments/SDK-iOS", :branch => "Swift"
+#    pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
     pod 'Cloudpayments', :path => "../sdk"
 
 end
