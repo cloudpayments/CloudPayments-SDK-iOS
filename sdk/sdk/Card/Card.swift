@@ -162,6 +162,21 @@ public struct Card {
         
         return packetString
     }
+    
+    public static func makeCardCryptogramPacket(with cvv: String) -> String? {
+        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: "cvv", pubkeyBase64: self.publicKey) else {
+            return nil
+        }
+        let cryptogramString = RSAUtils.base64Encode(cryptogramData)
+            .replacingOccurrences(of: "\n", with: "")
+            .replacingOccurrences(of: "\r", with: "")
+        
+        var packetString = "02"
+        packetString.append(self.publicKeyVersion)
+        packetString.append(cryptogramString)
+        
+        return packetString
+    }
 
     public static func cleanCreditCardNo(_ creditCardNo: String) -> String {
         return creditCardNo.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
