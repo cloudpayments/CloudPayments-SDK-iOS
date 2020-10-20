@@ -1,5 +1,5 @@
 //
-//  UnderlineTextField.swift
+//  TextField.swift
 //  sdk
 //
 //  Created by Sergey Iskhakov on 18.09.2020.
@@ -9,12 +9,19 @@
 import Foundation
 import UIKit
 
-class UnderlineTextField: UITextField, UITextFieldDelegate {
+class TextField: UITextField, UITextFieldDelegate {
     private var underlineView : UIView?
     
+    @IBInspectable var defaultTextColor: UIColor = UIColor.black
     @IBInspectable var activeColor: UIColor = UIColor.mainBlue
     @IBInspectable var passiveColor: UIColor = UIColor.border
-
+    @IBInspectable var errorColor: UIColor = UIColor.border
+    
+    var isErrorMode = false {
+        didSet {
+            self.updateColors()
+        }
+    }
     
     var shouldBeginEditing : (() -> Bool)? {
         didSet {
@@ -127,6 +134,43 @@ class UnderlineTextField: UITextField, UITextFieldDelegate {
         }
     }
     
+    private func getActiveColor() -> UIColor {
+        var color = self.activeColor
+        if isErrorMode {
+            color = self.errorColor
+        }
+        
+        return color
+    }
+    
+    private func getPassiveColor() -> UIColor {
+        var color = self.passiveColor
+        if isErrorMode {
+            color = self.errorColor
+        }
+        
+        return color
+    }
+    
+    private func getTextColor() -> UIColor {
+        var color = self.defaultTextColor
+        if isErrorMode {
+            color = self.errorColor
+        }
+        
+        return color
+    }
+    
+    private func updateColors(){
+        if self.isEditing {
+            self.underlineView?.backgroundColor = getActiveColor()
+        } else {
+            self.underlineView?.backgroundColor = getPassiveColor()
+        }
+        
+        self.textColor = getTextColor()
+    }
+    
     @objc func textFieldDidChange(textField: UITextField) -> Void {
         didChange?()
         setNeedsDisplay()
@@ -137,7 +181,7 @@ class UnderlineTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.underlineView?.backgroundColor = activeColor
+        self.underlineView?.backgroundColor = getActiveColor()
         didBeginEditing?()
     }
     
@@ -146,7 +190,7 @@ class UnderlineTextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
-        self.underlineView?.backgroundColor = passiveColor
+        self.underlineView?.backgroundColor = getPassiveColor()
         
         didEndEditing?()
     }
@@ -171,7 +215,7 @@ class UnderlineTextField: UITextField, UITextFieldDelegate {
         if let underlineView = self.underlineView {
             self.addSubview(underlineView)
             underlineView.translatesAutoresizingMaskIntoConstraints = false
-            underlineView.backgroundColor = self.passiveColor
+            underlineView.backgroundColor = self.getPassiveColor()
             
             NSLayoutConstraint.activate([
                 underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),

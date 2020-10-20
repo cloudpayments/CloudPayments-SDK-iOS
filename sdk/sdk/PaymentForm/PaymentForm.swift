@@ -11,7 +11,7 @@ import UIKit
 import PassKit
 import WebKit
 
-typealias PaymentCallback = (_ status: Bool, _ errorMessage: String?) -> ()
+typealias PaymentCallback = (_ status: Bool, _ canceled: Bool, _ errorMessage: String?) -> ()
 
 public class PaymentForm: BaseViewController {
     @IBOutlet weak var containerView: UIView!
@@ -75,7 +75,7 @@ public class PaymentForm: BaseViewController {
         
         self.threeDsCloseButton?.onAction = {
             self.closeThreeDs {
-                self.threeDsCompletion?(false, nil)
+                self.threeDsCompletion?(false, true, nil)
             }
         }
     }
@@ -103,7 +103,7 @@ public class PaymentForm: BaseViewController {
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
-                completion?(false, error.localizedDescription)
+                completion?(false, false, error.localizedDescription)
             }
         }
     }
@@ -115,7 +115,7 @@ public class PaymentForm: BaseViewController {
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
-                completion?(false, error.localizedDescription)
+                completion?(false, false, error.localizedDescription)
             }
         }
     }
@@ -123,11 +123,11 @@ public class PaymentForm: BaseViewController {
     // Проверяем необходимо ли подтверждение с использованием 3DS
     internal func checkTransactionResponse(transactionResponse: TransactionResponse, completion: PaymentCallback?) {
         if (transactionResponse.success) {
-            completion?(true, nil)
+            completion?(true, false, nil)
         } else {
             if (!transactionResponse.message.isEmpty) {
-                completion?(false, transactionResponse.message)
-            } else if (transactionResponse.transaction?.paReq != nil && transactionResponse.transaction?.acsUrl != nil) {
+                completion?(false, false, transactionResponse.message)
+            } else if let paReq = transactionResponse.transaction?.paReq, !paReq.isEmpty, let acsUrl = transactionResponse.transaction?.acsUrl, !acsUrl.isEmpty {
                 self.threeDsCallbackId = transactionResponse.transaction?.threeDsCallbackId ?? ""
                 
                 let transactionId = String(transactionResponse.transaction?.transactionId ?? 0)
@@ -143,7 +143,7 @@ public class PaymentForm: BaseViewController {
                 self.threeDsCompletion = completion
                 
             } else {
-                completion?(false, transactionResponse.transaction?.cardHolderMessage)
+                completion?(false, false, transactionResponse.transaction?.cardHolderMessage)
             }
         }
     }
@@ -151,9 +151,9 @@ public class PaymentForm: BaseViewController {
     internal func post3ds(transactionId: String, paRes: String, completion: PaymentCallback?) {
         network.post3ds(transactionId: transactionId, threeDsCallbackId: self.threeDsCallbackId, paRes: paRes) { result in
             if result.success {
-                completion?(true, nil)
+                completion?(true, false, nil)
             } else {
-                completion?(true, result.cardHolderMessage)
+                completion?(true, false, result.cardHolderMessage)
             }
         }
     }
@@ -181,14 +181,14 @@ public class PaymentForm: BaseViewController {
 extension PaymentForm: ThreeDsDelegate {
     public func onAuthotizationCompleted(with md: String, paRes: String) {
         self.closeThreeDs { [weak self] in
-            self?.post3ds(transactionId: md, paRes: paRes) { status, errorMessage in
-                self?.threeDsCompletion?(status, errorMessage)
+            self?.post3ds(transactionId: md, paRes: paRes) { status, canceled, errorMessage in
+                self?.threeDsCompletion?(status, canceled, errorMessage)
             }
         }
     }
 
     public func onAuthorizationFailed(with html: String) {
-        self.threeDsCompletion?(false, html)
+        self.threeDsCompletion?(false, false, html)
         print("error: \(html)")
     }
 

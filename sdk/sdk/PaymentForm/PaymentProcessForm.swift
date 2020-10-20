@@ -79,14 +79,16 @@ public class PaymentProcessForm: PaymentForm {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateUI(with: self.state)
+        self.updateUI(with: self.state, errorMessage: nil)
         
         if let cryptogram = self.cryptogram {
-            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { status, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { status, canceled, errorMessage in
                 if status {
-                    self.updateUI(with: .succeeded)
+                    self.updateUI(with: .succeeded, errorMessage: nil)
+                } else if !canceled {
+                    self.updateUI(with: .failed, errorMessage: errorMessage)
                 } else {
-                    self.updateUI(with: .failed)
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
         }
@@ -104,12 +106,12 @@ public class PaymentProcessForm: PaymentForm {
         self.stopAnimation()
     }
     
-    private func updateUI(with state: State){
+    private func updateUI(with state: State, errorMessage: String?){
         self.state = state
         self.stopAnimation()
         
         self.progressIcon.image = self.state.getImage()
-        self.messageLabel.text = self.state.getMessage()
+        self.messageLabel.text = errorMessage ?? self.state.getMessage()
         self.actionButton.isHidden = self.state == .inProgress
         self.actionButton.setTitle(self.state.getActionButtonTitle(), for: .normal)
         

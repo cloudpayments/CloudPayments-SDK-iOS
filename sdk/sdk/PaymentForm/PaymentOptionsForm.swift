@@ -134,7 +134,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         
         if let cryptogram = payment.convertToString() {
-            self.charge(cardCryptogramPacket: cryptogram, email: nil) { status, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: nil) { status, canceled, errorMessage in
                 self.applePaymentSucceeded = status
                 if status {
                     completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
