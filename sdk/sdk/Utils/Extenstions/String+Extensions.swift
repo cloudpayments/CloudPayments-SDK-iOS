@@ -24,9 +24,17 @@ extension String {
         return self.onlyNumbers().formattedString(mask: mask, ignoredSymbols: nil)
     }
     
+    func clearCardNumber() -> String {
+        return self.onlyNumbers()
+    }
+    
     func formattedCardExp() -> String {
         let mask = "XX/XX"
         return self.onlyNumbers().formattedString(mask: mask, ignoredSymbols: nil)
+    }
+    
+    func cleanCardExp() -> String {
+        return self.onlyNumbers()
     }
     
     func formattedCardCVV() -> String {
@@ -53,6 +61,11 @@ extension String {
         return sum % 10 == 0
     }
 
+    func emailIsValid() -> Bool {
+        let emailRegex = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
+        let predicate = NSPredicate.init(format: "SELF MATCHES %@", emailRegex)
+        return predicate.evaluate(with:self)
+    }
     
     func formattedString(mask: String, ignoredSymbols: String?) -> String {
         let cleanString = self.onlyNumbers()
