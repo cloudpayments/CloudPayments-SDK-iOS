@@ -28,7 +28,16 @@ class CheckoutViewController: BaseViewController {
     
     // APPLE PAY
     
-    let paymentNetworks: [PKPaymentNetwork] = [.visa, .masterCard, .JCB, .amex, .maestro] // Платежные системы для Apple Pay
+    var paymentNetworks: [PKPaymentNetwork] {
+        get {
+            var arr: [PKPaymentNetwork] = [.visa, .masterCard, .JCB, .amex]
+            if #available(iOS 12.0, *) {
+                arr.append(.maestro)
+            }
+            
+            return arr
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

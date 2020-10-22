@@ -314,7 +314,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="kaR-pu-6co"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="Отлично!" backgroundImage="button_blue"/>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sqi-VT-CJw">

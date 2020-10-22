@@ -3,6 +3,11 @@ import AlamofireObjectMapper
 import ObjectMapper
 
 public class CloudpaymentsApi {
+    enum Source: String {
+        case cpForm = "Cloudpayments SDK iOS (Default form)"
+        case ownForm = "Cloudpayments SDK iOS (Custom form)"
+    }
+    
     private let defaultCardHolderName = "Cloudpayments SDK"
     
     private let threeDsSuccessURL = "https://demo.cloudpayments.ru/success"
@@ -10,15 +15,21 @@ public class CloudpaymentsApi {
     
     private let session: Session
     private let publicId: String
+    private let source: Source
     
     private var threeDsCompletion: ((_ result: ThreeDsResponse) -> ())?
     
     lazy var redirectHandler = self
     
-    public required init(publicId: String) {
+    public required convenience init(publicId: String) {
+        self.init(publicId: publicId, source: .ownForm)
+    }
+    
+    init(publicId: String, source: Source) {
         let handler = ThreeDsRedirectHandler(threeDsSuccessURL: threeDsSuccessURL, threeDsFailURL: threeDsFailURL)
         self.session = Session.init(redirectHandler: handler)
         self.publicId = publicId
+        self.source = source
         
         handler.api = self
     }
@@ -190,6 +201,9 @@ private extension CloudpaymentsApi {
     func validatedDataRequest(from httpRequest: HTTPRequest) -> DataRequest {
         var parameters = httpRequest.parameters
         parameters["PublicId"] = self.publicId
+        
+        var headers = httpRequest.headers
+        headers["MobileSDKSource"] = self.source.rawValue
         
         return session
             .request(httpRequest.resource,

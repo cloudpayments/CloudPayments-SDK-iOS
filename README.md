@@ -3,7 +3,7 @@
 CloudPayments SDK позволяет интегрировать прием платежей в мобильные приложение для платформы iOS.
 
 ### Требования
-Для работы CloudPayments SDK необходим iOS версии 12.0 и выше.
+Для работы CloudPayments SDK необходим iOS версии 11.0 и выше.
 
 ### Подключение
 Для подключения SDK мы рекомендуем использовать Cocoa Pods. Добавьте в файл Podfile зависимость:
@@ -248,6 +248,12 @@ CloudpaymentsApi.getBankInfo(cardNumber: cardNumber) { (info, error) in
 
 ```
 let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: Constants.merchantPulicId)
+```
+
+* Шифрование cvv при оплате сохраненной картой и создание криптограммы для отправки на сервер
+
+```
+let cvvCryptogramPacket = Card.makeCardCryptogramPacket(with: cvv)
 ```
 
 * Преобразование PKPayment в строку-криптограмму для отправки на сервер

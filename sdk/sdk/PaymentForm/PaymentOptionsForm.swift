@@ -69,7 +69,6 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
                 button.layer.masksToBounds = true
             }
             
-            
             self.applePayContainer.isHidden = false
             self.applePayContainer.addSubview(button)
             button.bindFrameToSuperviewBounds()
