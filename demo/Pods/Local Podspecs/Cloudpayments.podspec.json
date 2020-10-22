@@ -10,7 +10,7 @@
     "Sergey Iskhakov": "s.iskhakov@cloudpayments.ru"
   },
   "platforms": {
-    "ios": "12.0"
+    "ios": "11.0"
   },
   "source": {
     "git": "https://github.com/cloudpayments/CloudPayments-SDK-iOS-V2.git",
