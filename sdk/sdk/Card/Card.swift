@@ -86,46 +86,34 @@ public struct Card {
             return false
         }
         
-        let comps = expDate.split(separator: "/")
-        guard comps.count == 2 else {
+
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/yy"
+
+        guard let date = dateFormatter.date(from: expDate) else {
             return false
         }
-        
-        let firstTwo = String(comps.first!)
-        let firstTwoNum = Int(firstTwo) ?? 0
-        
-        return firstTwoNum > 0 && firstTwoNum <= 12
-        
-        
-//        Закоментировано для возможности оплаты просроченной картой
-//
-//
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "MM/yy"
-//
-//        guard let date = dateFormatter.date(from: expDate) else {
-//            return false
-//        }
-//
-//        var calendar = Calendar.init(identifier: .gregorian)
-//        calendar.timeZone = TimeZone.current
-//
-//        let dayRange = calendar.range(of: .day, in: .month, for: date)
-//        var comps = calendar.dateComponents([.year, .month, .day], from: date)
-//        comps.day = dayRange?.count ?? 1
-//        comps.hour = 24
-//        comps.minute = 0
-//        comps.second = 0
-//
-//        guard let aNewDate = calendar.date(from: comps) else {
-//            return false
-//        }
-//
-//        guard aNewDate.compare(Date()) == .orderedDescending else {
-//            return false
-//        }
-//
-//        return true
+
+        var calendar = Calendar.init(identifier: .gregorian)
+        calendar.timeZone = TimeZone.current
+
+        let dayRange = calendar.range(of: .day, in: .month, for: date)
+        var comps = calendar.dateComponents([.year, .month, .day], from: date)
+        comps.day = dayRange?.count ?? 1
+        comps.hour = 24
+        comps.minute = 0
+        comps.second = 0
+
+        guard let aNewDate = calendar.date(from: comps) else {
+            return false
+        }
+
+        guard aNewDate.compare(Date()) == .orderedDescending else {
+            return false
+        }
+
+        return true
     }
     
     public static func cardType(from cardNumber: String) -> CardType {
