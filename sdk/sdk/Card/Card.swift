@@ -56,12 +56,76 @@ public struct Card {
     private static let publicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArBZ1NNjvszen6BNWsgyDUJvDUZDtvR4jKNQtEwW1iW7hqJr0TdD8hgTxw3DfH+Hi/7ZjSNdH5EfChvgVW9wtTxrvUXCOyJndReq7qNMo94lHpoSIVW82dp4rcDB4kU+q+ekh5rj9Oj6EReCTuXr3foLLBVpH0/z1vtgcCfQzsLlGkSTwgLqASTUsuzfI8viVUbxE1a+600hN0uBh/CYKoMnCp/EhxV8g7eUmNsWjZyiUrV8AA/5DgZUCB+jqGQT/Dhc8e21tAkQ3qan/jQ5i/QYocA/4jW3WQAldMLj0PA36kINEbuDKq8qRh25v+k4qyjb7Xp4W2DywmNtG3Q20MQIDAQAB-----END PUBLIC KEY-----"
     private static let publicKeyVersion = "04"
     
-    public static func isCardNumberValid(_ cardNumber: String) -> Bool {
-        return true
+    public static func isCardNumberValid(_ cardNumber: String?) -> Bool {
+        guard let cardNumber = cardNumber else {
+            return false
+        }
+        let number = cardNumber.onlyNumbers()
+        guard number.count >= 16 && number.count <= 19 else {
+            return false
+        }
+        
+        var digits = number.map { Int(String($0))! }
+        stride(from: digits.count - 2, through: 0, by: -2).forEach { i in
+            var value = digits[i] * 2
+            if value > 9 {
+                value = value % 10 + 1
+            }
+            digits[i] = value
+        }
+        
+        let sum = digits.reduce(0, +)
+        return sum % 10 == 0
     }
 
-    public static func isExpDateValid(_ expDate: String) -> Bool {
-        return true
+    public static func isExpDateValid(_ expDate: String?) -> Bool {
+        guard let expDate = expDate else {
+            return false
+        }
+        guard expDate.count == 5 else {
+            return false
+        }
+        
+        let comps = expDate.split(separator: "/")
+        guard comps.count == 2 else {
+            return false
+        }
+        
+        let firstTwo = String(comps.first!)
+        let firstTwoNum = Int(firstTwo) ?? 0
+        
+        return firstTwoNum > 0 && firstTwoNum <= 12
+        
+        
+//        Закоментировано для возможности оплаты просроченной картой
+//
+//
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/yy"
+//
+//        guard let date = dateFormatter.date(from: expDate) else {
+//            return false
+//        }
+//
+//        var calendar = Calendar.init(identifier: .gregorian)
+//        calendar.timeZone = TimeZone.current
+//
+//        let dayRange = calendar.range(of: .day, in: .month, for: date)
+//        var comps = calendar.dateComponents([.year, .month, .day], from: date)
+//        comps.day = dayRange?.count ?? 1
+//        comps.hour = 24
+//        comps.minute = 0
+//        comps.second = 0
+//
+//        guard let aNewDate = calendar.date(from: comps) else {
+//            return false
+//        }
+//
+//        guard aNewDate.compare(Date()) == .orderedDescending else {
+//            return false
+//        }
+//
+//        return true
     }
     
     public static func cardType(from cardNumber: String) -> CardType {

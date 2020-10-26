@@ -12,7 +12,7 @@ import Alamofire
 
 public protocol ThreeDsDelegate: class {
     func willPresentWebView(_ webView: WKWebView)
-    func onAuthotizationCompleted(with md: String, paRes: String)
+    func onAuthorizationCompleted(with md: String, paRes: String)
     func onAuthorizationFailed(with html: String)
 }
 
@@ -74,7 +74,7 @@ public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
                     str = String(str[startIndex!...endIndex!])
                     if let data = str.data(using: .utf8), let dict = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
                         if let md = dict["MD"] as? String, let paRes = dict["PaRes"] as? String {
-                            self.delegate?.onAuthotizationCompleted(with: md, paRes: paRes)
+                            self.delegate?.onAuthorizationCompleted(with: md, paRes: paRes)
                         } else {
                             self.delegate?.onAuthorizationFailed(with: str)
                         }

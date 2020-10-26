@@ -230,7 +230,7 @@ extension CheckoutViewController: ThreeDsDelegate {
         }
     }
 
-    func onAuthotizationCompleted(with md: String, paRes: String) {
+    func onAuthorizationCompleted(with md: String, paRes: String) {
         hideThreeDs()
         post3ds(transactionId: md, paRes: paRes)
     }

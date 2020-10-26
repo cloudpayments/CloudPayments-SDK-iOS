@@ -1,5 +1,4 @@
 import Alamofire
-import AlamofireObjectMapper
 import ObjectMapper
 
 public class CloudpaymentsApi {

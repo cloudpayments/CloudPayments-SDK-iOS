@@ -179,7 +179,7 @@ public class PaymentForm: BaseViewController {
 }
 
 extension PaymentForm: ThreeDsDelegate {
-    public func onAuthotizationCompleted(with md: String, paRes: String) {
+    public func onAuthorizationCompleted(with md: String, paRes: String) {
         self.closeThreeDs { [weak self] in
             self?.post3ds(transactionId: md, paRes: paRes) { status, canceled, errorMessage in
                 self?.threeDsCompletion?(status, canceled, errorMessage)

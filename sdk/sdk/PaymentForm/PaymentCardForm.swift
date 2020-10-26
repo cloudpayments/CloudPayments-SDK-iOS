@@ -105,7 +105,7 @@ public class PaymentCardForm: PaymentForm {
             if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
                 self.cardNumberTextField.text = cardNumber
                 
-                if cardNumber.cardNumberIsValid() {
+                if Card.isCardNumberValid(cardNumber) {
                     self.cardExpDateTextField.becomeFirstResponder()
                     self.cardNumberTextField.isErrorMode = false
                 } else {
@@ -127,9 +127,11 @@ public class PaymentCardForm: PaymentForm {
             if let cardExp = self.cardExpDateTextField.text?.formattedCardExp() {
                 self.cardExpDateTextField.text = cardExp
                 
-                self.cardExpDateTextField.isErrorMode = false
-                if cardExp.count == 5 {
+                if Card.isExpDateValid(cardExp) {
                     self.cardCvcTextField.becomeFirstResponder()
+                    self.cardExpDateTextField.isErrorMode = false
+                } else {
+                    self.cardExpDateTextField.isErrorMode = cardExp.count == 19
                 }
             }
         }
@@ -159,7 +161,7 @@ public class PaymentCardForm: PaymentForm {
         
         self.cardNumberTextField.shouldReturn = {
             if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
-                if cardNumber.cardNumberIsValid() {
+                if Card.isCardNumberValid(cardNumber) {
                     self.cardExpDateTextField.becomeFirstResponder()
                 }
             }
@@ -188,8 +190,8 @@ public class PaymentCardForm: PaymentForm {
     }
     
     private func isValid() -> Bool {
-        let cardNumberIsValid = self.cardNumberTextField.text?.formattedCardNumber().cardNumberIsValid() == true
-        let cardExpIsValid = self.cardExpDateTextField.text?.formattedCardExp().count == 5
+        let cardNumberIsValid = Card.isCardNumberValid(self.cardNumberTextField.text?.formattedCardNumber())
+        let cardExpIsValid = Card.isExpDateValid(self.cardExpDateTextField.text?.formattedCardExp())
         let cardCvcIsValid = self.cardCvcTextField.text?.formattedCardCVV().count == 3
         let emailIsValid = !self.receiptButton.isSelected || self.emailTextField.text?.emailIsValid() == true
         
@@ -203,20 +205,13 @@ public class PaymentCardForm: PaymentForm {
     
     private func validateAndErrorCardNumber(){
         if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
-            self.cardNumberTextField.isErrorMode = !cardNumber.cardNumberIsValid()
+            self.cardNumberTextField.isErrorMode = !Card.isCardNumberValid(cardNumber)
         }
     }
     
     private func validateAndErrorCardExp(){
-        if let cardExp = self.cardExpDateTextField.text?.cleanCardExp(), cardExp.count == 4 {
-            let indexTwo = cardExp.index(cardExp.startIndex, offsetBy: 2)
-            let firstTwo = String(cardExp[..<indexTwo])
-            let firstTwoNum = Int(firstTwo) ?? 0
-            
-            self.cardExpDateTextField.isErrorMode = firstTwoNum == 0 || firstTwoNum > 12
-            
-        } else {
-            self.cardExpDateTextField.isErrorMode = true
+        if let cardExp = self.cardExpDateTextField.text?.formattedCardExp() {
+            self.cardExpDateTextField.isErrorMode = !Card.isExpDateValid(cardExp)
         }
     }
     
