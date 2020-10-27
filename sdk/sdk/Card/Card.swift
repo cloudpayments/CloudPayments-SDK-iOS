@@ -61,7 +61,7 @@ public struct Card {
             return false
         }
         let number = cardNumber.onlyNumbers()
-        guard number.count >= 16 && number.count <= 19 else {
+        guard number.count >= 14 && number.count <= 19 else {
             return false
         }
         
