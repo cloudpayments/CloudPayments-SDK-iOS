@@ -223,7 +223,7 @@ public struct Card {
             .replacingOccurrences(of: "\n", with: "")
             .replacingOccurrences(of: "\r", with: "")
         
-        var packetString = "02"
+        var packetString = "03"
         packetString.append(self.publicKeyVersion)
         packetString.append(cryptogramString)
         
