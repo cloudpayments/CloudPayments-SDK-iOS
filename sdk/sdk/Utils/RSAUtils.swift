@@ -554,7 +554,7 @@ class RSAUtils {
             return nil
         }
 
-        return encryptWithRSAKey(str.data(using: .utf8)!, rsaKeyRef: keyRef!, padding: SecPadding.OAEP)
+        return encryptWithRSAKey(str.data(using: .utf8)!, rsaKeyRef: keyRef!, padding: SecPadding.PKCS1)
     }
 
     /**
