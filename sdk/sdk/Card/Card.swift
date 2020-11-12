@@ -203,7 +203,7 @@ public struct Card {
             .replacingOccurrences(of: "\n", with: "")
             .replacingOccurrences(of: "\r", with: "")
         
-        var packetString = "02"
+        var packetString = "01"
         let startIndex = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
         let endIndex = cleanCardNumber.index(cleanCardNumber.endIndex, offsetBy: -4)
         packetString.append(String(cleanCardNumber[cleanCardNumber.startIndex..<startIndex]))
@@ -216,7 +216,7 @@ public struct Card {
     }
     
     public static func makeCardCryptogramPacket(with cvv: String) -> String? {
-        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: "cvv", pubkeyBase64: self.publicKey) else {
+        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: self.publicKey) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
