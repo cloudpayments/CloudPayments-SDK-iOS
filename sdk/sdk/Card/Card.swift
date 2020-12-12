@@ -196,14 +196,14 @@ public struct Card {
         let cleanCardNumber = self.cleanCreditCardNo(cardNumber)
         let decryptedCryptogram = String.init(format: "%@@%@@%@@%@", cleanCardNumber, cardDateString, cvv, merchantPublicID)
         
-        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: self.publicKey) else {
+        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: self.publicKey, padding: .OAEP) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
             .replacingOccurrences(of: "\n", with: "")
             .replacingOccurrences(of: "\r", with: "")
         
-        var packetString = "01"
+        var packetString = "02"
         let startIndex = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
         let endIndex = cleanCardNumber.index(cleanCardNumber.endIndex, offsetBy: -4)
         packetString.append(String(cleanCardNumber[cleanCardNumber.startIndex..<startIndex]))
@@ -216,7 +216,7 @@ public struct Card {
     }
     
     public static func makeCardCryptogramPacket(with cvv: String) -> String? {
-        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: self.publicKey) else {
+        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: self.publicKey, padding: .PKCS1) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)

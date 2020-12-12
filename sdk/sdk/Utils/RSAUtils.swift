@@ -544,7 +544,7 @@ class RSAUtils {
      * - Returns: the data in encrypted form
      */
     @available(iOS, introduced: 1.2.0)
-    public static func encryptWithRSAPublicKey(str: String, pubkeyBase64: String) throws -> Data? {
+    public static func encryptWithRSAPublicKey(str: String, pubkeyBase64: String, padding: SecPadding) throws -> Data? {
         let tagName = "PUBIC-" + String(pubkeyBase64.hashValue)
         var keyRef = getRSAKeyFromKeychain(tagName)
         if ( keyRef == nil ) {
@@ -554,7 +554,7 @@ class RSAUtils {
             return nil
         }
 
-        return encryptWithRSAKey(str.data(using: .utf8)!, rsaKeyRef: keyRef!, padding: SecPadding.PKCS1)
+        return encryptWithRSAKey(str.data(using: .utf8)!, rsaKeyRef: keyRef!, padding: padding)
     }
 
     /**
