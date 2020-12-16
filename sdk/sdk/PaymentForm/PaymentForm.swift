@@ -160,11 +160,11 @@ public class PaymentForm: BaseViewController {
 
     private func closeThreeDs(completion: (() -> ())?) {
         if let form = self.threeDsFormView {
-            UIView.animate(withDuration: 0.25) {
+            UIView.animate(withDuration: 0.25, animations: {
                 form.alpha = 0
-            } completion: { [weak self] (status) in
+            }) { (_) in
                 form.isHidden = true
-                if let container = self?.threeDsContainerView {
+                if let container = self.threeDsContainerView {
                     container.subviews.forEach { $0.removeFromSuperview()}
                 }
 
