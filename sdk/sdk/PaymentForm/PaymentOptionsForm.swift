@@ -90,7 +90,11 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
             request.merchantCapabilities = PKMerchantCapability.capability3DS
             request.countryCode = "RU"
             request.currencyCode = paymentData.currency.rawValue
-            request.paymentSummaryItems = [PKPaymentSummaryItem(label: "К оплате", amount: NSDecimalNumber.init(value: amount))]
+            
+            
+            let paymentSummaryItems = [PKPaymentSummaryItem(label: self.configuration.paymentData.description ?? "К оплате", amount: NSDecimalNumber.init(value: amount))]
+            request.paymentSummaryItems = paymentSummaryItems
+            
             if let applePayController = PKPaymentAuthorizationViewController(paymentRequest:
                     request) {
                 applePayController.delegate = self

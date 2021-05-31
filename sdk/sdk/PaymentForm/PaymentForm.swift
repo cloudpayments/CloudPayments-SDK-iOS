@@ -29,6 +29,7 @@ public class PaymentForm: BaseViewController {
     private var threeDsCallbackId: String = ""
     
     private var threeDsCompletion: PaymentCallback?
+    private var transaction: Transaction?
     
     @discardableResult
     public class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
@@ -125,6 +126,9 @@ public class PaymentForm: BaseViewController {
     
     // Проверяем необходимо ли подтверждение с использованием 3DS
     internal func checkTransactionResponse(transactionResponse: TransactionResponse, completion: PaymentCallback?) {
+        self.threeDsCompletion = nil
+        self.transaction = nil
+        
         if (transactionResponse.success) {
             completion?(true, false, transactionResponse.transaction, nil)
         } else {
@@ -144,21 +148,15 @@ public class PaymentForm: BaseViewController {
                 threeDsProcessor.make3DSPayment(with: threeDsData, delegate: self)
                 
                 self.threeDsCompletion = completion
-                
+                self.transaction = transactionResponse.transaction
             } else {
                 completion?(false, false, transactionResponse.transaction, transactionResponse.transaction?.cardHolderMessage)
             }
         }
     }
     
-    internal func post3ds(transactionId: String, paRes: String, completion: PaymentCallback?) {
-        network.post3ds(transactionId: transactionId, threeDsCallbackId: self.threeDsCallbackId, paRes: paRes) { result in
-            if result.success {
-                completion?(true, false, nil, nil)
-            } else {
-                completion?(true, false, nil, result.cardHolderMessage)
-            }
-        }
+    internal func post3ds(transactionId: String, paRes: String, completion: @escaping ((_ response: ThreeDsResponse) -> ())) {
+        network.post3ds(transactionId: transactionId, threeDsCallbackId: self.threeDsCallbackId, paRes: paRes, completion: completion)
     }
 
     private func closeThreeDs(completion: (() -> ())?) {
@@ -184,8 +182,14 @@ public class PaymentForm: BaseViewController {
 extension PaymentForm: ThreeDsDelegate {
     public func onAuthorizationCompleted(with md: String, paRes: String) {
         self.closeThreeDs { [weak self] in
-            self?.post3ds(transactionId: md, paRes: paRes) { status, canceled, transaction, errorMessage in
-                self?.threeDsCompletion?(status, canceled, transaction, errorMessage)
+            guard let self = self else {
+                return
+            }
+            self.post3ds(transactionId: md, paRes: paRes) { [weak self] response in
+                guard let self = self else {
+                    return
+                }
+                self.threeDsCompletion?(response.success, false, self.transaction, response.cardHolderMessage)
             }
         }
     }

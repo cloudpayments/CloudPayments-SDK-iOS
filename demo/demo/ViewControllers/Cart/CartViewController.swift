@@ -136,12 +136,12 @@ extension CartViewController: PaymentCardScanner {
 }
 
 extension CartViewController: PaymentDelegate {
-    func onPaymentFinished(_ transaction: Transaction?) {
+    func onPaymentFinished(_ transactionId: Int?) {
         self.navigationController?.popViewController(animated: true)
         CartManager.shared.products.removeAll()
         
-        if let transaction = transaction {
-            print("finished with transaction info: \(transaction)")
+        if let transactionId = transactionId {
+            print("finished with transactionId: \(transactionId)")
         }
     }
     

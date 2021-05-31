@@ -9,7 +9,7 @@
 import Foundation
 
 public protocol PaymentDelegate: class {
-    func onPaymentFinished(_ transaction: Transaction?)
+    func onPaymentFinished(_ transactionId: Int?)
     func onPaymentFailed(_ errorMessage: String?)
 }
 
@@ -28,7 +28,7 @@ internal class PaymentDelegateImpl {
     }
     
     func paymentFinished(_ transaction: Transaction?){
-        self.delegate?.onPaymentFinished(transaction)
+        self.delegate?.onPaymentFinished(transaction?.transactionId)
     }
     
     func paymentFailed(_ errorMessage: String?) {
