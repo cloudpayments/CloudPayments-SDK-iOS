@@ -54,33 +54,29 @@ public class CloudpaymentsApi {
         }
     }
     
-    public func charge(cardCryptogramPacket: String, cardHolderName: String?, email: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
+    public func charge(cardCryptogramPacket: String,
+                       email: String?,
+                       paymentData: PaymentData,
+                       completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
         self.threeDsCompletion = nil
         
-        let parameters: Parameters = [
-            "Amount" : "\(amount)", // Сумма платежа (Обязательный)
-            "Currency" : currency.rawValue, // Валюта (Обязательный)
-            "IpAddress" : "", // IP адрес плательщика (Обязательный)
-            "Name" : cardHolderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
-            "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
-            "Email" : email ?? "" // E-mail, на который будет отправлена квитанция об оплате
-        ]
+        let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
+                                        email: email,
+                                        paymentData: paymentData)
         
         let request = HTTPRequest(resource: .charge, method: .post, parameters: parameters)
         makeObjectRequest(request, completion: completion)
     }
     
-    public func auth(cardCryptogramPacket: String, cardHolderName: String?, email: String?, amount: String, currency: Currency = .ruble, completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
+    public func auth(cardCryptogramPacket: String,
+                     email: String?,
+                     paymentData: PaymentData,
+                     completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
         self.threeDsCompletion = nil
         
-        let parameters: Parameters = [
-            "Amount" : "\(amount)", // Сумма платежа (Обязательный)
-            "Currency" : currency.rawValue, // Валюта (Обязательный)
-            "IpAddress" : "",
-            "Name" : cardHolderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
-            "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
-            "Email" : email ?? "" // E-mail, на который будет отправлена квитанция об оплате
-        ]
+        let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
+                                        email: email,
+                                        paymentData: paymentData)
         
         let request = HTTPRequest(resource: .auth, method: .post, parameters: parameters)
         makeObjectRequest(request, completion: completion)
@@ -106,6 +102,25 @@ public class CloudpaymentsApi {
         } else {
             completion(ThreeDsResponse.init(success: false, cardHolderMessage: ""))
         }
+    }
+    
+    private func generateParams(cardCryptogramPacket: String,
+                                email: String?,
+                                paymentData: PaymentData) -> Parameters {
+        let parameters: Parameters = [
+            "Amount" : paymentData.amount, // Сумма платежа (Обязательный)
+            "Currency" : paymentData.currency.rawValue, // Валюта (Обязательный)
+            "IpAddress" : paymentData.ipAddress ?? "",
+            "Name" : paymentData.cardholderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
+            "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
+            "Email" : email ?? "", // E-mail, на который будет отправлена квитанция об оплате
+            "InvoiceId" : paymentData.invoiceId ?? "", // Номер счета или заказа в вашей системе (Необязательный)
+            "Description" : paymentData.description ?? "", // Описание оплаты в свободной форме (Необязательный)
+            "AccountId" : paymentData.accountId ?? "", // Идентификатор пользователя в вашей системе (Необязательный)
+            "JsonData" : paymentData.jsonData ?? "" // Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для создания подписки или формирования онлайн-чека (Необязательный)
+        ]
+        
+        return parameters
     }
     
     private class ThreeDsRedirectHandler: RedirectHandler {

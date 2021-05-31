@@ -11,7 +11,7 @@ import UIKit
 import PassKit
 import WebKit
 
-typealias PaymentCallback = (_ status: Bool, _ canceled: Bool, _ errorMessage: String?) -> ()
+typealias PaymentCallback = (_ status: Bool, _ canceled: Bool, _ trasaction: Transaction?, _ errorMessage: String?) -> ()
 
 public class PaymentForm: BaseViewController {
     @IBOutlet weak var containerView: UIView!
@@ -32,28 +32,27 @@ public class PaymentForm: BaseViewController {
     
     @discardableResult
     public class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
-        if PKPaymentAuthorizationViewController.canMakePayments() {
-            if let controller = PaymentOptionsForm.present(with: configuration, from: from) as? PaymentOptionsForm {
-                controller.onCardOptionSelected = {
-                    self.showCardForm(with: configuration, from: from)
-                }
-                return controller
-            }
-        } else {
-            return self.showCardForm(with: configuration, from: from)
+        let completion = {
+            configuration.paymentUIDelegate.paymentFormDidDisplay()
         }
+        configuration.paymentUIDelegate.paymentFormWillDisplay()
         
-        return nil
+        if PKPaymentAuthorizationViewController.canMakePayments() {
+            let controller = PaymentOptionsForm.present(with: configuration, from: from, completion: completion) as! PaymentOptionsForm
+            controller.onCardOptionSelected = {
+                self.showCardForm(with: configuration, from: from, completion: nil)
+            }
+            return controller
+        } else {
+            return self.showCardForm(with: configuration, from: from, completion: completion)
+        }
     }
     
     @discardableResult
-    private class func showCardForm(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
-        guard let controller = PaymentCardForm.present(with: configuration, from: from) as? PaymentCardForm else {
-            return nil
-        }
-        
+    private class func showCardForm(with configuration: PaymentConfiguration, from: UIViewController, completion: (() -> ())?) -> PaymentForm {
+        let controller = PaymentCardForm.present(with: configuration, from: from, completion: completion) as! PaymentCardForm
         controller.onPayClicked = { cryptogram, email in
-            PaymentProcessForm.present(with: configuration, cryptogram: cryptogram, email: email, from: from)
+            PaymentProcessForm.present(with: configuration, cryptogram: cryptogram, email: email, from: from, completion: nil)
         }
         return controller
     }
@@ -75,7 +74,7 @@ public class PaymentForm: BaseViewController {
         
         self.threeDsCloseButton?.onAction = {
             self.closeThreeDs {
-                self.threeDsCompletion?(false, true, nil)
+                self.threeDsCompletion?(false, true, nil, nil)
             }
         }
     }
@@ -87,7 +86,10 @@ public class PaymentForm: BaseViewController {
     }
     
     @IBAction private func onClose(_ sender: UIButton) {
-        self.hide(completion: nil)
+        self.configuration.paymentUIDelegate.paymentFormWillHide()
+        self.hide {
+            self.configuration.paymentUIDelegate.paymentFormDidHide()
+        }
     }
     
     internal func makeContainerCorners(){
@@ -98,24 +100,25 @@ public class PaymentForm: BaseViewController {
     }
     
     internal func charge(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
-        let paymentData = self.configuration.paymentData
-        network.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: paymentData.amount, currency: paymentData.currency) { [weak self] response, error in
+        network.charge(cardCryptogramPacket: cardCryptogramPacket,
+                       email: email,
+                       paymentData: self.configuration.paymentData) { [weak self] response, error in
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
-                completion?(false, false, error.localizedDescription)
+                completion?(false, false, nil, error.localizedDescription)
             }
         }
     }
     
     internal func auth(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
-        let paymentData = self.configuration.paymentData
-        
-        network.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: nil, email: email, amount: paymentData.amount, currency: paymentData.currency) { [weak self] response, error in
+        network.auth(cardCryptogramPacket: cardCryptogramPacket,
+                     email: email,
+                     paymentData: self.configuration.paymentData) { [weak self] response, error in
             if let response = response {
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
-                completion?(false, false, error.localizedDescription)
+                completion?(false, false, nil, error.localizedDescription)
             }
         }
     }
@@ -123,10 +126,10 @@ public class PaymentForm: BaseViewController {
     // Проверяем необходимо ли подтверждение с использованием 3DS
     internal func checkTransactionResponse(transactionResponse: TransactionResponse, completion: PaymentCallback?) {
         if (transactionResponse.success) {
-            completion?(true, false, nil)
+            completion?(true, false, transactionResponse.transaction, nil)
         } else {
             if (!transactionResponse.message.isEmpty) {
-                completion?(false, false, transactionResponse.message)
+                completion?(false, false, transactionResponse.transaction, transactionResponse.message)
             } else if let paReq = transactionResponse.transaction?.paReq, !paReq.isEmpty, let acsUrl = transactionResponse.transaction?.acsUrl, !acsUrl.isEmpty {
                 self.threeDsCallbackId = transactionResponse.transaction?.threeDsCallbackId ?? ""
                 
@@ -143,7 +146,7 @@ public class PaymentForm: BaseViewController {
                 self.threeDsCompletion = completion
                 
             } else {
-                completion?(false, false, transactionResponse.transaction?.cardHolderMessage)
+                completion?(false, false, transactionResponse.transaction, transactionResponse.transaction?.cardHolderMessage)
             }
         }
     }
@@ -151,9 +154,9 @@ public class PaymentForm: BaseViewController {
     internal func post3ds(transactionId: String, paRes: String, completion: PaymentCallback?) {
         network.post3ds(transactionId: transactionId, threeDsCallbackId: self.threeDsCallbackId, paRes: paRes) { result in
             if result.success {
-                completion?(true, false, nil)
+                completion?(true, false, nil, nil)
             } else {
-                completion?(true, false, result.cardHolderMessage)
+                completion?(true, false, nil, result.cardHolderMessage)
             }
         }
     }
@@ -181,14 +184,14 @@ public class PaymentForm: BaseViewController {
 extension PaymentForm: ThreeDsDelegate {
     public func onAuthorizationCompleted(with md: String, paRes: String) {
         self.closeThreeDs { [weak self] in
-            self?.post3ds(transactionId: md, paRes: paRes) { status, canceled, errorMessage in
-                self?.threeDsCompletion?(status, canceled, errorMessage)
+            self?.post3ds(transactionId: md, paRes: paRes) { status, canceled, transaction, errorMessage in
+                self?.threeDsCompletion?(status, canceled, transaction, errorMessage)
             }
         }
     }
 
     public func onAuthorizationFailed(with html: String) {
-        self.threeDsCompletion?(false, false, html)
+        self.threeDsCompletion?(false, false, nil, html)
         print("error: \(html)")
     }
 

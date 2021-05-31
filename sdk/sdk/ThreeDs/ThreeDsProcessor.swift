@@ -87,9 +87,4 @@ public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
             }
         }
     }
-    
-    deinit {
-        print("deallocated: \(self)")
-    }
-
 }

@@ -24,7 +24,7 @@ public class PaymentCardForm: PaymentForm {
     var onPayClicked: ((_ cryptogram: String, _ email: String?) -> ())?
     
     @discardableResult
-    public override class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
+    public class func present(with configuration: PaymentConfiguration, from: UIViewController, completion: (() -> ())?) -> PaymentForm? {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
         guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentForm") as? PaymentForm else {
@@ -33,7 +33,7 @@ public class PaymentCardForm: PaymentForm {
         
         controller.configuration = configuration
 
-        controller.show(inViewController: from, completion: nil)
+        controller.show(inViewController: from, completion: completion)
         
         return controller
     }
