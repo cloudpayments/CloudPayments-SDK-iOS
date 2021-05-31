@@ -1,6 +1,7 @@
 import UIKit
 import Alamofire
 import SDWebImage
+import AlamofireObjectMapper
 
 class MainViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var productsCollectionView: UICollectionView!

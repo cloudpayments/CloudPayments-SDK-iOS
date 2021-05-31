@@ -82,12 +82,21 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     }
                 }
 
-                let paymentData = PaymentData.init(publicId: Constants.merchantPulicId)
+                let jsonData: [String: Any] = ["age":27,
+                                               "name":"Ivan",
+                                               "phone":"+79998881122"]
+                let paymentData = PaymentData.init(publicId: Constants.merchantPublicId)
                     .setAmount(String(totalAmount))
                     .setCurrency(.ruble)
                     .setApplePayMerchantId(Constants.applePayMerchantID)
+                    .setCardholderName("Демо приложение")
+                    .setDescription("Корзина цветов")
+                    .setAccountId("111")
+                    .setIpAddress("98.21.123.32")
+                    .setInvoiceId("123")
+                    .setJsonData(jsonData)
 
-                let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, scanner: self)
+                let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, uiDelegate: self, scanner: self)
                 PaymentForm.present(with: configuration, from: self)
             }
             
@@ -127,8 +136,36 @@ extension CartViewController: PaymentCardScanner {
 }
 
 extension CartViewController: PaymentDelegate {
-    func onPaymentFinished() {
+    func onPaymentFinished(_ transactionId: Int?) {
         self.navigationController?.popViewController(animated: true)
         CartManager.shared.products.removeAll()
+        
+        if let transactionId = transactionId {
+            print("finished with transactionId: \(transactionId)")
+        }
+    }
+    
+    func onPaymentFailed(_ errorMessage: String?) {
+        if let error = errorMessage {
+            print("finished with error: \(error)")
+        }
+    }
+}
+
+extension CartViewController: PaymentUIDelegate {
+    func paymentFormWillDisplay() {
+        print("paymentFormWillDisplay")
+    }
+    
+    func paymentFormDidDisplay() {
+        print("paymentFormDidDisplay")
+    }
+    
+    func paymentFormWillHide() {
+        print("paymentFormWillHide")
+    }
+    
+    func paymentFormDidHide() {
+        print("paymentFormDidHide")
     }
 }

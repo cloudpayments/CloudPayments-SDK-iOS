@@ -11,11 +11,13 @@ import Foundation
 public class PaymentConfiguration {
     let paymentData: PaymentData
     let paymentDelegate: PaymentDelegateImpl
+    let paymentUIDelegate: PaymentUIDelegateImpl
     let scanner: PaymentCardScanner?
     
-    public init(paymentData: PaymentData, delegate: PaymentDelegate?, scanner: PaymentCardScanner?) {
+    public init(paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?) {
         self.paymentData = paymentData
         self.paymentDelegate = PaymentDelegateImpl.init(delegate: delegate)
+        self.paymentUIDelegate = PaymentUIDelegateImpl.init(delegate: uiDelegate)
         self.scanner = scanner
     }
 }

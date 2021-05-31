@@ -22,7 +22,7 @@ class CheckoutViewController: BaseViewController {
     var threeDsProcessor = ThreeDsProcessor()
     var total = 0
 
-    private let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)
+    private let api = CloudpaymentsApi.init(publicId: Constants.merchantPublicId)
     private var transactionResponse: TransactionResponse?
     private var paymentCompletion: ((_ succeeded: Bool, _ message: String?) ->())?
     
@@ -110,7 +110,7 @@ class CheckoutViewController: BaseViewController {
         
         // Создаем криптограмму карточных данных
         // Чтобы создать криптограмму необходим PublicID (свой PublicID можно посмотреть в личном кабинете и затем заменить в файле Constants)
-        let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: Constants.merchantPulicId)
+        let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: Constants.merchantPublicId)
         
         guard let packet = cardCryptogramPacket else {
             self.showAlert(title: .errorWord, message: .errorCreatingCryptoPacket)
@@ -230,7 +230,7 @@ extension CheckoutViewController: ThreeDsDelegate {
         }
     }
 
-    func onAuthotizationCompleted(with md: String, paRes: String) {
+    func onAuthorizationCompleted(with md: String, paRes: String) {
         hideThreeDs()
         post3ds(transactionId: md, paRes: paRes)
     }
@@ -253,7 +253,11 @@ private extension CheckoutViewController {
         self.transactionResponse = nil
         self.paymentCompletion = nil
         
-        api.charge(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, email: nil, amount: String(total)) { [weak self] (response, error) in
+        let paymentData = PaymentData(publicId: Constants.merchantPublicId)
+            .setAmount(String(total))
+            .setCardholderName(cardHolderName)
+        
+        api.charge(cardCryptogramPacket: cardCryptogramPacket, email: nil, paymentData: paymentData) { [weak self] (response, error) in
             if let response = response {
                 print("success")
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
@@ -268,7 +272,11 @@ private extension CheckoutViewController {
         self.transactionResponse = nil
         self.paymentCompletion = nil
         
-        api.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, email: nil, amount: String(total)) { [weak self] (response, error) in
+        let paymentData = PaymentData(publicId: Constants.merchantPublicId)
+            .setAmount(String(total))
+            .setCardholderName(cardHolderName)
+        
+        api.auth(cardCryptogramPacket: cardCryptogramPacket, email: nil, paymentData: paymentData) { [weak self] (response, error) in
             if let response = response {
                 print("success")
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)

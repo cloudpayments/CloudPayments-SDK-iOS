@@ -13,8 +13,8 @@ import WebKit
 public class PaymentProcessForm: PaymentForm {
     public enum State {
         case inProgress
-        case succeeded
-        case failed
+        case succeeded(Transaction?)
+        case failed(String?)
         
         func getImage() -> UIImage? {
             switch self {
@@ -33,8 +33,8 @@ public class PaymentProcessForm: PaymentForm {
                 return "Оплата выполняется..."
             case .succeeded:
                 return "Оплата завершена"
-            case .failed:
-                return "Произошла ошибка!"
+            case .failed(let message):
+                return message ?? "Произошла ошибка!"
             }
         }
         
@@ -59,19 +59,16 @@ public class PaymentProcessForm: PaymentForm {
     private var email: String?
     
     @discardableResult
-    public class func present(with configuration: PaymentConfiguration, cryptogram: String?, email: String?, state: State = .inProgress, from: UIViewController) -> PaymentForm? {
+    public class func present(with configuration: PaymentConfiguration, cryptogram: String?, email: String?, state: State = .inProgress, from: UIViewController, completion: (() -> ())?) -> PaymentForm? {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentProcessForm") as? PaymentProcessForm else {
-            return nil
-        }
-        
+        let controller = storyboard.instantiateViewController(withIdentifier: "PaymentProcessForm") as! PaymentProcessForm        
         controller.configuration = configuration
         controller.cryptogram = cryptogram
         controller.email = email
         controller.state = state
         
-        controller.show(inViewController: from, completion: nil)
+        controller.show(inViewController: from, completion: completion)
         
         return controller
     }
@@ -79,16 +76,19 @@ public class PaymentProcessForm: PaymentForm {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.updateUI(with: self.state, errorMessage: nil)
+        self.updateUI(with: self.state)
         
         if let cryptogram = self.cryptogram {
-            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { status, canceled, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { status, canceled, transaction, errorMessage in
                 if status {
-                    self.updateUI(with: .succeeded, errorMessage: nil)
+                    self.updateUI(with: .succeeded(transaction))
                 } else if !canceled {
-                    self.updateUI(with: .failed, errorMessage: errorMessage)
+                    self.updateUI(with: .failed(errorMessage))
                 } else {
-                    self.dismiss(animated: true, completion: nil)
+                    self.configuration.paymentUIDelegate.paymentFormWillHide()
+                    self.dismiss(animated: true) {
+                        self.configuration.paymentUIDelegate.paymentFormDidHide()
+                    }
                 }
             }
         }
@@ -106,23 +106,32 @@ public class PaymentProcessForm: PaymentForm {
         self.stopAnimation()
     }
     
-    private func updateUI(with state: State, errorMessage: String?){
+    private func updateUI(with state: State){
         self.state = state
         self.stopAnimation()
         
         self.progressIcon.image = self.state.getImage()
-        self.messageLabel.text = errorMessage ?? self.state.getMessage()
-        self.actionButton.isHidden = self.state == .inProgress
+        self.messageLabel.text = self.state.getMessage()
         self.actionButton.setTitle(self.state.getActionButtonTitle(), for: .normal)
         
-        if self.state == .succeeded {
-            self.actionButton.onAction = {
-                self.dismiss(animated: true) {
-                    self.configuration.paymentDelegate.paymentFinished()
-                }
+        if case .inProgress = self.state {
+            self.actionButton.isHidden = true
+        } else {
+            self.actionButton.isHidden = false
+        }
+        
+        if case .succeeded(let transaction) = self.state {
+            self.configuration.paymentDelegate.paymentFinished(transaction)
+            self.actionButton.onAction = { [weak self] in
+                self?.hide()
             }
-        } else if self.state == .failed {
-            self.actionButton.onAction = {
+        } else if case .failed(let errorMessage) = self.state {
+            self.configuration.paymentDelegate.paymentFailed(errorMessage)
+            self.actionButton.onAction = { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
                 let parent = self.presentingViewController
                 self.dismiss(animated: true) {
                     if let parent = parent {
@@ -136,7 +145,7 @@ public class PaymentProcessForm: PaymentForm {
     private func startAnimation(){
         self.stopAnimation()
         
-        if self.state == .inProgress {
+        if case .inProgress = self.state {
             let animation = CABasicAnimation.init(keyPath: "transform.rotation")
             animation.toValue = NSNumber.init(value: Double.pi * 2.0)
             animation.duration = 1.0
@@ -156,6 +165,14 @@ public class PaymentProcessForm: PaymentForm {
         let mask = CAShapeLayer()
         mask.path = path.cgPath
         self.containerView.layer.mask = mask
+    }
+    
+    private func hide(_ completion: (() -> ())? = nil) {
+        self.configuration.paymentUIDelegate.paymentFormWillHide()
+        self.dismiss(animated: true) {
+            self.configuration.paymentUIDelegate.paymentFormDidHide()
+            completion?()
+        }
     }
 }
 

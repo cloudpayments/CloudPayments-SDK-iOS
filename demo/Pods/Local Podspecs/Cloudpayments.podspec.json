@@ -1,6 +1,6 @@
 {
   "name": "Cloudpayments",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "Core library that allows you to use internet acquiring from CloudPayments in your app",
   "description": "Core library that allows you to use internet acquiring from CloudPayments in your app!",
   "homepage": "https://cloudpayments.ru/",
@@ -13,8 +13,8 @@
     "ios": "11.0"
   },
   "source": {
-    "git": "https://github.com/cloudpayments/CloudPayments-SDK-iOS-V2.git",
-    "tag": "1.0.0"
+    "git": "https://github.com/cloudpayments/CloudPayments-SDK-iOS.git",
+    "tag": "1.0.1"
   },
   "source_files": "sdk/**/*.swift",
   "resource_bundles": {
@@ -25,9 +25,9 @@
   "requires_arc": true,
   "dependencies": {
     "Alamofire": [
-      "= 5.0.0-rc.2"
+
     ],
-    "AlamofireObjectMapper": [
+    "ObjectMapper": [
 
     ]
   }

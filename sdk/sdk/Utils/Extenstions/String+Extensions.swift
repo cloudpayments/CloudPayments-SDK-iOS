@@ -41,25 +41,6 @@ extension String {
         let mask = "XXX"
         return self.onlyNumbers().formattedString(mask: mask, ignoredSymbols: nil)
     }
-    
-    func cardNumberIsValid() -> Bool {
-        let number = self.onlyNumbers()
-        guard number.count >= 16 && number.count <= 19 else {
-            return false
-        }
-        
-        var digits = number.map { Int(String($0))! }
-        stride(from: digits.count - 2, through: 0, by: -2).forEach { i in
-            var value = digits[i] * 2
-            if value > 9 {
-                value = value % 10 + 1
-            }
-            digits[i] = value
-        }
-        
-        let sum = digits.reduce(0, +)
-        return sum % 10 == 0
-    }
 
     func emailIsValid() -> Bool {
         let emailRegex = "^.+@([A-Za-z0-9-]+\\.)+[A-Za-z]{2}[A-Za-z]*$";
@@ -90,7 +71,7 @@ extension String {
         return result
     }
     
-    private func onlyNumbers() -> String {
+    func onlyNumbers() -> String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()
     }

@@ -22,9 +22,11 @@
 		00FA97D56201027AEB1C7692A2C3CF8B /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0091DC516C3EBEC4B1CEA0DE590014F9 /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02292FC1E8CF700F59D154DF2C841F75 /* SDAssociatedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F0A4FA7BDF25AE5122D73D82F01BE8 /* SDAssociatedObject.m */; };
 		02630CF9E3967768C1A8EB31DBE9BB72 /* SDImageCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A93257F04339D9E5F206A9157CB91AA /* SDImageCoder.m */; };
+		02FB5D3A797CDF48109DF45DA4DE79BD /* Cloudpayments-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 594BE565E084DC969D197B667C242941 /* Cloudpayments-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		03206EC67DE4762B4AA8DB22F31207EC /* PaymentProcessForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CD3A78B3CECB14F86513D9A7334768 /* PaymentProcessForm.swift */; };
 		0419772A87B16DB7DCF405A9E77D671F /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEE37EF8AD6A0970C6A18C140A285F2 /* Protector.swift */; };
 		04762E2F6696F6B57AC647288F800D2D /* SDWebImageCacheKeyFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 97C73C98F1A5958EF7E76D6EC302B4A1 /* SDWebImageCacheKeyFilter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05C49E773FDC69F7267F7090313E4AFE /* PaymentProcessForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC00D8FBC670842494DD237722B5AA36 /* PaymentProcessForm.swift */; };
+		0521CBC83C6C0FD0A312B0F1B959B438 /* PKPayment+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BEB639CEB7DB41F7147C0094B3C9E5 /* PKPayment+Convert.swift */; };
 		064E3B3A6A411886A3648C2ADBE64F9B /* SDImageAPNGCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AEF1496BFF415EAFA0C7D846C26C7F /* SDImageAPNGCoder.m */; };
 		06507A26118BA5ACFBBC8C225776920E /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A7CB003637708E33E75775EE93A6CC /* Validation.swift */; };
 		06A9E5F32704DE5428A294F53820EDA7 /* Pods-demo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 919022BC48F9439E29669B27B83A8482 /* Pods-demo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,126 +36,121 @@
 		0AE06C3AEA6CA45342BA703230ABD2CB /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BE24B016D089C03501912B907982DE /* CachedResponseHandler.swift */; };
 		0BC52097426786A1611A11744FF823B4 /* SDWebImageCacheSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0152B57E95C58ACBFA16373B8D94C5CD /* SDWebImageCacheSerializer.m */; };
 		0C02ABEC760BF80131B37D63C73BE26B /* ObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FD9CBEBFCC1944B1F8A0DBFB94A1C7C9 /* ObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0C993EEE77CD304447D797B6B2A5EBA5 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E929F48194A99E7217397C162CA4FF7 /* RSAUtils.swift */; };
 		0CC43FF0E31AA320ACFEB0FE6239DF34 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D2DA139D093D580F73B347C6E0DA1B /* ServerTrustEvaluation.swift */; };
 		0DE72963700100361EA2789EA929EFFD /* SDDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 03E7E326911C9E04A1D70D6FE95441D3 /* SDDiskCache.m */; };
-		0E16E2A6B9E0F76674A8910A534A2EFF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E3A1DD3260C37B732A695153B06867 /* ImageIO.framework */; };
+		0E16E2A6B9E0F76674A8910A534A2EFF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1834D57A08CE11035BECFAF8E08B91B /* ImageIO.framework */; };
 		0FE4EBA08A8135658EE3FEE7198FF686 /* SDWebImageDownloaderConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = F19D20DA291B15684D0DC6293A810709 /* SDWebImageDownloaderConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10B5A5FF74C577DB66C759DE898D39D2 /* SDImageCodersManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B394AF957500D9611D1FE82CFBEF4B1 /* SDImageCodersManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		114C2D0BB7EDBEAAA2433CCC8DE5526C /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A43CF4D615F37D6A7AB1B01037470D /* UIButton+WebCache.m */; };
-		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
+		1251ABF8613A45A93CF7198E944EFA1D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		1270F4E601423EF36FE824207169002A /* CodableTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0133EFFCE5ADB695E7239D108D534EC0 /* CodableTransform.swift */; };
 		13457FE4E607509A3B9527B0711033D5 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62EB4A3814F39DE8D427E9C6D0E9194 /* ResponseSerialization.swift */; };
 		14AB7976E100075ADEA0AB1DB833E72D /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DA787D7BD4195A3F8D9577C515EF71 /* ParameterEncoding.swift */; };
 		158ED66F79A1A1B16072418E8B66E628 /* SDWebImageIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C933254619DA3A53C2F16A3CA2713C1 /* SDWebImageIndicator.m */; };
 		15F0D404DF94F1546A17142E40A8F3B1 /* UIImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FFDC155A9310C47D3D02BE7FCB2D67B7 /* UIImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16DF9AB53E2ABE07D68936C0ADC3C813 /* Cloudpayments.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB6F89EAD792AB5F69E3263B2FFDF /* Cloudpayments.bundle */; };
 		17953A9CF2E354B3E69B9ABC2F367AD9 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC3E75028EEA9026A7560E6A415ED1 /* AFError.swift */; };
 		18D1D252617EE8076F60E5F13462A79F /* SDAnimatedImageView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = FBA2A96CFB838A0D3FCDF54CA611B284 /* SDAnimatedImageView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		19A14163D1B85BA2674C47C08DD42F3B /* EnumOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55741EBE19F397629B595EEA5DE691E /* EnumOperators.swift */; };
 		1A6FB23F6D6908396FB5FE61D9A76FB5 /* URLTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAAF940D724DAADD299241C8524CBC15 /* URLTransform.swift */; };
 		1B6CF5D1D8FCF530E4889E7A24D3D359 /* SDImageAWebPCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D00D03275AC3ABA42C7CA4AFAC6CB7B /* SDImageAWebPCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1C4E35F55A6329617D438B149650AD87 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E03928F4CACAC3DCC6B01B37D23C2C0 /* Mappable.swift */; };
-		1C6D89B6B8A8F433F5AFBBE067DEAE39 /* PaymentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C7621F4BF3F6258B5AC5B208BDD2C7 /* PaymentDelegate.swift */; };
 		1C7FD60FFAD67D4FA202225FB6303128 /* SDWebImageDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 38113F63E3F3FEB11FA47ECC562CD9B2 /* SDWebImageDefine.m */; };
 		1CBEEC98DEB7338620F68B0E705D132D /* NSImage+Compatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = F083221A5465DA72FAE4859987F8BDF0 /* NSImage+Compatibility.m */; };
 		1DA6DE69B7F59943AF3B60BA9ACFDEFA /* UIImage+MemoryCacheCost.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D5737E61D89A4C42B420A3E5C54869 /* UIImage+MemoryCacheCost.m */; };
 		1F55097C4490DCFB8BA4B3D8D284ED33 /* SDAnimatedImage.h in Headers */ = {isa = PBXBuildFile; fileRef = FE781D55A6CE21C39F57F278EB4A7C66 /* SDAnimatedImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F5A96B3EF393FE66CAA63900C7B0D56 /* SDDiskCache.h in Headers */ = {isa = PBXBuildFile; fileRef = E81378911EB32F9F98A4DEA6D1EE656A /* SDDiskCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F7AFE861609115DF7D756769A553F87 /* SDAnimatedImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D8C821C1B1AB7B6A88D875B5E62FD26 /* SDAnimatedImageView+WebCache.m */; };
-		20A7FC9528102FD106B01E21B783BC81 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
-		22AFEAD54CBCA6FD16CBCF9D8D3F4649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
-		245B571021F05DA0CBFD9FEDFBAF42F5 /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49A98A17A44C6469A268318A41BEED3 /* BankInfo.swift */; };
+		22AFEAD54CBCA6FD16CBCF9D8D3F4649 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		26AFA2DD186558E28CCAC2EF248B4E56 /* UIButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 99822DB99874840016A7E1452B54D9EB /* UIButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26D9C9FFCDC18618DC92736439FAD58A /* SDImageCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = C60EAF02CF405F1E13C16E46249DCB3F /* SDImageCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		273ACF8CDCA537DB5769A55F35195A03 /* SDImageCodersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E2D52318E06F987A02D79987353AC5 /* SDImageCodersManager.m */; };
 		274968CAE2ADC9D4A4FEBCF184148C6D /* SDImageTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = FAF09349BC4BCA1E0FAAEE8F138FF8EC /* SDImageTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		27D3DC8DE867E6C36D9409C6A8D7F671 /* Pods-demo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C5DC5ABE867DFAFEEFE65EB904EC044 /* Pods-demo-dummy.m */; };
-		28EA17CD128625BA6D376C9E1BA2770E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
+		28EA17CD128625BA6D376C9E1BA2770E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		28FB7D2AE173D7A32B3866FC2CBF587B /* AlamofireObjectMapper-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40C35435DDAD9E8A548350F7A8B89C03 /* AlamofireObjectMapper-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		29A34FBE9DC82BF012AC83585F4530E0 /* SDInternalMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FB7DB4F042AD79204EA427FD9B7D3C /* SDInternalMacros.m */; };
 		29C11EBD5BA1F4AB95FE233E96AFA3E6 /* SDWebImageDownloaderRequestModifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A2074965D70569EAF0F524ABD5A244A /* SDWebImageDownloaderRequestModifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2B6D8F87DD7A8C170D60C260BCDB2ABF /* BankInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669E8DD05AD03A729D1040E4A3E92349 /* BankInfoResponse.swift */; };
-		31AD17742EAC6FF7BB17A06137D9B10A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B61D3D4AAF5BC7A2ED31AF96E83F1BC /* Card.swift */; };
+		29C3F838B8953F0E13AF8F16C40D3845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80454FFFD923AADCD0046BAF61EBBE48 /* Assets.xcassets */; };
 		3539E3E01A8DE6636BE39797BBBD13E4 /* SDImageIOCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3719FC7937D414FC2FF62BB34F859A7D /* SDImageIOCoder.m */; };
 		354ED7FE2CF541313426DDB96EC41B5D /* SDWebImageDownloaderOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = CD325AE6AEE074C848E48BC0D31522ED /* SDWebImageDownloaderOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		35D7349FA198504825E3602C4941EF4D /* UIImage+Transform.h in Headers */ = {isa = PBXBuildFile; fileRef = F4D0F5AD39E4F2B793AAD6B78948C5C8 /* UIImage+Transform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3678DF7B6539D273A7C1427C9B3A844E /* UIColor+SDHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = D37604EBDFD60B1898DDEECB3E755DBC /* UIColor+SDHexString.m */; };
 		3712621D4AB06646D591BFB56FE46BBD /* SDWebImageDownloaderDecryptor.m in Sources */ = {isa = PBXBuildFile; fileRef = CC994BEBE6E959157ED74B584DDF74D7 /* SDWebImageDownloaderDecryptor.m */; };
-		37AFCE562667537137948A79ECFF94A1 /* Cloudpayments-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE4823D13D0B7C77EF0D29C1A4185292 /* Cloudpayments-dummy.m */; };
+		3762B836315890B0C0FFFBCBD89FBA41 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2165B33982B523B54F764A404337716 /* UIViewController+Extensions.swift */; };
 		388578341C510BD6E0323A526C8D171D /* SDWebImageTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 1607004A23361AAC8971D0F775F4E929 /* SDWebImageTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		38BF4EEFE885A6E3BA892C96F24F8723 /* IntegerOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE6B29A21BA187129660CE52FA4062F /* IntegerOperators.swift */; };
-		395860861B1BDD5E0B1C40795378C916 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4FDFBAD0D35899C60B7EF92DE9C255 /* Currency.swift */; };
 		3A61543E124318E17FF811C66C7FE8F1 /* SDImageCoderHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4521EE9C95A43FD3DB268BB1FF3C9106 /* SDImageCoderHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B3AB649C1F38E3F9EEDE1ED237E43FC /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3826685008D527E18FE5EAF92BDB6AF0 /* String+Extensions.swift */; };
 		3D375A85D8162BC44D045F53781D006A /* SDWeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A7AF6BA99438205A3621A78A9253F22 /* SDWeakProxy.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		3E344FED4F81EEA697CB210FEAC27659 /* SDImageAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5968A9811A6000C294DE946FDB65A16E /* SDImageAssetManager.m */; };
 		4082513A35C682F2193D002C80F72B79 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6A86BA526AF0B0700D85F7C123EE82 /* Result+Alamofire.swift */; };
 		40A5F8B62507885E01DB3FE0EDE93706 /* UIView+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F831EF08DF7889909FE0D6EC5718CA3 /* UIView+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40C1238DC5744C26FB96C3391431639A /* SDImageHEICCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4D7E7F1546327FD531DD1B2F842393 /* SDImageHEICCoder.m */; };
+		42BD8A4F90A76ED2E83938EB5DD8A664 /* PaymentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09E7BA64F1CAFAFAF0AE935E51FFC2C6 /* PaymentForm.swift */; };
 		42CDB5C986C78BBC8E5C0185F746CABF /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E2C5E71CF5863FBA1355E205D7FFE /* SessionDelegate.swift */; };
-		437D5ADAC69D0A446B7C835A8B9C40B4 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECE8504C9BBD28B1A09871C5FF761EC /* Transaction.swift */; };
-		43D2607D4FC1D4991DB364E719510F1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1A389D795BCED63AE82C21F4B88478 /* Alamofire.framework */; };
+		43D2607D4FC1D4991DB364E719510F1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E230E084953570B411311447894EAF /* Alamofire.framework */; };
 		44127C4B989C9CC6A90D78B66A929A5E /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8807452AD74587C59EA809D37CBD6980 /* AlamofireExtended.swift */; };
 		44B4F51B018F0039263D2DD796E2F467 /* SDWebImageOptionsProcessor.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA0B5A118E155CBD57C0A4212609C0A /* SDWebImageOptionsProcessor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46B5D52708CC548AA3BB4FE2F1DE2403 /* BankInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC97047F643C1F7864AE288C6494772 /* BankInfoResponse.swift */; };
 		482390939D521EDC7E4197436C13C005 /* SDMemoryCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E44B9E892B38F20069D05F2E92E2AD6 /* SDMemoryCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48D97BE7D5CAED273BD2341C239CC934 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAE33D1DE26559065AF52C5A1BAF3647 /* RequestTaskMap.swift */; };
+		48E88FDB663FB2707138F097F7286996 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE1682D64C8D52A0DA7594E51655C8F /* UIImage+Assets.swift */; };
 		494F5E5284E2F6D0FA92F07ADF5FB6AC /* SDFileAttributeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7728071EFC1061C1E4D769E42574F9B1 /* SDFileAttributeHelper.m */; };
-		4C67A1A725E5A30F849B6CA2DF543447 /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8566C540E43119B007579F38BA1F4C28 /* ThreeDsData.swift */; };
+		49BFC762E89164CE5111ED4E2F0F8E9D /* PaymentCardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37F9F353208702F021DE11BD2E73182 /* PaymentCardScanner.swift */; };
 		4C6D5D1CC894D8853ACBF2FB5FE40EC5 /* EnumTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8EC08B8D4E5C8EDAB1841EDDC143A6 /* EnumTransform.swift */; };
 		4D3D9AA5E2ABCB9F87CD0A59AE536CC6 /* SDImageIOAnimatedCoderInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CB9DD27ECA1EDDD698D1A5F635AD2E6 /* SDImageIOAnimatedCoderInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4E928D91F861358D6A4D0740CD26B415 /* ThreeDsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D56175C89AC54407E0997B485E6F839 /* ThreeDsResponse.swift */; };
-		4F3F3C3CBFFFE46CFE82422C0623BECB /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6B439306A5C15405F341CD398E76F33 /* TransactionResponse.swift */; };
 		4F9B8F367350FE6F02486D6B0AFC0D0C /* UIImage+ForceDecode.h in Headers */ = {isa = PBXBuildFile; fileRef = 78689EE87ABFADC8770FADD16514A0E1 /* UIImage+ForceDecode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		502D148FB284EE012260A1AA96674EEE /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE75316D66E0C139112E795D4CD8491 /* SDWebImageManager.m */; };
 		536AE5E0C47A0C546EF96C64C2BC819A /* AlamofireObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 618996CCD360DD3660EE20BC1D21B44E /* AlamofireObjectMapper-dummy.m */; };
 		563B9544C22BA4447DF43156531D5743 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CF90E1655A697D539119B362FFA329A8 /* SDImageCache.m */; };
 		565FFF620CE785D5F264F0C35121D578 /* SDImageLoadersManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F390BF773D902EAB485CDCE30EFDCE68 /* SDImageLoadersManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56EC8ED1535DAB987F3D2B71D4C05773 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C372293A219320437A018D3C6E37E115 /* HTTPHeaders.swift */; };
-		577241AC0BF136FA9762AE8B93E58480 /* PaymentForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98B058D582E01FDEA4E8328FDCDF51C /* PaymentForm.swift */; };
+		5879F553E3C288BE92B86C3E89264773 /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5F378B9006C351B6E8032CA535814A /* PaymentForm.storyboard */; };
+		5924B29696716F618382F2C2533C453A /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FB5723E42D10DACA8B49640B606225 /* Transaction.swift */; };
 		5C4A0685B5A201436AB52EF25829B333 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0CE59B28333ED2FD1A0B9C89B320C94 /* MultipartFormData.swift */; };
-		5CBBE504FFFBD5537FD6B1D6B0D12B52 /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CF5E2197E9BEA9F59517AE5382AF73 /* PaymentCardForm.swift */; };
 		5D12235D061AEE7459279AAF8C348DFE /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A0E9FCB48F8DC11F91EDFDCAB676A /* URLEncodedFormEncoder.swift */; };
 		5D61C8ED0DDCC9F8B576B6514B19EE50 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5C4422DF3AE7702BEE6F36763393A /* ParameterEncoder.swift */; };
 		5E0D570A78EF2D89B442D62B266B275E /* SDImageLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = D83FF2348C1AA932E69D7584AB28FD3C /* SDImageLoader.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5F24BA7A0627FCAEF24C81A82E9DCF5C /* AlamofireObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 719FA8CB752E64CB5CFA589AE8CD5450 /* AlamofireObjectMapper.framework */; };
+		5E427FE1BF4266F3E4B1D7826892FE6D /* PaymentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83BB63D3AAC0A2F278A38F2678ECDB2 /* PaymentDelegate.swift */; };
 		6004AF2B6D5942DBF1D22646B5061E57 /* UIImage+Metadata.m in Sources */ = {isa = PBXBuildFile; fileRef = 730554983FAC8F4B5B70938BA9620C00 /* UIImage+Metadata.m */; };
 		600983DEB7205EC72FAB41DD91F1D605 /* SDMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 547B3B0E5F922DBEA4F861242FA55472 /* SDMemoryCache.m */; };
 		606CF4C030B87CD04100E49A3B962C2B /* SDWebImageDownloaderRequestModifier.m in Sources */ = {isa = PBXBuildFile; fileRef = D857324E206DE68D0EE52A094D2FDDA8 /* SDWebImageDownloaderRequestModifier.m */; };
-		6165073BE4BEB1CDC910804B0BACDD93 /* Cloudpayments-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C644D7624272FBA25034D4881399BFA /* Cloudpayments-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6191E2144BB480A4DDF3A4B59487AFA3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C5065D171FF3630A4A24040D74D13AD /* String+Extensions.swift */; };
 		61CFA5456E6B3B612AFBE85C6C9D4D10 /* HexColorTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B823D5343CB5AA3BAC3D90DCA6A2C1C /* HexColorTransform.swift */; };
+		63D55B9A2388C387129AC7435FF49798 /* Cloudpayments-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 85A989ED199FFB591E2DACBE89FA8E17 /* Cloudpayments-dummy.m */; };
 		6426334186986F3FB6225876EB8A90DA /* SDImageGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DB2D8F0B6A5D123844E959EDD49FB7 /* SDImageGraphics.m */; };
 		64DAB91A8FA2EA338E04690A514F7AE0 /* SDImageAWebPCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0884E379C268521BA7030EAF8EB89E4E /* SDImageAWebPCoder.m */; };
+		6562301C8B5B3402A8408F02913962B4 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D51CC4A5C7ACCE316B1A56DF9F1D4 /* HTTP.swift */; };
 		660751AEAE8DBBF4FBEC77223AC2C69C /* SDWebImageDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = C2A5EC18A122EF24D3CE589B49102D19 /* SDWebImageDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6670CE21A07A8FE1D74FAD1F5103A93B /* SDImageCachesManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B8D277EA2789C46C53D6B9CDAC4B95C9 /* SDImageCachesManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68933E1C468033115C50C838E7634A2B /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24DF58898C2FC6F691FF9449BCB710C9 /* CloudpaymentsError.swift */; };
+		6888446D933E25C3B60DA7D85953DEF8 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F862CDDFD55736EA7ED24497256C085F /* UIColor+Assets.swift */; };
 		694569BA69DB36D7AFF27367F5ED3A36 /* UIImage+Metadata.h in Headers */ = {isa = PBXBuildFile; fileRef = 37F9807BE09DD1AC4CC74EC29A0E9F98 /* UIImage+Metadata.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		69ACE4EEE5A8C1C618B22CC1F7B8EF01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5A3F637C04AB8004102D3A85897B19 /* Session.swift */; };
 		6A22C46CB1EDE471794D9AB2AC10327F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AF5758899C794BF1E02C2AF71429804 /* Request.swift */; };
-		6A4BA5F71C72D5EEB72C6350E661A6B1 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A997C53653E1DFC32CE838235009A999 /* PaymentData.swift */; };
+		6AB91E7681B66763392443628E7DF595 /* TransactionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7062251B2AA1E69E31B222DE3F0899D /* TransactionResponse.swift */; };
 		6AC5D2781167F9081FBA570FC8B89C90 /* SDAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7175656AFEE0CB29BD033486CB882450 /* SDAnimatedImage.m */; };
-		6D556300C5125C14B88B9B14A4BD8B34 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1A389D795BCED63AE82C21F4B88478 /* Alamofire.framework */; };
+		6AC74E20C6827C9AD9A37F41BB36F310 /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EE2E0DF528BCDB14A29EEF869E9171C /* PaymentData.swift */; };
 		6D807F4E3245C11DF14F39F681BAEA23 /* SDAssociatedObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C3ED1F1E5EA40F3D2C1F1D294BA49980 /* SDAssociatedObject.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		6E8F129294E44619FA2674150EBE336A /* NSBezierPath+SDRoundedCorners.m in Sources */ = {isa = PBXBuildFile; fileRef = 154DE04137E08D8E15C973FC1B812BCF /* NSBezierPath+SDRoundedCorners.m */; };
 		6F27684AC57716BA63A3C106BF1C6A5D /* SDWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA01804F35699834EECC794328D85AE /* SDWeakProxy.m */; };
 		6F3B1690F53D8DD5B00A062BE5FAE923 /* UIImage+ForceDecode.m in Sources */ = {isa = PBXBuildFile; fileRef = B340E97FEBC9390D333EC2D29C4180A9 /* UIImage+ForceDecode.m */; };
+		6F9383F8006169C3C1B98AF2318839BE /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56201BAD88AD6D4841271DCBD614553E /* ThreeDsData.swift */; };
+		6FB1832A2C335843314163D46E87B703 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D130939791A217A034B30D4B3CD5C239 /* UIView+Constraints.swift */; };
 		70517C3BAC2D6614347DEAC15299EB84 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0719161F43B4E245827C541026B5AC19 /* URLConvertible+URLRequestConvertible.swift */; };
 		710B099BD183D22DC6138DEF0D82F478 /* NSData+ImageContentType.h in Headers */ = {isa = PBXBuildFile; fileRef = 1740B15D79A6852D58D2E84EBCEB0CA0 /* NSData+ImageContentType.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71C95FB341142F6C81587F4A60DC189F /* SDAsyncBlockOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 09ACF1629031328C08ACD0854A32C765 /* SDAsyncBlockOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		72A80124A9E9F0F28B5949657D31E328 /* UIView+WebCacheOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 90EB1BE4B324A671373AC8941B0D40B5 /* UIView+WebCacheOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		72C0C431B0F8346BAD2882777BAEC5BE /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03DE83053108F4B293C76A004DC91B /* ThreeDsProcessor.swift */; };
 		72E902B0D6D593657CC38405EE1118A1 /* TransformOf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BEDFC780254527E69CE1D59CC7EDFFE /* TransformOf.swift */; };
 		730F02CFFBD74BD46562276A09B922B0 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = C7DF25EB05798BBFF7B174E150F826AE /* SDWebImageDownloader.m */; };
 		739D94DB13626873E4F91055ADFF76A5 /* SDFileAttributeHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 66F4A794EC3B0D5D4BC6A3634D48D5B1 /* SDFileAttributeHelper.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		74254B9CA52B587447BF81A96DD79424 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF996A5FD7B65CF3153FA500D6968ED0 /* ObjectMapper.framework */; };
 		7523FC5C348F565FA5A2C8ADBAB3CEA0 /* SDImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 69A9CFF3023AD113CDA6DD8226FC49EA /* SDImageLoader.m */; };
-		76934424E79FF18889359FC66C61C459 /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FB3039A7502DEABF8E7BD2E73A98C61 /* PaymentOptionsForm.swift */; };
 		7771562E8212237F9D71DFA61B548766 /* SDDeviceHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D90863F512DD33DADB882B07A2570D3 /* SDDeviceHelper.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		78EAF5EB18481BBCC1FE7DB38E929746 /* NSButton+WebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 4AA68370985960E2617ECF27A5D10F2C /* NSButton+WebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		78EBAE4A4F7FDA568D8CEE83E8B03F0D /* SDWebImageDownloaderConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B03A4FF9091E63BF2329CBA13F655BA /* SDWebImageDownloaderConfig.m */; };
 		7958AE8C4352219F24537DC524916EF1 /* SDImageCachesManagerOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 561AF64CAEFB306454F40EE865252A8F /* SDImageCachesManagerOperation.m */; };
 		7AA1A5A48A4182B11CFA792714C82631 /* TransformType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B367D523BE929254664AD2471620B52 /* TransformType.swift */; };
 		7BFE56BB8AC3DC97C988565B3AE3C571 /* SDWebImageOptionsProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B10F5A01F653916CBB98776B68CF32B /* SDWebImageOptionsProcessor.m */; };
-		7C788D437046C20E18A52E2A26993C72 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4A0492540F90958022FBD74BCAEE62 /* TextField.swift */; };
+		7CB49CB562946BB7C99CEED0F3F85D19 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D86A0AED66170DB917456BC5307AC2BA /* BaseViewController.swift */; };
 		7CF8362BA31492053F5CB165637AE117 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E85BF30F4A1209212C96C0323F1C5B /* NetworkReachabilityManager.swift */; };
 		7D2961DDAF48D719A4A73A3B8C046A8F /* SDImageCacheDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 3668E0B36E19A32B978EBBE454C06B9D /* SDImageCacheDefine.m */; };
 		7E98F6C822C3BC874C2BBDAA21EDE6EC /* SDImageCacheConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 9BC74D81559113DD7021F76B61B5A87A /* SDImageCacheConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -161,6 +158,7 @@
 		84B3C925CCA883C89A4FAF942D952371 /* SDWebImageCompat.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B07A1CEC4A5D0FB740BE3F432CEADA7 /* SDWebImageCompat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		85FB50C8A79A473625B9BB664BCCEBBE /* SDDisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 922232EC61092DA940932B571F1BBA3C /* SDDisplayLink.m */; };
 		870F8CC125713185231805CA5F1A3005 /* SDAnimatedImageView.h in Headers */ = {isa = PBXBuildFile; fileRef = E6B776C3DE1BEE4A35EE31B003DF1C4A /* SDAnimatedImageView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A00435ED8AADCB4AC0E549659FF04FF /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00CE4AD3A377405D4C656B8CB5BB23B /* Card.swift */; };
 		8B5758DF4B13538BD14B5923B2FCF70A /* NSBezierPath+SDRoundedCorners.h in Headers */ = {isa = PBXBuildFile; fileRef = 562BAAE54AF2E274AD8252995BCF6DBC /* NSBezierPath+SDRoundedCorners.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8D34717C107EA741BEE9869A20622AFE /* SDImageTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A44909684692C941A1D803D11C0F09B /* SDImageTransformer.m */; };
 		8D73F702A995711B09C3AE6315D3AFFD /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E03F5B51C58DF5BFB729B96195D03146 /* UIImageView+HighlightedWebCache.m */; };
@@ -168,14 +166,18 @@
 		919698B67A879DF4B1D27ADEC113E4EB /* UIImage+ExtendedCacheData.h in Headers */ = {isa = PBXBuildFile; fileRef = A7B05B02E5C38D0F7C3219E4D8A91DEF /* UIImage+ExtendedCacheData.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		91BA956F3C83DD73EDC9E6842FAFA5C1 /* NSDecimalNumberTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335945DAAF8709CE4BB763DB5B95603F /* NSDecimalNumberTransform.swift */; };
 		91CB272CC3D7C0D5C1442BCFBC4F5048 /* NSButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = E07F498BF0A6BD1F6D4F9B28D992F8C7 /* NSButton+WebCache.m */; };
+		91F0EF45AAE851B1E120B4C78EF93B0B /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD41655ED20E3482EB63FA7FE04B8B9 /* CloudpaymentsError.swift */; };
 		92811AC5CD9A5004116AE43C4E8FD955 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0456C65D364207BCAE240C45D26005DB /* OperationQueue+Alamofire.swift */; };
 		934A350851291541BFD22A75C146A6F1 /* SDImageGIFCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 623828193B1429475D08FEFF80AC4A5D /* SDImageGIFCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		937FC411CB6833D68407CFC5F97CE68D /* TransformOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C095D87C5202E5BF15AF95B95BCC1E5 /* TransformOperators.swift */; };
 		9504088CAE8E4620226B40481A679F44 /* SDWebImageOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A58804D2F0F9B8539216C74C3ED49E25 /* SDWebImageOperation.m */; };
 		970A6BB5BF8D5909D1BF00E3FD0BDDE8 /* SDImageCacheDefine.h in Headers */ = {isa = PBXBuildFile; fileRef = F22B04E25AF7C49E1507E948A415A4C0 /* SDImageCacheDefine.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7CDA5B025467BBB86597E6D11F5EBB2 /* CFNetwork.framework */; };
+		97A168DFB6DB61770CE2DBF4FD39AA8D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D84E94729997058CA8245425011B5C /* CFNetwork.framework */; };
 		9A7902828F49BD78A454AA95FF89DAC7 /* UIImage+GIF.h in Headers */ = {isa = PBXBuildFile; fileRef = F78A5366FFE85012BDF074B9B7BA7365 /* UIImage+GIF.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9BFF63FFEA484FC67C23A671B6E5153B /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 6347A150B7EA4E88511283E128FC95E4 /* UIImage+GIF.m */; };
+		9C062A125F41DBB4776A0F523C37AD00 /* FormPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88D415A582A9B1E3F2074F4319F43A6 /* FormPresentationController.swift */; };
+		9C7CD763C03C7C555B951C0C1248C4BF /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6578E3C91648C9579F1AA0D79A359350 /* PaymentCardForm.swift */; };
+		9D1836B05C7315B5C531E1C0897A1376 /* RSAUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10199BC069C814656B6993922C7C899D /* RSAUtils.swift */; };
 		9D227F3FB6A74CB6D35300133142E7DF /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 69FEAC8D562A3D8A71DA45438AC1F635 /* UIView+WebCache.m */; };
 		9FFBF180E58F87C33F09ECAA10CA6627 /* SDImageLoadersManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD39DE138FDBEA7216791A0E2277B50D /* SDImageLoadersManager.m */; };
 		A128F49AA0C69EC677B7CBE89E876B42 /* SDWebImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D2BB728D9868D18A4169DFC2BB04AF1 /* SDWebImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -186,11 +188,9 @@
 		A3957E12BFFD41402737EC9CB044D96E /* SDImageCachesManagerOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D87B155D8AE9A1461808597EF5B1756 /* SDImageCachesManagerOperation.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A5AA0CB9BFE983E769FEBB95186787A4 /* MapError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8D29262535F11FCB0B35510A3D9B4E /* MapError.swift */; };
 		A68986E13F5E041F5BA4A6AA4D5B9455 /* CustomDateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = A490A73812060B6508630AB210BE15A6 /* CustomDateFormatTransform.swift */; };
-		A70BCFD5A19701D17A0BE725454A24E7 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1CF08A3E7B5B6E184E9BC2A769E8E4 /* Button.swift */; };
 		A7164BC1D4458DF39F884C4FABD3CBAB /* UIImageView+HighlightedWebCache.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC1C6115CAEC00A3DBADDDBC5135F70 /* UIImageView+HighlightedWebCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A735411AAB17482B0DF14E902AF6DD09 /* PaymentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD544E8EDB8AA2F360405D609FB7502 /* PaymentConfiguration.swift */; };
 		A80404D8B63B127D33C6EE5FDCF9E22A /* SDImageGIFCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = A263381E0612125B4E3595C8476E722E /* SDImageGIFCoder.m */; };
-		A84E9D6D28CFF00C7BB20CB2E59F2B49 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79553F8F00C49E0E56C479FA17F6E25 /* BaseViewController.swift */; };
+		A832E7D7FB8D23A24DF4562A28405E26 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67AD2A6B3E0B4DC97B05543B5C185693 /* TextField.swift */; };
 		A89A92F1A42E55D16D68F8C61956B738 /* SDImageAPNGCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 15D597C4809D97903BFF0502195F4A74 /* SDImageAPNGCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A8C8A2C92F70DFC3E67E1CCB0A5FBDA3 /* SDDeviceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CD8F08C7DF9B791E4141E3B8654A63 /* SDDeviceHelper.m */; };
 		AAABA6909E7E218399B8D18C8D6E5233 /* SDWebImageOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = BA4E1C8D38CF760BE37CB8E3DB3152CC /* SDWebImageOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -204,26 +204,27 @@
 		AE9A894C45B1F40A0585B51D241DD2A6 /* SDInternalMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA7499A0A9898B00991577F3D5A1525 /* SDInternalMacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		AF855A5EDCAEFF0EFCD1F6AC49D664B5 /* SDAsyncBlockOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 71ED99D6D5663EEAE83866ADD2103578 /* SDAsyncBlockOperation.m */; };
 		AF92602937CA016548022C600B8CDC16 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAC2E29DC82850198CF7475936D5F69 /* URLSessionConfiguration+Alamofire.swift */; };
+		B09A81018D47AC4740934C2B22847E8B /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01AD6CE1C21D43FBFDCB359C6E3136A5 /* Currency.swift */; };
 		B13000184102BC002BDF251521D52FBE /* SDmetamacros.h in Headers */ = {isa = PBXBuildFile; fileRef = D5E37863A6CA8F8322DEEA6CFA9E7DE2 /* SDmetamacros.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B1C58F6CED7B3E45170711D9ADF878AF /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EF7B15CFD1AA5E6F4F53A26016E4F3A0 /* Alamofire-dummy.m */; };
 		B1DB99789806C0441B342B5E9DC53B51 /* SDImageCoderHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = EF9EBF0F6C53EFEAF0B3E2AF3C12B23A /* SDImageCoderHelper.m */; };
 		B23E9A5CDA31534491226F4C2EE8F8E6 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0B14901CD0AA7F9A89A8625DBBAD9B7 /* HTTPMethod.swift */; };
 		B28A92AA7D5CE9A97C4AABBFADA59EDD /* DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2E8964A8C232642CB3C57B26BEBA04 /* DateTransform.swift */; };
 		B3750289C10AD65DFE5F79C135CDC02D /* SDImageFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 606424374E842C2391FA9A26D80E2EC5 /* SDImageFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4762756F64C661592645D32D87ECA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
+		B4762756F64C661592645D32D87ECA8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		B5100B423F78B1CF2EA5B47DB9D503D5 /* SDWebImageDownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C7B1BDCCEE8530EFBA51274B4EB80473 /* SDWebImageDownloaderOperation.m */; };
 		B5D6F3E34540D26973E78445BC8667CF /* SDImageHEICCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 927E5C1A36E60F06A3199E86ACC3482B /* SDImageHEICCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B74F4E473F8A8EE8922DE009ADBA3AB0 /* SDAnimatedImageRep.h in Headers */ = {isa = PBXBuildFile; fileRef = 1FF1B49C64A19A46F29A10CAE6C4950D /* SDAnimatedImageRep.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B788B3354CCEBE56DFDB963CAFD7F6C2 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 246EA4735DBF7B62AB6D131450A9E0BB /* Alamofire.swift */; };
 		B7E17DB82CEFFEE5D3EF0327A919FC57 /* SDGraphicsImageRenderer.h in Headers */ = {isa = PBXBuildFile; fileRef = AC8EBECEF07FB66B5FAB4B2CDD4A1C4A /* SDGraphicsImageRenderer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B964F75E0BEC223C3DDD199C6342AE0F /* SDWebImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C494385973A3B75C9409FBFD8C95795 /* SDWebImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BCF7940F4D473EF84062DB448F69790D /* PaymentCardScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C9599DFA29D8D33EADF645DDFEA167 /* PaymentCardScanner.swift */; };
+		BD541CB16C496C0BC6C521E1ABE9AC82 /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4D5EB5F438D03419FA24E7990974996 /* PaymentOptionsForm.swift */; };
 		BD8E2EDAA9631CEF3CDEECF1254AAA23 /* SDImageCachesManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FEE5E24D2AF60B0064023B2E2038D00 /* SDImageCachesManager.m */; };
-		BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */; };
-		C00081A9054DC24872E54F5F0FEC6650 /* CloudpaymentsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA60D55B62A45E0F23E4AF70B67EE71 /* CloudpaymentsApi.swift */; };
+		BE82AE980F8C7EE28A6448959194F93A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		C0B393B80CD971349123D9F02DFDD554 /* ImmutableMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56290DAB605896F56F9FA68AD4BA899E /* ImmutableMappable.swift */; };
 		C237BF7CC4251B70879620EDB8ECB238 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 913EA9258E68C24F36F98AE1F77BFCF5 /* UIImageView+WebCache.m */; };
 		C311E505311BAEA04C896AD42725298D /* SDWebImageDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = BEAE61CB17E1F69ADE570001B3D2466F /* SDWebImageDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C5C60040EF2D2F4AFF21EF920BC7EFAD /* BankInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508D69024F0875B321E10C7074E44C39 /* BankInfo.swift */; };
 		C5E75553E150D75C05DDFF6A1F937B2D /* SDImageIOAnimatedCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FF036564C59E260DFFA92269B744EBA /* SDImageIOAnimatedCoder.m */; };
 		C64AF152F7928CDB59385528DB65FE19 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070DF2FF3AAA104081054F64F88FF35 /* RedirectHandler.swift */; };
 		C6FF07461DB95FD96B47723C123B36BB /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F7669F8F0885D0E00A771D259025BA /* NSData+ImageContentType.m */; };
@@ -236,45 +237,45 @@
 		CFD70C4512BE496D2CFA66C1F07D0743 /* ObjectMapper-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B739E328DDF98690E390A1295189176E /* ObjectMapper-dummy.m */; };
 		D178E7A915C804DC54F57BE6050E2CFE /* SDWebImageTransitionInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A5BAAA46C4539C8087B66A7D6D976E9 /* SDWebImageTransitionInternal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		D298E3A34E428388DEF4B1708F23BE55 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC25D71C665F4DA27CC71BEA92519B26 /* Operators.swift */; };
-		D4FC949EF0B8380902C529FB5DC7EE16 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEE6D9C4B3DBE281C8B61F8CFFA7306 /* UIViewController+Extensions.swift */; };
 		D6B2983389480F48F27A0704EEB5DC81 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B89F47FFD58AE2C01AE2919BF4A538 /* RetryPolicy.swift */; };
 		D77545145A5D9E4053D6A121CED76362 /* ToJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A87E71777F1BCF597BA7E3D66A760A /* ToJSON.swift */; };
 		D91024E2275D2B62BB8CDFAADDA9F999 /* SDAnimatedImagePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FC561AEC5317A688FF8DBEC35B45FB85 /* SDAnimatedImagePlayer.m */; };
+		D98DF4D5392656BB120073F31C25ED4E /* PaymentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B7C92EC74C9F41B1E8BCE7D727456 /* PaymentConfiguration.swift */; };
 		DA6895F97E7A188A1086A604D704181B /* SDWebImageIndicator.h in Headers */ = {isa = PBXBuildFile; fileRef = E39B4B01740A3E7BBBC61F8865C433CD /* SDWebImageIndicator.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCD1114CE31161272F51CBD11819D7A0 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53459AEE5A3D76DB7FC808E4115C69B /* UIView+Constraints.swift */; };
+		DBF396A9C9369823D181B02D5301D9B5 /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D91FE15AFDDD9F478B8BC4702CFCAE /* DataRequest+Extension.swift */; };
+		DD5609D1B9E37E7856C0AAA60966E8CF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */; };
 		DDABCEDA1455A7213CC6411BEE294CCB /* SDAnimatedImagePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7ECBB57F8850FA87DB7F1E65DCA47AE1 /* SDAnimatedImagePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE6DF3E3B58EC9ABB850F3917F06D77B /* Cloudpayments.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BD0EB6F89EAD792AB5F69E3263B2FFDF /* Cloudpayments.bundle */; };
+		DE7F1BF311913080327BC88DD693C4F6 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6F7314B294E545AD4454050BED7ACD4 /* Button.swift */; };
 		DF32AA01A71E3AAAF2F476873A472838 /* SDDisplayLink.h in Headers */ = {isa = PBXBuildFile; fileRef = E1863CE9B016FB24520834838988480C /* SDDisplayLink.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		E07BD425C4EA9ADF15DDFCDB10D0B2FB /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D7592789E229D7E120CDDBE1C37AFDA /* MultipartUpload.swift */; };
 		E0C1244422C284ED4A6CA575318EE275 /* ISO8601DateTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11E78FF75ACAA3E6AC716D9F3CAD7B17 /* ISO8601DateTransform.swift */; };
+		E28A9F972AD891C78D38EA5B6B8E5CD5 /* CloudpaymentsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CAA3BB2530E9742391F9C6A1F082E7 /* CloudpaymentsApi.swift */; };
 		E3C7DC809034DACD9D1FF1856DAD3ED2 /* SDAnimatedImageRep.m in Sources */ = {isa = PBXBuildFile; fileRef = CC2B58B645771B7A36246841EACCD508 /* SDAnimatedImageRep.m */; };
 		E3F51CB54A45249F79A9C49F02039CC5 /* SDImageCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 58BDFBEB5E919CAD12288D423232E04F /* SDImageCache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4E12208D5246E64B7E6CCAE987ADB03 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B63AAA5D442EA656B7B18FB4EAB5BC /* URLRequest+Alamofire.swift */; };
 		E4E1FA42EF47413EBEB0D1E5827C21E5 /* SDGraphicsImageRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9473FFDEE21EB62515C0CD0572470F0C /* SDGraphicsImageRenderer.m */; };
 		E57482DCBAB73E4AC9A8EB0816998D8F /* SDAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48A0A800854E46B42B33102B5AE73420 /* SDAnimatedImageView.m */; };
-		E5CE4316087C8034FE9880DBB67FB63C /* PKPayment+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFCD1855C0684DD7A8E955D673197299 /* PKPayment+Convert.swift */; };
-		E82957D6EA1315C2EADA38892E962169 /* UIImage+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A531275833239BB7C09D7863A6C6B9 /* UIImage+Assets.swift */; };
 		E9A5AC2F471699CCA516952A5FEB990B /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61994A22834EED920484148E1FB06FC2 /* DispatchQueue+Alamofire.swift */; };
+		EC4769385C04F50BD4E95E05171919A8 /* ThreeDsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392A74DBC61DAFAF2CF453E4D6C33F0B /* ThreeDsResponse.swift */; };
 		EE97F345DCB9A549EF71232B8B19C421 /* DictionaryTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F622781969B4BC63D1AB66BF3C4CBB5 /* DictionaryTransform.swift */; };
-		EEBAA7C0E7F5FAD211422DA9EC1651B1 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = D11FE5694CC752DEE6388E33973BCF87 /* UIColor+Assets.swift */; };
 		F00615AF2747EBC80993096F43808951 /* SDImageFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = FA0A1ED8064CB717A17A16FD8FED4568 /* SDImageFrame.m */; };
-		F189C3AEF39D661EF1E400A659BFB67C /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBD5BF8EE2DD702DAA62A13A9A7C642 /* Bundle+Extenstions.swift */; };
 		F1D31101E2475D6199388A2B5C96841D /* UIImage+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = B8F0BB3D400CCF5F3F3D8E90FD9A278C /* UIImage+Transform.m */; };
 		F2D4806385A7E84C6FFCFEB93C089B0F /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E0A98FA26FE42C3C12740491FF9C04 /* Mapper.swift */; };
 		F3928A33E3BA8E361B7287528F88ABB4 /* UIImage+ExtendedCacheData.m in Sources */ = {isa = PBXBuildFile; fileRef = DA0E7146E9CB5D6F13B308F47EC87F0A /* UIImage+ExtendedCacheData.m */; };
-		F3C822A5B0B643213C171930EF0FD33C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35C4175FEAFFE4E36FAEB169F38A741B /* ObjectMapper.framework */; };
+		F3C822A5B0B643213C171930EF0FD33C /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF996A5FD7B65CF3153FA500D6968ED0 /* ObjectMapper.framework */; };
 		F3F1E68D641B571814463C6224C4EBD5 /* SDWebImageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EFB48D0FE72B182970663D2BC81E0BFB /* SDWebImageManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F5B2194F8954EB26405AC5EE15D4B673 /* SDImageAssetManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B22D4C3E97051926EA7779EA834FFB72 /* SDImageAssetManager.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		F682200A21B02BD4B36ACCD9184E00AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17E230E084953570B411311447894EAF /* Alamofire.framework */; };
 		F71789DC91A75033EFB79DB828676451 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFFE7C2BB64F694A4DDC5EA76016487 /* Response.swift */; };
 		F7425341829DF6D4D5D48298E7001981 /* UIImage+MultiFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B76D23866A8BD7C260AD7541EF0F3E /* UIImage+MultiFormat.m */; };
 		F8C32F37DC56462D29CA113B078ADF99 /* SDImageGraphics.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F164CAF4B72AEA74D73A3AC567BD170 /* SDImageGraphics.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F8FF55BA138D3FC45AF24588E145DD53 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF41482EF7F21EAFD2150D79EBD92EA /* HTTP.swift */; };
 		F9B9D0B4A16EC1CADBCFE8533E849AF6 /* SDWebImageTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 654DF7B3E721089A2D9A229A1E2679B6 /* SDWebImageTransition.m */; };
-		F9E94EF1012CBA17F205F37C55BF1E4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D14776806370A8DFE7CE37B734D8DF3E /* Assets.xcassets */; };
-		FB8E96DC5341EEBC09B3BAA343E26C36 /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FBA093F3453DA4B54FEA8E33425D659 /* PaymentForm.storyboard */; };
-		FBA42108A41F6C9B205CA1D74F74E29C /* FormPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF0B4739BB3F823425CE8A0942D6F745 /* FormPresentationController.swift */; };
+		FCA0B13D8875D72311DB4EEBDA6D833B /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A86D329C0351B5551F8E2354DEE1E0 /* ThreeDsProcessor.swift */; };
 		FCB195C37285D2114148870D88D2973C /* SDImageCacheConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 54490DF72831774E676EE4ACD98CDB56 /* SDImageCacheConfig.m */; };
 		FCE4B93B3ACF7D9349F4604EB0BFA2A7 /* SDImageIOCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A3A59E315836C6D81A6F417BD82D673 /* SDImageIOCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE3DA5677D1F398C686BF698344DFAC2 /* UIColor+SDHexString.h in Headers */ = {isa = PBXBuildFile; fileRef = DB47067D4579EF979A57AC5C6A0F6F93 /* UIColor+SDHexString.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FEC3FC44FE997EBA956ACB359824927F /* Bundle+Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B5DB283B2954C996BFF702A2F32065 /* Bundle+Extenstions.swift */; };
 		FF798D8A4E72564785D4FFB3D474EDA7 /* SDWebImageError.h in Headers */ = {isa = PBXBuildFile; fileRef = CA676813FA7816615B5DC7971AFF0850 /* SDWebImageError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FFAFA85A6E470FF29C6F4B433762E61C /* SDWebImageDownloaderDecryptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 24FDDAA64CC0CDE4C05B3FAC34B9B7B5 /* SDWebImageDownloaderDecryptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -301,21 +302,7 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
-		36DADBDF62F12ACB6C4A428B959859C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 99B6E494F89116282F457C5A89EE99A7;
-			remoteInfo = "Cloudpayments-Cloudpayments";
-		};
 		5ECF06DB1D5F0B0EB4082D2C0AE76ED0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
-			remoteInfo = Alamofire;
-		};
-		641399D9999DE6F80010AFE11AF2A57F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -336,12 +323,19 @@
 			remoteGlobalIDString = 3847153A6E5EEFB86565BA840768F429;
 			remoteInfo = SDWebImage;
 		};
-		8F15D97A55CCC80C40BCA1AA5CADAF36 /* PBXContainerItemProxy */ = {
+		91527C04C81FB1082DFE8E4101A89CAD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3F64080413BB03C0B16BFEB621E6E0F2;
-			remoteInfo = AlamofireObjectMapper;
+			remoteGlobalIDString = 99B6E494F89116282F457C5A89EE99A7;
+			remoteInfo = "Cloudpayments-Cloudpayments";
+		};
+		9EF24121B5E64A39D7C49BF70074DE99 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
+			remoteInfo = ObjectMapper;
 		};
 		CE7E347DD900F3627643CC643550F098 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -357,6 +351,13 @@
 			remoteGlobalIDString = 162E649F50FEC62B61BDD87D1BD422B4;
 			remoteInfo = ObjectMapper;
 		};
+		FB163510D92CCFF0EC1C07E5C9FDF0F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EAAA1AD3A8A1B59AB91319EE40752C6D;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -364,21 +365,23 @@
 		0091DC516C3EBEC4B1CEA0DE590014F9 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		0133EFFCE5ADB695E7239D108D534EC0 /* CodableTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableTransform.swift; path = Sources/CodableTransform.swift; sourceTree = "<group>"; };
 		0152B57E95C58ACBFA16373B8D94C5CD /* SDWebImageCacheSerializer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheSerializer.m; path = SDWebImage/Core/SDWebImageCacheSerializer.m; sourceTree = "<group>"; };
+		01AD6CE1C21D43FBFDCB359C6E3136A5 /* Currency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		03E7E326911C9E04A1D70D6FE95441D3 /* SDDiskCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDiskCache.m; path = SDWebImage/Core/SDDiskCache.m; sourceTree = "<group>"; };
 		0456C65D364207BCAE240C45D26005DB /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "OperationQueue+Alamofire.swift"; path = "Source/OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		056C11651D9181CFD60992F50710A1E6 /* Pods-demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-demo.release.xcconfig"; sourceTree = "<group>"; };
 		05FB0B90427BD463387D1EECF5E0820D /* AlamofireObjectMapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireObjectMapper.swift; path = AlamofireObjectMapper/AlamofireObjectMapper.swift; sourceTree = "<group>"; };
 		0719161F43B4E245827C541026B5AC19 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLConvertible+URLRequestConvertible.swift"; path = "Source/URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
 		0884E379C268521BA7030EAF8EB89E4E /* SDImageAWebPCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAWebPCoder.m; path = SDWebImage/Core/SDImageAWebPCoder.m; sourceTree = "<group>"; };
-		09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		08B5DB283B2954C996BFF702A2F32065 /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
 		09ACF1629031328C08ACD0854A32C765 /* SDAsyncBlockOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAsyncBlockOperation.h; path = SDWebImage/Private/SDAsyncBlockOperation.h; sourceTree = "<group>"; };
+		09E7BA64F1CAFAFAF0AE935E51FFC2C6 /* PaymentForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentForm.swift; sourceTree = "<group>"; };
 		0A2074965D70569EAF0F524ABD5A244A /* SDWebImageDownloaderRequestModifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderRequestModifier.h; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.h; sourceTree = "<group>"; };
-		0A6EB8C5B9FA29B709F6282AFD5C2E0B /* ResourceBundle-Cloudpayments-Cloudpayments-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Cloudpayments-Cloudpayments-Info.plist"; sourceTree = "<group>"; };
 		0B23EB993B717613A064B30C0C145FC6 /* Alamofire.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.debug.xcconfig; sourceTree = "<group>"; };
 		0B367D523BE929254664AD2471620B52 /* TransformType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformType.swift; path = Sources/TransformType.swift; sourceTree = "<group>"; };
+		0C7BB5C6EED8CF1236091BB7F96D3EA5 /* Cloudpayments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cloudpayments.release.xcconfig; sourceTree = "<group>"; };
 		0D87B155D8AE9A1461808597EF5B1756 /* SDImageCachesManagerOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCachesManagerOperation.h; path = SDWebImage/Private/SDImageCachesManagerOperation.h; sourceTree = "<group>"; };
-		0EB390057550B3435F26B507EE9A6891 /* Cloudpayments-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cloudpayments-Info.plist"; sourceTree = "<group>"; };
 		0FF036564C59E260DFFA92269B744EBA /* SDImageIOAnimatedCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOAnimatedCoder.m; path = SDWebImage/Core/SDImageIOAnimatedCoder.m; sourceTree = "<group>"; };
+		10199BC069C814656B6993922C7C899D /* RSAUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
 		11E78FF75ACAA3E6AC716D9F3CAD7B17 /* ISO8601DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISO8601DateTransform.swift; path = Sources/ISO8601DateTransform.swift; sourceTree = "<group>"; };
 		154DE04137E08D8E15C973FC1B812BCF /* NSBezierPath+SDRoundedCorners.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBezierPath+SDRoundedCorners.m"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.m"; sourceTree = "<group>"; };
 		155AB23E88E3B5974ADBF0B792A1FC15 /* Alamofire.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.release.xcconfig; sourceTree = "<group>"; };
@@ -388,12 +391,11 @@
 		171784CD7F89555EFD77B2A0479363CA /* Pods-demo-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-demo-Info.plist"; sourceTree = "<group>"; };
 		1740B15D79A6852D58D2E84EBCEB0CA0 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+ImageContentType.h"; path = "SDWebImage/Core/NSData+ImageContentType.h"; sourceTree = "<group>"; };
 		17A0BC3A9A6DAFD3D40E5A4C80A56B6D /* SDWebImageDownloaderResponseModifier.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderResponseModifier.h; path = SDWebImage/Core/SDWebImageDownloaderResponseModifier.h; sourceTree = "<group>"; };
+		17E230E084953570B411311447894EAF /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		192ED4E8EA24CD5AD476DEA4F60618AB /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		1A8D29262535F11FCB0B35510A3D9B4E /* MapError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapError.swift; path = Sources/MapError.swift; sourceTree = "<group>"; };
 		1CBA77E54036E7BE7AF7926DB44553BF /* RequestInterceptor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestInterceptor.swift; path = Source/RequestInterceptor.swift; sourceTree = "<group>"; };
-		1D1CF08A3E7B5B6E184E9BC2A769E8E4 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		1D8C821C1B1AB7B6A88D875B5E62FD26 /* SDAnimatedImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "SDAnimatedImageView+WebCache.m"; path = "SDWebImage/Core/SDAnimatedImageView+WebCache.m"; sourceTree = "<group>"; };
-		1E929F48194A99E7217397C162CA4FF7 /* RSAUtils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RSAUtils.swift; sourceTree = "<group>"; };
 		1F50414E3C172EA210EE0C673FC4D1A6 /* SDWebImageCacheKeyFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCacheKeyFilter.m; path = SDWebImage/Core/SDWebImageCacheKeyFilter.m; sourceTree = "<group>"; };
 		1FF1B49C64A19A46F29A10CAE6C4950D /* SDAnimatedImageRep.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageRep.h; path = SDWebImage/Core/SDAnimatedImageRep.h; sourceTree = "<group>"; };
 		2271051F34A047C8EC4C449EBD0FD4F9 /* CardIO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CardIO.release.xcconfig; sourceTree = "<group>"; };
@@ -401,20 +403,15 @@
 		22E0A98FA26FE42C3C12740491FF9C04 /* Mapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mapper.swift; path = Sources/Mapper.swift; sourceTree = "<group>"; };
 		236BC70DE4DBD0F214AC21782698BBEE /* SDWebImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SDWebImage.modulemap; sourceTree = "<group>"; };
 		246EA4735DBF7B62AB6D131450A9E0BB /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		24DF58898C2FC6F691FF9449BCB710C9 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		24FDDAA64CC0CDE4C05B3FAC34B9B7B5 /* SDWebImageDownloaderDecryptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderDecryptor.h; path = SDWebImage/Core/SDWebImageDownloaderDecryptor.h; sourceTree = "<group>"; };
 		259DB1E1C9CFA1E01E08D6AD95A4D356 /* Alamofire-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Alamofire-Info.plist"; sourceTree = "<group>"; };
-		2785867770A34B17EF666A88F1A18F08 /* Cloudpayments.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Cloudpayments.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		278A7C6740C46D70B5A726F8FA864B29 /* libopencv_imgproc.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_imgproc.a; path = CardIO/libopencv_imgproc.a; sourceTree = "<group>"; };
 		287C1B8280AB6F5B214AA698B096D4C1 /* CardIOViewDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOViewDelegate.h; path = CardIO/CardIOViewDelegate.h; sourceTree = "<group>"; };
 		29E85BF30F4A1209212C96C0323F1C5B /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NetworkReachabilityManager.swift; path = Source/NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		2A7AF6BA99438205A3621A78A9253F22 /* SDWeakProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWeakProxy.h; path = SDWebImage/Private/SDWeakProxy.h; sourceTree = "<group>"; };
 		2B10F5A01F653916CBB98776B68CF32B /* SDWebImageOptionsProcessor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOptionsProcessor.m; path = SDWebImage/Core/SDWebImageOptionsProcessor.m; sourceTree = "<group>"; };
 		2B356AED95D602FC023D72E5B1FC97C5 /* SDWebImageCacheSerializer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheSerializer.h; path = SDWebImage/Core/SDWebImageCacheSerializer.h; sourceTree = "<group>"; };
-		2B61D3D4AAF5BC7A2ED31AF96E83F1BC /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		2C494385973A3B75C9409FBFD8C95795 /* SDWebImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-umbrella.h"; sourceTree = "<group>"; };
-		2CA60D55B62A45E0F23E4AF70B67EE71 /* CloudpaymentsApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsApi.swift; sourceTree = "<group>"; };
-		2D56175C89AC54407E0997B485E6F839 /* ThreeDsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsResponse.swift; sourceTree = "<group>"; };
 		2E721644F2A192E3DDDFCB3C19B27AA7 /* CardIO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CardIO.debug.xcconfig; sourceTree = "<group>"; };
 		2FEE5E24D2AF60B0064023B2E2038D00 /* SDImageCachesManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManager.m; path = SDWebImage/Core/SDImageCachesManager.m; sourceTree = "<group>"; };
 		30B76D23866A8BD7C260AD7541EF0F3E /* UIImage+MultiFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MultiFormat.m"; path = "SDWebImage/Core/UIImage+MultiFormat.m"; sourceTree = "<group>"; };
@@ -425,62 +422,64 @@
 		34D525DDADBC6D80B60F25BC848E6C62 /* UIImage+MemoryCacheCost.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MemoryCacheCost.h"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.h"; sourceTree = "<group>"; };
 		34D5737E61D89A4C42B420A3E5C54869 /* UIImage+MemoryCacheCost.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+MemoryCacheCost.m"; path = "SDWebImage/Core/UIImage+MemoryCacheCost.m"; sourceTree = "<group>"; };
 		34FB7DB4F042AD79204EA427FD9B7D3C /* SDInternalMacros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDInternalMacros.m; path = SDWebImage/Private/SDInternalMacros.m; sourceTree = "<group>"; };
-		35C4175FEAFFE4E36FAEB169F38A741B /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35E0AC6AE96D42C20F4F9FA4AC0C5F6D /* libopencv_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libopencv_core.a; path = CardIO/libopencv_core.a; sourceTree = "<group>"; };
 		3668E0B36E19A32B978EBBE454C06B9D /* SDImageCacheDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheDefine.m; path = SDWebImage/Core/SDImageCacheDefine.m; sourceTree = "<group>"; };
 		3719FC7937D414FC2FF62BB34F859A7D /* SDImageIOCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageIOCoder.m; path = SDWebImage/Core/SDImageIOCoder.m; sourceTree = "<group>"; };
 		37F9807BE09DD1AC4CC74EC29A0E9F98 /* UIImage+Metadata.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Metadata.h"; path = "SDWebImage/Core/UIImage+Metadata.h"; sourceTree = "<group>"; };
 		38113F63E3F3FEB11FA47ECC562CD9B2 /* SDWebImageDefine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDefine.m; path = SDWebImage/Core/SDWebImageDefine.m; sourceTree = "<group>"; };
+		3826685008D527E18FE5EAF92BDB6AF0 /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		392A74DBC61DAFAF2CF453E4D6C33F0B /* ThreeDsResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsResponse.swift; sourceTree = "<group>"; };
 		3B394AF957500D9611D1FE82CFBEF4B1 /* SDImageCodersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCodersManager.h; path = SDWebImage/Core/SDImageCodersManager.h; sourceTree = "<group>"; };
 		3B823D5343CB5AA3BAC3D90DCA6A2C1C /* HexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HexColorTransform.swift; path = Sources/HexColorTransform.swift; sourceTree = "<group>"; };
-		3C4C616CBA249FF2034FBB07A1ADB411 /* Cloudpayments.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cloudpayments.release.xcconfig; sourceTree = "<group>"; };
 		3C933254619DA3A53C2F16A3CA2713C1 /* SDWebImageIndicator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageIndicator.m; path = SDWebImage/Core/SDWebImageIndicator.m; sourceTree = "<group>"; };
 		3D4D7E7F1546327FD531DD1B2F842393 /* SDImageHEICCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageHEICCoder.m; path = SDWebImage/Core/SDImageHEICCoder.m; sourceTree = "<group>"; };
 		3D5E2C9EC6ACFB7C3CF7FC90625ED6D8 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCacheOperation.m"; path = "SDWebImage/Core/UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		40C35435DDAD9E8A548350F7A8B89C03 /* AlamofireObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		4521EE9C95A43FD3DB268BB1FF3C9106 /* SDImageCoderHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoderHelper.h; path = SDWebImage/Core/SDImageCoderHelper.h; sourceTree = "<group>"; };
+		467B7C92EC74C9F41B1E8BCE7D727456 /* PaymentConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentConfiguration.swift; sourceTree = "<group>"; };
 		48A0A800854E46B42B33102B5AE73420 /* SDAnimatedImageView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImageView.m; path = SDWebImage/Core/SDAnimatedImageView.m; sourceTree = "<group>"; };
 		4AA68370985960E2617ECF27A5D10F2C /* NSButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSButton+WebCache.h"; path = "SDWebImage/Core/NSButton+WebCache.h"; sourceTree = "<group>"; };
 		4B03A4FF9091E63BF2329CBA13F655BA /* SDWebImageDownloaderConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderConfig.m; path = SDWebImage/Core/SDWebImageDownloaderConfig.m; sourceTree = "<group>"; };
-		4C03DE83053108F4B293C76A004DC91B /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
 		4CC04732F5B7D02E749AAA07ECC90A8D /* ObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.release.xcconfig; sourceTree = "<group>"; };
 		4D90863F512DD33DADB882B07A2570D3 /* SDDeviceHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDeviceHelper.h; path = SDWebImage/Private/SDDeviceHelper.h; sourceTree = "<group>"; };
-		4EF41482EF7F21EAFD2150D79EBD92EA /* HTTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		4F831EF08DF7889909FE0D6EC5718CA3 /* UIView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCache.h"; path = "SDWebImage/Core/UIView+WebCache.h"; sourceTree = "<group>"; };
 		4FA01804F35699834EECC794328D85AE /* SDWeakProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWeakProxy.m; path = SDWebImage/Private/SDWeakProxy.m; sourceTree = "<group>"; };
 		4FE45AE5DAA8B1DF7D6099181AD9FA0A /* Pods-demo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-demo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		508D69024F0875B321E10C7074E44C39 /* BankInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		54490DF72831774E676EE4ACD98CDB56 /* SDImageCacheConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCacheConfig.m; path = SDWebImage/Core/SDImageCacheConfig.m; sourceTree = "<group>"; };
 		547B3B0E5F922DBEA4F861242FA55472 /* SDMemoryCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDMemoryCache.m; path = SDWebImage/Core/SDMemoryCache.m; sourceTree = "<group>"; };
 		561AF64CAEFB306454F40EE865252A8F /* SDImageCachesManagerOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCachesManagerOperation.m; path = SDWebImage/Private/SDImageCachesManagerOperation.m; sourceTree = "<group>"; };
+		56201BAD88AD6D4841271DCBD614553E /* ThreeDsData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
 		56290DAB605896F56F9FA68AD4BA899E /* ImmutableMappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImmutableMappable.swift; path = Sources/ImmutableMappable.swift; sourceTree = "<group>"; };
 		562BAAE54AF2E274AD8252995BCF6DBC /* NSBezierPath+SDRoundedCorners.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBezierPath+SDRoundedCorners.h"; path = "SDWebImage/Private/NSBezierPath+SDRoundedCorners.h"; sourceTree = "<group>"; };
 		58BDFBEB5E919CAD12288D423232E04F /* SDImageCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCache.h; path = SDWebImage/Core/SDImageCache.h; sourceTree = "<group>"; };
+		594BE565E084DC969D197B667C242941 /* Cloudpayments-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-umbrella.h"; sourceTree = "<group>"; };
 		5968A9811A6000C294DE946FDB65A16E /* SDImageAssetManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAssetManager.m; path = SDWebImage/Private/SDImageAssetManager.m; sourceTree = "<group>"; };
 		5A5BAAA46C4539C8087B66A7D6D976E9 /* SDWebImageTransitionInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageTransitionInternal.h; path = SDWebImage/Private/SDWebImageTransitionInternal.h; sourceTree = "<group>"; };
 		5A93257F04339D9E5F206A9157CB91AA /* SDImageCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCoder.m; path = SDWebImage/Core/SDImageCoder.m; sourceTree = "<group>"; };
 		5C095D87C5202E5BF15AF95B95BCC1E5 /* TransformOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOperators.swift; path = Sources/TransformOperators.swift; sourceTree = "<group>"; };
+		5CC97047F643C1F7864AE288C6494772 /* BankInfoResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfoResponse.swift; sourceTree = "<group>"; };
 		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D9BEB0D1F35E8F217B467E87BFAFA51 /* SDWebImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SDWebImage-dummy.m"; sourceTree = "<group>"; };
-		5DD544E8EDB8AA2F360405D609FB7502 /* PaymentConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentConfiguration.swift; sourceTree = "<group>"; };
 		5E03928F4CACAC3DCC6B01B37D23C2C0 /* Mappable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Mappable.swift; path = Sources/Mappable.swift; sourceTree = "<group>"; };
 		5E95B63B17C963495E1E92280D5AB837 /* CardIO.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIO.h; path = CardIO/CardIO.h; sourceTree = "<group>"; };
-		5FB3039A7502DEABF8E7BD2E73A98C61 /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		606424374E842C2391FA9A26D80E2EC5 /* SDImageFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageFrame.h; path = SDWebImage/Core/SDImageFrame.h; sourceTree = "<group>"; };
-		60C7621F4BF3F6258B5AC5B208BDD2C7 /* PaymentDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentDelegate.swift; sourceTree = "<group>"; };
 		618996CCD360DD3660EE20BC1D21B44E /* AlamofireObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AlamofireObjectMapper-dummy.m"; sourceTree = "<group>"; };
 		61994A22834EED920484148E1FB06FC2 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Alamofire.swift"; path = "Source/DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
 		620C2E500E91AE09F121C9670613B82F /* Pods_demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_demo.framework; path = "Pods-demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		623828193B1429475D08FEFF80AC4A5D /* SDImageGIFCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGIFCoder.h; path = SDWebImage/Core/SDImageGIFCoder.h; sourceTree = "<group>"; };
 		6347A150B7EA4E88511283E128FC95E4 /* UIImage+GIF.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+GIF.m"; path = "SDWebImage/Core/UIImage+GIF.m"; sourceTree = "<group>"; };
-		63A531275833239BB7C09D7863A6C6B9 /* UIImage+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
-		63C9599DFA29D8D33EADF645DDFEA167 /* PaymentCardScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardScanner.swift; sourceTree = "<group>"; };
+		64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		64BE24B016D089C03501912B907982DE /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
+		64D91FE15AFDDD9F478B8BC4702CFCAE /* DataRequest+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
 		654DF7B3E721089A2D9A229A1E2679B6 /* SDWebImageTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageTransition.m; path = SDWebImage/Core/SDWebImageTransition.m; sourceTree = "<group>"; };
-		669E8DD05AD03A729D1040E4A3E92349 /* BankInfoResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfoResponse.swift; sourceTree = "<group>"; };
+		6578E3C91648C9579F1AA0D79A359350 /* PaymentCardForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
 		66F4A794EC3B0D5D4BC6A3634D48D5B1 /* SDFileAttributeHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDFileAttributeHelper.h; path = SDWebImage/Private/SDFileAttributeHelper.h; sourceTree = "<group>"; };
+		67AD2A6B3E0B4DC97B05543B5C185693 /* TextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		67B5C4422DF3AE7702BEE6F36763393A /* ParameterEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoder.swift; path = Source/ParameterEncoder.swift; sourceTree = "<group>"; };
 		68CD8F08C7DF9B791E4141E3B8654A63 /* SDDeviceHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDeviceHelper.m; path = SDWebImage/Private/SDDeviceHelper.m; sourceTree = "<group>"; };
 		69A9CFF3023AD113CDA6DD8226FC49EA /* SDImageLoader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoader.m; path = SDWebImage/Core/SDImageLoader.m; sourceTree = "<group>"; };
+		69FB5723E42D10DACA8B49640B606225 /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		69FEAC8D562A3D8A71DA45438AC1F635 /* UIView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+WebCache.m"; path = "SDWebImage/Core/UIView+WebCache.m"; sourceTree = "<group>"; };
 		6A64E5EA166BB20F85272546DA493091 /* AlamofireObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AlamofireObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		6AB4044F75CCB17F2758EF814C24FD64 /* AlamofireObjectMapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AlamofireObjectMapper.modulemap; sourceTree = "<group>"; };
@@ -488,13 +487,13 @@
 		6B2E8964A8C232642CB3C57B26BEBA04 /* DateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DateTransform.swift; path = Sources/DateTransform.swift; sourceTree = "<group>"; };
 		6BEDFC780254527E69CE1D59CC7EDFFE /* TransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransformOf.swift; path = Sources/TransformOf.swift; sourceTree = "<group>"; };
 		6D00D03275AC3ABA42C7CA4AFAC6CB7B /* SDImageAWebPCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAWebPCoder.h; path = SDWebImage/Core/SDImageAWebPCoder.h; sourceTree = "<group>"; };
-		6DEE6D9C4B3DBE281C8B61F8CFFA7306 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		6EE2E0DF528BCDB14A29EEF869E9171C /* PaymentData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
 		6F164CAF4B72AEA74D73A3AC567BD170 /* SDImageGraphics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageGraphics.h; path = SDWebImage/Core/SDImageGraphics.h; sourceTree = "<group>"; };
 		6FFFE7C2BB64F694A4DDC5EA76016487 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
 		7175656AFEE0CB29BD033486CB882450 /* SDAnimatedImage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImage.m; path = SDWebImage/Core/SDAnimatedImage.m; sourceTree = "<group>"; };
-		719FA8CB752E64CB5CFA589AE8CD5450 /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED99D6D5663EEAE83866ADD2103578 /* SDAsyncBlockOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAsyncBlockOperation.m; path = SDWebImage/Private/SDAsyncBlockOperation.m; sourceTree = "<group>"; };
 		730554983FAC8F4B5B70938BA9620C00 /* UIImage+Metadata.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Metadata.m"; path = "SDWebImage/Core/UIImage+Metadata.m"; sourceTree = "<group>"; };
+		74CAA3BB2530E9742391F9C6A1F082E7 /* CloudpaymentsApi.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsApi.swift; sourceTree = "<group>"; };
 		7728071EFC1061C1E4D769E42574F9B1 /* SDFileAttributeHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDFileAttributeHelper.m; path = SDWebImage/Private/SDFileAttributeHelper.m; sourceTree = "<group>"; };
 		7746CC448EA0C2E5BD0EB7A1AB7CFF34 /* AlamofireObjectMapper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.release.xcconfig; sourceTree = "<group>"; };
 		78689EE87ABFADC8770FADD16514A0E1 /* UIImage+ForceDecode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ForceDecode.h"; path = "SDWebImage/Core/UIImage+ForceDecode.h"; sourceTree = "<group>"; };
@@ -502,28 +501,26 @@
 		7A4F4A1B871C5EFECA53792A23DAB4B7 /* CardIOPaymentViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewControllerDelegate.h; path = CardIO/CardIOPaymentViewControllerDelegate.h; sourceTree = "<group>"; };
 		7AE75316D66E0C139112E795D4CD8491 /* SDWebImageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageManager.m; path = SDWebImage/Core/SDWebImageManager.m; sourceTree = "<group>"; };
 		7C5DC5ABE867DFAFEEFE65EB904EC044 /* Pods-demo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-demo-dummy.m"; sourceTree = "<group>"; };
-		7C644D7624272FBA25034D4881399BFA /* Cloudpayments-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-umbrella.h"; sourceTree = "<group>"; };
 		7CB3B79215BA1166EC88EE23A168C49C /* SDWebImagePrefetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImagePrefetcher.m; path = SDWebImage/Core/SDWebImagePrefetcher.m; sourceTree = "<group>"; };
 		7D2BB728D9868D18A4169DFC2BB04AF1 /* SDWebImage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImage.h; path = WebImage/SDWebImage.h; sourceTree = "<group>"; };
 		7ECBB57F8850FA87DB7F1E65DCA47AE1 /* SDAnimatedImagePlayer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImagePlayer.h; path = SDWebImage/Core/SDAnimatedImagePlayer.h; sourceTree = "<group>"; };
 		7F8EC08B8D4E5C8EDAB1841EDDC143A6 /* EnumTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumTransform.swift; path = Sources/EnumTransform.swift; sourceTree = "<group>"; };
-		7FBA093F3453DA4B54FEA8E33425D659 /* PaymentForm.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = PaymentForm.storyboard; path = Resources/PaymentForm.storyboard; sourceTree = "<group>"; };
 		802744417D60E520543DF43B4F501564 /* SDWebImageError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageError.m; path = SDWebImage/Core/SDWebImageError.m; sourceTree = "<group>"; };
+		80454FFFD923AADCD0046BAF61EBBE48 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
 		8304FA02D2A592F4996BA412884CCA37 /* Pods-demo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-demo.modulemap"; sourceTree = "<group>"; };
 		84B63AAA5D442EA656B7B18FB4EAB5BC /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "URLRequest+Alamofire.swift"; path = "Source/URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		84E3A1DD3260C37B732A695153B06867 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
-		8566C540E43119B007579F38BA1F4C28 /* ThreeDsData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
+		84D84E94729997058CA8245425011B5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		85A989ED199FFB591E2DACBE89FA8E17 /* Cloudpayments-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cloudpayments-dummy.m"; sourceTree = "<group>"; };
 		8642B544368C663428940E3E37703CE8 /* SDWebImageCompat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageCompat.m; path = SDWebImage/Core/SDWebImageCompat.m; sourceTree = "<group>"; };
 		86822384CD379FCE373C2F755839B8DE /* AlamofireObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AlamofireObjectMapper.framework; path = AlamofireObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8807452AD74587C59EA809D37CBD6980 /* AlamofireExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AlamofireExtended.swift; path = Source/AlamofireExtended.swift; sourceTree = "<group>"; };
 		8835FEEC83815F1E880634EFB0290BD0 /* Cloudpayments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cloudpayments.framework; path = Cloudpayments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3A59E315836C6D81A6F417BD82D673 /* SDImageIOCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOCoder.h; path = SDWebImage/Core/SDImageIOCoder.h; sourceTree = "<group>"; };
 		8B07A1CEC4A5D0FB740BE3F432CEADA7 /* SDWebImageCompat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCompat.h; path = SDWebImage/Core/SDWebImageCompat.h; sourceTree = "<group>"; };
-		8C5065D171FF3630A4A24040D74D13AD /* String+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		8BE1682D64C8D52A0DA7594E51655C8F /* UIImage+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIImage+Assets.swift"; sourceTree = "<group>"; };
 		8D7592789E229D7E120CDDBE1C37AFDA /* MultipartUpload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartUpload.swift; path = Source/MultipartUpload.swift; sourceTree = "<group>"; };
 		8E44B9E892B38F20069D05F2E92E2AD6 /* SDMemoryCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDMemoryCache.h; path = SDWebImage/Core/SDMemoryCache.h; sourceTree = "<group>"; };
 		8F622781969B4BC63D1AB66BF3C4CBB5 /* DictionaryTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DictionaryTransform.swift; path = Sources/DictionaryTransform.swift; sourceTree = "<group>"; };
-		8FBD5BF8EE2DD702DAA62A13A9A7C642 /* Bundle+Extenstions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "Bundle+Extenstions.swift"; sourceTree = "<group>"; };
 		90A43CF4D615F37D6A7AB1B01037470D /* UIButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+WebCache.m"; path = "SDWebImage/Core/UIButton+WebCache.m"; sourceTree = "<group>"; };
 		90EB1BE4B324A671373AC8941B0D40B5 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WebCacheOperation.h"; path = "SDWebImage/Core/UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		913EA9258E68C24F36F98AE1F77BFCF5 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+WebCache.m"; path = "SDWebImage/Core/UIImageView+WebCache.m"; sourceTree = "<group>"; };
@@ -532,32 +529,33 @@
 		922232EC61092DA940932B571F1BBA3C /* SDDisplayLink.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDDisplayLink.m; path = SDWebImage/Private/SDDisplayLink.m; sourceTree = "<group>"; };
 		927E5C1A36E60F06A3199E86ACC3482B /* SDImageHEICCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageHEICCoder.h; path = SDWebImage/Core/SDImageHEICCoder.h; sourceTree = "<group>"; };
 		92A8C6CD9365DA01457B84855252E8FF /* EventMonitor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EventMonitor.swift; path = Source/EventMonitor.swift; sourceTree = "<group>"; };
+		932CD6AC4B3C53F6B043B2A4B42E968E /* Cloudpayments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cloudpayments.debug.xcconfig; sourceTree = "<group>"; };
 		9473FFDEE21EB62515C0CD0572470F0C /* SDGraphicsImageRenderer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDGraphicsImageRenderer.m; path = SDWebImage/Core/SDGraphicsImageRenderer.m; sourceTree = "<group>"; };
 		97C73C98F1A5958EF7E76D6EC302B4A1 /* SDWebImageCacheKeyFilter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageCacheKeyFilter.h; path = SDWebImage/Core/SDWebImageCacheKeyFilter.h; sourceTree = "<group>"; };
 		99268427A4D09B0FA450551A6EBA44D5 /* SDWebImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SDWebImage-prefix.pch"; sourceTree = "<group>"; };
 		99822DB99874840016A7E1452B54D9EB /* UIButton+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+WebCache.h"; path = "SDWebImage/Core/UIButton+WebCache.h"; sourceTree = "<group>"; };
+		9A8D03BA730447A6FCC68CDF1AE3532F /* Cloudpayments.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cloudpayments.modulemap; sourceTree = "<group>"; };
 		9BC74D81559113DD7021F76B61B5A87A /* SDImageCacheConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheConfig.h; path = SDWebImage/Core/SDImageCacheConfig.h; sourceTree = "<group>"; };
 		9CA7499A0A9898B00991577F3D5A1525 /* SDInternalMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDInternalMacros.h; path = SDWebImage/Private/SDInternalMacros.h; sourceTree = "<group>"; };
 		9CB9DD27ECA1EDDD698D1A5F635AD2E6 /* SDImageIOAnimatedCoderInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoderInternal.h; path = SDWebImage/Private/SDImageIOAnimatedCoderInternal.h; sourceTree = "<group>"; };
 		9D8555CF729566BCEE3C78D1D53EA96D /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A00CE4AD3A377405D4C656B8CB5BB23B /* Card.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A24813060F62A7A995A0FF72B0D83D68 /* CardIOView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOView.h; path = CardIO/CardIOView.h; sourceTree = "<group>"; };
 		A263381E0612125B4E3595C8476E722E /* SDImageGIFCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageGIFCoder.m; path = SDWebImage/Core/SDImageGIFCoder.m; sourceTree = "<group>"; };
 		A490A73812060B6508630AB210BE15A6 /* CustomDateFormatTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomDateFormatTransform.swift; path = Sources/CustomDateFormatTransform.swift; sourceTree = "<group>"; };
-		A49A98A17A44C6469A268318A41BEED3 /* BankInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BankInfo.swift; sourceTree = "<group>"; };
 		A4A87E71777F1BCF597BA7E3D66A760A /* ToJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToJSON.swift; path = Sources/ToJSON.swift; sourceTree = "<group>"; };
+		A4D5EB5F438D03419FA24E7990974996 /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		A58804D2F0F9B8539216C74C3ED49E25 /* SDWebImageOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageOperation.m; path = SDWebImage/Core/SDWebImageOperation.m; sourceTree = "<group>"; };
 		A7B05B02E5C38D0F7C3219E4D8A91DEF /* UIImage+ExtendedCacheData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+ExtendedCacheData.h"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.h"; sourceTree = "<group>"; };
-		A997C53653E1DFC32CE838235009A999 /* PaymentData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
 		AA6F28936150B774D174F70EC133595F /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
-		AC00D8FBC670842494DD237722B5AA36 /* PaymentProcessForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentProcessForm.swift; sourceTree = "<group>"; };
 		AC25D71C665F4DA27CC71BEA92519B26 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
 		AC8EBECEF07FB66B5FAB4B2CDD4A1C4A /* SDGraphicsImageRenderer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDGraphicsImageRenderer.h; path = SDWebImage/Core/SDGraphicsImageRenderer.h; sourceTree = "<group>"; };
+		ACD41655ED20E3482EB63FA7FE04B8B9 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		AD0FE056A4D62357ADF7BBB3D29B2E52 /* Pods-demo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-demo-frameworks.sh"; sourceTree = "<group>"; };
 		AD4DFF18E44F0DC6CBD00006D2A38483 /* SDWebImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.debug.xcconfig; sourceTree = "<group>"; };
 		AD6E2C5E71CF5863FBA1355E205D7FFE /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
-		AE1A389D795BCED63AE82C21F4B88478 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE4A0492540F90958022FBD74BCAEE62 /* TextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AF996A5FD7B65CF3153FA500D6968ED0 /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B214D775196BA7CA8E17E53048A493 /* SDWebImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SDWebImage.framework; path = SDWebImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B22D4C3E97051926EA7779EA834FFB72 /* SDImageAssetManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageAssetManager.h; path = SDWebImage/Private/SDImageAssetManager.h; sourceTree = "<group>"; };
 		B2DD1012499B30D6442B3EE280AE6850 /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
@@ -566,7 +564,7 @@
 		B4E2D52318E06F987A02D79987353AC5 /* SDImageCodersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCodersManager.m; path = SDWebImage/Core/SDImageCodersManager.m; sourceTree = "<group>"; };
 		B62EB4A3814F39DE8D427E9C6D0E9194 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
 		B739E328DDF98690E390A1295189176E /* ObjectMapper-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ObjectMapper-dummy.m"; sourceTree = "<group>"; };
-		B75E6B0E700E9AB1394ADC774669139D /* Cloudpayments.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cloudpayments.debug.xcconfig; sourceTree = "<group>"; };
+		B88D415A582A9B1E3F2074F4319F43A6 /* FormPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormPresentationController.swift; sourceTree = "<group>"; };
 		B8D277EA2789C46C53D6B9CDAC4B95C9 /* SDImageCachesManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCachesManager.h; path = SDWebImage/Core/SDImageCachesManager.h; sourceTree = "<group>"; };
 		B8F0BB3D400CCF5F3F3D8E90FD9A278C /* UIImage+Transform.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Transform.m"; path = "SDWebImage/Core/UIImage+Transform.m"; sourceTree = "<group>"; };
 		B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper.framework; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -578,19 +576,21 @@
 		BEE6B29A21BA187129660CE52FA4062F /* IntegerOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IntegerOperators.swift; path = Sources/IntegerOperators.swift; sourceTree = "<group>"; };
 		C0CE59B28333ED2FD1A0B9C89B320C94 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		C1488E9E6E1FF04CB37BABE45780C303 /* DataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataTransform.swift; path = Sources/DataTransform.swift; sourceTree = "<group>"; };
+		C1834D57A08CE11035BECFAF8E08B91B /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/ImageIO.framework; sourceTree = DEVELOPER_DIR; };
 		C1C2BE630D33856913749FF21D0BBA10 /* SDWebImagePrefetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImagePrefetcher.h; path = SDWebImage/Core/SDWebImagePrefetcher.h; sourceTree = "<group>"; };
 		C2A5EC18A122EF24D3CE589B49102D19 /* SDWebImageDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDefine.h; path = SDWebImage/Core/SDWebImageDefine.h; sourceTree = "<group>"; };
+		C2BEB639CEB7DB41F7147C0094B3C9E5 /* PKPayment+Convert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PKPayment+Convert.swift"; sourceTree = "<group>"; };
+		C2C89CAD6DFFA1852AB447DAB5F0D06D /* Cloudpayments-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cloudpayments-Info.plist"; sourceTree = "<group>"; };
 		C2F5497DDAD855AA0E23399007082FD7 /* ObjectMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ObjectMapper.debug.xcconfig; sourceTree = "<group>"; };
 		C372293A219320437A018D3C6E37E115 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
+		C3CD3A78B3CECB14F86513D9A7334768 /* PaymentProcessForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentProcessForm.swift; sourceTree = "<group>"; };
 		C3ED1F1E5EA40F3D2C1F1D294BA49980 /* SDAssociatedObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAssociatedObject.h; path = SDWebImage/Private/SDAssociatedObject.h; sourceTree = "<group>"; };
 		C515F2A573ABA465C3C95F98A2AA7FE3 /* ObjectMapper-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-prefix.pch"; sourceTree = "<group>"; };
 		C5AEF1496BFF415EAFA0C7D846C26C7F /* SDImageAPNGCoder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageAPNGCoder.m; path = SDWebImage/Core/SDImageAPNGCoder.m; sourceTree = "<group>"; };
 		C60EAF02CF405F1E13C16E46249DCB3F /* SDImageCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCoder.h; path = SDWebImage/Core/SDImageCoder.h; sourceTree = "<group>"; };
 		C7B1BDCCEE8530EFBA51274B4EB80473 /* SDWebImageDownloaderOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderOperation.m; path = SDWebImage/Core/SDWebImageDownloaderOperation.m; sourceTree = "<group>"; };
-		C7CDA5B025467BBB86597E6D11F5EBB2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		C7DF25EB05798BBFF7B174E150F826AE /* SDWebImageDownloader.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloader.m; path = SDWebImage/Core/SDWebImageDownloader.m; sourceTree = "<group>"; };
 		C90A0E9FCB48F8DC11F91EDFDCAB676A /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		C98B058D582E01FDEA4E8328FDCDF51C /* PaymentForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentForm.swift; sourceTree = "<group>"; };
 		CA676813FA7816615B5DC7971AFF0850 /* SDWebImageError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageError.h; path = SDWebImage/Core/SDWebImageError.h; sourceTree = "<group>"; };
 		CAE33D1DE26559065AF52C5A1BAF3647 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
 		CB4E4D9AC0A78FFBCDBC941A04796BA9 /* CardIODetectionMode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIODetectionMode.h; path = CardIO/CardIODetectionMode.h; sourceTree = "<group>"; };
@@ -601,39 +601,35 @@
 		CD325AE6AEE074C848E48BC0D31522ED /* SDWebImageDownloaderOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderOperation.h; path = SDWebImage/Core/SDWebImageDownloaderOperation.h; sourceTree = "<group>"; };
 		CDA9B5638E2A4421BBF5B7E0969AF208 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
 		CDC1C6115CAEC00A3DBADDDBC5135F70 /* UIImageView+HighlightedWebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImageView+HighlightedWebCache.h"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.h"; sourceTree = "<group>"; };
-		CE4FDFBAD0D35899C60B7EF92DE9C255 /* Currency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
-		CECE8504C9BBD28B1A09871C5FF761EC /* Transaction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		CF90E1655A697D539119B362FFA329A8 /* SDImageCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageCache.m; path = SDWebImage/Core/SDImageCache.m; sourceTree = "<group>"; };
 		D0F2E061051F6D21B0BAF73976F897BE /* SDWebImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SDWebImage.release.xcconfig; sourceTree = "<group>"; };
-		D11FE5694CC752DEE6388E33973BCF87 /* UIColor+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
+		D130939791A217A034B30D4B3CD5C239 /* UIView+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		D1317625AF8A43859E27FD6B5DCA8D11 /* AlamofireObjectMapper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AlamofireObjectMapper.debug.xcconfig; sourceTree = "<group>"; };
-		D14776806370A8DFE7CE37B734D8DF3E /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = "<group>"; };
-		D2CD7226EB3888DF3A87BA8B2E543337 /* Cloudpayments.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cloudpayments.modulemap; sourceTree = "<group>"; };
 		D37604EBDFD60B1898DDEECB3E755DBC /* UIColor+SDHexString.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SDHexString.m"; path = "SDWebImage/Private/UIColor+SDHexString.m"; sourceTree = "<group>"; };
 		D44596215377BE43AC7962B8674D790F /* libCardIO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libCardIO.a; path = CardIO/libCardIO.a; sourceTree = "<group>"; };
-		D53459AEE5A3D76DB7FC808E4115C69B /* UIView+Constraints.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		D5E37863A6CA8F8322DEEA6CFA9E7DE2 /* SDmetamacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDmetamacros.h; path = SDWebImage/Private/SDmetamacros.h; sourceTree = "<group>"; };
 		D6F0A4FA7BDF25AE5122D73D82F01BE8 /* SDAssociatedObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAssociatedObject.m; path = SDWebImage/Private/SDAssociatedObject.m; sourceTree = "<group>"; };
+		D7062251B2AA1E69E31B222DE3F0899D /* TransactionResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
 		D83FF2348C1AA932E69D7584AB28FD3C /* SDImageLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoader.h; path = SDWebImage/Core/SDImageLoader.h; sourceTree = "<group>"; };
 		D8542B1A334D0AAF2A8948AC3AAA511D /* AlamofireObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AlamofireObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		D857324E206DE68D0EE52A094D2FDDA8 /* SDWebImageDownloaderRequestModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderRequestModifier.m; path = SDWebImage/Core/SDWebImageDownloaderRequestModifier.m; sourceTree = "<group>"; };
+		D86A0AED66170DB917456BC5307AC2BA /* BaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		D8A86D329C0351B5551F8E2354DEE1E0 /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
 		DA0E7146E9CB5D6F13B308F47EC87F0A /* UIImage+ExtendedCacheData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+ExtendedCacheData.m"; path = "SDWebImage/Core/UIImage+ExtendedCacheData.m"; sourceTree = "<group>"; };
 		DB43F91B3EE433F7C57C39B74082887F /* SDWebImageDownloaderResponseModifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDWebImageDownloaderResponseModifier.m; path = SDWebImage/Core/SDWebImageDownloaderResponseModifier.m; sourceTree = "<group>"; };
 		DB47067D4579EF979A57AC5C6A0F6F93 /* UIColor+SDHexString.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+SDHexString.h"; path = "SDWebImage/Private/UIColor+SDHexString.h"; sourceTree = "<group>"; };
 		DD39DE138FDBEA7216791A0E2277B50D /* SDImageLoadersManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageLoadersManager.m; path = SDWebImage/Core/SDImageLoadersManager.m; sourceTree = "<group>"; };
-		DE4823D13D0B7C77EF0D29C1A4185292 /* Cloudpayments-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cloudpayments-dummy.m"; sourceTree = "<group>"; };
-		DF0B4739BB3F823425CE8A0942D6F745 /* FormPresentationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FormPresentationController.swift; sourceTree = "<group>"; };
 		DF7F789A2730039B3057EF80EFD8FEA9 /* SDImageIOAnimatedCoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageIOAnimatedCoder.h; path = SDWebImage/Core/SDImageIOAnimatedCoder.h; sourceTree = "<group>"; };
-		DFCD1855C0684DD7A8E955D673197299 /* PKPayment+Convert.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "PKPayment+Convert.swift"; sourceTree = "<group>"; };
 		E03F5B51C58DF5BFB729B96195D03146 /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+HighlightedWebCache.m"; path = "SDWebImage/Core/UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		E07F498BF0A6BD1F6D4F9B28D992F8C7 /* NSButton+WebCache.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSButton+WebCache.m"; path = "SDWebImage/Core/NSButton+WebCache.m"; sourceTree = "<group>"; };
 		E0B14901CD0AA7F9A89A8625DBBAD9B7 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = Source/HTTPMethod.swift; sourceTree = "<group>"; };
+		E146FF11D4B465E21FDA1E9B734EA2D8 /* ResourceBundle-Cloudpayments-Cloudpayments-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Cloudpayments-Cloudpayments-Info.plist"; sourceTree = "<group>"; };
 		E1863CE9B016FB24520834838988480C /* SDDisplayLink.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDisplayLink.h; path = SDWebImage/Private/SDDisplayLink.h; sourceTree = "<group>"; };
+		E37F9F353208702F021DE11BD2E73182 /* PaymentCardScanner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardScanner.swift; sourceTree = "<group>"; };
 		E39B4B01740A3E7BBBC61F8865C433CD /* SDWebImageIndicator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageIndicator.h; path = SDWebImage/Core/SDWebImageIndicator.h; sourceTree = "<group>"; };
-		E3CF5E2197E9BEA9F59517AE5382AF73 /* PaymentCardForm.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
 		E55741EBE19F397629B595EEA5DE691E /* EnumOperators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EnumOperators.swift; path = Sources/EnumOperators.swift; sourceTree = "<group>"; };
 		E6B776C3DE1BEE4A35EE31B003DF1C4A /* SDAnimatedImageView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDAnimatedImageView.h; path = SDWebImage/Core/SDAnimatedImageView.h; sourceTree = "<group>"; };
-		E74A2036F09B437B750C7CB2B99AF40E /* Cloudpayments-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-prefix.pch"; sourceTree = "<group>"; };
+		E70D51CC4A5C7ACCE316B1A56DF9F1D4 /* HTTP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		E81378911EB32F9F98A4DEA6D1EE656A /* SDDiskCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDDiskCache.h; path = SDWebImage/Core/SDDiskCache.h; sourceTree = "<group>"; };
 		E8DA787D7BD4195A3F8D9577C515EF71 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		EA96317F8DBE2C7048B863DEF1B67E14 /* Pods-demo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-demo-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -644,21 +640,26 @@
 		EFB48D0FE72B182970663D2BC81E0BFB /* SDWebImageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageManager.h; path = SDWebImage/Core/SDWebImageManager.h; sourceTree = "<group>"; };
 		F083221A5465DA72FAE4859987F8BDF0 /* NSImage+Compatibility.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSImage+Compatibility.m"; path = "SDWebImage/Core/NSImage+Compatibility.m"; sourceTree = "<group>"; };
 		F19D20DA291B15684D0DC6293A810709 /* SDWebImageDownloaderConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDWebImageDownloaderConfig.h; path = SDWebImage/Core/SDWebImageDownloaderConfig.h; sourceTree = "<group>"; };
+		F2165B33982B523B54F764A404337716 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		F22B04E25AF7C49E1507E948A415A4C0 /* SDImageCacheDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageCacheDefine.h; path = SDWebImage/Core/SDImageCacheDefine.h; sourceTree = "<group>"; };
+		F389C16F63351A4F47A4826814A4278E /* Cloudpayments-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cloudpayments-prefix.pch"; sourceTree = "<group>"; };
 		F390BF773D902EAB485CDCE30EFDCE68 /* SDImageLoadersManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageLoadersManager.h; path = SDWebImage/Core/SDImageLoadersManager.h; sourceTree = "<group>"; };
 		F3B89F47FFD58AE2C01AE2919BF4A538 /* RetryPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RetryPolicy.swift; path = Source/RetryPolicy.swift; sourceTree = "<group>"; };
 		F47D17663FF3F4F2494DCD9506A46D73 /* CardIOCreditCardInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOCreditCardInfo.h; path = CardIO/CardIOCreditCardInfo.h; sourceTree = "<group>"; };
 		F4D0F5AD39E4F2B793AAD6B78948C5C8 /* UIImage+Transform.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Transform.h"; path = "SDWebImage/Core/UIImage+Transform.h"; sourceTree = "<group>"; };
 		F4D2DA139D093D580F73B347C6E0DA1B /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
-		F6B439306A5C15405F341CD398E76F33 /* TransactionResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TransactionResponse.swift; sourceTree = "<group>"; };
+		F6F7314B294E545AD4454050BED7ACD4 /* Button.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		F731FB883929FE5F1D3927EBACF2F2AE /* Cloudpayments.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = Cloudpayments.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F74990A32355D4F668863B9CDD731090 /* CardIOPaymentViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOPaymentViewController.h; path = CardIO/CardIOPaymentViewController.h; sourceTree = "<group>"; };
 		F78A5366FFE85012BDF074B9B7BA7365 /* UIImage+GIF.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+GIF.h"; path = "SDWebImage/Core/UIImage+GIF.h"; sourceTree = "<group>"; };
-		F79553F8F00C49E0E56C479FA17F6E25 /* BaseViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		F83BB63D3AAC0A2F278A38F2678ECDB2 /* PaymentDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PaymentDelegate.swift; sourceTree = "<group>"; };
+		F862CDDFD55736EA7ED24497256C085F /* UIColor+Assets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
 		F9C22F2385F21A37036F2E8F4DCE54B3 /* UIImage+MultiFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+MultiFormat.h"; path = "SDWebImage/Core/UIImage+MultiFormat.h"; sourceTree = "<group>"; };
 		FA0A1ED8064CB717A17A16FD8FED4568 /* SDImageFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDImageFrame.m; path = SDWebImage/Core/SDImageFrame.m; sourceTree = "<group>"; };
 		FAF09349BC4BCA1E0FAAEE8F138FF8EC /* SDImageTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SDImageTransformer.h; path = SDWebImage/Core/SDImageTransformer.h; sourceTree = "<group>"; };
 		FBA2A96CFB838A0D3FCDF54CA611B284 /* SDAnimatedImageView+WebCache.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SDAnimatedImageView+WebCache.h"; path = "SDWebImage/Core/SDAnimatedImageView+WebCache.h"; sourceTree = "<group>"; };
 		FC561AEC5317A688FF8DBEC35B45FB85 /* SDAnimatedImagePlayer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SDAnimatedImagePlayer.m; path = SDWebImage/Core/SDAnimatedImagePlayer.m; sourceTree = "<group>"; };
+		FC5F378B9006C351B6E8032CA535814A /* PaymentForm.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = PaymentForm.storyboard; path = Resources/PaymentForm.storyboard; sourceTree = "<group>"; };
 		FD9CBEBFCC1944B1F8A0DBFB94A1C7C9 /* ObjectMapper-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ObjectMapper-umbrella.h"; sourceTree = "<group>"; };
 		FDC40D06C96A45D4639D1CFCDF9A6F6E /* CardIOUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CardIOUtilities.h; path = CardIO/CardIOUtilities.h; sourceTree = "<group>"; };
 		FDCC3E75028EEA9026A7560E6A415ED1 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
@@ -678,13 +679,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		705D66030FCDD9D285D42ACD3382A0CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8B0D8633F410345F93419B8C3D7B6916 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -694,13 +688,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A890F4839B7EB9E7E2B1646F52E9C163 /* Frameworks */ = {
+		906A939EBCA7CC7475861494E0704482 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D556300C5125C14B88B9B14A4BD8B34 /* Alamofire.framework in Frameworks */,
-				5F24BA7A0627FCAEF24C81A82E9DCF5C /* AlamofireObjectMapper.framework in Frameworks */,
-				20A7FC9528102FD106B01E21B783BC81 /* Foundation.framework in Frameworks */,
+				F682200A21B02BD4B36ACCD9184E00AE /* Alamofire.framework in Frameworks */,
+				DD5609D1B9E37E7856C0AAA60966E8CF /* Foundation.framework in Frameworks */,
+				74254B9CA52B587447BF81A96DD79424 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +724,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAED00A72E5505D8FA69B9E1DC2F18EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -748,17 +749,6 @@
 			path = "../Target Support Files/AlamofireObjectMapper";
 			sourceTree = "<group>";
 		};
-		2280DD2430C2563DE02234B8324B6C2F /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				1D1CF08A3E7B5B6E184E9BC2A769E8E4 /* Button.swift */,
-				DF0B4739BB3F823425CE8A0942D6F745 /* FormPresentationController.swift */,
-				AE4A0492540F90958022FBD74BCAEE62 /* TextField.swift */,
-			);
-			name = UIKit;
-			path = UIKit;
-			sourceTree = "<group>";
-		};
 		2D9CCB4F5089955B5ED9B391A54E286E /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,15 +763,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2FE38E02AC5A23A040C2D90180FE13EA /* configuration */ = {
+		3194D80F03FBD8F4630EBC2D182991B2 /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
-				5DD544E8EDB8AA2F360405D609FB7502 /* PaymentConfiguration.swift */,
-				A997C53653E1DFC32CE838235009A999 /* PaymentData.swift */,
-				60C7621F4BF3F6258B5AC5B208BDD2C7 /* PaymentDelegate.swift */,
+				08B5DB283B2954C996BFF702A2F32065 /* Bundle+Extenstions.swift */,
+				C2BEB639CEB7DB41F7147C0094B3C9E5 /* PKPayment+Convert.swift */,
+				3826685008D527E18FE5EAF92BDB6AF0 /* String+Extensions.swift */,
+				F862CDDFD55736EA7ED24497256C085F /* UIColor+Assets.swift */,
+				8BE1682D64C8D52A0DA7594E51655C8F /* UIImage+Assets.swift */,
+				D130939791A217A034B30D4B3CD5C239 /* UIView+Constraints.swift */,
+				F2165B33982B523B54F764A404337716 /* UIViewController+Extensions.swift */,
 			);
-			name = configuration;
-			path = configuration;
+			name = Extenstions;
+			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		35F663EE0E9EFCD6AEA7492D57BA23EA /* SDWebImage */ = {
@@ -804,49 +798,30 @@
 			path = "../Target Support Files/CardIO";
 			sourceTree = "<group>";
 		};
-		3C911BB21A724C35830F503A3BD1E1E0 /* ThreeDs */ = {
+		468D39EDCB1CC69DE8CB11FE6534CB70 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				8566C540E43119B007579F38BA1F4C28 /* ThreeDsData.swift */,
-				4C03DE83053108F4B293C76A004DC91B /* ThreeDsProcessor.swift */,
-			);
-			name = ThreeDs;
-			path = sdk/ThreeDs;
-			sourceTree = "<group>";
-		};
-		471C72B933358F7F3072725764800ABD /* api */ = {
-			isa = PBXGroup;
-			children = (
-				2CA60D55B62A45E0F23E4AF70B67EE71 /* CloudpaymentsApi.swift */,
-				24DF58898C2FC6F691FF9449BCB710C9 /* CloudpaymentsError.swift */,
-				4EF41482EF7F21EAFD2150D79EBD92EA /* HTTP.swift */,
-				49FB6E881B4C6546B368ECE1F8472D8F /* Models */,
-			);
-			name = api;
-			path = sdk/api;
-			sourceTree = "<group>";
-		};
-		49FB6E881B4C6546B368ECE1F8472D8F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A49A98A17A44C6469A268318A41BEED3 /* BankInfo.swift */,
-				669E8DD05AD03A729D1040E4A3E92349 /* BankInfoResponse.swift */,
-				CE4FDFBAD0D35899C60B7EF92DE9C255 /* Currency.swift */,
-				2D56175C89AC54407E0997B485E6F839 /* ThreeDsResponse.swift */,
-				CECE8504C9BBD28B1A09871C5FF761EC /* Transaction.swift */,
-				F6B439306A5C15405F341CD398E76F33 /* TransactionResponse.swift */,
+				508D69024F0875B321E10C7074E44C39 /* BankInfo.swift */,
+				5CC97047F643C1F7864AE288C6494772 /* BankInfoResponse.swift */,
+				01AD6CE1C21D43FBFDCB359C6E3136A5 /* Currency.swift */,
+				392A74DBC61DAFAF2CF453E4D6C33F0B /* ThreeDsResponse.swift */,
+				69FB5723E42D10DACA8B49640B606225 /* Transaction.swift */,
+				D7062251B2AA1E69E31B222DE3F0899D /* TransactionResponse.swift */,
 			);
 			name = Models;
 			path = Models;
 			sourceTree = "<group>";
 		};
-		579D2D00F29EDAA011ED02C5DF98106A /* Resources */ = {
+		5882EED425A46941C3A9E94DFD770C51 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D14776806370A8DFE7CE37B734D8DF3E /* Assets.xcassets */,
-				7FBA093F3453DA4B54FEA8E33425D659 /* PaymentForm.storyboard */,
+				64D91FE15AFDDD9F478B8BC4702CFCAE /* DataRequest+Extension.swift */,
+				10199BC069C814656B6993922C7C899D /* RSAUtils.swift */,
+				3194D80F03FBD8F4630EBC2D182991B2 /* Extenstions */,
+				9B2E99458B2D7AEFD5F36AD1DEC14067 /* UIKit */,
 			);
-			name = Resources;
+			name = Utils;
+			path = sdk/Utils;
 			sourceTree = "<group>";
 		};
 		58C9A463EE5E4F6AF51F46411B9590DC /* Core */ = {
@@ -998,6 +973,15 @@
 			name = Core;
 			sourceTree = "<group>";
 		};
+		5A5D2A7BB5DF95CBC757DDE92DE501CF /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				A00CE4AD3A377405D4C656B8CB5BB23B /* Card.swift */,
+			);
+			name = Card;
+			path = sdk/Card;
+			sourceTree = "<group>";
+		};
 		69A814E326AEE1472BFDE015E218E037 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1008,6 +992,33 @@
 				35F663EE0E9EFCD6AEA7492D57BA23EA /* SDWebImage */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		6E4B625B5EB026A9FA410F38A4F2DB33 /* Cloudpayments */ = {
+			isa = PBXGroup;
+			children = (
+				F0B083AB9239727204B402B28930456D /* api */,
+				5A5D2A7BB5DF95CBC757DDE92DE501CF /* Card */,
+				EFF0BF4D5F39CF63B11115D8312DC453 /* PaymentForm */,
+				D98ACC5711BED5C3162328AF0DA969D9 /* Pod */,
+				9CB17BC71DACD4DCD8338AA60AC76F36 /* Resources */,
+				C0059731AD0BEED635D1D1F7DBE094FE /* Support Files */,
+				9E151F2DB0DD4730FE03E6F5C44A599B /* ThreeDs */,
+				5882EED425A46941C3A9E94DFD770C51 /* Utils */,
+			);
+			name = Cloudpayments;
+			path = ../../sdk;
+			sourceTree = "<group>";
+		};
+		7B69622B5990F64E4C45F91645060B57 /* configuration */ = {
+			isa = PBXGroup;
+			children = (
+				467B7C92EC74C9F41B1E8BCE7D727456 /* PaymentConfiguration.swift */,
+				6EE2E0DF528BCDB14A29EEF869E9171C /* PaymentData.swift */,
+				F83BB63D3AAC0A2F278A38F2678ECDB2 /* PaymentDelegate.swift */,
+			);
+			name = configuration;
+			path = configuration;
 			sourceTree = "<group>";
 		};
 		7CFB4022B2690CA26475BB735524DE51 /* Alamofire */ = {
@@ -1066,13 +1077,14 @@
 			path = "../Target Support Files/ObjectMapper";
 			sourceTree = "<group>";
 		};
-		8D7BD17475519D8936C4F15112A9028A /* Card */ = {
+		8A97456D01213E9C7F5A50B82F0E7679 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2B61D3D4AAF5BC7A2ED31AF96E83F1BC /* Card.swift */,
+				84D84E94729997058CA8245425011B5C /* CFNetwork.framework */,
+				64B61C955057E7FA8AB2A0F3600D0330 /* Foundation.framework */,
+				C1834D57A08CE11035BECFAF8E08B91B /* ImageIO.framework */,
 			);
-			name = Card;
-			path = sdk/Card;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		9309643351B34247B1E8A9AC7EC9A02E /* AlamofireObjectMapper */ = {
@@ -1085,15 +1097,34 @@
 			path = AlamofireObjectMapper;
 			sourceTree = "<group>";
 		};
-		98A946F234D3F962676A883ECC242849 /* Utils */ = {
+		9B2E99458B2D7AEFD5F36AD1DEC14067 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				1E929F48194A99E7217397C162CA4FF7 /* RSAUtils.swift */,
-				CC711148669A4998FBCE0B1A0A9695D6 /* Extenstions */,
-				2280DD2430C2563DE02234B8324B6C2F /* UIKit */,
+				F6F7314B294E545AD4454050BED7ACD4 /* Button.swift */,
+				B88D415A582A9B1E3F2074F4319F43A6 /* FormPresentationController.swift */,
+				67AD2A6B3E0B4DC97B05543B5C185693 /* TextField.swift */,
 			);
-			name = Utils;
-			path = sdk/Utils;
+			name = UIKit;
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		9CB17BC71DACD4DCD8338AA60AC76F36 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				80454FFFD923AADCD0046BAF61EBBE48 /* Assets.xcassets */,
+				FC5F378B9006C351B6E8032CA535814A /* PaymentForm.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		9E151F2DB0DD4730FE03E6F5C44A599B /* ThreeDs */ = {
+			isa = PBXGroup;
+			children = (
+				56201BAD88AD6D4841271DCBD614553E /* ThreeDsData.swift */,
+				D8A86D329C0351B5551F8E2354DEE1E0 /* ThreeDsProcessor.swift */,
+			);
+			name = ThreeDs;
+			path = sdk/ThreeDs;
 			sourceTree = "<group>";
 		};
 		A2086231697D9DA066BAF786A34CC23C /* ObjectMapper */ = {
@@ -1129,22 +1160,28 @@
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
-		A3413E93B44401D334FA930B8D99B83A /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				C7CDA5B025467BBB86597E6D11F5EBB2 /* CFNetwork.framework */,
-				09323B389D18D5AD10BAEA5108E9FB3F /* Foundation.framework */,
-				84E3A1DD3260C37B732A695153B06867 /* ImageIO.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		A93195AB5748F7569134F397E2674D09 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
 				CBA4AB0AD989728D60465BDAA2076BA2 /* Pods-demo */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		C0059731AD0BEED635D1D1F7DBE094FE /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9A8D03BA730447A6FCC68CDF1AE3532F /* Cloudpayments.modulemap */,
+				85A989ED199FFB591E2DACBE89FA8E17 /* Cloudpayments-dummy.m */,
+				C2C89CAD6DFFA1852AB447DAB5F0D06D /* Cloudpayments-Info.plist */,
+				F389C16F63351A4F47A4826814A4278E /* Cloudpayments-prefix.pch */,
+				594BE565E084DC969D197B667C242941 /* Cloudpayments-umbrella.h */,
+				932CD6AC4B3C53F6B043B2A4B42E968E /* Cloudpayments.debug.xcconfig */,
+				0C7BB5C6EED8CF1236091BB7F96D3EA5 /* Cloudpayments.release.xcconfig */,
+				E146FF11D4B465E21FDA1E9B734EA2D8 /* ResourceBundle-Cloudpayments-Cloudpayments-Info.plist */,
+			);
+			name = "Support Files";
+			path = "../demo/Pods/Target Support Files/Cloudpayments";
 			sourceTree = "<group>";
 		};
 		C0EBE628BE52E11B1FE058B7B5569D20 /* Frameworks */ = {
@@ -1157,12 +1194,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9FB1A3AA354DE616F20022610E2D175 /* Pod */ = {
+		C2043B142D4A852B30490A4D7D183C1F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2785867770A34B17EF666A88F1A18F08 /* Cloudpayments.podspec */,
+				17E230E084953570B411311447894EAF /* Alamofire.framework */,
+				AF996A5FD7B65CF3153FA500D6968ED0 /* ObjectMapper.framework */,
+				8A97456D01213E9C7F5A50B82F0E7679 /* iOS */,
 			);
-			name = Pod;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CBA4AB0AD989728D60465BDAA2076BA2 /* Pods-demo */ = {
@@ -1180,37 +1219,6 @@
 			);
 			name = "Pods-demo";
 			path = "Target Support Files/Pods-demo";
-			sourceTree = "<group>";
-		};
-		CBEA0A34135284B6D3A2774C2C2229A7 /* Cloudpayments */ = {
-			isa = PBXGroup;
-			children = (
-				471C72B933358F7F3072725764800ABD /* api */,
-				8D7BD17475519D8936C4F15112A9028A /* Card */,
-				F445731B74CADFEB5F67AA0DB2CFD777 /* PaymentForm */,
-				C9FB1A3AA354DE616F20022610E2D175 /* Pod */,
-				579D2D00F29EDAA011ED02C5DF98106A /* Resources */,
-				F2FBA7D162A1B139F3C4F88638A9DC72 /* Support Files */,
-				3C911BB21A724C35830F503A3BD1E1E0 /* ThreeDs */,
-				98A946F234D3F962676A883ECC242849 /* Utils */,
-			);
-			name = Cloudpayments;
-			path = ../../sdk;
-			sourceTree = "<group>";
-		};
-		CC711148669A4998FBCE0B1A0A9695D6 /* Extenstions */ = {
-			isa = PBXGroup;
-			children = (
-				8FBD5BF8EE2DD702DAA62A13A9A7C642 /* Bundle+Extenstions.swift */,
-				DFCD1855C0684DD7A8E955D673197299 /* PKPayment+Convert.swift */,
-				8C5065D171FF3630A4A24040D74D13AD /* String+Extensions.swift */,
-				D11FE5694CC752DEE6388E33973BCF87 /* UIColor+Assets.swift */,
-				63A531275833239BB7C09D7863A6C6B9 /* UIImage+Assets.swift */,
-				D53459AEE5A3D76DB7FC808E4115C69B /* UIView+Constraints.swift */,
-				6DEE6D9C4B3DBE281C8B61F8CFFA7306 /* UIViewController+Extensions.swift */,
-			);
-			name = Extenstions;
-			path = Extenstions;
 			sourceTree = "<group>";
 		};
 		CCDC7ECCE45EBBFF0781A945EDAA89A9 /* CardIO */ = {
@@ -1236,7 +1244,7 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				E8D6519B041DCECB7A3704A128DE7EFE /* Development Pods */,
-				F63FD16F8B813571A419660CE17A9517 /* Frameworks */,
+				C2043B142D4A852B30490A4D7D183C1F /* Frameworks */,
 				69A814E326AEE1472BFDE015E218E037 /* Pods */,
 				2D9CCB4F5089955B5ED9B391A54E286E /* Products */,
 				A93195AB5748F7569134F397E2674D09 /* Targets Support Files */,
@@ -1258,6 +1266,14 @@
 			path = "../Target Support Files/SDWebImage";
 			sourceTree = "<group>";
 		};
+		D98ACC5711BED5C3162328AF0DA969D9 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				F731FB883929FE5F1D3927EBACF2F2AE /* Cloudpayments.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		E61A61814E8D6D179378E4AAB368040D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -1276,51 +1292,36 @@
 		E8D6519B041DCECB7A3704A128DE7EFE /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CBEA0A34135284B6D3A2774C2C2229A7 /* Cloudpayments */,
+				6E4B625B5EB026A9FA410F38A4F2DB33 /* Cloudpayments */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		F2FBA7D162A1B139F3C4F88638A9DC72 /* Support Files */ = {
+		EFF0BF4D5F39CF63B11115D8312DC453 /* PaymentForm */ = {
 			isa = PBXGroup;
 			children = (
-				D2CD7226EB3888DF3A87BA8B2E543337 /* Cloudpayments.modulemap */,
-				DE4823D13D0B7C77EF0D29C1A4185292 /* Cloudpayments-dummy.m */,
-				0EB390057550B3435F26B507EE9A6891 /* Cloudpayments-Info.plist */,
-				E74A2036F09B437B750C7CB2B99AF40E /* Cloudpayments-prefix.pch */,
-				7C644D7624272FBA25034D4881399BFA /* Cloudpayments-umbrella.h */,
-				B75E6B0E700E9AB1394ADC774669139D /* Cloudpayments.debug.xcconfig */,
-				3C4C616CBA249FF2034FBB07A1ADB411 /* Cloudpayments.release.xcconfig */,
-				0A6EB8C5B9FA29B709F6282AFD5C2E0B /* ResourceBundle-Cloudpayments-Cloudpayments-Info.plist */,
-			);
-			name = "Support Files";
-			path = "../demo/Pods/Target Support Files/Cloudpayments";
-			sourceTree = "<group>";
-		};
-		F445731B74CADFEB5F67AA0DB2CFD777 /* PaymentForm */ = {
-			isa = PBXGroup;
-			children = (
-				F79553F8F00C49E0E56C479FA17F6E25 /* BaseViewController.swift */,
-				E3CF5E2197E9BEA9F59517AE5382AF73 /* PaymentCardForm.swift */,
-				63C9599DFA29D8D33EADF645DDFEA167 /* PaymentCardScanner.swift */,
-				C98B058D582E01FDEA4E8328FDCDF51C /* PaymentForm.swift */,
-				5FB3039A7502DEABF8E7BD2E73A98C61 /* PaymentOptionsForm.swift */,
-				AC00D8FBC670842494DD237722B5AA36 /* PaymentProcessForm.swift */,
-				2FE38E02AC5A23A040C2D90180FE13EA /* configuration */,
+				D86A0AED66170DB917456BC5307AC2BA /* BaseViewController.swift */,
+				6578E3C91648C9579F1AA0D79A359350 /* PaymentCardForm.swift */,
+				E37F9F353208702F021DE11BD2E73182 /* PaymentCardScanner.swift */,
+				09E7BA64F1CAFAFAF0AE935E51FFC2C6 /* PaymentForm.swift */,
+				A4D5EB5F438D03419FA24E7990974996 /* PaymentOptionsForm.swift */,
+				C3CD3A78B3CECB14F86513D9A7334768 /* PaymentProcessForm.swift */,
+				7B69622B5990F64E4C45F91645060B57 /* configuration */,
 			);
 			name = PaymentForm;
 			path = sdk/PaymentForm;
 			sourceTree = "<group>";
 		};
-		F63FD16F8B813571A419660CE17A9517 /* Frameworks */ = {
+		F0B083AB9239727204B402B28930456D /* api */ = {
 			isa = PBXGroup;
 			children = (
-				AE1A389D795BCED63AE82C21F4B88478 /* Alamofire.framework */,
-				719FA8CB752E64CB5CFA589AE8CD5450 /* AlamofireObjectMapper.framework */,
-				35C4175FEAFFE4E36FAEB169F38A741B /* ObjectMapper.framework */,
-				A3413E93B44401D334FA930B8D99B83A /* iOS */,
+				74CAA3BB2530E9742391F9C6A1F082E7 /* CloudpaymentsApi.swift */,
+				ACD41655ED20E3482EB63FA7FE04B8B9 /* CloudpaymentsError.swift */,
+				E70D51CC4A5C7ACCE316B1A56DF9F1D4 /* HTTP.swift */,
+				468D39EDCB1CC69DE8CB11FE6534CB70 /* Models */,
 			);
-			name = Frameworks;
+			name = api;
+			path = sdk/api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1334,11 +1335,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3AED0ECE99813093372BF36A08A3ECA2 /* Headers */ = {
+		4B01AAB2E31F1132634C1B3C38252560 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6165073BE4BEB1CDC910804B0BACDD93 /* Cloudpayments-umbrella.h in Headers */,
+				02FB5D3A797CDF48109DF45DA4DE79BD /* Cloudpayments-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1532,11 +1533,11 @@
 		};
 		99B6E494F89116282F457C5A89EE99A7 /* Cloudpayments-Cloudpayments */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E195EF39F9E206EE26382B13494A586D /* Build configuration list for PBXNativeTarget "Cloudpayments-Cloudpayments" */;
+			buildConfigurationList = 4457C9C6CA5D8970432E2869C8B77388 /* Build configuration list for PBXNativeTarget "Cloudpayments-Cloudpayments" */;
 			buildPhases = (
-				83DF508E3A31C024C33CA342C4FB74D5 /* Sources */,
-				705D66030FCDD9D285D42ACD3382A0CA /* Frameworks */,
-				5642C481B4A864EC8D99169CE4B227A2 /* Resources */,
+				D1DAF081364B23071B98A5BF68897D94 /* Sources */,
+				FAED00A72E5505D8FA69B9E1DC2F18EC /* Frameworks */,
+				91B503C620ACED6BD189DDDDFD57404E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -1549,19 +1550,19 @@
 		};
 		BA59DB4873674A853FCDF8E84C19C072 /* Cloudpayments */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 972B8CCDF4467CFD651544B800A3DF6F /* Build configuration list for PBXNativeTarget "Cloudpayments" */;
+			buildConfigurationList = AF0C7CA803F87EA9993256FA761E6C9E /* Build configuration list for PBXNativeTarget "Cloudpayments" */;
 			buildPhases = (
-				3AED0ECE99813093372BF36A08A3ECA2 /* Headers */,
-				FB4299C3E6EA1910BDB1C2810A1D377F /* Sources */,
-				A890F4839B7EB9E7E2B1646F52E9C163 /* Frameworks */,
-				01481EF7B494DD01981BD19173F496EF /* Resources */,
+				4B01AAB2E31F1132634C1B3C38252560 /* Headers */,
+				DC0E8D5ACC1E98C60C9CB49883F79D9B /* Sources */,
+				906A939EBCA7CC7475861494E0704482 /* Frameworks */,
+				E8858FDFDD4D152FA70A74B364E6F3CB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				675142B63CA83AD0A8B8251CB8890AFF /* PBXTargetDependency */,
-				26FCDF5BE10F48D01AED9A9A0DEB03B4 /* PBXTargetDependency */,
-				9F9701038C973F0476BF2598D0D55493 /* PBXTargetDependency */,
+				1B3A7EE37DF8B0AAC26F6AC117B7DE2A /* PBXTargetDependency */,
+				183F51F0D979236D7E69C4A5CB13B6CA /* PBXTargetDependency */,
+				14EBC4FDEEE3ECD5D05B7312D10E512A /* PBXTargetDependency */,
 			);
 			name = Cloudpayments;
 			productName = Cloudpayments;
@@ -1621,14 +1622,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		01481EF7B494DD01981BD19173F496EF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16DF9AB53E2ABE07D68936C0ADC3C813 /* Cloudpayments.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1B524A7746682A3360EAED50910ADB56 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1657,19 +1650,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5642C481B4A864EC8D99169CE4B227A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F9E94EF1012CBA17F205F37C55BF1E4E /* Assets.xcassets in Resources */,
-				FB8E96DC5341EEBC09B3BAA343E26C36 /* PaymentForm.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		728FF2A4CDAFD0B0CDAA210105C25BF6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		91B503C620ACED6BD189DDDDFD57404E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29C3F838B8953F0E13AF8F16C40D3845 /* Assets.xcassets in Resources */,
+				5879F553E3C288BE92B86C3E89264773 /* PaymentForm.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E8858FDFDD4D152FA70A74B364E6F3CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE6DF3E3B58EC9ABB850F3917F06D77B /* Cloudpayments.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1801,13 +1802,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		83DF508E3A31C024C33CA342C4FB74D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9E0C555BE2F8DBB03F19286C54D82AF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1849,54 +1843,74 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FB4299C3E6EA1910BDB1C2810A1D377F /* Sources */ = {
+		D1DAF081364B23071B98A5BF68897D94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				245B571021F05DA0CBFD9FEDFBAF42F5 /* BankInfo.swift in Sources */,
-				2B6D8F87DD7A8C170D60C260BCDB2ABF /* BankInfoResponse.swift in Sources */,
-				A84E9D6D28CFF00C7BB20CB2E59F2B49 /* BaseViewController.swift in Sources */,
-				F189C3AEF39D661EF1E400A659BFB67C /* Bundle+Extenstions.swift in Sources */,
-				A70BCFD5A19701D17A0BE725454A24E7 /* Button.swift in Sources */,
-				31AD17742EAC6FF7BB17A06137D9B10A /* Card.swift in Sources */,
-				37AFCE562667537137948A79ECFF94A1 /* Cloudpayments-dummy.m in Sources */,
-				C00081A9054DC24872E54F5F0FEC6650 /* CloudpaymentsApi.swift in Sources */,
-				68933E1C468033115C50C838E7634A2B /* CloudpaymentsError.swift in Sources */,
-				395860861B1BDD5E0B1C40795378C916 /* Currency.swift in Sources */,
-				FBA42108A41F6C9B205CA1D74F74E29C /* FormPresentationController.swift in Sources */,
-				F8FF55BA138D3FC45AF24588E145DD53 /* HTTP.swift in Sources */,
-				5CBBE504FFFBD5537FD6B1D6B0D12B52 /* PaymentCardForm.swift in Sources */,
-				BCF7940F4D473EF84062DB448F69790D /* PaymentCardScanner.swift in Sources */,
-				A735411AAB17482B0DF14E902AF6DD09 /* PaymentConfiguration.swift in Sources */,
-				6A4BA5F71C72D5EEB72C6350E661A6B1 /* PaymentData.swift in Sources */,
-				1C6D89B6B8A8F433F5AFBBE067DEAE39 /* PaymentDelegate.swift in Sources */,
-				577241AC0BF136FA9762AE8B93E58480 /* PaymentForm.swift in Sources */,
-				76934424E79FF18889359FC66C61C459 /* PaymentOptionsForm.swift in Sources */,
-				05C49E773FDC69F7267F7090313E4AFE /* PaymentProcessForm.swift in Sources */,
-				E5CE4316087C8034FE9880DBB67FB63C /* PKPayment+Convert.swift in Sources */,
-				0C993EEE77CD304447D797B6B2A5EBA5 /* RSAUtils.swift in Sources */,
-				6191E2144BB480A4DDF3A4B59487AFA3 /* String+Extensions.swift in Sources */,
-				7C788D437046C20E18A52E2A26993C72 /* TextField.swift in Sources */,
-				4C67A1A725E5A30F849B6CA2DF543447 /* ThreeDsData.swift in Sources */,
-				72C0C431B0F8346BAD2882777BAEC5BE /* ThreeDsProcessor.swift in Sources */,
-				4E928D91F861358D6A4D0740CD26B415 /* ThreeDsResponse.swift in Sources */,
-				437D5ADAC69D0A446B7C835A8B9C40B4 /* Transaction.swift in Sources */,
-				4F3F3C3CBFFFE46CFE82422C0623BECB /* TransactionResponse.swift in Sources */,
-				EEBAA7C0E7F5FAD211422DA9EC1651B1 /* UIColor+Assets.swift in Sources */,
-				E82957D6EA1315C2EADA38892E962169 /* UIImage+Assets.swift in Sources */,
-				DCD1114CE31161272F51CBD11819D7A0 /* UIView+Constraints.swift in Sources */,
-				D4FC949EF0B8380902C529FB5DC7EE16 /* UIViewController+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC0E8D5ACC1E98C60C9CB49883F79D9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5C60040EF2D2F4AFF21EF920BC7EFAD /* BankInfo.swift in Sources */,
+				46B5D52708CC548AA3BB4FE2F1DE2403 /* BankInfoResponse.swift in Sources */,
+				7CB49CB562946BB7C99CEED0F3F85D19 /* BaseViewController.swift in Sources */,
+				FEC3FC44FE997EBA956ACB359824927F /* Bundle+Extenstions.swift in Sources */,
+				DE7F1BF311913080327BC88DD693C4F6 /* Button.swift in Sources */,
+				8A00435ED8AADCB4AC0E549659FF04FF /* Card.swift in Sources */,
+				63D55B9A2388C387129AC7435FF49798 /* Cloudpayments-dummy.m in Sources */,
+				E28A9F972AD891C78D38EA5B6B8E5CD5 /* CloudpaymentsApi.swift in Sources */,
+				91F0EF45AAE851B1E120B4C78EF93B0B /* CloudpaymentsError.swift in Sources */,
+				B09A81018D47AC4740934C2B22847E8B /* Currency.swift in Sources */,
+				DBF396A9C9369823D181B02D5301D9B5 /* DataRequest+Extension.swift in Sources */,
+				9C062A125F41DBB4776A0F523C37AD00 /* FormPresentationController.swift in Sources */,
+				6562301C8B5B3402A8408F02913962B4 /* HTTP.swift in Sources */,
+				9C7CD763C03C7C555B951C0C1248C4BF /* PaymentCardForm.swift in Sources */,
+				49BFC762E89164CE5111ED4E2F0F8E9D /* PaymentCardScanner.swift in Sources */,
+				D98DF4D5392656BB120073F31C25ED4E /* PaymentConfiguration.swift in Sources */,
+				6AC74E20C6827C9AD9A37F41BB36F310 /* PaymentData.swift in Sources */,
+				5E427FE1BF4266F3E4B1D7826892FE6D /* PaymentDelegate.swift in Sources */,
+				42BD8A4F90A76ED2E83938EB5DD8A664 /* PaymentForm.swift in Sources */,
+				BD541CB16C496C0BC6C521E1ABE9AC82 /* PaymentOptionsForm.swift in Sources */,
+				03206EC67DE4762B4AA8DB22F31207EC /* PaymentProcessForm.swift in Sources */,
+				0521CBC83C6C0FD0A312B0F1B959B438 /* PKPayment+Convert.swift in Sources */,
+				9D1836B05C7315B5C531E1C0897A1376 /* RSAUtils.swift in Sources */,
+				3B3AB649C1F38E3F9EEDE1ED237E43FC /* String+Extensions.swift in Sources */,
+				A832E7D7FB8D23A24DF4562A28405E26 /* TextField.swift in Sources */,
+				6F9383F8006169C3C1B98AF2318839BE /* ThreeDsData.swift in Sources */,
+				FCA0B13D8875D72311DB4EEBDA6D833B /* ThreeDsProcessor.swift in Sources */,
+				EC4769385C04F50BD4E95E05171919A8 /* ThreeDsResponse.swift in Sources */,
+				5924B29696716F618382F2C2533C453A /* Transaction.swift in Sources */,
+				6AB91E7681B66763392443628E7DF595 /* TransactionResponse.swift in Sources */,
+				6888446D933E25C3B60DA7D85953DEF8 /* UIColor+Assets.swift in Sources */,
+				48E88FDB663FB2707138F097F7286996 /* UIImage+Assets.swift in Sources */,
+				6FB1832A2C335843314163D46E87B703 /* UIView+Constraints.swift in Sources */,
+				3762B836315890B0C0FFFBCBD89FBA41 /* UIViewController+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		26FCDF5BE10F48D01AED9A9A0DEB03B4 /* PBXTargetDependency */ = {
+		14EBC4FDEEE3ECD5D05B7312D10E512A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = AlamofireObjectMapper;
-			target = 3F64080413BB03C0B16BFEB621E6E0F2 /* AlamofireObjectMapper */;
-			targetProxy = 8F15D97A55CCC80C40BCA1AA5CADAF36 /* PBXContainerItemProxy */;
+			name = ObjectMapper;
+			target = 162E649F50FEC62B61BDD87D1BD422B4 /* ObjectMapper */;
+			targetProxy = 9EF24121B5E64A39D7C49BF70074DE99 /* PBXContainerItemProxy */;
+		};
+		183F51F0D979236D7E69C4A5CB13B6CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Cloudpayments-Cloudpayments";
+			target = 99B6E494F89116282F457C5A89EE99A7 /* Cloudpayments-Cloudpayments */;
+			targetProxy = 91527C04C81FB1082DFE8E4101A89CAD /* PBXContainerItemProxy */;
+		};
+		1B3A7EE37DF8B0AAC26F6AC117B7DE2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
+			targetProxy = FB163510D92CCFF0EC1C07E5C9FDF0F1 /* PBXContainerItemProxy */;
 		};
 		34F882C47D939539D0648850F0E58489 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1910,12 +1924,6 @@
 			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
 			targetProxy = 5ECF06DB1D5F0B0EB4082D2C0AE76ED0 /* PBXContainerItemProxy */;
 		};
-		675142B63CA83AD0A8B8251CB8890AFF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = EAAA1AD3A8A1B59AB91319EE40752C6D /* Alamofire */;
-			targetProxy = 641399D9999DE6F80010AFE11AF2A57F /* PBXContainerItemProxy */;
-		};
 		6BAB38DEB2B1A4604664BE44D03CE009 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Cloudpayments;
@@ -1927,12 +1935,6 @@
 			name = SDWebImage;
 			target = 3847153A6E5EEFB86565BA840768F429 /* SDWebImage */;
 			targetProxy = 88913EE9BED58DF85BF64257E6B1D8A7 /* PBXContainerItemProxy */;
-		};
-		9F9701038C973F0476BF2598D0D55493 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Cloudpayments-Cloudpayments";
-			target = 99B6E494F89116282F457C5A89EE99A7 /* Cloudpayments-Cloudpayments */;
-			targetProxy = 36DADBDF62F12ACB6C4A428B959859C7 /* PBXContainerItemProxy */;
 		};
 		B53B0FC7CA99FB55850C796071694965 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1994,6 +1996,23 @@
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		1296FA0BBF446D8C1E14404782AEC239 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7BB5C6EED8CF1236091BB7F96D3EA5 /* Cloudpayments.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments";
+				IBSC_MODULE = Cloudpayments;
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments/ResourceBundle-Cloudpayments-Cloudpayments-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = Cloudpayments;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -2128,40 +2147,6 @@
 			};
 			name = Debug;
 		};
-		371A344C4713CA6D059E9CAE4DBE7C2D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B75E6B0E700E9AB1394ADC774669139D /* Cloudpayments.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments";
-				IBSC_MODULE = Cloudpayments;
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments/ResourceBundle-Cloudpayments-Cloudpayments-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = Cloudpayments;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		49C3DDF1A6570487D94DA95C23FEFA40 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C4C616CBA249FF2034FBB07A1ADB411 /* Cloudpayments.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments";
-				IBSC_MODULE = Cloudpayments;
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments/ResourceBundle-Cloudpayments-Cloudpayments-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_NAME = Cloudpayments;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 		4C950B5655253472452F1517B6B7F867 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E721644F2A192E3DDDFCB3C19B27AA7 /* CardIO.debug.xcconfig */;
@@ -2288,6 +2273,43 @@
 			};
 			name = Release;
 		};
+		944C13C953ACDFFE73085FAD4CEBC6BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C7BB5C6EED8CF1236091BB7F96D3EA5 /* Cloudpayments.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments/Cloudpayments-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments/Cloudpayments-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cloudpayments/Cloudpayments.modulemap";
+				PRODUCT_MODULE_NAME = Cloudpayments;
+				PRODUCT_NAME = Cloudpayments;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9A20D9C5346766D8C4243E542E6C0E31 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B23EB993B717613A064B30C0C145FC6 /* Alamofire.debug.xcconfig */;
@@ -2341,6 +2363,42 @@
 			};
 			name = Release;
 		};
+		A450D76ACB90C1AF71FFD0C142A03E7E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 932CD6AC4B3C53F6B043B2A4B42E968E /* Cloudpayments.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments/Cloudpayments-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments/Cloudpayments-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/Cloudpayments/Cloudpayments.modulemap";
+				PRODUCT_MODULE_NAME = Cloudpayments;
+				PRODUCT_NAME = Cloudpayments;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		AA4BD163BCD307BF86CE66D12A6728A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7746CC448EA0C2E5BD0EB7A1AB7CFF34 /* AlamofireObjectMapper.release.xcconfig */;
@@ -2377,79 +2435,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
-		};
-		BE53A4193D271D8318EBC967B269A615 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C4C616CBA249FF2034FBB07A1ADB411 /* Cloudpayments.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments/Cloudpayments-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments/Cloudpayments-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Cloudpayments/Cloudpayments.modulemap";
-				PRODUCT_MODULE_NAME = Cloudpayments;
-				PRODUCT_NAME = Cloudpayments;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CB75ECB819ED1195FAFDCBA79F5055FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B75E6B0E700E9AB1394ADC774669139D /* Cloudpayments.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Cloudpayments/Cloudpayments-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Cloudpayments/Cloudpayments-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/Cloudpayments/Cloudpayments.modulemap";
-				PRODUCT_MODULE_NAME = Cloudpayments;
-				PRODUCT_NAME = Cloudpayments;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 		DD8F832993327D1DD8046C3CBCBD97CD /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2590,6 +2575,23 @@
 			};
 			name = Release;
 		};
+		ECACCA3A0BD3E66A8E26607D217705D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 932CD6AC4B3C53F6B043B2A4B42E968E /* Cloudpayments.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Cloudpayments";
+				IBSC_MODULE = Cloudpayments;
+				INFOPLIST_FILE = "Target Support Files/Cloudpayments/ResourceBundle-Cloudpayments-Cloudpayments-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_NAME = Cloudpayments;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2598,6 +2600,15 @@
 			buildConfigurations = (
 				30BCDDAB4BD9D09CE8926BA8D71F05BC /* Debug */,
 				AA4BD163BCD307BF86CE66D12A6728A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4457C9C6CA5D8970432E2869C8B77388 /* Build configuration list for PBXNativeTarget "Cloudpayments-Cloudpayments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ECACCA3A0BD3E66A8E26607D217705D0 /* Debug */,
+				1296FA0BBF446D8C1E14404782AEC239 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -2629,15 +2640,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		972B8CCDF4467CFD651544B800A3DF6F /* Build configuration list for PBXNativeTarget "Cloudpayments" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CB75ECB819ED1195FAFDCBA79F5055FA /* Debug */,
-				BE53A4193D271D8318EBC967B269A615 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		9B104DFAE487741D6C167471A0DF9296 /* Build configuration list for PBXNativeTarget "Pods-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2647,20 +2649,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		AF0C7CA803F87EA9993256FA761E6C9E /* Build configuration list for PBXNativeTarget "Cloudpayments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A450D76ACB90C1AF71FFD0C142A03E7E /* Debug */,
+				944C13C953ACDFFE73085FAD4CEBC6BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BE2D23DBDD07ECE5D86E860EE36B0BD2 /* Build configuration list for PBXAggregateTarget "CardIO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4C950B5655253472452F1517B6B7F867 /* Debug */,
 				9AC9E39BB2736B6FFFD6ACF1117BB607 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E195EF39F9E206EE26382B13494A586D /* Build configuration list for PBXNativeTarget "Cloudpayments-Cloudpayments" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				371A344C4713CA6D059E9CAE4DBE7C2D /* Debug */,
-				49C3DDF1A6570487D94DA95C23FEFA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

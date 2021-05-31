@@ -26,20 +26,18 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     private var applePaymentSucceeded: Bool?
+    private var resultTransaction: Transaction?
+    private var errorMessage: String?
     
     var onCardOptionSelected: (() -> ())?
 
     @discardableResult
-    public override class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
+    public class func present(with configuration: PaymentConfiguration, from: UIViewController, completion: (() -> ())?) -> PaymentForm {
         let storyboard = UIStoryboard.init(name: "PaymentForm", bundle: Bundle.mainSdk)
 
-        guard let controller = storyboard.instantiateViewController(withIdentifier: "PaymentOptionsForm") as? PaymentOptionsForm else {
-            return nil
-        }
-        
+        let controller = storyboard.instantiateViewController(withIdentifier: "PaymentOptionsForm") as! PaymentOptionsForm
         controller.configuration = configuration
-
-        controller.show(inViewController: from, completion: nil)
+        controller.show(inViewController: from, completion: completion)
         
         return controller
     }
@@ -51,7 +49,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     private func initializeApplePay() {
-        if !self.configuration.paymentData.applePayMerchantId.isEmpty && PKPaymentAuthorizationViewController.canMakePayments() {
+        if let _  = self.configuration.paymentData.applePayMerchantId, PKPaymentAuthorizationViewController.canMakePayments() {
             let button: PKPaymentButton!
             if PKPaymentAuthorizationController.canMakePayments(usingNetworks: self.supportedPaymentNetworks) {
                 button = PKPaymentButton.init(paymentButtonType: .plain, paymentButtonStyle: .black)
@@ -78,22 +76,31 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     @objc private func onApplePay(_ sender: UIButton) {
+        errorMessage = nil
+        resultTransaction = nil
+        applePaymentSucceeded = false
+        
         let paymentData = self.configuration.paymentData
-        
-        let amount = Double(paymentData.amount) ?? 0.0
-        
-        let request = PKPaymentRequest()
-        request.merchantIdentifier = paymentData.applePayMerchantId
-        request.supportedNetworks = self.supportedPaymentNetworks
-        request.merchantCapabilities = PKMerchantCapability.capability3DS
-        request.countryCode = "RU"
-        request.currencyCode = paymentData.currency.rawValue
-        request.paymentSummaryItems = [PKPaymentSummaryItem(label: "К оплате", amount: NSDecimalNumber.init(value: amount))]
-        if let applePayController = PKPaymentAuthorizationViewController(paymentRequest:
-                request) {
-            applePayController.delegate = self
-            applePayController.modalPresentationStyle = .formSheet
-            self.present(applePayController, animated: true, completion: nil)
+        if let applePayMerchantId = paymentData.applePayMerchantId {
+            let amount = Double(paymentData.amount) ?? 0.0
+            
+            let request = PKPaymentRequest()
+            request.merchantIdentifier = applePayMerchantId
+            request.supportedNetworks = self.supportedPaymentNetworks
+            request.merchantCapabilities = PKMerchantCapability.capability3DS
+            request.countryCode = "RU"
+            request.currencyCode = paymentData.currency.rawValue
+            
+            
+            let paymentSummaryItems = [PKPaymentSummaryItem(label: self.configuration.paymentData.description ?? "К оплате", amount: NSDecimalNumber.init(value: amount))]
+            request.paymentSummaryItems = paymentSummaryItems
+            
+            if let applePayController = PKPaymentAuthorizationViewController(paymentRequest:
+                    request) {
+                applePayController.delegate = self
+                applePayController.modalPresentationStyle = .formSheet
+                self.present(applePayController, animated: true, completion: nil)
+            }
         }
     }
     
@@ -110,20 +117,23 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     //MARK: - PKPaymentAuthorizationViewControllerDelegate -
     
     func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
-        controller.dismiss(animated: true) {
+        controller.dismiss(animated: true) { [weak self] in
+            guard let self = self else {
+                return
+            }
             if let status = self.applePaymentSucceeded {
                 let state: PaymentProcessForm.State
                 
                 if status {
-                    state = .succeeded
+                    state = .succeeded(self.resultTransaction)
                 } else {
-                    state = .failed
+                    state = .failed(self.errorMessage)
                 }
                 
                 let parent = self.presentingViewController
                 self.dismiss(animated: true) {
                     if parent != nil {
-                        PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!)
+                        PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!, completion: nil)
                     }
                 }
             }
@@ -133,14 +143,18 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         
         if let cryptogram = payment.convertToString() {
-            self.charge(cardCryptogramPacket: cryptogram, email: nil) { status, canceled, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: nil) { status, canceled, transaction, errorMessage in
                 self.applePaymentSucceeded = status
+                self.resultTransaction = transaction
+                self.errorMessage = errorMessage
+                
                 if status {
                     completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
                 } else {
                     var errors = [Error]()
                     if let message = errorMessage {
-                        let error = CloudpaymentsError.init(message: message)
+                        let userInfo = [NSLocalizedDescriptionKey: message]
+                        let error = PKPaymentError(.unknownError, userInfo: userInfo)
                         errors.append(error)
                     }
                     completion(PKPaymentAuthorizationResult(status: .failure, errors: errors))

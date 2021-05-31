@@ -9,7 +9,15 @@
 import Foundation
 
 public protocol PaymentDelegate: class {
-    func onPaymentFinished()
+    func onPaymentFinished(_ transactionId: Int?)
+    func onPaymentFailed(_ errorMessage: String?)
+}
+
+public protocol PaymentUIDelegate: class {
+    func paymentFormWillDisplay()
+    func paymentFormDidDisplay()
+    func paymentFormWillHide()
+    func paymentFormDidHide()
 }
 
 internal class PaymentDelegateImpl {
@@ -19,7 +27,35 @@ internal class PaymentDelegateImpl {
         self.delegate = delegate
     }
     
-    func paymentFinished(){
-        self.delegate?.onPaymentFinished()
+    func paymentFinished(_ transaction: Transaction?){
+        self.delegate?.onPaymentFinished(transaction?.transactionId)
+    }
+    
+    func paymentFailed(_ errorMessage: String?) {
+        self.delegate?.onPaymentFailed(errorMessage)
+    }
+}
+
+internal class PaymentUIDelegateImpl {
+    weak var delegate: PaymentUIDelegate?
+    
+    init(delegate: PaymentUIDelegate?) {
+        self.delegate = delegate
+    }
+    
+    func paymentFormWillDisplay() {
+        self.delegate?.paymentFormWillDisplay()
+    }
+    
+    func paymentFormDidDisplay() {
+        self.delegate?.paymentFormDidDisplay()
+    }
+    
+    func paymentFormWillHide() {
+        self.delegate?.paymentFormWillHide()
+    }
+    
+    func paymentFormDidHide() {
+        self.delegate?.paymentFormDidHide()
     }
 }

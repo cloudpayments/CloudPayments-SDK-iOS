@@ -7,5 +7,6 @@ target 'demo' do
 
 #    pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
     pod 'Cloudpayments', :path => "../sdk"
+    pod 'AlamofireObjectMapper', '~> 6.2'
 
 end

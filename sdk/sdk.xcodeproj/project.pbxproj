@@ -16,6 +16,7 @@
 		83171F0325124A1B00ACE6B1 /* PaymentForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83171F012512490800ACE6B1 /* PaymentForm.storyboard */; };
 		83171F0525124C0100ACE6B1 /* PaymentOptionsForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83171F0425124C0100ACE6B1 /* PaymentOptionsForm.swift */; };
 		83171F0725124F7600ACE6B1 /* PaymentCardForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83171F0625124F7600ACE6B1 /* PaymentCardForm.swift */; };
+		83197C2A2546FAD00008F705 /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83197C292546FAD00008F705 /* DataRequest+Extension.swift */; };
 		831D5C35251E0BA700C5D8F9 /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D5C34251E0BA700C5D8F9 /* ThreeDsData.swift */; };
 		831D5C4B251E117D00C5D8F9 /* CloudpaymentsError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831D5C4A251E117D00C5D8F9 /* CloudpaymentsError.swift */; };
 		83205ABB2514F75600F4BA98 /* UIColor+Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83205ABA2514F75600F4BA98 /* UIColor+Assets.swift */; };
@@ -41,14 +42,12 @@
 		83ECD1712513A3DF008F088C /* FormPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ECD1702513A3DF008F088C /* FormPresentationController.swift */; };
 		83F3AC502523208E0067C4BC /* BankInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F3AC4F2523208E0067C4BC /* BankInfoResponse.swift */; };
 		83FD7F52251A3BAD0035419D /* PaymentData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FD7F51251A3BAD0035419D /* PaymentData.swift */; };
-		A89071BB8F8B3C066760EAC3 /* Pods_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1FB10C128732D5821234DC /* Pods_sdk.framework */; };
+		E2F5DCDCFA1C12DE91355AA4 /* Pods_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8899609B37DECBC116F61C54 /* Pods_sdk.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		134298D52339F6A7009C744C /* sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		134298D92339F6A7009C744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D1FB10C128732D5821234DC /* Pods_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62FE70CAE588637499192E40 /* Pods-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.release.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.release.xcconfig"; sourceTree = "<group>"; };
 		830043042518D7C200178DC2 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		830043072518DC0F00178DC2 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		83171EF32512337700ACE6B1 /* PaymentForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentForm.swift; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		83171F012512490800ACE6B1 /* PaymentForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentForm.storyboard; sourceTree = "<group>"; };
 		83171F0425124C0100ACE6B1 /* PaymentOptionsForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentOptionsForm.swift; sourceTree = "<group>"; };
 		83171F0625124F7600ACE6B1 /* PaymentCardForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCardForm.swift; sourceTree = "<group>"; };
+		83197C292546FAD00008F705 /* DataRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
 		831D5C34251E0BA700C5D8F9 /* ThreeDsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
 		831D5C4A251E117D00C5D8F9 /* CloudpaymentsError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudpaymentsError.swift; sourceTree = "<group>"; };
 		83205ABA2514F75600F4BA98 /* UIColor+Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Assets.swift"; sourceTree = "<group>"; };
@@ -90,7 +90,9 @@
 		83ECD1702513A3DF008F088C /* FormPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormPresentationController.swift; sourceTree = "<group>"; };
 		83F3AC4F2523208E0067C4BC /* BankInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankInfoResponse.swift; sourceTree = "<group>"; };
 		83FD7F51251A3BAD0035419D /* PaymentData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentData.swift; sourceTree = "<group>"; };
-		DF2FF0DB094CE6B5B3752365 /* Pods-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.debug.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.debug.xcconfig"; sourceTree = "<group>"; };
+		8899609B37DECBC116F61C54 /* Pods_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD2FFC1B8080BE1C522E1F01 /* Pods-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.release.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		D177B6CF4EE20E734AC344D2 /* Pods-sdk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.debug.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A89071BB8F8B3C066760EAC3 /* Pods_sdk.framework in Frameworks */,
+				E2F5DCDCFA1C12DE91355AA4 /* Pods_sdk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				832ADD92252F5753002A2E8E /* configuration */,
-				832ADD93252F5767002A2E8E /* ui */,
 				830043072518DC0F00178DC2 /* BaseViewController.swift */,
 				83171EF32512337700ACE6B1 /* PaymentForm.swift */,
 				83171F0625124F7600ACE6B1 /* PaymentCardForm.swift */,
@@ -186,13 +187,6 @@
 			path = configuration;
 			sourceTree = "<group>";
 		};
-		832ADD93252F5767002A2E8E /* ui */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ui;
-			sourceTree = "<group>";
-		};
 		8387197D251A01FC00797EDA /* api */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +225,7 @@
 				83DFE5F025095CE200DD6128 /* RSAUtils.swift */,
 				83205AB92514F72A00F4BA98 /* Extenstions */,
 				83ECD16D25135BB7008F088C /* UIKit */,
+				83197C292546FAD00008F705 /* DataRequest+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -263,7 +258,7 @@
 				83507D372525DF4300637BB6 /* AudioToolbox.framework */,
 				83507D352525DF3C00637BB6 /* AVFoundation.framework */,
 				83507D332525DF3700637BB6 /* Accelerate.framework */,
-				3D1FB10C128732D5821234DC /* Pods_sdk.framework */,
+				8899609B37DECBC116F61C54 /* Pods_sdk.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -271,8 +266,8 @@
 		D6C804324FE0F6D877C7A194 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				DF2FF0DB094CE6B5B3752365 /* Pods-sdk.debug.xcconfig */,
-				62FE70CAE588637499192E40 /* Pods-sdk.release.xcconfig */,
+				D177B6CF4EE20E734AC344D2 /* Pods-sdk.debug.xcconfig */,
+				BD2FFC1B8080BE1C522E1F01 /* Pods-sdk.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -294,7 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 134298DD2339F6A7009C744C /* Build configuration list for PBXNativeTarget "sdk" */;
 			buildPhases = (
-				F92CCB1FB2A36EAEE9664C57 /* [CP] Check Pods Manifest.lock */,
+				23E8C89A295606210C8F9B8A /* [CP] Check Pods Manifest.lock */,
 				134298D02339F6A7009C744C /* Headers */,
 				134298D12339F6A7009C744C /* Sources */,
 				134298D22339F6A7009C744C /* Frameworks */,
@@ -355,7 +350,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F92CCB1FB2A36EAEE9664C57 /* [CP] Check Pods Manifest.lock */ = {
+		23E8C89A295606210C8F9B8A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -405,6 +400,7 @@
 				83DFE5F525095CE200DD6128 /* PKPayment+Convert.swift in Sources */,
 				8346DAE62541B2DC0037303D /* TextField.swift in Sources */,
 				837EBC70251A09C60085FEFA /* Currency.swift in Sources */,
+				83197C2A2546FAD00008F705 /* DataRequest+Extension.swift in Sources */,
 				83ECD16C25135BAB008F088C /* Button.swift in Sources */,
 				83171F0525124C0100ACE6B1 /* PaymentOptionsForm.swift in Sources */,
 				83FD7F52251A3BAD0035419D /* PaymentData.swift in Sources */,
@@ -554,7 +550,7 @@
 		};
 		134298DE2339F6A7009C744C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF2FF0DB094CE6B5B3752365 /* Pods-sdk.debug.xcconfig */;
+			baseConfigurationReference = D177B6CF4EE20E734AC344D2 /* Pods-sdk.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -573,10 +569,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/CardIO/CardIO\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.cloudpayments.sdk;
@@ -591,7 +584,7 @@
 		};
 		134298DF2339F6A7009C744C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62FE70CAE588637499192E40 /* Pods-sdk.release.xcconfig */;
+			baseConfigurationReference = BD2FFC1B8080BE1C522E1F01 /* Pods-sdk.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_MODULES = YES;
@@ -610,10 +603,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"${PODS_ROOT}/CardIO/CardIO\"",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0.0;
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = ru.cloudpayments.sdk;
