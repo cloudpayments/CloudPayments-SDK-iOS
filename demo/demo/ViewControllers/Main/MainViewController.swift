@@ -1,7 +1,6 @@
 import UIKit
-import Alamofire
 import SDWebImage
-import AlamofireObjectMapper
+import Cloudpayments
 
 class MainViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     @IBOutlet weak var productsCollectionView: UICollectionView!
@@ -20,17 +19,25 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         
         self.activityIndicator.startAnimating()
         
-        AF.request("https://wp-demo.cloudpayments.ru/index.php/wp-json/wc/v3/products", method: .get, parameters: nil, headers: getHeaders()).responseArray(completionHandler: { (response: DataResponse<[Product], AFError>) in
+        ProductsRequest().execute { [weak self] products in
+            guard let self = self else {
+                return
+            }
+            
             self.activityIndicator.stopAnimating()
             
-            if let products = response.value {
-                self.products = products
-                self.productsCollectionView.reloadData()
-            } else {
-                print("Ошибка при запросе данных \(String(describing: response.error))")
+            self.products = products
+            self.productsCollectionView.reloadData()
+        } onError: { [weak self] error in
+            guard let self = self else {
+                return
             }
-        })
-        
+            
+            self.activityIndicator.stopAnimating()
+            
+            print("Ошибка при запросе данных \(String(describing: error))")
+        }
+          
         self.createCartButton()
     }
     
@@ -107,7 +114,7 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         cell.image.image = nil
         cell.activityIndicator.stopAnimating()
         
-        if let image = product.image {
+        if let image = product.images?.first?.src {
             cell.activityIndicator.startAnimating()
             cell.image.alpha = 0
             cell.image.sd_setImage(with: URL.init(string: image), placeholderImage: nil, options: .avoidAutoSetImage) { (image, error, cacheType, url) in
@@ -156,15 +163,7 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     //MARK: - Private -
 
-    private func getHeaders() -> HTTPHeaders {
-        let userName = "ck_ddb320b48b89a170248545eb3bb8e822365aa917"
-        let password = "cs_35ad6d0cf8e6b149e66968efdad87112ca2bc2d3"
-        let credentialData = "\(userName):\(password)".data(using: .utf8)
-        guard let cred = credentialData else { return ["" : ""] }
-        let base64Credentials = cred.base64EncodedData(options: [])
-        guard let base64Date = Data(base64Encoded: base64Credentials) else { return ["" : ""] }
-        return ["Authorization": "Basic \(base64Date.base64EncodedString())"]
-    }
+    
     
     @objc func openCart() {
         if CartManager.shared.products.count > 0 {

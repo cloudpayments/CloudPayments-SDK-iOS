@@ -8,7 +8,6 @@
 
 import Foundation
 import WebKit
-import Alamofire
 
 public protocol ThreeDsDelegate: class {
     func willPresentWebView(_ webView: WKWebView)
@@ -34,22 +33,29 @@ public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
             
             URLCache.shared.removeCachedResponse(for: request)
             
-            AF.request(request)
-                .response(completionHandler: { (dataResponse) in
-                    if let httpResponse = dataResponse.response, (httpResponse.statusCode == 200 || httpResponse.statusCode == 201), let data = dataResponse.value {
+            URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                guard let self = self else {
+                    return
+                }
+                
+                if let httpResponse = response as? HTTPURLResponse, (httpResponse.statusCode == 200 || httpResponse.statusCode == 201), let data = data {
+                    DispatchQueue.main.async { [weak self] in
+                        guard let self = self else {
+                            return
+                        }
+                        
                         let webView = WKWebView.init()
                         webView.navigationDelegate = self
                         if let mimeType = httpResponse.mimeType, let textEncodingName = httpResponse.textEncodingName, let url = httpResponse.url {
-                            webView.load(data!, mimeType: mimeType, characterEncodingName: textEncodingName, baseURL: url)
+                            webView.load(data, mimeType: mimeType, characterEncodingName: textEncodingName, baseURL: url)
                         }
                         
                         self.delegate?.willPresentWebView(webView)
-                    } else {
-                        let statusCode = dataResponse.response?.statusCode ?? 0
-                        self.delegate?.onAuthorizationFailed(with: "Unable to load 3DS autorization page.\nStatus code: \(statusCode)")
                     }
-                })
-                .validate()
+                } else if let httpResponse = response as? HTTPURLResponse {
+                    self.delegate?.onAuthorizationFailed(with: "Unable to load 3DS autorization page.\nStatus code: \(httpResponse.statusCode)")
+                }
+            }.resume()
         }
     }
 

@@ -29,7 +29,6 @@ Pod::Spec.new do |spec|
   spec.resource_bundles = { 'Cloudpayments' => ['sdk/Resources/**/*.{json,png,jpeg,jpg,storyboard,xib,xcassets}']} 
   
   spec.requires_arc = true
-  
-  spec.dependency 'Alamofire'
-  spec.dependency 'ObjectMapper'
+
+  spec.dependency 'CloudpaymentsNetworking'  
 end

@@ -129,28 +129,26 @@ public class PaymentForm: BaseViewController {
         self.threeDsCompletion = nil
         self.transaction = nil
         
-        if (transactionResponse.success) {
-            completion?(true, false, transactionResponse.transaction, nil)
+        if (transactionResponse.success == true) {
+            completion?(true, false, transactionResponse.model, nil)
         } else {
-            if (!transactionResponse.message.isEmpty) {
-                completion?(false, false, transactionResponse.transaction, transactionResponse.message)
-            } else if let paReq = transactionResponse.transaction?.paReq, !paReq.isEmpty, let acsUrl = transactionResponse.transaction?.acsUrl, !acsUrl.isEmpty {
-                self.threeDsCallbackId = transactionResponse.transaction?.threeDsCallbackId ?? ""
+            let message = transactionResponse.message ?? ""
+            if (!message.isEmpty) {
+                completion?(false, false, transactionResponse.model, transactionResponse.message)
+            } else if let paReq = transactionResponse.model?.paReq, !paReq.isEmpty, let acsUrl = transactionResponse.model?.acsUrl, !acsUrl.isEmpty {
+                self.threeDsCallbackId = transactionResponse.model?.threeDsCallbackId ?? ""
                 
-                let transactionId = String(transactionResponse.transaction?.transactionId ?? 0)
+                let transactionId = String(transactionResponse.model?.transactionId ?? 0)
                 
-                let paReq = transactionResponse.transaction!.paReq
-                let acsUrl = transactionResponse.transaction!.acsUrl
-                               
-                // Показываем 3DS форму
+//                Показываем 3DS форму
                 
                 let threeDsData = ThreeDsData.init(transactionId: transactionId, paReq: paReq, acsUrl: acsUrl)
                 threeDsProcessor.make3DSPayment(with: threeDsData, delegate: self)
                 
                 self.threeDsCompletion = completion
-                self.transaction = transactionResponse.transaction
+                self.transaction = transactionResponse.model
             } else {
-                completion?(false, false, transactionResponse.transaction, transactionResponse.transaction?.cardHolderMessage)
+                completion?(false, false, transactionResponse.model, transactionResponse.model?.cardHolderMessage)
             }
         }
     }

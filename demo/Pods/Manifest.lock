@@ -1,43 +1,35 @@
 PODS:
-  - Alamofire (5.0.0-rc.2)
-  - AlamofireObjectMapper (6.2.0):
-    - Alamofire (= 5.0.0-rc.2)
-    - ObjectMapper (~> 3.5.1)
   - CardIO (5.4.1)
-  - Cloudpayments (1.0.1):
-    - Alamofire
-    - ObjectMapper
-  - ObjectMapper (3.5.3)
-  - SDWebImage (5.9.4):
-    - SDWebImage/Core (= 5.9.4)
-  - SDWebImage/Core (5.9.4)
+  - Cloudpayments (1.0.4):
+    - CloudpaymentsNetworking
+  - CloudpaymentsNetworking (1.0.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
-  - AlamofireObjectMapper (~> 6.2)
   - CardIO
   - Cloudpayments (from `../sdk`)
+  - CloudpaymentsNetworking (from `../networking`)
   - SDWebImage
 
 SPEC REPOS:
   trunk:
-    - Alamofire
-    - AlamofireObjectMapper
     - CardIO
-    - ObjectMapper
     - SDWebImage
 
 EXTERNAL SOURCES:
   Cloudpayments:
     :path: "../sdk"
+  CloudpaymentsNetworking:
+    :path: "../networking"
 
 SPEC CHECKSUMS:
-  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
-  AlamofireObjectMapper: 74d1440c92c42bbcc2b5f4dc81654ac095ec669f
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  Cloudpayments: 5e3799de6aeeddf6e9d471d3d27f6121a79be50d
-  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
-  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  Cloudpayments: f625fd8c838a34238775247d02df2ea3bfe1d1d7
+  CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 6ba1467b476f4342a610b337fe0add83d3f6f6cf
+PODFILE CHECKSUM: 9aefcf001b25cb1e9ac2cee26e804a728eaf5c9e
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

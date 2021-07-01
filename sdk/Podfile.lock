@@ -1,20 +1,16 @@
 PODS:
-  - Alamofire (5.3.0)
-  - ObjectMapper (4.2.0)
+  - CloudpaymentsNetworking (1.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.3)
-  - ObjectMapper (~> 4.2)
+  - CloudpaymentsNetworking (from `../networking`)
 
-SPEC REPOS:
-  trunk:
-    - Alamofire
-    - ObjectMapper
+EXTERNAL SOURCES:
+  CloudpaymentsNetworking:
+    :path: "../networking"
 
 SPEC CHECKSUMS:
-  Alamofire: 2c792affbdc2f18016e08fdbcacd60aebe1ba593
-  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
 
-PODFILE CHECKSUM: 4227c0c672043a110e7b59614d353f939e923734
+PODFILE CHECKSUM: 722ba902e56f8d63f66fc4df7de9e39435cb28a1
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

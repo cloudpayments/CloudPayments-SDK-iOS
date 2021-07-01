@@ -3,7 +3,7 @@
 //  demo
 //
 //  Created by Anton Ignatov on 31/05/2019.
-//  Copyright © 2019 Anton Ignatov. All rights reserved.
+//  Copyright © 2019 Cloudpayments. All rights reserved.
 //
 
 import UIKit
@@ -36,7 +36,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         cell.picture.sd_cancelCurrentImageLoad()
         cell.picture.image = nil
         
-        if let image = product.image {
+        if let image = product.images?.first?.src {
             cell.picture.sd_setImage(with: URL.init(string: image), completed: nil)
         }
         

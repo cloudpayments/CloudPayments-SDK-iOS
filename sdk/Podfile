@@ -2,6 +2,5 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'sdk' do
-  pod 'Alamofire', '~> 5.3'
-  pod 'ObjectMapper', '~> 4.2'
+  pod 'CloudpaymentsNetworking', :path => "../networking"
 end

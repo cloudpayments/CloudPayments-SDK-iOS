@@ -1,5 +1,5 @@
-import Alamofire
-import ObjectMapper
+
+import CloudpaymentsNetworking
 
 public class CloudpaymentsApi {
     enum Source: String {
@@ -7,30 +7,23 @@ public class CloudpaymentsApi {
         case ownForm = "Cloudpayments SDK iOS (Custom form)"
     }
     
+    private static let baseURLString = "https://api.cloudpayments.ru/"
+    
     private let defaultCardHolderName = "Cloudpayments SDK"
     
     private let threeDsSuccessURL = "https://demo.cloudpayments.ru/success"
     private let threeDsFailURL = "https://demo.cloudpayments.ru/fail"
     
-    private let session: Session
     private let publicId: String
     private let source: Source
-    
-    private var threeDsCompletion: ((_ result: ThreeDsResponse) -> ())?
-    
-    lazy var redirectHandler = self
-    
+        
     public required convenience init(publicId: String) {
         self.init(publicId: publicId, source: .ownForm)
     }
     
     init(publicId: String, source: Source) {
-        let handler = ThreeDsRedirectHandler(threeDsSuccessURL: threeDsSuccessURL, threeDsFailURL: threeDsFailURL)
-        self.session = Session.init(redirectHandler: handler)
         self.publicId = publicId
         self.source = source
-        
-        handler.api = self
     }
     
     public class func getBankInfo(cardNumber: String, completion: ((_ bankInfo: BankInfo?, _ error: CloudpaymentsError?) -> ())?) {
@@ -43,43 +36,43 @@ public class CloudpaymentsApi {
         let firstSixIndex = cleanCardNumber.index(cleanCardNumber.startIndex, offsetBy: 6)
         let firstSixDigits = String(cleanCardNumber[..<firstSixIndex])
         
-        AF.request(String.init(format: "https://widget.cloudpayments.ru/Home/BinInfo?firstSixDigits=%@", firstSixDigits), method: .get, parameters: nil, headers: nil).responseObject { (response: DataResponse<BankInfoResponse, AFError>) in
-            if let bankInfo = response.value?.bankInfo {
-                completion?(bankInfo, nil)
-            } else if let message = response.error?.localizedDescription {
-                completion?(nil, CloudpaymentsError.init(message: message))
+        BankInfoRequest(firstSix: firstSixDigits).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
+            completion?(response.model, nil)
+        }, onError: { error in
+            if !error.localizedDescription.isEmpty  {
+                completion?(nil, CloudpaymentsError.init(message: error.localizedDescription))
             } else {
                 completion?(nil, CloudpaymentsError.defaultCardError)
             }
-        }
+        })
     }
     
     public func charge(cardCryptogramPacket: String,
                        email: String?,
                        paymentData: PaymentData,
-                       completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
-        self.threeDsCompletion = nil
-        
+                       completion: @escaping CloudpaymentsRequestCompletion<TransactionResponse>) {
         let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
                                         email: email,
                                         paymentData: paymentData)
-        
-        let request = HTTPRequest(resource: .charge, method: .post, parameters: parameters)
-        makeObjectRequest(request, completion: completion)
+        ChargeRequest(params: patch(params: parameters), headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
+            completion(response, nil)
+        }, onError: { error in
+            completion(nil, error)
+        })
     }
     
     public func auth(cardCryptogramPacket: String,
                      email: String?,
                      paymentData: PaymentData,
-                     completion: @escaping HTTPRequestCompletion<TransactionResponse>) {
-        self.threeDsCompletion = nil
-        
+                     completion: @escaping CloudpaymentsRequestCompletion<TransactionResponse>) {
         let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
                                         email: email,
                                         paymentData: paymentData)
-        
-        let request = HTTPRequest(resource: .auth, method: .post, parameters: parameters)
-        makeObjectRequest(request, completion: completion)
+        AuthRequest(params: patch(params: parameters), headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
+            completion(response, nil)
+        }, onError: { error in
+            completion(nil, error)
+        })
     }
     
     public func post3ds(transactionId: String, threeDsCallbackId: String, paRes: String, completion: @escaping (_ result: ThreeDsResponse) -> ()) {
@@ -88,17 +81,46 @@ public class CloudpaymentsApi {
                         "SuccessUrl": self.threeDsSuccessURL,
                         "FailUrl": self.threeDsFailURL]
         if let mdParamsData = try? JSONSerialization.data(withJSONObject: mdParams, options: .sortedKeys), let mdParamsStr = String.init(data: mdParamsData, encoding: .utf8) {
-            let parameters: Parameters = [
+            let parameters: [String: Any] = [
                 "MD" : mdParamsStr,
                 "PaRes" : paRes
             ]
-            
-            self.threeDsCompletion = completion
-            
-            let completion: HTTPRequestCompletion<TransactionResponse> = { r, e in }
-            
-            let request = HTTPRequest(resource: .post3ds, method: .post, parameters: parameters)
-            makeObjectRequest(request, completion: completion)
+
+            PostThreeDsRequest(params: parameters, headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { r in
+            }, onError: { error in
+            }, onRedirect: { [weak self] request in
+                guard let self = self else {
+                    return true
+                }
+                
+                if let url = request.url {
+                    let items = url.absoluteString.split(separator: "&").filter { $0.contains("CardHolderMessage")}
+                    var message: String? = nil
+                    if !items.isEmpty, let params = items.first?.split(separator: "="), params.count == 2 {
+                        message = String(params[1]).removingPercentEncoding
+                    }
+
+                    if url.absoluteString.starts(with: self.threeDsSuccessURL) {
+                        DispatchQueue.main.async {
+                            let r = ThreeDsResponse.init(success: true, cardHolderMessage: message)
+                            completion(r)
+                        }
+                        
+                        return false
+                    } else if url.absoluteString.starts(with: self.threeDsFailURL) {
+                        DispatchQueue.main.async {
+                            let r = ThreeDsResponse.init(success: false, cardHolderMessage: message)
+                            completion(r)
+                        }
+                        
+                        return false
+                    } else {
+                        return true
+                    }
+                } else {
+                    return true
+                }
+            })
         } else {
             completion(ThreeDsResponse.init(success: false, cardHolderMessage: ""))
         }
@@ -106,8 +128,8 @@ public class CloudpaymentsApi {
     
     private func generateParams(cardCryptogramPacket: String,
                                 email: String?,
-                                paymentData: PaymentData) -> Parameters {
-        let parameters: Parameters = [
+                                paymentData: PaymentData) -> [String: Any] {
+        let parameters: [String: Any] = [
             "Amount" : paymentData.amount, // Сумма платежа (Обязательный)
             "Currency" : paymentData.currency.rawValue, // Валюта (Обязательный)
             "IpAddress" : paymentData.ipAddress ?? "",
@@ -122,109 +144,49 @@ public class CloudpaymentsApi {
         
         return parameters
     }
-    
-    private class ThreeDsRedirectHandler: RedirectHandler {
-        private let threeDsSuccessURL: String
-        private let threeDsFailURL: String
-        var api: CloudpaymentsApi?
-        
-        init(threeDsSuccessURL: String, threeDsFailURL: String) {
-            self.threeDsSuccessURL = threeDsSuccessURL
-            self.threeDsFailURL = threeDsFailURL
-        }
-        
-        public func task(_ task: URLSessionTask, willBeRedirectedTo request: URLRequest, for response: HTTPURLResponse, completion: @escaping (URLRequest?) -> Void) {
-            if let url = request.url {
-                let items = url.absoluteString.split(separator: "&").filter { $0.contains("CardHolderMessage")}
-                var message: String? = nil
-                if !items.isEmpty, let params = items.first?.split(separator: "="), params.count == 2 {
-                    message = String(params[1]).removingPercentEncoding
-                }
-                
-                if url.absoluteString.starts(with: threeDsSuccessURL) {
-                    self.threeDsFinished(with: true, message: message)
-                    completion(nil)
-                } else if url.absoluteString.starts(with: threeDsFailURL) {
-                    self.threeDsFinished(with: false, message: message)
-                    completion(nil)
-                } else {
-                    completion(request)
-                }
-            } else {
-                completion(request)
-            }
-        }
-        
-        private func threeDsFinished(with success: Bool, message: String?) {
-            DispatchQueue.main.async {
-                let result = ThreeDsResponse.init(success: success, cardHolderMessage: message)
-                self.api?.threeDsCompletion?(result)
-            }
-        }
-    }
-}
 
-
-// MARK: - Internal methods
-
-extension CloudpaymentsApi {
-    
-    func makeObjectRequest<T: BaseMappable>(_ request: HTTPRequest, completion: HTTPRequestCompletion<T>?) {
-        let url = (try? request.resource.asURL())?.absoluteString ?? ""
-        
-        print("--------------------------")
-        print("sending request: \(url)")
-        print("parameters: \(request.parameters as NSDictionary?)")
-        print("--------------------------")
-        
-        validatedDataRequest(from: request).responseObject { (dataResponse) in
-//            if let data = dataResponse.data, let dataStr = String.init(data: data, encoding: .utf8) {
-//                print("--------------------------")
-//                print("response for (\(url): \(dataStr)")
-//                print("--------------------------")
-//            }
-            
-            completion?(dataResponse.value, dataResponse.error)
-        }
-    }
-    
-    func makeArrayRequest<T: BaseMappable>(_ request: HTTPRequest, completion: HTTPRequestCompletion<[T]>?) {
-        let url = (try? request.resource.asURL())?.absoluteString ?? ""
-        
-        print("--------------------------")
-        print("sending request: \(url)")
-        print("parameters: \(request.parameters as NSDictionary?)")
-        print("--------------------------")
-        
-        validatedDataRequest(from: request).responseArray(completionHandler: { (dataResponse) in
-//            if let data = dataResponse.data, let dataStr = String.init(data: data, encoding: .utf8) {
-//                print("--------------------------")
-//                print("response for (\(url): \(dataStr)")
-//                print("--------------------------")
-//            }
-            
-            completion?(dataResponse.value, dataResponse.error)
-        })
-    }
-}
-
-// MARK: - Private methods
-
-private extension CloudpaymentsApi {
-    
-    func validatedDataRequest(from httpRequest: HTTPRequest) -> DataRequest {
-        var parameters = httpRequest.parameters
+    private func patch(params: [String: Any]) -> [String: Any] {
+        var parameters = params
         parameters["PublicId"] = self.publicId
-        
-        var headers = httpRequest.headers
+        return parameters
+    }
+    
+    private func getDefaultHeaders() -> [String: String] {
+        var headers = [String: String]()
         headers["MobileSDKSource"] = self.source.rawValue
-        
-        return session
-            .request(httpRequest.resource,
-                     method: httpRequest.method,
-                     parameters: parameters,
-                     encoding: JSONEncoding.default,
-                     headers: httpRequest.headers)
-            .validate()
+        return headers
+    }
+}
+
+public typealias CloudpaymentsRequestCompletion<T> = (_ response: T?, _ error: Error?) -> Void
+
+private struct CloudpaymentsCodingKey: CodingKey {
+    var stringValue: String
+
+    init(stringValue: String) {
+        self.stringValue = stringValue
+    }
+
+    var intValue: Int? {
+        return nil
+    }
+
+    init?(intValue: Int) {
+        return nil
+    }
+}
+
+extension JSONDecoder.KeyDecodingStrategy {
+    static var convertToUpperCamelCase: JSONDecoder.KeyDecodingStrategy {
+        return .custom({ keys -> CodingKey in
+            let lastKey = keys.last!
+            if lastKey.intValue != nil {
+                return lastKey
+            }
+            
+            let firstLetter = lastKey.stringValue.prefix(1).lowercased()
+            let modifiedKey = firstLetter + lastKey.stringValue.dropFirst()
+            return CloudpaymentsCodingKey(stringValue: modifiedKey)
+        })
     }
 }
