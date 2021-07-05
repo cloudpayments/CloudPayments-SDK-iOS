@@ -19,7 +19,7 @@
   "source_files": "sdk/**/*.swift",
   "resource_bundles": {
     "Cloudpayments": [
-      "Resources/**/*.{json,png,jpeg,jpg,storyboard,xib,xcassets}"
+      "Resources/**/*.{txt,json,png,jpeg,jpg,storyboard,xib,xcassets}"
     ]
   },
   "requires_arc": true,

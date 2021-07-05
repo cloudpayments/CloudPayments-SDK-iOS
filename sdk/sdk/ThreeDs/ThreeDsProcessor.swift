@@ -53,7 +53,9 @@ public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
                         self.delegate?.willPresentWebView(webView)
                     }
                 } else if let httpResponse = response as? HTTPURLResponse {
-                    self.delegate?.onAuthorizationFailed(with: "Unable to load 3DS autorization page.\nStatus code: \(httpResponse.statusCode)")
+                    DispatchQueue.main.async { [weak self] in
+                        self?.delegate?.onAuthorizationFailed(with: "Unable to load 3DS autorization page.\nStatus code: \(httpResponse.statusCode)")
+                    }
                 }
             }.resume()
         }

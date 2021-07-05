@@ -46,6 +46,7 @@
 		8341E494268E65EE007561FF /* ThreeDsProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341E46D268E65EE007561FF /* ThreeDsProcessor.swift */; };
 		8341E495268E65EE007561FF /* ThreeDsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341E46E268E65EE007561FF /* ThreeDsData.swift */; };
 		8341E498268E6626007561FF /* CloudpaymentsHTTPResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341E497268E6626007561FF /* CloudpaymentsHTTPResource.swift */; };
+		8341E6A426930620007561FF /* PublicKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8341E6A326930620007561FF /* PublicKey.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +92,7 @@
 		8341E46D268E65EE007561FF /* ThreeDsProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDsProcessor.swift; sourceTree = "<group>"; };
 		8341E46E268E65EE007561FF /* ThreeDsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreeDsData.swift; sourceTree = "<group>"; };
 		8341E497268E6626007561FF /* CloudpaymentsHTTPResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudpaymentsHTTPResource.swift; sourceTree = "<group>"; };
+		8341E6A326930620007561FF /* PublicKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PublicKey.txt; sourceTree = "<group>"; wrapsLines = 1; };
 		83507D332525DF3700637BB6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
 		83507D352525DF3C00637BB6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		83507D372525DF4300637BB6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
@@ -151,6 +153,7 @@
 			children = (
 				83171F002512490800ACE6B1 /* Assets.xcassets */,
 				83171F012512490800ACE6B1 /* PaymentForm.storyboard */,
+				8341E6A326930620007561FF /* PublicKey.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				83171F0225124A1B00ACE6B1 /* Assets.xcassets in Resources */,
 				83171F0325124A1B00ACE6B1 /* PaymentForm.storyboard in Resources */,
+				8341E6A426930620007561FF /* PublicKey.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

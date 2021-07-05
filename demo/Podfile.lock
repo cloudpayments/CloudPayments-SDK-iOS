@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
     :path: "../networking"
 
 SPEC CHECKSUMS:
-  Cloudpayments: f625fd8c838a34238775247d02df2ea3bfe1d1d7
+  Cloudpayments: a6c2e72bd110e9744287d703484169e9b5cdfb24
   CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 

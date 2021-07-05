@@ -73,9 +73,9 @@ public class PaymentForm: BaseViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.threeDsCloseButton?.onAction = {
-            self.closeThreeDs {
-                self.threeDsCompletion?(false, true, nil, nil)
+        self.threeDsCloseButton?.onAction = { [weak self] in
+            self?.closeThreeDs { [weak self] in
+                self?.threeDsCompletion?(false, true, nil, nil)
             }
         }
     }
@@ -88,8 +88,8 @@ public class PaymentForm: BaseViewController {
     
     @IBAction private func onClose(_ sender: UIButton) {
         self.configuration.paymentUIDelegate.paymentFormWillHide()
-        self.hide {
-            self.configuration.paymentUIDelegate.paymentFormDidHide()
+        self.hide { [weak self] in
+            self?.configuration.paymentUIDelegate.paymentFormDidHide()
         }
     }
     

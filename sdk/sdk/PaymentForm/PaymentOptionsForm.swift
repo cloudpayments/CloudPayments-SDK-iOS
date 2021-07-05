@@ -109,7 +109,10 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     @IBAction private func onCard(_ sender: UIButton) {
-        self.hide {
+        self.hide { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.onCardOptionSelected?()
         }
     }
@@ -131,7 +134,10 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
                 }
                 
                 let parent = self.presentingViewController
-                self.dismiss(animated: true) {
+                self.dismiss(animated: true) { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
                     if parent != nil {
                         PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!, completion: nil)
                     }
@@ -143,7 +149,10 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         
         if let cryptogram = payment.convertToString() {
-            self.charge(cardCryptogramPacket: cryptogram, email: nil) { status, canceled, transaction, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: nil) { [weak self] status, canceled, transaction, errorMessage in
+                guard let self = self else {
+                    return
+                }
                 self.applePaymentSucceeded = status
                 self.resultTransaction = transaction
                 self.errorMessage = errorMessage

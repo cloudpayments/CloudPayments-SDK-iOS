@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sds-GN-2ua">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sds-GN-2ua">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -186,10 +186,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnD-SE-5jt">
-                                                    <rect key="frame" x="8" y="8" width="81.333333333333329" height="64"/>
+                                                    <rect key="frame" x="8" y="8" width="80" height="64"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="KnD-SE-5jt" secondAttribute="height" multiplier="80:63" id="FCD-vJ-F5N"/>
-                                                        <constraint firstAttribute="height" constant="63.666666666666657" id="Uwr-t5-GHE"/>
+                                                        <constraint firstAttribute="width" secondItem="KnD-SE-5jt" secondAttribute="height" multiplier="5:4" id="FCD-vJ-F5N"/>
+                                                        <constraint firstAttribute="height" constant="64" id="Uwr-t5-GHE"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CkE-wW-il4">
@@ -199,7 +199,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpa-Yf-c6w">
-                                                    <rect key="frame" x="97.333333333333314" y="30" width="242" height="20.333333333333329"/>
+                                                    <rect key="frame" x="96.000000000000014" y="30" width="243.33333333333337" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -209,7 +209,7 @@
                                                 <constraint firstItem="Gpa-Yf-c6w" firstAttribute="leading" secondItem="KnD-SE-5jt" secondAttribute="trailing" constant="8" id="6Mf-4e-TUH"/>
                                                 <constraint firstItem="CkE-wW-il4" firstAttribute="leading" secondItem="Gpa-Yf-c6w" secondAttribute="trailing" constant="8" id="8nv-v0-NPc"/>
                                                 <constraint firstItem="KnD-SE-5jt" firstAttribute="top" secondItem="NrS-7x-i3g" secondAttribute="top" constant="8" id="C1y-Ic-2Fu"/>
-                                                <constraint firstAttribute="bottom" secondItem="KnD-SE-5jt" secondAttribute="bottom" constant="8" id="KVc-wS-gtR"/>
+                                                <constraint firstAttribute="bottom" secondItem="KnD-SE-5jt" secondAttribute="bottom" priority="999" constant="8" id="KVc-wS-gtR"/>
                                                 <constraint firstItem="CkE-wW-il4" firstAttribute="centerY" secondItem="NrS-7x-i3g" secondAttribute="centerY" id="kZJ-La-7sj"/>
                                                 <constraint firstItem="Gpa-Yf-c6w" firstAttribute="centerY" secondItem="NrS-7x-i3g" secondAttribute="centerY" id="nJ9-3J-PnA"/>
                                                 <constraint firstItem="KnD-SE-5jt" firstAttribute="leading" secondItem="NrS-7x-i3g" secondAttribute="leading" constant="8" id="tPo-as-y3U"/>
