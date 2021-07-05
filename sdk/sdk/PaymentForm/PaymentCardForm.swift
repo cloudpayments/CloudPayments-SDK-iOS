@@ -40,11 +40,7 @@ public class PaymentCardForm: PaymentForm {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.cardNumberTextField.text = "4111111111111111".formattedCardNumber()
-        self.cardExpDateTextField.text = "12/23"
-        self.cardCvcTextField.text = "111"
-        
+
         self.receiptButton.onAction = {
             self.receiptButton.isSelected = !self.receiptButton.isSelected
             self.emailTextField.isHidden = !self.receiptButton.isSelected
