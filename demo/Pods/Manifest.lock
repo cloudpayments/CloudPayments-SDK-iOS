@@ -1,5 +1,4 @@
 PODS:
-  - CardIO (5.4.1)
   - Cloudpayments (1.0.4):
     - CloudpaymentsNetworking
   - CloudpaymentsNetworking (1.0.0)
@@ -8,14 +7,12 @@ PODS:
   - SDWebImage/Core (5.11.1)
 
 DEPENDENCIES:
-  - CardIO
   - Cloudpayments (from `../sdk`)
   - CloudpaymentsNetworking (from `../networking`)
   - SDWebImage
 
 SPEC REPOS:
   trunk:
-    - CardIO
     - SDWebImage
 
 EXTERNAL SOURCES:
@@ -25,11 +22,10 @@ EXTERNAL SOURCES:
     :path: "../networking"
 
 SPEC CHECKSUMS:
-  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
   Cloudpayments: f625fd8c838a34238775247d02df2ea3bfe1d1d7
   CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: 9aefcf001b25cb1e9ac2cee26e804a728eaf5c9e
+PODFILE CHECKSUM: 65d235e56cef071489b1ee8cc889501eb3adcf65
 
 COCOAPODS: 1.10.1

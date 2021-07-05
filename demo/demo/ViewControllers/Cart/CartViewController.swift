@@ -60,8 +60,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         }
         
         labelTotal.text = "Итого: \(total) Руб."
-        
-        CardIOUtilities.preloadCardIO()
     }
     
     @IBAction func onPay(_ sender: UIButton) {
@@ -96,7 +94,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     .setInvoiceId("123")
                     .setJsonData(jsonData)
 
-                let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, uiDelegate: self, scanner: self)
+                let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, uiDelegate: self, scanner: nil)
                 PaymentForm.present(with: configuration, from: self)
             }
             
@@ -112,26 +110,6 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         self.present(controller, animated: true, completion: nil)
         
-    }
-}
-
-extension CartViewController: CardIOPaymentViewControllerDelegate {
-    func userDidCancel(_ paymentViewController: CardIOPaymentViewController!) {
-        paymentViewController.dismiss(animated: true, completion: nil)
-    }
-    
-    func userDidProvide(_ cardInfo: CardIOCreditCardInfo!, in paymentViewController: CardIOPaymentViewController!) {
-        self.scannerCompletion?(cardInfo.cardNumber, cardInfo.expiryMonth, cardInfo.expiryYear, cardInfo.cvv)
-        paymentViewController.dismiss(animated: true, completion: nil)
-    }
-}
-
-extension CartViewController: PaymentCardScanner {
-    func startScanner(completion: @escaping (String?, UInt?, UInt?, String?) -> Void) -> UIViewController? {
-        self.scannerCompletion = completion
-        
-        let scanController = CardIOPaymentViewController.init(paymentDelegate: self)
-        return scanController
     }
 }
 

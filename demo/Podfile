@@ -2,7 +2,6 @@ platform :ios, '11.0'
 use_frameworks!
 
 target 'demo' do
-    pod 'CardIO'
     pod 'SDWebImage'
 
 #    pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
