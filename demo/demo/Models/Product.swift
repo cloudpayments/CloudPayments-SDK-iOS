@@ -3,29 +3,33 @@
 //  demo
 //
 //  Created by Anton Ignatov on 29/05/2019.
-//  Copyright © 2019 Anton Ignatov. All rights reserved.
+//  Copyright © 2019 Cloudpayments. All rights reserved.
 //
 
-import Foundation
-import ObjectMapper
-
-class Product: Mappable {
+struct Product: Codable {
     var id: Int?
     var name: String?
     var price: String?
-    var image: String?
+    var images: [Image]?
     
-    required init?(map: Map) {
-        
+    enum CodingKeys: String, CodingKey {
+        case id = "dict"
+        case name
+        case price
+        case images
     }
     
-    func mapping(map: Map) {
-        id <- map["dict"]
-        name <- map["name"]
-        price <- map["price"]
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        if let images = map.JSON["images"] as? [[String : AnyObject]], !images.isEmpty {
-            image = images.first?["src"] as? String
-        }
+        self.id = try? container.decode(Int.self, forKey: .id)
+        self.name = try? container.decode(String.self, forKey: .name)
+        self.price = try? container.decode(String.self, forKey: .price)
+        self.images = try? container.decode([Image].self, forKey: .images)
     }
+}
+
+struct Image: Codable {
+    var id: Int?
+    var src: String?
 }

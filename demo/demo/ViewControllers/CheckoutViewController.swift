@@ -289,31 +289,31 @@ private extension CheckoutViewController {
     
     // Проверяем необходимо ли подтверждение с использованием 3DS
     func checkTransactionResponse(transactionResponse: TransactionResponse, completion: ((_ succeeded: Bool, _ message: String?) ->())?) {
-        if (transactionResponse.success) {
-            completion?(true, transactionResponse.transaction?.cardHolderMessage)
+        if (transactionResponse.success == true) {
+            completion?(true, transactionResponse.model?.cardHolderMessage)
         } else {
-            if (!transactionResponse.message.isEmpty) {
+            let message = transactionResponse.message ?? ""
+            if (!message.isEmpty) {
                 completion?(false, transactionResponse.message)
-            } else if (transactionResponse.transaction?.paReq != nil && transactionResponse.transaction?.acsUrl != nil) {
+            } else if (transactionResponse.model?.paReq != nil && transactionResponse.model?.acsUrl != nil) {
                 self.transactionResponse = transactionResponse
                 self.paymentCompletion = completion
                 
-                let transactionId = String(transactionResponse.transaction?.transactionId ?? 0)
+                let transactionId = String(transactionResponse.model?.transactionId ?? 0)
                 
-                let paReq = transactionResponse.transaction!.paReq
-                let acsUrl = transactionResponse.transaction!.acsUrl
-                               
-                // Показываем 3DS форму
-                let data = ThreeDsData.init(transactionId: transactionId, paReq: paReq, acsUrl: acsUrl)
-                threeDsProcessor.make3DSPayment(with: data, delegate: self)
+                if let paReq = transactionResponse.model?.paReq, let acsUrl = transactionResponse.model?.acsUrl {
+//                    Показываем 3DS форму
+                    let data = ThreeDsData.init(transactionId: transactionId, paReq: paReq, acsUrl: acsUrl)
+                    threeDsProcessor.make3DSPayment(with: data, delegate: self)
+                }
             } else {
-                completion?(false, transactionResponse.transaction?.cardHolderMessage)
+                completion?(false, transactionResponse.model?.cardHolderMessage)
             }
         }
     }
     
     func post3ds(transactionId: String, paRes: String) {
-        if let threeDsCallbackId = self.transactionResponse?.transaction?.threeDsCallbackId {
+        if let threeDsCallbackId = self.transactionResponse?.model?.threeDsCallbackId {
             api.post3ds(transactionId: transactionId, threeDsCallbackId: threeDsCallbackId, paRes: paRes) { [weak self] (response) in
                 self?.paymentCompletion?(response.success, response.cardHolderMessage)
                 self?.paymentCompletion = nil

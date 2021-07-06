@@ -10,6 +10,7 @@ CloudPayments SDK позволяет интегрировать прием пл�
 
 ```
 pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
+pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
 ```
 ### Структура проекта:
 

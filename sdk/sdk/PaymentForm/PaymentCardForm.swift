@@ -40,7 +40,7 @@ public class PaymentCardForm: PaymentForm {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.receiptButton.onAction = {
             self.receiptButton.isSelected = !self.receiptButton.isSelected
             self.emailTextField.isHidden = !self.receiptButton.isSelected
@@ -51,7 +51,10 @@ public class PaymentCardForm: PaymentForm {
             }
         }
         
-        self.closeButton.onAction = {
+        self.closeButton.onAction = { [weak self] in
+            guard let self = self else {
+                return
+            }
             let parent = self.presentingViewController
             self.dismiss(animated: true) {
                 if let parent = parent {
@@ -63,9 +66,15 @@ public class PaymentCardForm: PaymentForm {
         let paymentData = self.configuration.paymentData
         
         self.payButton.setTitle("Оплатить \(paymentData.amount) \(paymentData.currency.currencySign())", for: .normal)
-        self.payButton.onAction = {
+        self.payButton.onAction = { [weak self] in
+            guard let self = self else {
+                return
+            }
             if self.isValid(), let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: paymentData.publicId) {
-                self.dismiss(animated: true) {
+                self.dismiss(animated: true) { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
                     self.onPayClicked?(cryptogram, self.emailTextField.text)
                 }
             }
@@ -74,7 +83,10 @@ public class PaymentCardForm: PaymentForm {
         if self.configuration.scanner == nil {
             self.scanButton.isHidden = true
         } else {
-            self.scanButton.onAction = {
+            self.scanButton.onAction = { [weak self] in
+                guard let self = self else {
+                    return
+                }
                 if let controller = self.configuration.scanner?.startScanner(completion: { number, month, year, cvv in
                     self.cardNumberTextField.text = number?.formattedCardNumber()
                     if let month = month, let year = year {
@@ -101,7 +113,10 @@ public class PaymentCardForm: PaymentForm {
         self.cardCvcTextField.attributedPlaceholder = NSAttributedString.init(string: "CVC", attributes: attributes)
         self.emailTextField.attributedPlaceholder = NSAttributedString.init(string: "E-mail", attributes: attributes)
         
-        self.cardNumberTextField.didChange = {
+        self.cardNumberTextField.didChange = { [weak self] in
+            guard let self = self else {
+                return
+            }
             if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
                 self.cardNumberTextField.text = cardNumber
                 
@@ -119,11 +134,17 @@ public class PaymentCardForm: PaymentForm {
             }
         }
         
-        self.cardNumberTextField.didEndEditing = {
+        self.cardNumberTextField.didEndEditing = { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.validateAndErrorCardNumber()
         }
         
-        self.cardExpDateTextField.didChange = {
+        self.cardExpDateTextField.didChange = { [weak self] in
+            guard let self = self else {
+                return
+            }
             if let cardExp = self.cardExpDateTextField.text?.formattedCardExp() {
                 self.cardExpDateTextField.text = cardExp
                 
@@ -136,11 +157,17 @@ public class PaymentCardForm: PaymentForm {
             }
         }
         
-        self.cardExpDateTextField.didEndEditing = {
+        self.cardExpDateTextField.didEndEditing = { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.validateAndErrorCardExp()
         }
 
-        self.cardCvcTextField.didChange = {
+        self.cardCvcTextField.didChange = { [weak self] in
+            guard let self = self else {
+                return
+            }
             if let text = self.cardCvcTextField.text?.formattedCardCVV() {
                 self.cardCvcTextField.text = text
                 
@@ -151,15 +178,24 @@ public class PaymentCardForm: PaymentForm {
             }
         }
         
-        self.cardCvcTextField.didEndEditing = {
+        self.cardCvcTextField.didEndEditing = { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.validateAndErrorCardCVV()
         }
         
-        self.emailTextField.didChange = {
+        self.emailTextField.didChange = { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.emailTextField.isErrorMode = false
         }
         
-        self.cardNumberTextField.shouldReturn = {
+        self.cardNumberTextField.shouldReturn = { [weak self] in
+            guard let self = self else {
+                return false
+            }
             if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
                 if Card.isCardNumberValid(cardNumber) {
                     self.cardExpDateTextField.becomeFirstResponder()
@@ -168,7 +204,10 @@ public class PaymentCardForm: PaymentForm {
             return false
         }
         
-        self.cardExpDateTextField.shouldReturn = {
+        self.cardExpDateTextField.shouldReturn = { [weak self] in
+            guard let self = self else {
+                return false
+            }
             if let cardExp = self.cardExpDateTextField.text?.formattedCardExp() {
                 if cardExp.count == 5 {
                     self.cardCvcTextField.becomeFirstResponder()
@@ -178,7 +217,10 @@ public class PaymentCardForm: PaymentForm {
             return false
         }
 
-        self.cardCvcTextField.shouldReturn = {
+        self.cardCvcTextField.shouldReturn = { [weak self] in
+            guard let self = self else {
+                return false
+            }
             if let text = self.cardCvcTextField.text?.formattedCardCVV() {
                 if text.count == 3 {
                     self.cardCvcTextField.resignFirstResponder()

@@ -3,7 +3,7 @@
 //  demo
 //
 //  Created by Sergey Iskhakov on 15.10.2020.
-//  Copyright © 2020 Anton Ignatov. All rights reserved.
+//  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
 import Foundation

@@ -339,38 +339,42 @@ class RSAUtils {
     @available(iOS, introduced: 1.2.0)
     public static func encryptWithRSAKey(_ data: Data, rsaKeyRef: SecKey, padding: SecPadding) -> Data? {
         let blockSize = SecKeyGetBlockSize(rsaKeyRef)
-        let dataSize = data.count / MemoryLayout<UInt8>.size
-        let maxChunkSize = padding==SecPadding.OAEP ? (blockSize - 42) : (blockSize - 11)
-
-        var dataAsArray = [UInt8](repeating: 0, count: dataSize)
-        (data as NSData).getBytes(&dataAsArray, length: dataSize)
-
-        var encryptedData = [UInt8](repeating: 0, count: 0)
+        var maxChunkSize: Int
+        switch padding {
+        case []:
+            maxChunkSize = blockSize
+        case .OAEP:
+            maxChunkSize = blockSize - 42
+        default:
+            maxChunkSize = blockSize - 11
+        }
+        
+        var decryptedDataAsArray = [UInt8](repeating: 0, count: data.count)
+        (data as NSData).getBytes(&decryptedDataAsArray, length: data.count)
+        
+        var encryptedDataBytes = [UInt8](repeating: 0, count: 0)
         var idx = 0
-        while (idx < dataAsArray.count ) {
-            var idxEnd = idx + maxChunkSize
-            if ( idxEnd > dataAsArray.count ) {
-                idxEnd = dataAsArray.count
-            }
-            var chunkData = [UInt8](repeating: 0, count: maxChunkSize)
-            for i in idx..<idxEnd {
-                chunkData[i-idx] = dataAsArray[i]
-            }
-
+        while idx < decryptedDataAsArray.count {
+            
+            let idxEnd = min(idx + maxChunkSize, decryptedDataAsArray.count)
+            let chunkData = [UInt8](decryptedDataAsArray[idx..<idxEnd])
+            
             var encryptedDataBuffer = [UInt8](repeating: 0, count: blockSize)
             var encryptedDataLength = blockSize
-
-            let status = SecKeyEncrypt(rsaKeyRef, padding, chunkData, idxEnd-idx, &encryptedDataBuffer, &encryptedDataLength)
-            if ( status != noErr ) {
-                NSLog("Error while encrypting: %i", status)
+            
+            let status = SecKeyEncrypt(rsaKeyRef, padding, chunkData, chunkData.count, &encryptedDataBuffer, &encryptedDataLength)
+            
+            guard status == noErr else {
                 return nil
             }
-            encryptedData += encryptedDataBuffer
-
+            
+            encryptedDataBytes += encryptedDataBuffer
+            
             idx += maxChunkSize
         }
-
-        return Data(bytes: UnsafePointer<UInt8>(encryptedData), count: encryptedData.count)
+        
+        let encryptedData = Data(bytes: encryptedDataBytes, count: encryptedDataBytes.count)
+        return encryptedData
     }
 
     /**
@@ -415,7 +419,7 @@ class RSAUtils {
             idx += blockSize
         }
 
-        return Data(bytes: UnsafePointer<UInt8>(decryptedData), count: decryptedData.count)
+        return Data(bytes: decryptedData, count: decryptedData.count)
     }
 
     @available(iOS, introduced: 1.2.0)

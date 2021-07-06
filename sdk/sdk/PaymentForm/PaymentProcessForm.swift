@@ -79,14 +79,20 @@ public class PaymentProcessForm: PaymentForm {
         self.updateUI(with: self.state)
         
         if let cryptogram = self.cryptogram {
-            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { status, canceled, transaction, errorMessage in
+            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { [weak self] status, canceled, transaction, errorMessage in
+                guard let self = self else {
+                    return
+                }
                 if status {
                     self.updateUI(with: .succeeded(transaction))
                 } else if !canceled {
                     self.updateUI(with: .failed(errorMessage))
                 } else {
                     self.configuration.paymentUIDelegate.paymentFormWillHide()
-                    self.dismiss(animated: true) {
+                    self.dismiss(animated: true) { [weak self] in
+                        guard let self = self else {
+                            return
+                        }
                         self.configuration.paymentUIDelegate.paymentFormDidHide()
                     }
                 }
@@ -133,7 +139,10 @@ public class PaymentProcessForm: PaymentForm {
                 }
                 
                 let parent = self.presentingViewController
-                self.dismiss(animated: true) {
+                self.dismiss(animated: true) { [weak self] in
+                    guard let self = self else {
+                        return
+                    }
                     if let parent = parent {
                         PaymentForm.present(with: self.configuration, from: parent)
                     }
@@ -169,7 +178,10 @@ public class PaymentProcessForm: PaymentForm {
     
     private func hide(_ completion: (() -> ())? = nil) {
         self.configuration.paymentUIDelegate.paymentFormWillHide()
-        self.dismiss(animated: true) {
+        self.dismiss(animated: true) { [weak self] in
+            guard let self = self else {
+                return
+            }
             self.configuration.paymentUIDelegate.paymentFormDidHide()
             completion?()
         }

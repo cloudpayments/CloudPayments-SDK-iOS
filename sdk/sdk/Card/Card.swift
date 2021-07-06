@@ -53,7 +53,6 @@ public enum CardType: String {
 }
 
 public struct Card {
-    private static let publicKey = "-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArBZ1NNjvszen6BNWsgyDUJvDUZDtvR4jKNQtEwW1iW7hqJr0TdD8hgTxw3DfH+Hi/7ZjSNdH5EfChvgVW9wtTxrvUXCOyJndReq7qNMo94lHpoSIVW82dp4rcDB4kU+q+ekh5rj9Oj6EReCTuXr3foLLBVpH0/z1vtgcCfQzsLlGkSTwgLqASTUsuzfI8viVUbxE1a+600hN0uBh/CYKoMnCp/EhxV8g7eUmNsWjZyiUrV8AA/5DgZUCB+jqGQT/Dhc8e21tAkQ3qan/jQ5i/QYocA/4jW3WQAldMLj0PA36kINEbuDKq8qRh25v+k4qyjb7Xp4W2DywmNtG3Q20MQIDAQAB-----END PUBLIC KEY-----"
     private static let publicKeyVersion = "04"
     
     public static func isCardNumberValid(_ cardNumber: String?) -> Bool {
@@ -196,7 +195,7 @@ public struct Card {
         let cleanCardNumber = self.cleanCreditCardNo(cardNumber)
         let decryptedCryptogram = String.init(format: "%@@%@@%@@%@", cleanCardNumber, cardDateString, cvv, merchantPublicID)
         
-        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: self.publicKey) else {
+        guard let publicKey = publicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: publicKey) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
@@ -216,7 +215,7 @@ public struct Card {
     }
     
     public static func makeCardCryptogramPacket(with cvv: String) -> String? {
-        guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: self.publicKey) else {
+        guard let publicKey = publicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: publicKey) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
@@ -232,5 +231,13 @@ public struct Card {
 
     public static func cleanCreditCardNo(_ creditCardNo: String) -> String {
         return creditCardNo.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+    }
+    
+    private static func publicKey() -> String? {
+        guard let filePath = Bundle.mainSdk.path(forResource: "PublicKey", ofType: "txt") else {
+            return nil
+        }
+        let key = try? String(contentsOfFile: filePath).replacingOccurrences(of: "\n", with: "")
+        return key
     }
 }
