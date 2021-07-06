@@ -1,5 +1,5 @@
 PODS:
-  - Cloudpayments (1.0.4):
+  - Cloudpayments (1.1.0):
     - CloudpaymentsNetworking
   - CloudpaymentsNetworking (1.0.0)
   - SDWebImage (5.11.1):
@@ -22,10 +22,10 @@ EXTERNAL SOURCES:
     :path: "../networking"
 
 SPEC CHECKSUMS:
-  Cloudpayments: a6c2e72bd110e9744287d703484169e9b5cdfb24
+  Cloudpayments: 60d2ed2bd55b660cb62f264d94d48ac96875b0b3
   CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
 
-PODFILE CHECKSUM: cf450ab4b7854f5e6c397510c559e2055e716cfc
+PODFILE CHECKSUM: b981bdc8284bf39b714a712d67a73bbad3b859df
 
 COCOAPODS: 1.10.1
