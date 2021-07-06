@@ -8,11 +8,11 @@
 import Foundation
 
 open class BaseRequest {
-    var params: [String: Any?]?
-    var headers: [String: String]?
+    var params: [String: Any?]
+    var headers: [String: String]
     
-    public init(params: [String: Any?]? = nil,
-         headers: [String: String]? = nil) {
+    public init(params: [String: Any?] = [:],
+         headers: [String: String] = [:]) {
         self.params = params
         self.headers = headers
     }

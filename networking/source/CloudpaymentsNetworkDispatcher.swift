@@ -36,18 +36,17 @@ public class CloudpaymentsURLSessionNetworkDispatcher: NSObject, CloudpaymentsNe
         urlRequest.httpMethod = request.method.rawValue
         
         do {
-            if let params = request.params {
-                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: params, options: [])
+            if !request.params.isEmpty {
+                urlRequest.httpBody = try JSONSerialization.data(withJSONObject: request.params, options: [])
             }
         } catch let error {
             onError(error)
             return
         }
         
-        if var headers = request.headers {
-            headers["Content-Type"] = "application/json"
-            urlRequest.allHTTPHeaderFields = headers
-        }
+        var headers = request.headers
+        headers["Content-Type"] = "application/json"
+        urlRequest.allHTTPHeaderFields = headers
         
         session.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
