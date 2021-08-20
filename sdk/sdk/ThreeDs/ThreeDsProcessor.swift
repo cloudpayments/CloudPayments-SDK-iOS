@@ -46,7 +46,10 @@ public class ThreeDsProcessor: NSObject, WKNavigationDelegate {
                         
                         let webView = WKWebView.init()
                         webView.navigationDelegate = self
-                        if let mimeType = httpResponse.mimeType, let textEncodingName = httpResponse.textEncodingName, let url = httpResponse.url {
+                        if let mimeType = httpResponse.mimeType,
+                           let url = httpResponse.url {
+                            
+                            let textEncodingName = httpResponse.textEncodingName ?? ""
                             webView.load(data, mimeType: mimeType, characterEncodingName: textEncodingName, baseURL: url)
                         }
                         
