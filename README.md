@@ -89,7 +89,7 @@ extension CartViewController: CardIOPaymentViewControllerDelegate {
 let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: Constants.merchantPulicId)
 ```
 
-2. Выполните запрос на проведения платежа. Создайте объект CloudpaymentApi и вызовите функцию auth для одностадийного платежа или charge для двухстадийного. Укажите email, на который будет выслана квитанция об оплате.
+2. Выполните запрос на проведения платежа. Создайте объект CloudpaymentApi и вызовите функцию charge для одностадийного платежа или auth для двухстадийного. Укажите email, на который будет выслана квитанция об оплате.
 
 ```
 let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)
