@@ -30,16 +30,35 @@ pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudP
 1. Создайте объект PaymentData, передайте в него Public Id из [личного кабинета Cloudpayments](https://merchant.cloudpayments.ru/), сумму платежа и валюту. Если хотите иметь возможность оплаты с помощью Apple Pay, передайте также Apple pay merchant id.
 
 ```
-let paymentData = PaymentData.init(publicId: Constants.merchantPulicId)
-                    .setAmount(String(totalAmount))
-                    .setCurrency(.ruble)
-                    .setApplePayMerchantId(Constants.applePayMerchantID)
+let paymentData = PaymentData.init(publicId: Constants.merchantPulicId) // Ваш PublicId
+	.setAmount(String(totalAmount)) // Сумма платежа
+	.setCurrency(.ruble) // Валюта
+	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id
+	
+// Указывайте дополнительные данные если это необходимо
+let jsonData: [String: Any] = ["age":27, "name":"Ivan", "phone":"+79998881122"] // Данные в формате JSON
+let paymentData = PaymentData.init(publicId: Constants.merchantPublicId) // Ваш PublicId
+	.setAmount(String(totalAmount)) // Сумма платежа
+	.setCurrency(.ruble) // Валюта
+	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id
+	.setDescription("Корзина цветов")
+	.setAccountId("111")
+	.setIpAddress("98.21.123.32")
+	.setInvoiceId("123")
+	.setJsonData(jsonData)                    
 ```
 
 2. Создайте объект PaymentConfiguration, передайте в него объект PaymentData. Реализуйте протокол PaymentDelegate, чтобы узнать о завершении платежа
 
 ```
-let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, scanner: self)
+let configuration = PaymentConfiguration.init(
+	paymentData: paymentData, 
+	delegate: self, 
+	uiDelegate: self,
+	scanner: nil,
+	useDualMessagePayment: true, // Использовать двухстадийную схему проведения платежа, по умолчанию используется одностадийная схема
+	disableApplePay: true // Выключить Apple Pay, по умолчанию Apple Pay включен
+)
 ```
 
 3. Вызовите форму оплаты внутри своего контроллера
@@ -89,7 +108,7 @@ extension CartViewController: CardIOPaymentViewControllerDelegate {
 let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDate: expDate, cvv: cvv, merchantPublicID: Constants.merchantPulicId)
 ```
 
-2. Выполните запрос на проведения платежа. Создайте объект CloudpaymentApi и вызовите функцию auth для одностадийного платежа или charge для двухстадийного. Укажите email, на который будет выслана квитанция об оплате.
+2. Выполните запрос на проведения платежа. Создайте объект CloudpaymentApi и вызовите функцию charge для одностадийного платежа или auth для двухстадийного. Укажите email, на который будет выслана квитанция об оплате.
 
 ```
 let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)

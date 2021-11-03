@@ -33,12 +33,12 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         
         let product = CartManager.shared.products[indexPath.item]
         
-        cell.picture.sd_cancelCurrentImageLoad()
-        cell.picture.image = nil
-        
-        if let image = product.images?.first?.src {
-            cell.picture.sd_setImage(with: URL.init(string: image), completed: nil)
-        }
+//        cell.picture.sd_cancelCurrentImageLoad()
+//        cell.picture.image = nil
+//
+//        if let image = product.images?.first?.src {
+//            cell.picture.sd_setImage(with: URL.init(string: image), completed: nil)
+//        }
         
         cell.name.text = product.name
         cell.price.text = "\(product.price ?? "0")  Руб."
@@ -50,6 +50,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
 
         tableView.dataSource = self
+        
+        let product = Product(id: 1, name: "Букет \"Нежность\"", price: "1")
+        
+        CartManager.shared.products.append(product)
         
         var total = 0;
         
@@ -94,7 +98,14 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     .setInvoiceId("123")
                     .setJsonData(jsonData)
 
-                let configuration = PaymentConfiguration.init(paymentData: paymentData, delegate: self, uiDelegate: self, scanner: nil)
+                let configuration = PaymentConfiguration.init(
+                    paymentData: paymentData,
+                    delegate: self,
+                    uiDelegate: self,
+                    scanner: nil,
+                    useDualMessagePayment: true,
+                    disableApplePay: true)
+                
                 PaymentForm.present(with: configuration, from: self)
             }
             

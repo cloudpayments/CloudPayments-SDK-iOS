@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sds-GN-2ua">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sds-GN-2ua">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TJW-J4-f8V"/>
+                        <segue destination="1Am-tX-iia" kind="relationship" relationship="rootViewController" id="hdQ-Bk-faF"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xii-bx-TxT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,14 +55,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="342.99999999999994" translatesAutoresizingMaskIntoConstraints="NO" id="Q1Q-L9-VLA">
-                                <rect key="frame" x="16" y="56" width="382" height="122"/>
+                                <rect key="frame" x="16" y="12" width="382" height="122"/>
                                 <string key="text">Посмотрите, как выглядят платежи через CloudPayments для покупателей в мобильном приложении. Выберите товары, которые нужно приобрести. Товары не настоящие, платежи тоже — деньги тратить не придется.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eDR-5P-CMa">
-                                <rect key="frame" x="8" y="186" width="398" height="500"/>
+                                <rect key="frame" x="8" y="142" width="398" height="544"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ywW-My-r5h">
                                     <size key="itemSize" width="111" height="197"/>
@@ -125,7 +125,7 @@
                                 </cells>
                             </collectionView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="01u-tz-wh7">
-                                <rect key="frame" x="197" y="426" width="20" height="20"/>
+                                <rect key="frame" x="197" y="404" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -152,9 +152,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="Cart"/>
                             </button>
-                            <connections>
-                                <segue destination="1Am-tX-iia" kind="show" id="wNM-q3-oVj"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -164,7 +161,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498.55072463768118" y="-267.39130434782612"/>
+            <point key="canvasLocation" x="-649" y="-1266"/>
         </scene>
         <!--Корзина-->
         <scene sceneID="2q6-HO-mcy">
@@ -179,13 +176,13 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="80" id="F45-XE-6P6" customClass="CartViewCell" customModule="demo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="398" height="80"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="398" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F45-XE-6P6" id="NrS-7x-i3g">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KnD-SE-5jt">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="product" translatesAutoresizingMaskIntoConstraints="NO" id="KnD-SE-5jt">
                                                     <rect key="frame" x="8" y="8" width="80" height="64"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="KnD-SE-5jt" secondAttribute="height" multiplier="5:4" id="FCD-vJ-F5N"/>
@@ -276,6 +273,7 @@
                             <constraint firstItem="SZg-F2-6za" firstAttribute="trailing" secondItem="56Y-Z2-TVq" secondAttribute="trailing" constant="8" id="rNl-8l-6Wa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mPM-uC-cDG"/>
                     <connections>
                         <outlet property="labelTotal" destination="X79-F2-BXK" id="O65-cP-FAi"/>
                         <outlet property="payButton" destination="56Y-Z2-TVq" id="kel-Ac-UZj"/>
@@ -496,6 +494,7 @@
     </scenes>
     <resources>
         <image name="Cart" width="25" height="25"/>
+        <image name="product" width="90" height="115.5"/>
         <namedColor name="color_border">
             <color red="0.75294117647058822" green="0.78823529411764703" blue="0.83137254901960789" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

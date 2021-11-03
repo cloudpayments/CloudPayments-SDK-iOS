@@ -27,6 +27,12 @@ struct Product: Codable {
         self.price = try? container.decode(String.self, forKey: .price)
         self.images = try? container.decode([Image].self, forKey: .images)
     }
+    
+    init(id: Int, name: String, price: String) {
+        self.id = id
+        self.name = name
+        self.price = price
+    }
 }
 
 struct Image: Codable {

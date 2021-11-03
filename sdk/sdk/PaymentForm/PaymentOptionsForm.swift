@@ -49,6 +49,11 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     }
     
     private func initializeApplePay() {
+        if (self.configuration.disableApplePay) {
+            self.applePayContainer.isHidden = true
+            return
+        }
+        
         if let _  = self.configuration.paymentData.applePayMerchantId, PKPaymentAuthorizationViewController.canMakePayments() {
             let button: PKPaymentButton!
             if PKPaymentAuthorizationController.canMakePayments(usingNetworks: self.supportedPaymentNetworks) {
@@ -149,27 +154,49 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
     func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, handler completion: @escaping (PKPaymentAuthorizationResult) -> Void) {
         
         if let cryptogram = payment.convertToString() {
-            self.charge(cardCryptogramPacket: cryptogram, email: nil) { [weak self] status, canceled, transaction, errorMessage in
-                guard let self = self else {
-                    return
-                }
-                self.applePaymentSucceeded = status
-                self.resultTransaction = transaction
-                self.errorMessage = errorMessage
-                
-                if status {
-                    completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
-                } else {
-                    var errors = [Error]()
-                    if let message = errorMessage {
-                        let userInfo = [NSLocalizedDescriptionKey: message]
-                        let error = PKPaymentError(.unknownError, userInfo: userInfo)
-                        errors.append(error)
+            if (configuration.useDualMessagePayment) {
+                self.auth(cardCryptogramPacket: cryptogram, email: nil) { [weak self] status, canceled, transaction, errorMessage in
+                    guard let self = self else {
+                        return
                     }
-                    completion(PKPaymentAuthorizationResult(status: .failure, errors: errors))
+                    self.applePaymentSucceeded = status
+                    self.resultTransaction = transaction
+                    self.errorMessage = errorMessage
+                    
+                    if status {
+                        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+                    } else {
+                        var errors = [Error]()
+                        if let message = errorMessage {
+                            let userInfo = [NSLocalizedDescriptionKey: message]
+                            let error = PKPaymentError(.unknownError, userInfo: userInfo)
+                            errors.append(error)
+                        }
+                        completion(PKPaymentAuthorizationResult(status: .failure, errors: errors))
+                    }
+                }
+            } else {
+                self.charge(cardCryptogramPacket: cryptogram, email: nil) { [weak self] status, canceled, transaction, errorMessage in
+                    guard let self = self else {
+                        return
+                    }
+                    self.applePaymentSucceeded = status
+                    self.resultTransaction = transaction
+                    self.errorMessage = errorMessage
+                    
+                    if status {
+                        completion(PKPaymentAuthorizationResult(status: .success, errors: nil))
+                    } else {
+                        var errors = [Error]()
+                        if let message = errorMessage {
+                            let userInfo = [NSLocalizedDescriptionKey: message]
+                            let error = PKPaymentError(.unknownError, userInfo: userInfo)
+                            errors.append(error)
+                        }
+                        completion(PKPaymentAuthorizationResult(status: .failure, errors: errors))
+                    }
                 }
             }
-
         } else {
             completion(PKPaymentAuthorizationResult(status: PKPaymentAuthorizationStatus.failure, errors: []))
         }

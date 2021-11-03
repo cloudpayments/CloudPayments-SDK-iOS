@@ -101,6 +101,7 @@ public class PaymentForm: BaseViewController {
     }
     
     internal func charge(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
+        print("CHARGE")
         network.charge(cardCryptogramPacket: cardCryptogramPacket,
                        email: email,
                        paymentData: self.configuration.paymentData) { [weak self] response, error in
@@ -113,6 +114,7 @@ public class PaymentForm: BaseViewController {
     }
     
     internal func auth(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
+        print("AUTH")
         network.auth(cardCryptogramPacket: cardCryptogramPacket,
                      email: email,
                      paymentData: self.configuration.paymentData) { [weak self] response, error in

@@ -79,21 +79,42 @@ public class PaymentProcessForm: PaymentForm {
         self.updateUI(with: self.state)
         
         if let cryptogram = self.cryptogram {
-            self.charge(cardCryptogramPacket: cryptogram, email: self.email) { [weak self] status, canceled, transaction, errorMessage in
-                guard let self = self else {
-                    return
-                }
-                if status {
-                    self.updateUI(with: .succeeded(transaction))
-                } else if !canceled {
-                    self.updateUI(with: .failed(errorMessage))
-                } else {
-                    self.configuration.paymentUIDelegate.paymentFormWillHide()
-                    self.dismiss(animated: true) { [weak self] in
-                        guard let self = self else {
-                            return
+            if (configuration.useDualMessagePayment) {
+                self.auth(cardCryptogramPacket: cryptogram, email: self.email) { [weak self] status, canceled, transaction, errorMessage in
+                    guard let self = self else {
+                        return
+                    }
+                    if status {
+                        self.updateUI(with: .succeeded(transaction))
+                    } else if !canceled {
+                        self.updateUI(with: .failed(errorMessage))
+                    } else {
+                        self.configuration.paymentUIDelegate.paymentFormWillHide()
+                        self.dismiss(animated: true) { [weak self] in
+                            guard let self = self else {
+                                return
+                            }
+                            self.configuration.paymentUIDelegate.paymentFormDidHide()
                         }
-                        self.configuration.paymentUIDelegate.paymentFormDidHide()
+                    }
+                }
+            } else {
+                self.charge(cardCryptogramPacket: cryptogram, email: self.email) { [weak self] status, canceled, transaction, errorMessage in
+                    guard let self = self else {
+                        return
+                    }
+                    if status {
+                        self.updateUI(with: .succeeded(transaction))
+                    } else if !canceled {
+                        self.updateUI(with: .failed(errorMessage))
+                    } else {
+                        self.configuration.paymentUIDelegate.paymentFormWillHide()
+                        self.dismiss(animated: true) { [weak self] in
+                            guard let self = self else {
+                                return
+                            }
+                            self.configuration.paymentUIDelegate.paymentFormDidHide()
+                        }
                     }
                 }
             }
