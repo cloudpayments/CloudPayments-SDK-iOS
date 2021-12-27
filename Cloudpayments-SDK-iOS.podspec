@@ -10,7 +10,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments-SDK-iOS"
-  spec.version      = "2.0.0"
+  spec.version      = "1.1.3"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 

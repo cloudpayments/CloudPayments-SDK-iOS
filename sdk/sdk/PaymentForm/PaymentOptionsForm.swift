@@ -20,6 +20,9 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
             if #available(iOS 12.0, *) {
                 arr.append(.maestro)
             }
+            if #available(iOS 14.5, *) {
+                arr.append(.mir)
+            }
             
             return arr
         }
