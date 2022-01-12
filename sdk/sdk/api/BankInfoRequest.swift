@@ -14,6 +14,6 @@ class BankInfoRequest: BaseRequest, CloudpaymentsRequestType {
     }
     typealias ResponseType = BankInfoResponse
     var data: CloudpaymentsRequest {
-        return CloudpaymentsRequest(path: "https://widget.cloudpayments.ru/Home/BinInfo?firstSixDigits=\(firstSix)", method: .get)
+        return CloudpaymentsRequest(path: "https://api.cloudpayments.ru/bins/info/\(firstSix)", method: .get)
     }
 }
