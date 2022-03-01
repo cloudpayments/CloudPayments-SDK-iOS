@@ -10,7 +10,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments-SDK-iOS"
-  spec.version      = "1.1.4"
+  spec.version      = "1.1.5"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -29,5 +29,7 @@ Pod::Spec.new do |spec|
   spec.resource_bundles = { 'Cloudpayments-SDK-iOS' => ['Resources/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}']}
 
   spec.requires_arc = true
+
+  spec.swift_version = '5.0'
 
 end
