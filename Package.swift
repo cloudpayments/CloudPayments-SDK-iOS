@@ -25,7 +25,7 @@ let package = Package(
             name: "sdk",
             path: "sdk",
             resources: [
-                            .process("../Resources")
+                            .process("./Resources")
                         ]),
         .target(
             name: "networking",
