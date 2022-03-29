@@ -4,12 +4,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "cpsdkiosv2",
+    name: "CloudPayments",
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "cpsdkiosv2",
-            targets: ["cpsdkiosv2"]),
+            name: "CloudPaymentsSDK",
+            targets: ["sdk"]),
+        .library(
+            name: "CloudPaymentsNetworking",
+            targets: ["networking"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -19,10 +22,13 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "cpsdkiosv2",
-            dependencies: []),
-        .testTarget(
-            name: "cpsdkiosv2Tests",
-            dependencies: ["cpsdkiosv2"]),
+            name: "sdk",
+            path: "sdk",
+            resources: [
+                            .process("../Resources")
+                        ]),
+        .target(
+            name: "networking",
+            path: "networking"),
     ]
 )
