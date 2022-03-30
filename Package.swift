@@ -29,7 +29,7 @@ let package = Package(
             dependencies: ["CloudpaymentsNetworking"],
             path: "sdk/sdk",
             resources: [
-                            .process("../Resources")
+                            .copy("../Resources")
                         ]),
         .target(
             name: "CloudpaymentsNetworking",
