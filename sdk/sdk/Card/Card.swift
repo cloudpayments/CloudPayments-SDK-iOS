@@ -108,11 +108,50 @@ public struct Card {
             return false
         }
 
-        guard aNewDate.compare(Date()) == .orderedDescending else {
+        let dateNow = dateFormatter.date(from: "02/22")!
+        //let dateNow = Date()
+        
+        guard aNewDate.compare(dateNow) == .orderedDescending else {
             return false
         }
 
         return true
+    }
+    
+    public static func isCvvValid(_ cardNumber: String?, _ cvv: String?) -> Bool {
+        guard let cvv = cvv else {
+            return false
+        }
+        
+        if (cvv.length == 3) {
+            return true
+        }
+        
+        guard let cardNumber = cardNumber else {
+            return false
+        }
+
+        if (isUzcardCard(cardNumber: cardNumber) || isHumoCard(cardNumber: cardNumber) ) {
+            return true
+        }
+        
+        return false
+    }
+    
+    private static func isUzcardCard(cardNumber: String?) -> Bool {
+        //Uzcard 8600
+        if (cardNumber?.substring(0, 4) == "8600") {
+            return true
+        }
+        return false
+    }
+
+    private static func isHumoCard(cardNumber: String?) -> Bool {
+        //Humo 9860
+        if (cardNumber?.substring(0, 4) == "9860") {
+            return true
+        }
+        return false
     }
     
     public static func cardType(from cardNumber: String) -> CardType {

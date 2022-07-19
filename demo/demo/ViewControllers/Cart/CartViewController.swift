@@ -91,6 +91,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     .setAmount(String(totalAmount))
                     .setCurrency(.ruble)
                     .setApplePayMerchantId(Constants.applePayMerchantID)
+                    .setYandexPayMerchantId(Constants.yandexPayMerchantID)
                     .setCardholderName("Демо приложение")
                     .setDescription("Корзина цветов")
                     .setAccountId("111")
@@ -104,7 +105,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     uiDelegate: self,
                     scanner: nil,
                     useDualMessagePayment: true,
-                    disableApplePay: true)
+                    disableApplePay: false,
+                    disableYandexPay: false)
                 
                 PaymentForm.present(with: configuration, from: self)
             }

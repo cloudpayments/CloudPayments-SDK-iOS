@@ -234,7 +234,7 @@ public class PaymentCardForm: PaymentForm {
     private func isValid() -> Bool {
         let cardNumberIsValid = Card.isCardNumberValid(self.cardNumberTextField.text?.formattedCardNumber())
         let cardExpIsValid = Card.isExpDateValid(self.cardExpDateTextField.text?.formattedCardExp())
-        let cardCvcIsValid = self.cardCvcTextField.text?.formattedCardCVV().count == 3
+        let cardCvcIsValid = Card.isCvvValid(self.cardNumberTextField.text?.formattedCardNumber(), self.cardCvcTextField.text?.formattedCardCVV())
         let emailIsValid = !self.receiptButton.isSelected || self.emailTextField.text?.emailIsValid() == true
         
         self.validateAndErrorCardNumber()
@@ -258,7 +258,7 @@ public class PaymentCardForm: PaymentForm {
     }
     
     private func validateAndErrorCardCVV(){
-        self.cardCvcTextField.isErrorMode = self.cardCvcTextField.text?.count != 3
+        self.cardCvcTextField.isErrorMode = !Card.isCvvValid(self.cardNumberTextField.text?.formattedCardNumber(), self.cardCvcTextField.text)
     }
     
     private func validateAndErrorEmail(){

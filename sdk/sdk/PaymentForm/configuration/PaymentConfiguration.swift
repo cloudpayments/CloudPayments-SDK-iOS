@@ -15,13 +15,15 @@ public class PaymentConfiguration {
     let scanner: PaymentCardScanner?
     let useDualMessagePayment: Bool
     let disableApplePay: Bool
+    let disableYandexPay: Bool
     
-    public init(paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?, useDualMessagePayment: Bool = false, disableApplePay: Bool = false) {
+    public init(paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?, useDualMessagePayment: Bool = false, disableApplePay: Bool = false, disableYandexPay: Bool = false) {
         self.paymentData = paymentData
         self.paymentDelegate = PaymentDelegateImpl.init(delegate: delegate)
         self.paymentUIDelegate = PaymentUIDelegateImpl.init(delegate: uiDelegate)
         self.scanner = scanner
         self.useDualMessagePayment = useDualMessagePayment
         self.disableApplePay = disableApplePay
+        self.disableYandexPay = disableYandexPay
     }
 }

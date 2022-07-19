@@ -40,7 +40,8 @@ let jsonData: [String: Any] = ["age":27, "name":"Ivan", "phone":"+79998881122"] 
 let paymentData = PaymentData.init(publicId: Constants.merchantPublicId) // Ваш PublicId
 	.setAmount(String(totalAmount)) // Сумма платежа
 	.setCurrency(.ruble) // Валюта
-	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id
+	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id (Необходимо получить у Apple)
+	.setYandexPayMerchantId(Constants.yandexPayMerchantID) // Yandex pay merchant id (Необходимо получить у Yandex)
 	.setDescription("Корзина цветов")
 	.setAccountId("111")
 	.setIpAddress("98.21.123.32")
@@ -58,8 +59,11 @@ let configuration = PaymentConfiguration.init(
 	scanner: nil,
 	useDualMessagePayment: true, // Использовать двухстадийную схему проведения платежа, по умолчанию используется одностадийная схема
 	disableApplePay: true // Выключить Apple Pay, по умолчанию Apple Pay включен
+	disableYandexPay: true // Выключить Yandex Pay, по умолчанию Yandex Pay включен
 )
 ```
+
+Если вы планируете использовать Yandex Pay вам необходимо зарегистрироваться в программе Yandex Pay, а так же выполнить в своем приложении, авторизацию в Yandex Login SDK: https://yandex.ru/dev/mobileauthsdk/
 
 3. Вызовите форму оплаты внутри своего контроллера
 

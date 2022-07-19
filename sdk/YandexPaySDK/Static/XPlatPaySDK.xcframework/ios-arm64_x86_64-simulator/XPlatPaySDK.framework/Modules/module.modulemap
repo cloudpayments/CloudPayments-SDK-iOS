@@ -1,0 +1,11 @@
+framework module XPlatPaySDK {
+  umbrella header "XPlatPaySDK.h"
+
+  export *
+  module * { export * }
+}
+
+module XPlatPaySDK.Swift {
+    header "XPlatPaySDK-Swift.h"
+    requires objc
+}

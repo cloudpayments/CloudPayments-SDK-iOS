@@ -1,10 +1,16 @@
 PODS:
-  - Cloudpayments (1.1.0):
+  - Cloudpayments (1.1.5):
     - CloudpaymentsNetworking
-  - CloudpaymentsNetworking (1.0.0)
-  - SDWebImage (5.11.1):
-    - SDWebImage/Core (= 5.11.1)
-  - SDWebImage/Core (5.11.1)
+    - PromiseKit/CorePromise
+    - SnapKit
+    - YandexLoginSDK
+  - CloudpaymentsNetworking (1.0.1)
+  - PromiseKit/CorePromise (6.17.1)
+  - SDWebImage (5.12.5):
+    - SDWebImage/Core (= 5.12.5)
+  - SDWebImage/Core (5.12.5)
+  - SnapKit (5.6.0)
+  - YandexLoginSDK (2.0.2)
 
 DEPENDENCIES:
   - Cloudpayments (from `../sdk`)
@@ -13,7 +19,10 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - PromiseKit
     - SDWebImage
+    - SnapKit
+    - YandexLoginSDK
 
 EXTERNAL SOURCES:
   Cloudpayments:
@@ -22,10 +31,13 @@ EXTERNAL SOURCES:
     :path: "../networking"
 
 SPEC CHECKSUMS:
-  Cloudpayments: 60d2ed2bd55b660cb62f264d94d48ac96875b0b3
-  CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
-  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  Cloudpayments: fc693db301ed35e7acd954ce296319426d61b325
+  CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
+  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
+  SDWebImage: 0905f1b7760fc8ac4198cae0036600d67478751e
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
 
-PODFILE CHECKSUM: b981bdc8284bf39b714a712d67a73bbad3b859df
+PODFILE CHECKSUM: 06dd31f40b970a3dd0b19046f7238523d4070cdb
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

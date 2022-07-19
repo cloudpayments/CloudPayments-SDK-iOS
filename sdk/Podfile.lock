@@ -1,16 +1,32 @@
 PODS:
-  - CloudpaymentsNetworking (1.0.0)
+  - CloudpaymentsNetworking (1.0.1)
+  - PromiseKit/CorePromise (6.17.1)
+  - YandexLoginSDK (2.0.2)
+  - YandexPaySDK/Static (1.1.0):
+    - PromiseKit/CorePromise (~> 6.0)
+    - YandexLoginSDK (~> 2.0.2)
 
 DEPENDENCIES:
   - CloudpaymentsNetworking (from `../networking`)
+  - YandexPaySDK/Static (from `./YandexPaySDK`)
+
+SPEC REPOS:
+  trunk:
+    - PromiseKit
+    - YandexLoginSDK
 
 EXTERNAL SOURCES:
   CloudpaymentsNetworking:
     :path: "../networking"
+  YandexPaySDK:
+    :path: "./YandexPaySDK"
 
 SPEC CHECKSUMS:
-  CloudpaymentsNetworking: fc95734f41940569a7e942c3816ff9d2f1525c9d
+  CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
+  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
+  YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
+  YandexPaySDK: 6b653587456cb94efc57823f632ca69a888172a4
 
-PODFILE CHECKSUM: 722ba902e56f8d63f66fc4df7de9e39435cb28a1
+PODFILE CHECKSUM: e827fd086a99ef13c8ae328508a288dfece13c77
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

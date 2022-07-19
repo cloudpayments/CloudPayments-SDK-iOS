@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YandexPaySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        do {
+                // Укажите необходимую конфигурацию SDK
+                let configuration = YandexPaySDKConfiguration(environment: .sandbox)
+                // Инициализируйте SDK
+                try YandexPaySDKApi.initialize(configuration: configuration)
+            } catch {
+                fatalError("Unable to initialize YandexPaySDKApi.")
+            }
+               
+        
         return true
     }
 

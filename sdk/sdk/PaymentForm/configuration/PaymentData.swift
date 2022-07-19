@@ -13,6 +13,7 @@ public class PaymentData {
     private (set) var amount: String = "0"
     private (set) var currency: Currency = .ruble
     private (set) var applePayMerchantId: String?
+    private (set) var yandexPayMerchantId: String?
     private (set) var cardholderName: String?
     private (set) var description: String?
     private (set) var accountId: String?
@@ -40,6 +41,11 @@ public class PaymentData {
     
     public func setApplePayMerchantId(_ applePayMerchantId: String) -> PaymentData {
         self.applePayMerchantId = applePayMerchantId
+        return self
+    }
+    
+    public func setYandexPayMerchantId(_ yandexPayMerchantId: String) -> PaymentData {
+        self.yandexPayMerchantId = yandexPayMerchantId
         return self
     }
     

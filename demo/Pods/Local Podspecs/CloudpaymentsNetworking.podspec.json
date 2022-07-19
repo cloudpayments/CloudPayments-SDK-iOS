@@ -1,6 +1,6 @@
 {
   "name": "CloudpaymentsNetworking",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "Networking layer for Cloudpayments SDK's",
   "description": "Networking layer for Cloudpayments SDK's",
   "homepage": "https://cloudpayments.ru/",
@@ -14,13 +14,10 @@
   },
   "source": {
     "git": "https://github.com/cloudpayments/CloudPayments-Networking-iOS.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "source_files": "source/**/*.swift",
-  "resource_bundles": {
-    "Cloudpayments": [
-      "Resources/**/*.{json,png,jpeg,jpg,storyboard,xib,xcassets}"
-    ]
-  },
-  "requires_arc": true
+  "requires_arc": true,
+  "swift_versions": "5.0",
+  "swift_version": "5.0"
 }
