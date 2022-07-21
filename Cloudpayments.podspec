@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments"
-  spec.version      = "1.1.10"
+  spec.version      = "1.1.11"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -31,6 +31,9 @@ Pod::Spec.new do |spec|
   spec.requires_arc = true
 
   spec.dependency 'CloudpaymentsNetworking'  
+
+  spec.vendored_frameworks = 'sdk/YandexPaySDK/Static/YandexPaySDK.xcframework', 'sdk/YandexPaySDK/Static/XPlatPaySDK.xcframework'
+  spec.resources = ["sdk/YandexPaySDK/Static/YandexPaySDKResources.bundle"]
 
   spec.swift_version = '5.0'
 end
