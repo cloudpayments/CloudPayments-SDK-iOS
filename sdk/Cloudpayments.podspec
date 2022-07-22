@@ -38,6 +38,4 @@ Pod::Spec.new do |spec|
   spec.vendored_frameworks = 'YandexPaySDK/Static/YandexPaySDK.xcframework', 'YandexPaySDK/Static/XPlatPaySDK.xcframework'
   spec.resources = ["YandexPaySDK/Static/YandexPaySDKResources.bundle"]
 
-  spec.swift_version = '5.0'
-
 end
