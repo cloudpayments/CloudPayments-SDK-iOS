@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ajF8wB/jt8iltuaKX8pQ/cCX3wM=
+		XquQLPH94R3kqtlKp8cK68iJI4I=
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wt/Lcl7gKKzxjuGMFRCsTNwrqns=
+		kcNKnQZv/4dJf9vroqd/TrtfdEE=
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		wt/Lcl7gKKzxjuGMFRCsTNwrqns=
+		kcNKnQZv/4dJf9vroqd/TrtfdEE=
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -50,7 +50,7 @@
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ITKeGGXYeIpACR0Ynl0I15dNzlg=
+		0MZ+JzicWOpMeeK7bk1S1o+vdLk=
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		ITKeGGXYeIpACR0Ynl0I15dNzlg=
+		0MZ+JzicWOpMeeK7bk1S1o+vdLk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -119,11 +119,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wt/Lcl7gKKzxjuGMFRCsTNwrqns=
+			kcNKnQZv/4dJf9vroqd/TrtfdEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jlxyLUfJzT1VuOLEFjplBLBuA5LlZ7VociCe9BZlJ38=
+			1CapdeHY/5kE8BKQ6/+whX1/23idck4uJqu3vYuD7fA=
 			</data>
 		</dict>
 		<key>Modules/XPlatPaySDK.swiftmodule/arm64.swiftdoc</key>
@@ -152,11 +152,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wt/Lcl7gKKzxjuGMFRCsTNwrqns=
+			kcNKnQZv/4dJf9vroqd/TrtfdEE=
 			</data>
 			<key>hash2</key>
 			<data>
-			jlxyLUfJzT1VuOLEFjplBLBuA5LlZ7VociCe9BZlJ38=
+			1CapdeHY/5kE8BKQ6/+whX1/23idck4uJqu3vYuD7fA=
 			</data>
 		</dict>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -185,11 +185,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ITKeGGXYeIpACR0Ynl0I15dNzlg=
+			0MZ+JzicWOpMeeK7bk1S1o+vdLk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sl/LIaaYGa2w8Y4zyIYM0CT/wNZPgti4VHCIXKAbv1o=
+			FBRKWcGDQJDopTlJS458h7V60udDz7ZdS9I1xY27G1w=
 			</data>
 		</dict>
 		<key>Modules/XPlatPaySDK.swiftmodule/x86_64.swiftdoc</key>
@@ -218,11 +218,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ITKeGGXYeIpACR0Ynl0I15dNzlg=
+			0MZ+JzicWOpMeeK7bk1S1o+vdLk=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sl/LIaaYGa2w8Y4zyIYM0CT/wNZPgti4VHCIXKAbv1o=
+			FBRKWcGDQJDopTlJS458h7V60udDz7ZdS9I1xY27G1w=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
