@@ -1,41 +1,53 @@
 PODS:
   - Cloudpayments (1.1.11):
     - CloudpaymentsNetworking
+    - PromiseKit/CorePromise
+    - SnapKit
+    - YandexLoginSDK
   - CloudpaymentsNetworking (1.0.1)
+  - PromiseKit/CorePromise (6.17.1)
   - SDWebImage (5.13.2):
     - SDWebImage/Core (= 5.13.2)
   - SDWebImage/Core (5.13.2)
+  - SnapKit (5.6.0)
+  - YandexLoginSDK (2.0.2)
 
 DEPENDENCIES:
-  - Cloudpayments (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS`, branch `master`)
+  - Cloudpayments (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS/`, branch `air`)
   - CloudpaymentsNetworking (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS`, branch `master`)
   - SDWebImage
 
 SPEC REPOS:
   trunk:
+    - PromiseKit
     - SDWebImage
+    - SnapKit
+    - YandexLoginSDK
 
 EXTERNAL SOURCES:
   Cloudpayments:
-    :branch: master
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
+    :branch: air
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
   CloudpaymentsNetworking:
     :branch: master
     :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 CHECKOUT OPTIONS:
   Cloudpayments:
-    :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
+    :commit: b1466d0c2c2c115147f806b2f9c89d1a75156226
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
   CloudpaymentsNetworking:
     :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
     :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 SPEC CHECKSUMS:
-  Cloudpayments: 2c47c214168f59cafb500b997340724b0779fccd
+  Cloudpayments: 2f3abf6d9dfdb0ed21ff6579819c15993bc4fb1b
   CloudpaymentsNetworking: c888643c447d2ba487ff47300c9ed570f07d41d6
+  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
 
-PODFILE CHECKSUM: 60f1c0b3a812bcdbae0f86db7839dc0f9fc1cd36
+PODFILE CHECKSUM: 5d7803f9547ca68838927df00fc0806770983415
 
 COCOAPODS: 1.11.3
