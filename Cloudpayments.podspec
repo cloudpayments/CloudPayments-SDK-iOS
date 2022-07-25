@@ -24,15 +24,18 @@ Pod::Spec.new do |spec|
   spec.ios.deployment_target = "11.0"
 
   spec.source       = { :git => "https://github.com/cloudpayments/CloudPayments-SDK-iOS.git", :tag => "#{spec.version}" }
-  spec.source_files  = 'sdk/sdk/**/*.swift'
+  spec.source_files  = 'sdk/**/*.swift'
 
-  spec.resource_bundles = { 'Cloudpayments' => ['sdk/Resources/**/*.{txt,json,png,jpeg,jpg,storyboard,xib,xcassets}']} 
+  spec.resource_bundles = { 'CloudpaymentsSDK' => ['Resources/**/*.{txt,json,png,jpeg,jpg,storyboard,xib,xcassets}']} 
   
   spec.requires_arc = true
 
   spec.dependency 'CloudpaymentsNetworking'  
+  spec.dependency 'YandexLoginSDK'
+  spec.dependency 'PromiseKit/CorePromise'
+  spec.dependency 'SnapKit'
 
-  spec.vendored_frameworks = 'sdk/YandexPaySDK/Static/YandexPaySDK.xcframework', 'sdk/YandexPaySDK/Static/XPlatPaySDK.xcframework'
-  spec.resources = ["sdk/YandexPaySDK/Static/YandexPaySDKResources.bundle"]
+  spec.vendored_frameworks = 'YandexPaySDK/Static/YandexPaySDK.xcframework', 'YandexPaySDK/Static/XPlatPaySDK.xcframework'
+  spec.resources = ["YandexPaySDK/Static/YandexPaySDKResources.bundle"]
 
 end
