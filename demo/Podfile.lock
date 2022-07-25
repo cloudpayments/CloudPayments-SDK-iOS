@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Cloudpayments:
-    :commit: b1466d0c2c2c115147f806b2f9c89d1a75156226
+    :commit: 5ff4a654439cd061b76161f3f018ce8625074fe8
     :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
   CloudpaymentsNetworking:
     :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
