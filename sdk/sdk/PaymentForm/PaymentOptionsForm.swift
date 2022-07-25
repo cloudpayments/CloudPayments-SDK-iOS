@@ -54,7 +54,6 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
         self.applePayContainer.isHidden = true
         self.yandexPayContainer.isHidden = true
         
-        
         if (!self.configuration.disableApplePay) {
             self.initializeApplePay()
         }

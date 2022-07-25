@@ -1,6 +1,6 @@
 {
   "name": "Cloudpayments",
-  "version": "1.1.5",
+  "version": "1.1.11",
   "summary": "Core library that allows you to use internet acquiring from CloudPayments in your app",
   "description": "Core library that allows you to use internet acquiring from CloudPayments in your app!",
   "homepage": "https://cloudpayments.ru/",
@@ -14,7 +14,7 @@
   },
   "source": {
     "git": "https://github.com/cloudpayments/CloudPayments-SDK-iOS.git",
-    "tag": "1.1.5"
+    "tag": "1.1.11"
   },
   "source_files": "sdk/**/*.swift",
   "resource_bundles": {
@@ -37,13 +37,11 @@
 
     ]
   },
-  "swift_versions": "5.0",
   "vendored_frameworks": [
     "YandexPaySDK/Static/YandexPaySDK.xcframework",
     "YandexPaySDK/Static/XPlatPaySDK.xcframework"
   ],
   "resources": [
     "YandexPaySDK/Static/YandexPaySDKResources.bundle"
-  ],
-  "swift_version": "5.0"
+  ]
 }
