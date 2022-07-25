@@ -106,7 +106,7 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     scanner: nil,
                     useDualMessagePayment: true,
                     disableApplePay: true,
-                    disableYandexPay: true)
+                    disableYandexPay: false)
                 
                 PaymentForm.present(with: configuration, from: self)
             }

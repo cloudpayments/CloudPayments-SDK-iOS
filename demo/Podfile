@@ -4,9 +4,10 @@ use_frameworks!
 target 'demo' do
     pod 'SDWebImage'
 
-#    pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
-#    pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
-    pod 'Cloudpayments', :path => "../sdk"
-    pod 'CloudpaymentsNetworking', :path => "../networking"
+    pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS/", :branch => "master"
+    pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
+
+  #pod 'Cloudpayments', :path => "../sdk"
+  #pod 'CloudpaymentsNetworking', :path => "../networking"
 
 end
