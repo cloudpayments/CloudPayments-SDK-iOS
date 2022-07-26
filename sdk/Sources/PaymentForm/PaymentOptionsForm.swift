@@ -84,17 +84,8 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
         
         // Укажите скругления для кнопки (по умолчанию - 8px)
         button.layer.cornerRadius = 8
-        
-        // Добавьте кнопку в иерархию
-        yandexPayContainer.addSubview(button)
-        
+
         // Установите layout для кнопки
-        button.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        
         yandexPayContainer.addSubview(button)
         button.bindFrameToSuperviewBounds()
     }

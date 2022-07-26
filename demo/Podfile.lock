@@ -1,5 +1,5 @@
 PODS:
-  - Cloudpayments (1.1.11):
+  - Cloudpayments (1.1.13):
     - CloudpaymentsNetworking
     - PromiseKit/CorePromise
     - SnapKit
@@ -13,8 +13,8 @@ PODS:
   - YandexLoginSDK (2.0.2)
 
 DEPENDENCIES:
-  - Cloudpayments (from `../sdk`)
-  - CloudpaymentsNetworking (from `../networking`)
+  - Cloudpayments (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS/`, branch `air`)
+  - CloudpaymentsNetworking (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS`, branch `master`)
   - SDWebImage
 
 SPEC REPOS:
@@ -26,18 +26,28 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   Cloudpayments:
-    :path: "../sdk"
+    :branch: air
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
   CloudpaymentsNetworking:
-    :path: "../networking"
+    :branch: master
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
+
+CHECKOUT OPTIONS:
+  Cloudpayments:
+    :commit: ed1488db9cc2015e12dbcf422875f5111dff4cb9
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
+  CloudpaymentsNetworking:
+    :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
+    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 SPEC CHECKSUMS:
-  Cloudpayments: 2f3abf6d9dfdb0ed21ff6579819c15993bc4fb1b
-  CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
+  Cloudpayments: 38405479af8baaef6edc0b4ee1caa1f234b0ac29
+  CloudpaymentsNetworking: c888643c447d2ba487ff47300c9ed570f07d41d6
   PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
 
-PODFILE CHECKSUM: 06dd31f40b970a3dd0b19046f7238523d4070cdb
+PODFILE CHECKSUM: 5d7803f9547ca68838927df00fc0806770983415
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3
