@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments"
-  spec.version      = "1.1.14"
+  spec.version      = "1.1.15"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -21,7 +21,7 @@ Pod::Spec.new do |spec|
 			"Sergey Iskhakov" => "s.iskhakov@cloudpayments.ru" }
 	
   spec.platform     = :ios
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "12.0"
 
   spec.source       = { :git => "https://github.com/cloudpayments/CloudPayments-SDK-iOS.git", :tag => "#{spec.version}" }
   spec.source_files  = 'sdk/Sources/**/*.swift'

@@ -1,6 +1,6 @@
 PODS:
   - CloudpaymentsNetworking (1.0.1)
-  - PromiseKit/CorePromise (6.17.1)
+  - PromiseKit/CorePromise (6.18.0)
   - YandexLoginSDK (2.0.2)
   - YandexPaySDK/Static (1.1.0):
     - PromiseKit/CorePromise (~> 6.0)
@@ -23,10 +23,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
-  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
+  PromiseKit: 879fa89b55fcb8f11ade9aad0c9721850bb71b9f
   YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
   YandexPaySDK: 6b653587456cb94efc57823f632ca69a888172a4
 
 PODFILE CHECKSUM: e827fd086a99ef13c8ae328508a288dfece13c77
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

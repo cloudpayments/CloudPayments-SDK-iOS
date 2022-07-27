@@ -3,5 +3,5 @@ use_frameworks!
 
 target 'sdk' do
   pod 'CloudpaymentsNetworking', :path => "../networking"
-  pod 'YandexPaySDK/Dynamic', :path => './YandexPaySDK'
+  pod 'YandexPaySDK/Static', :path => './YandexPaySDK'
 end

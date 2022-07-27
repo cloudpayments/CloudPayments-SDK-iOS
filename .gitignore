@@ -3,7 +3,8 @@
 # Learn more about .gitignore:
 #     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
 
-
+sdk/Pods/
+demo/Pods/
 Pods/
 
 # Node artifact files

@@ -1,5 +1,5 @@
 PODS:
-  - Cloudpayments (1.1.13):
+  - Cloudpayments (1.1.14):
     - CloudpaymentsNetworking
     - PromiseKit/CorePromise
     - SnapKit
@@ -34,14 +34,14 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Cloudpayments:
-    :commit: ed1488db9cc2015e12dbcf422875f5111dff4cb9
+    :commit: 72693b4d40752c77d8995da59c8878e6c8459684
     :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
   CloudpaymentsNetworking:
     :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
     :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
 
 SPEC CHECKSUMS:
-  Cloudpayments: 38405479af8baaef6edc0b4ee1caa1f234b0ac29
+  Cloudpayments: b0f719953ff4ae6026e5938022038172d1cd0dd5
   CloudpaymentsNetworking: c888643c447d2ba487ff47300c9ed570f07d41d6
   PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
   SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
