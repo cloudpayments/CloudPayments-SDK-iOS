@@ -1,53 +1,47 @@
 PODS:
-  - Cloudpayments (1.1.13):
+  - Cloudpayments (1.1.14):
     - CloudpaymentsNetworking
-    - PromiseKit/CorePromise
-    - SnapKit
     - YandexLoginSDK
+    - YandexPaySDK/Dynamic
   - CloudpaymentsNetworking (1.0.1)
-  - PromiseKit/CorePromise (6.17.1)
-  - SDWebImage (5.13.2):
-    - SDWebImage/Core (= 5.13.2)
-  - SDWebImage/Core (5.13.2)
-  - SnapKit (5.6.0)
+  - PromiseKit/CorePromise (6.18.1)
   - YandexLoginSDK (2.0.2)
+  - YandexMobileMetrica/Dynamic (4.4.0):
+    - YandexMobileMetrica/Dynamic/Core (= 4.4.0)
+    - YandexMobileMetrica/Dynamic/Crashes (= 4.4.0)
+  - YandexMobileMetrica/Dynamic/Core (4.4.0)
+  - YandexMobileMetrica/Dynamic/Crashes (4.4.0):
+    - YandexMobileMetrica/Dynamic/Core
+  - YandexPaySDK/Dynamic (1.2.0):
+    - PromiseKit/CorePromise (~> 6.0)
+    - YandexLoginSDK (~> 2.0.2)
+    - YandexMobileMetrica/Dynamic
 
 DEPENDENCIES:
-  - Cloudpayments (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS/`, branch `air`)
-  - CloudpaymentsNetworking (from `https://github.com/cloudpayments/CloudPayments-SDK-iOS`, branch `master`)
-  - SDWebImage
+  - Cloudpayments (from `../sdk`)
+  - CloudpaymentsNetworking (from `../networking`)
 
 SPEC REPOS:
   trunk:
     - PromiseKit
-    - SDWebImage
-    - SnapKit
     - YandexLoginSDK
+    - YandexMobileMetrica
+    - YandexPaySDK
 
 EXTERNAL SOURCES:
   Cloudpayments:
-    :branch: air
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
+    :path: "../sdk"
   CloudpaymentsNetworking:
-    :branch: master
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
-
-CHECKOUT OPTIONS:
-  Cloudpayments:
-    :commit: ed1488db9cc2015e12dbcf422875f5111dff4cb9
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS/
-  CloudpaymentsNetworking:
-    :commit: 74f61be5f85e83407e35f823eb294f1d1e9f4f14
-    :git: https://github.com/cloudpayments/CloudPayments-SDK-iOS
+    :path: "../networking"
 
 SPEC CHECKSUMS:
-  Cloudpayments: 38405479af8baaef6edc0b4ee1caa1f234b0ac29
-  CloudpaymentsNetworking: c888643c447d2ba487ff47300c9ed570f07d41d6
-  PromiseKit: ee485df3d4dc570594d7e7aecae6352697dc6a4c
-  SDWebImage: 72f86271a6f3139cc7e4a89220946489d4b9a866
-  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Cloudpayments: 6bd2a91f4a1e5d622e05a9c5ad1468ad8165d5cf
+  CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
+  PromiseKit: 49d70c53d5d20e346beaea4b276b5dd2ab446bb4
   YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
+  YandexMobileMetrica: baf7cea47cb87fc9af963c4f747ce8dd7df3d7c0
+  YandexPaySDK: 77bfc6e67d889e26f1f3926c2a6cdfd5ccbb6a52
 
-PODFILE CHECKSUM: 5d7803f9547ca68838927df00fc0806770983415
+PODFILE CHECKSUM: c240e467832588b2938bb7cf248cbaa51ee4abc1
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.11.2

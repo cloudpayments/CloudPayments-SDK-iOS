@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-public protocol ThreeDsDelegate: class {
+public protocol ThreeDsDelegate: AnyObject {
     func willPresentWebView(_ webView: WKWebView)
     func onAuthorizationCompleted(with md: String, paRes: String)
     func onAuthorizationFailed(with html: String)

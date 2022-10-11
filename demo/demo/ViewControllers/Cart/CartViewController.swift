@@ -8,7 +8,6 @@
 
 import UIKit
 import Cloudpayments
-import SDWebImage
 
 class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
@@ -23,23 +22,10 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell")!
-        
-        let product = CartManager.shared.products[indexPath.item]
-        
-        cell.textLabel?.text = product.name*/
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath as IndexPath) as! CartViewCell
         
         let product = CartManager.shared.products[indexPath.item]
-        
-//        cell.picture.sd_cancelCurrentImageLoad()
-//        cell.picture.image = nil
-//
-//        if let image = product.images?.first?.src {
-//            cell.picture.sd_setImage(with: URL.init(string: image), completed: nil)
-//        }
-        
+                
         cell.name.text = product.name
         cell.price.text = "\(product.price ?? "0")  Руб."
             

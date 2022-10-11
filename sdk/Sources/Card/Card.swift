@@ -123,7 +123,7 @@ public struct Card {
             return false
         }
         
-        if (cvv.length == 3) {
+        if (cvv.count == 3) {
             return true
         }
         
@@ -140,7 +140,7 @@ public struct Card {
     
     private static func isUzcardCard(cardNumber: String?) -> Bool {
         //Uzcard 8600
-        if (cardNumber?.substring(0, 4) == "8600") {
+        if (cardNumber?.prefix(4) == "8600") {
             return true
         }
         return false
@@ -148,7 +148,7 @@ public struct Card {
 
     private static func isHumoCard(cardNumber: String?) -> Bool {
         //Humo 9860
-        if (cardNumber?.substring(0, 4) == "9860") {
+        if (cardNumber?.prefix(4) == "9860") {
             return true
         }
         return false

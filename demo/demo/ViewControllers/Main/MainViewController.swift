@@ -1,5 +1,4 @@
 import UIKit
-import SDWebImage
 import Cloudpayments
 
 class MainViewController: BaseViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -110,27 +109,27 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         
         let product = products[indexPath.item]
         
-        cell.image.sd_cancelCurrentImageLoad()
+       // cell.image.sd_cancelCurrentImageLoad()
         cell.image.image = nil
         cell.activityIndicator.stopAnimating()
         
-        if let image = product.images?.first?.src {
-            cell.activityIndicator.startAnimating()
-            cell.image.alpha = 0
-            cell.image.sd_setImage(with: URL.init(string: image), placeholderImage: nil, options: .avoidAutoSetImage) { (image, error, cacheType, url) in
-                cell.activityIndicator.stopAnimating()
-                
-                if cacheType == .none {
-                    cell.image.image = image
-                    UIView.animate(withDuration: 0.2, animations: {
-                        cell.image.alpha = 1
-                    })
-                } else {
-                    cell.image.image = image
-                    cell.image.alpha = 1
-                }
-            }
-        }
+//        if let image = product.images?.first?.src {
+//            cell.activityIndicator.startAnimating()
+//            cell.image.alpha = 0
+//            /cell.image.sd_setImage(with: URL.init(string: image), placeholderImage: nil, options: .avoidAutoSetImage) { (image, error, cacheType, url) in
+//                cell.activityIndicator.stopAnimating()
+//                
+//                if cacheType == .none {
+//                    cell.image.image = image
+//                    UIView.animate(withDuration: 0.2, animations: {
+//                        cell.image.alpha = 1
+//                    })
+//                } else {
+//                    cell.image.image = image
+//                    cell.image.alpha = 1
+//                }
+//            }
+//        }
         
         cell.name.text = product.name
         cell.price.text = "\(product.price ?? "0")  Руб."

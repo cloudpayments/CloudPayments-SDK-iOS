@@ -1,2 +1,2 @@
-${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/Static/YandexPaySDK.framework
-${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/Static/XPlatPaySDK.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/Dynamic/YandexPaySDK.framework
+${PODS_XCFRAMEWORKS_BUILD_DIR}/YandexPaySDK/Dynamic/XPlatPaySDK.framework

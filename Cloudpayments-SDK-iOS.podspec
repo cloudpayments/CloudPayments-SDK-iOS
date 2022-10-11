@@ -9,16 +9,15 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments"
-  spec.version      = "1.1.14"
+  spec.version      = "1.2.1"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
-  spec.homepage     = "https://cloudpayments.ru/"
+  spec.homepage     = "https://cp.ru/"
 
   spec.license      = "{ :type => 'Apache 2.0' }"
 
-  spec.author       = { "Anton Ignatov" => "a.ignatov@cloudpayments.ru",
-			"Sergey Iskhakov" => "s.iskhakov@cloudpayments.ru" }
+  spec.author       = { "Anton Ignatov" => "a.ignatov@cp.ru" }
 	
   spec.platform     = :ios
   spec.ios.deployment_target = "11.0"
@@ -32,10 +31,6 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'CloudpaymentsNetworking'  
   spec.dependency 'YandexLoginSDK'
-  spec.dependency 'PromiseKit/CorePromise'
-  spec.dependency 'SnapKit'
-
-  spec.vendored_frameworks = 'sdk/YandexPaySDK/Static/YandexPaySDK.xcframework', 'sdk/YandexPaySDK/Static/XPlatPaySDK.xcframework'
-  spec.resources = ["sdk/YandexPaySDK/Static/YandexPaySDKResources.bundle"]
+  spec.dependency 'YandexPaySDK'
 
 end

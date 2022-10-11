@@ -121,7 +121,7 @@ public class PaymentCardForm: PaymentForm {
                 self.cardNumberTextField.text = cardNumber
                 
                 if Card.isCardNumberValid(cardNumber) {
-                    self.cardExpDateTextField.becomeFirstResponder()
+//                    self.cardExpDateTextField.becomeFirstResponder()
                     self.cardNumberTextField.isErrorMode = false
                 } else {
                     let cleanCardNumber = cardNumber.clearCardNumber()
@@ -197,9 +197,9 @@ public class PaymentCardForm: PaymentForm {
                 return false
             }
             if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
-                if Card.isCardNumberValid(cardNumber) {
-                    self.cardExpDateTextField.becomeFirstResponder()
-                }
+//                if Card.isCardNumberValid(cardNumber) {
+//                    self.cardExpDateTextField.becomeFirstResponder()
+//                }
             }
             return false
         }
