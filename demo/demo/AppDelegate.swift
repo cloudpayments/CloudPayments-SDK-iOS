@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 // yandexPayAppId - ваш appId, который вы получили при настройке YandexLoginSDK
                 // sandboxMode - режим песочницы YandexPay
                 let yaAppId = "..."
-                try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaysandboxMode: false)
+                try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: false)
             } catch {
-                fatalError("Unable to initialize CloudtipsSDK.")
+                fatalError("Unable to initialize CloudPaymentsSDK.")
             }
                
         return true

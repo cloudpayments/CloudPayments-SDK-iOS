@@ -21,10 +21,10 @@ final public class CloudPaymentsSDK {
         return CloudPaymentsSDK()
     }()
 
-    public static func initialize(yandexPayAppId: String?, yandexPaysandboxMode: Bool? = false) throws {
+    public static func initialize(yandexPayAppId: String?, yandexPaySandboxMode: Bool? = false) throws {
         Self.yandexPayAppId = yandexPayAppId
 
-        let configuration = YandexPaySDKConfiguration(environment: (yandexPaysandboxMode ?? false) ? .sandbox : .production,
+        let configuration = YandexPaySDKConfiguration(environment: (yandexPaySandboxMode ?? false) ? .sandbox : .production,
                                                       merchant: YandexPaySDKMerchant.init(id: yandexPayAppId ?? "",
                                                       name: "Cloud", url: "https://cp.ru"), locale: .ru)
         try YandexPaySDKApi.initialize(configuration: configuration)
