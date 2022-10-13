@@ -6,7 +6,7 @@ CloudPayments SDK позволяет интегрировать прием пл�
 Для работы CloudPayments SDK необходим iOS версии 11.0 и выше.
 
 ### Подключение
-Для подключения SDK мы рекомендуем использовать Cocoa Pods. Добавьте в файл Podfile зависимость:
+Для подключения SDK мы рекомендуем использовать Cocoa Pods. Добавьте в файл Podfile зависимости:
 
 ```
 pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
@@ -25,7 +25,52 @@ pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudP
 * реализовать свою платежную форму с использованием функций CloudpaymentsApi без вашего сервера
 * реализовать свою платежную форму, сформировать криптограмму и отправить ее на свой сервер
 
-### Использование стандартной платежной формы Cloudpayments:
+## Инициализация CloudPaymentsSDK
+
+В `AppDelegate.swift` вашего проекта в методе `application(_:didFinishLaunchingWithOptions:)` осуществите инициализацию SDK:
+
+Если в проекте используется YandexPay, то для настройки YandexLoginSDK используйте пункты 1-3 [инструкции](https://yandex.ru/dev/mobileauthsdk/doc/sdk/concepts/ios/2.0.0/sdk-ios-install.html).
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    do {
+        // Инициализируйте SDK 
+        // Если в проекте используется YandexPay, то необходимо указать соответсвующие параметры:
+        // yandexPayAppId - ваш appId, который вы получили при настройке YandexLoginSDK
+        // sandboxMode - режим песочницы YandexPay
+        let yaAppId = "..."
+        try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: false)
+    } catch {
+        fatalError("Unable to initialize CloudPaymentsSDK")
+    }
+        
+    return true
+}
+```
+
+Также в `AppDelegate.swift` вашего проекта добавьте нотификацию `CloudtipsSDK` о событиях жизенного цикла приложения:
+
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+    CloudPaymentsSDK.instance.applicationDidReceiveUserActivity(userActivity)
+    return true
+}
+
+func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+    CloudPaymentsSDK.instance.applicationDidReceiveOpen(url, sourceApplication: options[.sourceApplication] as? String)
+    return true
+}
+    
+func applicationWillEnterForeground(_ application: UIApplication) {
+    CloudPaymentsSDK.instance.applicationWillEnterForeground()
+}
+    
+func applicationDidBecomeActive(_ application: UIApplication) {
+    CloudPaymentsSDK.instance.applicationDidBecomeActive()
+}
+```
+
+### Использование встроенной платежной формы от CloudPayments:
 
 1. Создайте объект PaymentData, передайте в него Public Id из [личного кабинета Cloudpayments](https://merchant.cloudpayments.ru/), сумму платежа и валюту. Если хотите иметь возможность оплаты с помощью Apple Pay, передайте также Apple pay merchant id.
 
@@ -103,7 +148,7 @@ extension CartViewController: CardIOPaymentViewControllerDelegate {
 ```
 
 
-### Использование вашей платежная формы с использованием функций CloudpaymentsApi:
+### Использование вашей платежная формы с использованием функций CloudPaymentsApi:
 
 1. Создайте криптограмму карточных данных
 
