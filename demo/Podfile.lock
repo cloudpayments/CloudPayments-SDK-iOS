@@ -1,5 +1,5 @@
 PODS:
-  - Cloudpayments (1.2.2):
+  - Cloudpayments (1.2.3):
     - CloudpaymentsNetworking
     - YandexLoginSDK
     - YandexPaySDK/Dynamic
@@ -35,13 +35,13 @@ EXTERNAL SOURCES:
     :path: "../networking"
 
 SPEC CHECKSUMS:
-  Cloudpayments: ea708a967a337b20c3a5bdf0b29584896db36016
+  Cloudpayments: 2a2611cd15bd836ad16250c20b9b8747c3d6fc05
   CloudpaymentsNetworking: b03a482d4200209a46f27da663d235228bab5071
   PromiseKit: 49d70c53d5d20e346beaea4b276b5dd2ab446bb4
   YandexLoginSDK: cd407482207b4b7da75c5f7d7fd2fdd6a604c325
   YandexMobileMetrica: baf7cea47cb87fc9af963c4f747ce8dd7df3d7c0
   YandexPaySDK: 77bfc6e67d889e26f1f3926c2a6cdfd5ccbb6a52
 
-PODFILE CHECKSUM: c240e467832588b2938bb7cf248cbaa51ee4abc1
+PODFILE CHECKSUM: a782a44dd36ae524b96d6453477467ac868c2af5
 
 COCOAPODS: 1.11.2

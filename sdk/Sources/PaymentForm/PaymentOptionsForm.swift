@@ -328,13 +328,6 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
             countryCode: .ru,
             // Код валюты
             currencyCode: .rub,
-            // Информация о мерчанте
-//            merchant: YPMerchant(
-//                // ID мерчанта в системе YandexPay
-//                id: self.configuration.paymentData.yandexPayMerchantId ?? "",
-//                name: "Cloud",
-//                url: "cp.ru"
-//            ),
             // Информация о заказе
             order: YPOrder(
                 // ID заказа
