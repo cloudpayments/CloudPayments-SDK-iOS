@@ -90,6 +90,8 @@ class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDa
                     delegate: self,
                     uiDelegate: self,
                     scanner: nil,
+                    showEmailField: true,
+                    email: "test@cp.ru",
                     useDualMessagePayment: true,
                     disableApplePay: true,
                     disableYandexPay: false)

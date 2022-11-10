@@ -46,7 +46,7 @@ public class PaymentCardForm: PaymentForm {
             self.emailTextField.isHidden = !self.receiptButton.isSelected
             
             if !self.receiptButton.isSelected {
-                self.emailTextField.text = ""
+                //self.emailTextField.text = ""
                 self.emailTextField.isErrorMode = false
             }
         }
@@ -101,6 +101,13 @@ public class PaymentCardForm: PaymentForm {
                 }
             }
         }
+        
+        if self.configuration.showEmailField {
+            self.receiptButton.isSelected = true
+            self.emailTextField.isHidden = false
+        }
+        
+        self.emailTextField.text = self.configuration.email
         
         self.configureTextFields()
         self.hideKeyboardWhenTappedAround()

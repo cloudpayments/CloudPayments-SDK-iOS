@@ -102,6 +102,8 @@ let configuration = PaymentConfiguration.init(
 	delegate: self, 
 	uiDelegate: self,
 	scanner: nil,
+    showEmailField: true, // Показывать поле ввода адреса для отправки квитанции при отображении формы ввода карточных данных (по умолчанию false)
+    email: "test@cp.ru", // Email для предзаполнения адреса для отправки квитанции  
 	useDualMessagePayment: true, // Использовать двухстадийную схему проведения платежа, по умолчанию используется одностадийная схема
 	disableApplePay: true // Выключить Apple Pay, по умолчанию Apple Pay включен
 	disableYandexPay: true // Выключить Yandex Pay, по умолчанию Yandex Pay включен
