@@ -9,8 +9,8 @@
 import Foundation
 
 public protocol PaymentDelegate: class {
-    func onPaymentFinished(_ transactionId: Int?)
-    func onPaymentFailed(_ errorMessage: String?)
+    func onPaymentFinished(_ transactionId: Int?, _ orderId: Int?)
+    func onPaymentFailed(_ errorMessage: String?, _ orderId: Int?)
 }
 
 public protocol PaymentUIDelegate: class {
@@ -27,12 +27,12 @@ internal class PaymentDelegateImpl {
         self.delegate = delegate
     }
     
-    func paymentFinished(_ transaction: Transaction?){
-        self.delegate?.onPaymentFinished(transaction?.transactionId)
+    func paymentFinished(_ transaction: Transaction?, _ orderId: Int?){
+        self.delegate?.onPaymentFinished(transaction?.transactionId, orderId)
     }
     
-    func paymentFailed(_ errorMessage: String?) {
-        self.delegate?.onPaymentFailed(errorMessage)
+    func paymentFailed(_ errorMessage: String?, _ orderId: Int?) {
+        self.delegate?.onPaymentFailed(errorMessage, orderId)
     }
 }
 

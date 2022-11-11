@@ -75,6 +75,9 @@ public class PaymentProcessForm: PaymentForm {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGetureRecognizer = UITapGestureRecognizer(target: self, action: #selector(progressIconTapped))
+        progressIcon.isUserInteractionEnabled = true
+        progressIcon.addGestureRecognizer(tapGetureRecognizer)
         
         self.updateUI(with: self.state)
         
@@ -148,12 +151,12 @@ public class PaymentProcessForm: PaymentForm {
         }
         
         if case .succeeded(let transaction) = self.state {
-            self.configuration.paymentDelegate.paymentFinished(transaction)
+            self.configuration.paymentDelegate.paymentFinished(transaction, configuration.paymentData.orderId)
             self.actionButton.onAction = { [weak self] in
                 self?.hide()
             }
         } else if case .failed(let errorMessage) = self.state {
-            self.configuration.paymentDelegate.paymentFailed(errorMessage)
+            self.configuration.paymentDelegate.paymentFailed(errorMessage, configuration.paymentData.orderId)
             self.actionButton.onAction = { [weak self] in
                 guard let self = self else {
                     return
@@ -205,6 +208,12 @@ public class PaymentProcessForm: PaymentForm {
             }
             self.configuration.paymentUIDelegate.paymentFormDidHide()
             completion?()
+        }
+    }
+    
+    @objc func progressIconTapped() {
+        if case .failed = self.state {
+            self.dismiss(animated: true)
         }
     }
 }

@@ -22,6 +22,7 @@ public class PaymentData {
     private (set) var cultureName: String?
     private (set) var payer: String?
     private (set) var jsonData: String?
+    private (set) var orderId: Int?
     
     var cryptogram: String?
     
