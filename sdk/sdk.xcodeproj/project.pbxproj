@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -47,6 +47,7 @@
 		8341E498268E6626007561FF /* CloudpaymentsHTTPResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8341E497268E6626007561FF /* CloudpaymentsHTTPResource.swift */; };
 		8341E6A426930620007561FF /* PublicKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8341E6A326930620007561FF /* PublicKey.txt */; };
 		B1473A2828D8894900A8EDFE /* CloudPaymentsSDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1473A2728D8894900A8EDFE /* CloudPaymentsSDK.swift */; };
+		B1F117392938868B00DBBCC3 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F117382938868B00DBBCC3 /* ApiError.swift */; };
 		EC0BD0F42B88F8C016C524DF /* Pods_sdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 513C31C49FC1D80D8573EDCE /* Pods_sdk.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		83507D3D2525DFA000637BB6 /* sdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sdk-Bridging-Header.h"; sourceTree = "<group>"; };
 		83507D3F2525DFDD00637BB6 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		B1473A2728D8894900A8EDFE /* CloudPaymentsSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudPaymentsSDK.swift; sourceTree = "<group>"; };
+		B1F117382938868B00DBBCC3 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		B4226B37F03B0C5D0D77B341 /* Pods-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.release.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +228,7 @@
 				8341E457268E65ED007561FF /* BankInfo.swift */,
 				8341E458268E65ED007561FF /* Transaction.swift */,
 				8341E459268E65ED007561FF /* ThreeDsResponse.swift */,
+				B1F117382938868B00DBBCC3 /* ApiError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8341E489268E65EE007561FF /* PaymentConfiguration.swift in Sources */,
+				B1F117392938868B00DBBCC3 /* ApiError.swift in Sources */,
 				8341E495268E65EE007561FF /* ThreeDsData.swift in Sources */,
 				8341E480268E65EE007561FF /* Currency.swift in Sources */,
 				8341E46F268E65EE007561FF /* Card.swift in Sources */,

@@ -87,7 +87,8 @@ public class PaymentProcessForm: PaymentForm {
                     if status {
                         self.updateUI(with: .succeeded(transaction))
                     } else if !canceled {
-                        self.updateUI(with: .failed(errorMessage))
+                        let apiErrorDescription = ApiError.getFullErrorDescription(code: String(transaction?.reasonCode ?? 5204))
+                        self.updateUI(with: .failed(apiErrorDescription))
                     } else {
                         self.configuration.paymentUIDelegate.paymentFormWillHide()
                         self.dismiss(animated: true) { [weak self] in
@@ -106,7 +107,8 @@ public class PaymentProcessForm: PaymentForm {
                     if status {
                         self.updateUI(with: .succeeded(transaction))
                     } else if !canceled {
-                        self.updateUI(with: .failed(errorMessage))
+                        let apiErrorDescription = ApiError.getFullErrorDescription(code: String(transaction?.reasonCode ?? 5204))
+                        self.updateUI(with: .failed(apiErrorDescription))
                     } else {
                         self.configuration.paymentUIDelegate.paymentFormWillHide()
                         self.dismiss(animated: true) { [weak self] in
