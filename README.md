@@ -350,4 +350,4 @@ public protocol ThreeDsDelegate: class {
 
 ### Поддержка
 
-По возникающим вопросам техничечкого характера обращайтесь на support@cloudpayments.ru
+По возникающим вопросам техничечкого характера обращайтесь на support@cp.ru
