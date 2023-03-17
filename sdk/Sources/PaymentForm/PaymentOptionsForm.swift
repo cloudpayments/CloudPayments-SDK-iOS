@@ -343,7 +343,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
                         // ID поставщика платежных услуг
                         gateway: "cloudpayments",
                         // ID продавца в системе поставщика платежных услуг
-                        gatewayMerchantId: self.configuration.paymentData.accountId ?? "",
+                        gatewayMerchantId: self.configuration.paymentData.publicId,
                         // Что будет содержаться в платежном токене: зашифрованные данные банковской карты или токенизированная карта
                         allowedAuthMethods: [
                             .panOnly
