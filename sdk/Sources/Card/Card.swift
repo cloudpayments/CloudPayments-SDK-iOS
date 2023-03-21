@@ -85,35 +85,39 @@ public struct Card {
             return false
         }
         
-
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/yy"
-
-        guard let date = dateFormatter.date(from: expDate) else {
+        guard let month = Int(expDate.prefix(2)) else {
             return false
         }
-
-        var calendar = Calendar.init(identifier: .gregorian)
-        calendar.timeZone = TimeZone.current
-
-        let dayRange = calendar.range(of: .day, in: .month, for: date)
-        var comps = calendar.dateComponents([.year, .month, .day], from: date)
-        comps.day = dayRange?.count ?? 1
-        comps.hour = 24
-        comps.minute = 0
-        comps.second = 0
-
-        guard let aNewDate = calendar.date(from: comps) else {
-            return false
-        }
-
-        let dateNow = dateFormatter.date(from: "02/22")!
-        //let dateNow = Date()
         
-        guard aNewDate.compare(dateNow) == .orderedDescending else {
-            return false
-        }
+        return month > 0 && month <= 12
+
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "MM/yy"
+//
+//        guard let date = dateFormatter.date(from: expDate) else {
+//            return false
+//        }
+//
+//        var calendar = Calendar.init(identifier: .gregorian)
+//        calendar.timeZone = TimeZone.current
+//
+//        let dayRange = calendar.range(of: .day, in: .month, for: date)
+//        var comps = calendar.dateComponents([.year, .month, .day], from: date)
+//        comps.day = dayRange?.count ?? 1
+//        comps.hour = 24
+//        comps.minute = 0
+//        comps.second = 0
+//
+//        guard let aNewDate = calendar.date(from: comps) else {
+//            return false
+//        }
+//
+//        let dateNow = dateFormatter.date(from: "02/22")!
+//        //let dateNow = Date()
+//
+//        guard aNewDate.compare(dateNow) == .orderedDescending else {
+//            return false
+//        }
 
         return true
     }
