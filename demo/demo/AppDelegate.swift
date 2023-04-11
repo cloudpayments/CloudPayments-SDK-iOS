@@ -21,10 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         do {
                 // Инициализируйте SDK
                 // Если в проекте используется YandexPay, то необходимо указать соответсвующие параметры:
-                // yandexPayAppId - ваш appId, который вы получили при настройке YandexLoginSDK
+                // yandexPayAppId - ваш appId для YandexPay
                 // sandboxMode - режим песочницы YandexPay
-                let yaAppId = "..."
-                try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: false)
+                let yaAppId = "3cf72c47-3027-44f5-b80f-054b0763a298"
+                try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: true)
             } catch {
                 fatalError("Unable to initialize CloudPaymentsSDK.")
             }

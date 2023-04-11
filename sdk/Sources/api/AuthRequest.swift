@@ -10,6 +10,6 @@ import CloudpaymentsNetworking
 class AuthRequest: BaseRequest, CloudpaymentsRequestType {
     typealias ResponseType = TransactionResponse
     var data: CloudpaymentsRequest {
-        return CloudpaymentsRequest(path: CloudpaymentsHTTPResource.auth.asUrl(), method: .post, params: params, headers: headers)
+        return CloudpaymentsRequest(path: CloudpaymentsHTTPResource.auth.asUrl(apiUrl: apiUrl), method: .post, params: params, headers: headers)
     }
 }

@@ -134,7 +134,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
             request.supportedNetworks = self.supportedPaymentNetworks
             request.merchantCapabilities = PKMerchantCapability.capability3DS
             request.countryCode = "RU"
-            request.currencyCode = paymentData.currency.rawValue
+            request.currencyCode = paymentData.currency
             
             
             let paymentSummaryItems = [PKPaymentSummaryItem(label: self.configuration.paymentData.description ?? "К оплате", amount: NSDecimalNumber.init(value: amount))]
@@ -343,7 +343,7 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
                         // ID поставщика платежных услуг
                         gateway: "cloudpayments",
                         // ID продавца в системе поставщика платежных услуг
-                        gatewayMerchantId: self.configuration.paymentData.publicId,
+                        gatewayMerchantId: self.configuration.publicId,
                         // Что будет содержаться в платежном токене: зашифрованные данные банковской карты или токенизированная карта
                         allowedAuthMethods: [
                             .panOnly

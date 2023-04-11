@@ -7,7 +7,7 @@ public class CloudpaymentsApi {
         case ownForm = "Cloudpayments SDK iOS (Custom form)"
     }
     
-    private static let baseURLString = "https://api.cloudpayments.ru/"
+    public static let baseURLString = "https://api.cloudpayments.ru/"
     
     private let defaultCardHolderName = "Cloudpayments SDK"
     
@@ -15,14 +15,22 @@ public class CloudpaymentsApi {
     private let threeDsFailURL = "https://demo.cloudpayments.ru/fail"
     
     private let publicId: String
+    private let apiUrl: String
     private let source: Source
         
-    public required convenience init(publicId: String) {
-        self.init(publicId: publicId, source: .ownForm)
+    public required convenience init(publicId: String, apiUrl: String) {
+        self.init(publicId: publicId, apiUrl: apiUrl, source: .ownForm)
     }
     
-    init(publicId: String, source: Source) {
+    init(publicId: String, apiUrl: String = baseURLString, source: Source) {
         self.publicId = publicId
+        
+        if (apiUrl.isEmpty) {
+            self.apiUrl = CloudpaymentsApi.baseURLString
+        } else {
+            self.apiUrl = apiUrl
+        }
+        
         self.source = source
     }
     
@@ -54,7 +62,7 @@ public class CloudpaymentsApi {
         let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
                                         email: email,
                                         paymentData: paymentData)
-        ChargeRequest(params: patch(params: parameters), headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
+        ChargeRequest(params: patch(params: parameters), headers: getDefaultHeaders(), apiUrl: apiUrl).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
             completion(response, nil)
         }, onError: { error in
             completion(nil, error)
@@ -68,8 +76,10 @@ public class CloudpaymentsApi {
         let parameters = generateParams(cardCryptogramPacket: cardCryptogramPacket,
                                         email: email,
                                         paymentData: paymentData)
-        AuthRequest(params: patch(params: parameters), headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { response in
+        AuthRequest(params: patch(params: parameters), headers: getDefaultHeaders(), apiUrl: apiUrl).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: {
+            response in
             completion(response, nil)
+            
         }, onError: { error in
             completion(nil, error)
         })
@@ -86,30 +96,32 @@ public class CloudpaymentsApi {
                 "PaRes" : paRes
             ]
 
-            PostThreeDsRequest(params: parameters, headers: getDefaultHeaders()).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { r in
+            PostThreeDsRequest(params: parameters, headers: getDefaultHeaders(), apiUrl: apiUrl).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: { r in
             }, onError: { error in
             }, onRedirect: { [weak self] request in
                 guard let self = self else {
                     return true
                 }
                 
+            
+                
                 if let url = request.url {
-                    let items = url.absoluteString.split(separator: "&").filter { $0.contains("CardHolderMessage")}
-                    var message: String? = nil
+                    let items = url.absoluteString.split(separator: "&").filter { $0.contains("ReasonCode")}
+                    var reasonCode: String? = nil
                     if !items.isEmpty, let params = items.first?.split(separator: "="), params.count == 2 {
-                        message = String(params[1]).removingPercentEncoding
+                        reasonCode = String(params[1]).removingPercentEncoding
                     }
 
                     if url.absoluteString.starts(with: self.threeDsSuccessURL) {
                         DispatchQueue.main.async {
-                            let r = ThreeDsResponse.init(success: true, cardHolderMessage: message)
+                            let r = ThreeDsResponse.init(success: true, reasonCode: reasonCode)
                             completion(r)
                         }
                         
                         return false
                     } else if url.absoluteString.starts(with: self.threeDsFailURL) {
                         DispatchQueue.main.async {
-                            let r = ThreeDsResponse.init(success: false, cardHolderMessage: message)
+                            let r = ThreeDsResponse.init(success: false, reasonCode: reasonCode)
                             completion(r)
                         }
                         
@@ -122,16 +134,17 @@ public class CloudpaymentsApi {
                 }
             })
         } else {
-            completion(ThreeDsResponse.init(success: false, cardHolderMessage: ""))
+            completion(ThreeDsResponse.init(success: false, reasonCode: ""))
         }
     }
     
     private func generateParams(cardCryptogramPacket: String,
                                 email: String?,
                                 paymentData: PaymentData) -> [String: Any] {
+        
         let parameters: [String: Any] = [
             "Amount" : paymentData.amount, // Сумма платежа (Обязательный)
-            "Currency" : paymentData.currency.rawValue, // Валюта (Обязательный)
+            "Currency" : paymentData.currency, // Валюта (Обязательный)
             "IpAddress" : paymentData.ipAddress ?? "",
             "Name" : paymentData.cardholderName ?? defaultCardHolderName, // Имя держателя карты в латинице (Обязательный для всех платежей кроме Apple Pay и Google Pay)
             "CardCryptogramPacket" : cardCryptogramPacket, // Криптограмма платежных данных (Обязательный)
@@ -139,6 +152,7 @@ public class CloudpaymentsApi {
             "InvoiceId" : paymentData.invoiceId ?? "", // Номер счета или заказа в вашей системе (Необязательный)
             "Description" : paymentData.description ?? "", // Описание оплаты в свободной форме (Необязательный)
             "AccountId" : paymentData.accountId ?? "", // Идентификатор пользователя в вашей системе (Необязательный)
+            "Payer" : paymentData.payer?.dictionary, // Доп. поле, куда передается информация о плательщике. (Необязательный)
             "JsonData" : paymentData.jsonData ?? "", // Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для создания подписки или формирования онлайн-чека (Необязательный)
             "scenario" : 7
         ]

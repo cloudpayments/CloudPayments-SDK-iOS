@@ -42,8 +42,6 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        self.updateBadge()
     }
     
     private func createCartButton() {
@@ -54,7 +52,6 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         btnOpenCart.translatesAutoresizingMaskIntoConstraints = false
         btnOpenCart.contentHorizontalAlignment = .center
         btnOpenCart.contentVerticalAlignment = .center
-        btnOpenCart.addTarget(self, action: #selector(openCart), for: .touchUpInside)
         view.addSubview(btnOpenCart)
         
         NSLayoutConstraint.activate([
@@ -90,13 +87,6 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         self.navigationItem.setRightBarButtonItems([itemOpenCart], animated: true)
     }
     
-    private func updateBadge(){
-        let productsCount = CartManager.shared.products.count
-        self.badgeLabel?.isHidden = productsCount == 0
-        
-        self.badgeLabel?.text = "\(productsCount)"
-    }
-
     //MARK: - UICollectionViewDataSource -
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -146,9 +136,6 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(String(describing: products[indexPath.item].name))!")
-        CartManager.shared.products.append(products[indexPath.item])
-        
-        self.updateBadge()
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout -
@@ -160,19 +147,4 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
         return CGSize(width: collectionViewSize/2, height: collectionViewSize/1.2)
     }
     
-    //MARK: - Private -
-
-    
-    
-    @objc func openCart() {
-        if CartManager.shared.products.count > 0 {
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let cartViewController = storyBoard.instantiateViewController(withIdentifier: "cartViewController") as! CartViewController
-            self.navigationController?.pushViewController(cartViewController, animated: true)
-        } else {
-            let alertController = UIAlertController(title: "Корзина пуста", message: "Добавьте один или несколько товаров чтобы продолжить", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .default))
-            self.present(alertController, animated: true, completion: nil)
-        }
-    }
 }

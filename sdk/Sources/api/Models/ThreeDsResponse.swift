@@ -10,10 +10,10 @@ import Foundation
 
 public struct ThreeDsResponse {
     public private(set) var success: Bool
-    public private(set) var cardHolderMessage: String?
+    public private(set) var reasonCode: String?
     
-    init(success: Bool, cardHolderMessage: String?) {
+    init(success: Bool, reasonCode: String?) {
         self.success = success
-        self.cardHolderMessage = cardHolderMessage
+        self.reasonCode = reasonCode
     }
 }

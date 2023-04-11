@@ -9,28 +9,30 @@
 import Foundation
 
 public class PaymentConfiguration {
+    let publicId: String
     let paymentData: PaymentData
     let paymentDelegate: PaymentDelegateImpl
     let paymentUIDelegate: PaymentUIDelegateImpl
     let scanner: PaymentCardScanner?
     let showEmailField: Bool
-    let email: String
     let useDualMessagePayment: Bool
     let disableApplePay: Bool
     let disableYandexPay: Bool
+    let apiUrl: String
     
-    public init(paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?,
-                showEmailField: Bool = false, email: String = "", useDualMessagePayment: Bool = false, disableApplePay: Bool = false,
-                disableYandexPay: Bool = false) {
-        
+    
+    public init(publicId: String, paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?,
+                showEmailField: Bool = false, useDualMessagePayment: Bool = false, disableApplePay: Bool = false,
+disableYandexPay: Bool = false, apiUrl: String = "") {
+        self.publicId = publicId
         self.paymentData = paymentData
         self.paymentDelegate = PaymentDelegateImpl.init(delegate: delegate)
         self.paymentUIDelegate = PaymentUIDelegateImpl.init(delegate: uiDelegate)
         self.scanner = scanner
         self.showEmailField = showEmailField
-        self.email = email
         self.useDualMessagePayment = useDualMessagePayment
         self.disableApplePay = disableApplePay
         self.disableYandexPay = disableYandexPay
+        self.apiUrl = apiUrl
     }
 }

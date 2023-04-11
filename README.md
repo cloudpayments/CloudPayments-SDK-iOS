@@ -5,23 +5,23 @@ CloudPayments SDK позволяет интегрировать прием пл�
 ### Требования
 Для работы CloudPayments SDK необходим iOS версии 11.0 и выше.
 
-### Дополнительные шаги для использования Yandex Pay
-1. Зарегистрировать приложение на [Яндекс.OAuth](https://oauth.yandex.ru/)
-и получить  YANDEX CLIENT ID
-2. Зарегистрироваться в консоли [Yandex Pay](https://console.pay.yandex.ru/web/registration/organization) (указать данные компании и нажать "Далее")
-3. Попадаем на страницу выбора платежного провайдера, нажимаем "В личный кабинет"
-4. В ЛК, нажимаем настройки и забираем там Merchant ID для Yandex Pay.
-5. Написать в службу поддержки ЯPay, на электронную почту yandex-pay@support.yandex.ru , с просьбой объединить YANDEX CLIENT ID и Merchant ID.
-
-Далее полученные YANDEX CLIENT ID и Merchant ID используем в нашем SDK
-
 ### Подключение
-Для подключения SDK мы рекомендуем использовать Cocoa Pods. Добавьте в файл Podfile зависимости:
+Для подключения SDK мы рекомендуем использовать CocoaPods. Добавьте в файл Podfile зависимости:
 
 ```
 pod 'Cloudpayments', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
 pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudPayments-SDK-iOS", :branch => "master"
+
 ```
+
+**Для новых чипов М1 и выше.**
+Для корректной установки CocoaPods для новых чипов, необходимо использовать команды ниже:
+
+- `sudo arch -x86_64 gem install ffi` - Установка расширения динамических библиотек Ruby.
+
+- `arch -x86_64 pod install` - Установка зависимостей.
+
+
 ### Структура проекта:
 
 * **demo** - Пример реализации приложения с использованием SDK
@@ -37,28 +37,7 @@ pod 'CloudpaymentsNetworking', :git =>  "https://github.com/cloudpayments/CloudP
 
 ## Инициализация CloudPaymentsSDK
 
-В `AppDelegate.swift` вашего проекта в методе `application(_:didFinishLaunchingWithOptions:)` осуществите инициализацию SDK:
-
-Если в проекте используется YandexPay, то для настройки YandexLoginSDK используйте пункты 1-3 [инструкции](https://yandex.ru/dev/mobileauthsdk/doc/sdk/concepts/ios/2.0.0/sdk-ios-install.html).
-
-```swift
-func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    do {
-        // Инициализируйте SDK 
-        // Если в проекте используется YandexPay, то необходимо указать соответсвующие параметры:
-        // yandexPayAppId - ваш appId, который вы получили при настройке YandexLoginSDK
-        // sandboxMode - режим песочницы YandexPay
-        let yaAppId = "..."
-        try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: false)
-    } catch {
-        fatalError("Unable to initialize CloudPaymentsSDK")
-    }
-        
-    return true
-}
-```
-
-Также в `AppDelegate.swift` вашего проекта добавьте нотификацию `CloudtipsSDK` о событиях жизенного цикла приложения:
+В `AppDelegate.swift` вашего проекта добавьте нотификацию `CloudtipsSDK` о событиях жизенного цикла приложения:
 
 ```swift
 func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -82,45 +61,70 @@ func applicationDidBecomeActive(_ application: UIApplication) {
 
 ### Использование встроенной платежной формы от CloudPayments:
 
-1. Создайте объект PaymentData, передайте в него Public Id из [личного кабинета Cloudpayments](https://merchant.cloudpayments.ru/), сумму платежа и валюту. Если хотите иметь возможность оплаты с помощью Apple Pay, передайте также Apple pay merchant id.
+1. Cоздайте объект PaymentDataPayer и проинициализируйте его, затем создайте объект PaymentData передайте в него объект PaymentDataPayer, сумму платежа, валюту и дополнительные данные. Если хотите иметь возможность оплаты с помощью Apple Pay, передайте также Apple pay merchant id.
 
 ```
-let paymentData = PaymentData.init(publicId: Constants.merchantPulicId) // Ваш PublicId
-	.setAmount(String(totalAmount)) // Сумма платежа
-	.setCurrency(.ruble) // Валюта
-	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id
-	
+// Доп. поле, куда передается информация о плательщике. Используйте следующие параметры: FirstName, LastName, MiddleName, Birth, Street, Address, City, Country, Phone, Postcode
+let payer = PaymentDataPayer(firstName: "Test", lastName: "Testov", middleName: "Testovich", birth: "1955-02-22", address: "home 6", street: "Testovaya", city: "Moscow", country: "RU", phone: "89991234567", postcode: "12345")
+    
 // Указывайте дополнительные данные если это необходимо
-let jsonData: [String: Any] = ["age":27, "name":"Ivan", "phone":"+79998881122"] // Данные в формате JSON
-let paymentData = PaymentData.init(publicId: Constants.merchantPublicId) // Ваш PublicId
-	.setAmount(String(totalAmount)) // Сумма платежа
-	.setCurrency(.ruble) // Валюта
-	.setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id (Необходимо получить у Apple)
-	.setYandexPayMerchantId(Constants.yandexPayMerchantID) // Yandex pay merchant id (Необходимо получить у Yandex)
-	.setDescription("Корзина цветов")
-	.setAccountId("111")
-	.setIpAddress("98.21.123.32")
-	.setInvoiceId("123")
-	.setJsonData(jsonData)                    
+let jsonData: [String: Any] = ["age":27, "name":"Ivan", "phone":"+79998881122"] // Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для создания подписки или формирования онлайн-чека должны обёртываться в объект cloudpayments. Мы зарезервировали названия следующих параметров и отображаем их содержимое в реестре операций, выгружаемом в Личном Кабинете: name, firstName, middleName, lastName, nick, phone, address, comment, birthDate.
+
+let paymentData = PaymentData() 
+    .setAmount(String(totalAmount)) // Cумма платежа в валюте, максимальное количество не нулевых знаков после запятой: 2
+    .setCurrency(.ruble) // Валюта
+    .setApplePayMerchantId(Constants.applePayMerchantID) // Apple pay merchant id (Необходимо получить у Apple)
+    .setYandexPayMerchantId(Constants.yandexPayMerchantID) // Yandex pay merchant id (Необходимо получить у Yandex)
+    .setDescription("Корзина цветов") // Описание оплаты в свободной форме
+    .setAccountId("111") // Обязательный идентификатор пользователя для создания подписки и получения токена
+    .setIpAddress("98.21.123.32") // IP-адрес плательщика
+    .setInvoiceId("123") // Номер счета или заказа
+    .setEmail("test@cp.ru") // E-mail плательщика, на который будет отправлена квитанция об оплате
+    .setPayer(payer)
+    .setJsonData(jsonData)                    
 ```
 
-2. Создайте объект PaymentConfiguration, передайте в него объект PaymentData. Реализуйте протокол PaymentDelegate, чтобы узнать о завершении платежа
+2. Создайте объект PaymentConfiguration, передайте в него объект PaymentData и ваш Public_id из [личного кабинета Cloudpayments](https://merchant.cloudpayments.ru/). Реализуйте протокол PaymentDelegate, чтобы узнать о завершении платежа
 
 ```
 let configuration = PaymentConfiguration.init(
-	paymentData: paymentData, 
-	delegate: self, 
-	uiDelegate: self,
-	scanner: nil,
+    publicId: Constants.merchantPublicId, // Ваш Public_id из личного кабинета
+    paymentData: paymentData, 
+    delegate: self,
+    uiDelegate: self,
+    scanner: nil,
     showEmailField: true, // Показывать поле ввода адреса для отправки квитанции при отображении формы ввода карточных данных (по умолчанию false)
-    email: "test@cp.ru", // Email для предзаполнения адреса для отправки квитанции  
-	useDualMessagePayment: true, // Использовать двухстадийную схему проведения платежа, по умолчанию используется одностадийная схема
-	disableApplePay: true // Выключить Apple Pay, по умолчанию Apple Pay включен
-	disableYandexPay: true // Выключить Yandex Pay, по умолчанию Yandex Pay включен
+    useDualMessagePayment: true, // Использовать двухстадийную схему проведения платежа, по умолчанию используется одностадийная схема
+    disableApplePay: false, // Выключить Apple Pay, по умолчанию Apple Pay включен
+    disableYandexPay: false, // Выключить Yandex Pay, по умолчанию Yandex Pay включен
+    apiUrl: sApiUrl)
 )
 ```
+### Использование Yandex Pay:
+Если вы планируете использовать Yandex Pay , вам необходимо зарегистрироваться в программе Yandex Pay, выполнить в своем приложении, авторизацию в Yandex Login SDK: https://yandex.ru/dev/mobileauthsdk/ и провести инициализацию в `AppDelegate.swift`
 
-Если вы планируете использовать Yandex Pay вам необходимо зарегистрироваться в программе Yandex Pay, а так же выполнить в своем приложении, авторизацию в Yandex Login SDK: https://yandex.ru/dev/mobileauthsdk/
+В `AppDelegate.swift` вашего проекта в методе `application(_:didFinishLaunchingWithOptions:)` осуществите инициализацию SDK:
+
+Если в проекте используется YandexPay, то для настройки YandexLoginSDK используйте пункты 1-3 [инструкции](https://yandex.ru/dev/mobileauthsdk/doc/sdk/concepts/ios/2.0.0/sdk-ios-install.html).
+
+Если в проекте не используется YandexPay, инициализацию проводить не нужно, также если вы не планируете использовать Yandex Pay , вам необходимо в объекте PaymentConfiguration при инициализации указать `disableYandexPay: true`
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    do {
+        // Инициализируйте SDK 
+        // Если в проекте используется YandexPay, то необходимо указать соответсвующие параметры:
+        // yandexPayAppId - ваш appId, который вы получили при настройке YandexLoginSDK
+        // sandboxMode - режим песочницы YandexPay
+        let yaAppId = "..."
+        try CloudPaymentsSDK.initialize(yandexPayAppId: yaAppId, yandexPaySandboxMode: false)
+    } catch {
+        fatalError("Unable to initialize CloudPaymentsSDK")
+    }
+        
+    return true
+}
+```
 
 3. Вызовите форму оплаты внутри своего контроллера
 
@@ -174,11 +178,11 @@ let cardCryptogramPacket = Card.makeCardCryptogramPacket(with: cardNumber, expDa
 ```
 let api = CloudpaymentsApi.init(publicId: Constants.merchantPulicId)
 api.auth(cardCryptogramPacket: cardCryptogramPacket, cardHolderName: cardHolderName, email: nil, amount: String(total)) { [weak self] (response, error) in
-	if let response = response {
-		self?.checkTransactionResponse(transactionResponse: response, completion: completion)
-	} else if let error = error {
-		completion?(false, error.localizedDescription)
-	}
+    if let response = response {
+        self?.checkTransactionResponse(transactionResponse: response, completion: completion)
+    } else if let error = error {
+        completion?(false, error.localizedDescription)
+    }
 }
 ```
 
@@ -194,13 +198,13 @@ threeDsProcessor.make3DSPayment(with: data, delegate: self)
 
 ```
 extension CheckoutViewController: ThreeDsDelegate {
-	// Вы получаете объект WKWebView, который сами показываете нужным вам способом и в нужном вам месте
+    // Вы получаете объект WKWebView, который сами показываете нужным вам способом и в нужном вам месте
     func willPresentWebView(_ webView: WKWebView) {
         self.showThreeDsForm(webView)
     }
 
-	// Для завершения оплаты в выполните метод post3ds CloudpaymentsApi. 
-	// threeDsCallbackId - идентификатор, полученный в ответ на запрос на проведение платежа
+    // Для завершения оплаты в выполните метод post3ds CloudpaymentsApi. 
+    // threeDsCallbackId - идентификатор, полученный в ответ на запрос на проведение платежа
     func onAuthotizationCompleted(with md: String, paRes: String) {
         hideThreeDs()
         post3ds(transactionId: md, paRes: paRes, threeDsCallbackId: threeDsCallbackId)
@@ -222,8 +226,8 @@ extension CheckoutViewController: ThreeDsDelegate {
 ```
 var paymentItems: [PKPaymentSummaryItem] = []
 for product in CartManager.shared.products {
-	let paymentItem = PKPaymentSummaryItem.init(label: product.name, amount: NSDecimalNumber(value: Int(product.price)!))
-	paymentItems.append(paymentItem)
+    let paymentItem = PKPaymentSummaryItem.init(label: product.name, amount: NSDecimalNumber(value: Int(product.price)!))
+    paymentItems.append(paymentItem)
 }
 ```
 2. Укажите ваш Apple Pay ID и допустимые платежные системы
@@ -307,21 +311,21 @@ let cardType: CardType = Card.cardType(from: cardNumberString)
 
 ```
 CloudpaymentsApi.getBankInfo(cardNumber: cardNumber) { (info, error) in
-	if let error = error {
-		print("error: \(error.message)")
-	} else {
-		if let bankName = info?.bankName {
-			print("BankName: \(bankName)")
-		} else {
-			print("BankName is empty")
-		}
-		
-		if let logoUrl = info?.logoUrl {
-			print("LogoUrl: \(logoUrl)")
-		} else {
-			print("LogoUrl is empty")
-		}
-	}
+    if let error = error {
+        print("error: \(error.message)")
+    } else {
+        if let bankName = info?.bankName {
+            print("BankName: \(bankName)")
+        } else {
+            print("BankName is empty")
+        }
+        
+        if let logoUrl = info?.logoUrl {
+            print("LogoUrl: \(logoUrl)")
+        } else {
+            print("LogoUrl is empty")
+        }
+    }
 }
 ```
 
@@ -360,4 +364,4 @@ public protocol ThreeDsDelegate: class {
 
 ### Поддержка
 
-По возникающим вопросам техничечкого характера обращайтесь на support@cp.ru
+По возникающим вопросам технического характера обращайтесь на support@cp.ru

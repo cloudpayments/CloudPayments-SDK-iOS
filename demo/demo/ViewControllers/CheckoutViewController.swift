@@ -22,7 +22,7 @@ class CheckoutViewController: BaseViewController {
     var threeDsProcessor = ThreeDsProcessor()
     var total = 0
 
-    private let api = CloudpaymentsApi.init(publicId: Constants.merchantPublicId)
+    private let api = CloudpaymentsApi.init(publicId: Constants.merchantPublicId, apiUrl: "")
     private var transactionResponse: TransactionResponse?
     private var paymentCompletion: ((_ succeeded: Bool, _ message: String?) ->())?
     
@@ -41,13 +41,7 @@ class CheckoutViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for product in CartManager.shared.products {
-            
-            if let priceStr = product.price, let price = Int(priceStr) {
-                total += price
-            }
-        }
+
         
         labelTotal.text = "Всего к оплате: \(total) Руб."
         
@@ -128,7 +122,6 @@ class CheckoutViewController: BaseViewController {
             
             if status {
                 self?.showAlert(title: .successWord, message: message, completion: {
-                    CartManager.shared.products.removeAll()
                     self?.navigationController?.popToRootViewController(animated: true)
                 })
             } else {
@@ -141,10 +134,6 @@ class CheckoutViewController: BaseViewController {
         
         // Получение информации о товарах выбранных пользователем
         var paymentItems: [PKPaymentSummaryItem] = []
-        for product in CartManager.shared.products {
-            let paymentItem = PKPaymentSummaryItem.init(label: product.name ?? "Продукт", amount: NSDecimalNumber(value: Int(product.price ?? "0")!))
-            paymentItems.append(paymentItem)
-        }
            
         // Формируем запрос для Apple Pay
         let request = PKPaymentRequest()
@@ -253,7 +242,7 @@ private extension CheckoutViewController {
         self.transactionResponse = nil
         self.paymentCompletion = nil
         
-        let paymentData = PaymentData(publicId: Constants.merchantPublicId)
+        let paymentData = PaymentData()
             .setAmount(String(total))
             .setCardholderName(cardHolderName)
         
@@ -272,7 +261,7 @@ private extension CheckoutViewController {
         self.transactionResponse = nil
         self.paymentCompletion = nil
         
-        let paymentData = PaymentData(publicId: Constants.merchantPublicId)
+        let paymentData = PaymentData()
             .setAmount(String(total))
             .setCardholderName(cardHolderName)
         
@@ -315,7 +304,7 @@ private extension CheckoutViewController {
     func post3ds(transactionId: String, paRes: String) {
         if let threeDsCallbackId = self.transactionResponse?.model?.threeDsCallbackId {
             api.post3ds(transactionId: transactionId, threeDsCallbackId: threeDsCallbackId, paRes: paRes) { [weak self] (response) in
-                self?.paymentCompletion?(response.success, response.cardHolderMessage)
+                self?.paymentCompletion?(response.success, response.reasonCode)
                 self?.paymentCompletion = nil
             }
         }

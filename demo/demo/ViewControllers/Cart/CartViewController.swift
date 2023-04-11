@@ -9,115 +9,118 @@
 import UIKit
 import Cloudpayments
 
-class CartViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var payButton: UIButton!
-    @IBOutlet weak var labelTotal: UILabel!
-    
-    private var scannerCompletion: ((_ number: String?, _ month: UInt?, _ year: UInt?, _ cvv: String?) -> ())?
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CartManager.shared.products.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath as IndexPath) as! CartViewCell
-        
-        let product = CartManager.shared.products[indexPath.item]
-                
-        cell.name.text = product.name
-        cell.price.text = "\(product.price ?? "0")  Руб."
-            
-        return cell
-    }
+class CartViewController: BaseViewController {
+
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var apiUrl: UITextField!
+    @IBOutlet weak var publicId: UITextField!
+    @IBOutlet weak var amount: UITextField!
+    @IBOutlet weak var currency: UITextField!
+    @IBOutlet weak var invoiceId: UITextField!
+    @IBOutlet weak var desc: UITextField!
+    @IBOutlet weak var accountId: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var jsonData: UITextField!
+    @IBOutlet weak var payerFirstName: UITextField!
+    @IBOutlet weak var payerLastName: UITextField!
+    @IBOutlet weak var payerMiddleName: UITextField!
+    @IBOutlet weak var payerBirthday: UITextField!
+    @IBOutlet weak var payerAddress: UITextField!
+    @IBOutlet weak var payerStreet: UITextField!
+    @IBOutlet weak var payerCity: UITextField!
+    @IBOutlet weak var payerCountry: UITextField!
+    @IBOutlet weak var payerPhone: UITextField!
+    @IBOutlet weak var payerPostcode: UITextField!
+    @IBOutlet weak var dualMessagePaymentSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        tableView.dataSource = self
-        
-        let product = Product(id: 1, name: "Букет \"Нежность\"", price: "1")
-        
-        CartManager.shared.products.append(product)
-        
-        var total = 0;
-        
-        for product in CartManager.shared.products {
-            if let priceStr = product.price, let price = Int(priceStr) {
-                total += price
-            }
-        }
-        
-        labelTotal.text = "Итого: \(total) Руб."
+        self.hideKeyboardWhenTappedAround()
+        registerForKeyboardNotifications()
     }
     
-    @IBAction func onPay(_ sender: UIButton) {
-        let controller = UIAlertController.init(title: "Выберите способ оплаты", message: nil, preferredStyle: .actionSheet)
-        controller.addAction(UIAlertAction.init(title: "Своя форма оплаты", style: .default, handler: { (action) in
-            controller.dismiss(animated: true) {
-                self.performSegue(withIdentifier: "CartToCheckoutSegue", sender: self)
-            }
-            
-        }))
-        controller.addAction(UIAlertAction.init(title: "Форма оплаты Cloudpayments", style: .default, handler: { (action) in
-            controller.dismiss(animated: true) {
-                var totalAmount = 0
-                for product in CartManager.shared.products {
-
-                    if let priceStr = product.price, let price = Int(priceStr) {
-                        totalAmount += price
-                    }
-                }
-
-                let jsonData: [String: Any] = ["age":27,
-                                               "name":"Ivan",
-                                               "phone":"+79998881122"]
-                let paymentData = PaymentData.init(publicId: Constants.merchantPublicId)
-                    .setAmount(String(totalAmount))
-                    .setCurrency(.ruble)
-                    .setApplePayMerchantId(Constants.applePayMerchantID)
-                    .setYandexPayMerchantId(Constants.yandexPayMerchantID)
-                    .setCardholderName("Демо приложение")
-                    .setDescription("Корзина цветов")
-                    .setAccountId("111")
-                    .setIpAddress("98.21.123.32")
-                    .setInvoiceId("123")
-                    .setJsonData(jsonData)
-
-                let configuration = PaymentConfiguration.init(
-                    paymentData: paymentData,
-                    delegate: self,
-                    uiDelegate: self,
-                    scanner: nil,
-                    showEmailField: true,
-                    email: "test@cp.ru",
-                    useDualMessagePayment: true,
-                    disableApplePay: true,
-                    disableYandexPay: false)
+    deinit {
+        removeKeyboardNotifications()
+    }
+    
+    func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func kbWillShow(_ notification: Notification) {
+        let userInfo = notification.userInfo
+        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentInset.bottom = kbFrameSize.height
+    }
+        
+    @objc func kbWillHide() {
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        scrollView.contentInset = contentInset
+    }
+    
+    @IBAction func run(_ sender: Any) {
                 
-                PaymentForm.present(with: configuration, from: self)
-            }
-            
-        }))
-        controller.addAction(UIAlertAction.init(title: "Отмена", style: .cancel, handler: { (action) in
-            controller.dismiss(animated: true, completion: nil)
-        }))
+        let sApiUrl = apiUrl.text ?? ""        
+        let sPublicId = publicId.text ?? ""
+        let sAmount = amount.text ?? ""
+        let sCurrency = currency.text ?? ""
+        let sInvoiceId = invoiceId.text ?? ""
+        let sDesc = desc.text ?? ""
+        let sAccountId = accountId.text ?? ""
+        let sEmail = email.text ?? ""
+        let sPayerFirstName = payerFirstName.text ?? ""
+        let sPayerLastName = payerLastName.text ?? ""
+        let sPayerMiddleName = payerMiddleName.text ?? ""
+        let sPayerBirthday = payerBirthday.text ?? ""
+        let sPayerAddress = payerAddress.text ?? ""
+        let sPayerStreet = payerStreet.text ?? ""
+        let sPayerCity = payerCity.text ?? ""
+        let sPayerCountry = payerCountry.text ?? ""
+        let sPayerPhone = payerPhone.text ?? ""
+        let sPayerPostcode = payerPostcode.text ?? ""
+        let sJsonData = jsonData.text ?? ""
         
-        if let presenter = controller.popoverPresentationController {
-            presenter.sourceView = self.payButton
-            presenter.sourceRect = self.payButton.bounds
-        }
-        
-        self.present(controller, animated: true, completion: nil)
-        
+        let payer = PaymentDataPayer(firstName: sPayerFirstName, lastName: sPayerLastName, middleName: sPayerMiddleName, birth: sPayerBirthday, address: sPayerAddress, street: sPayerStreet, city: sPayerCity, country: sPayerCountry, phone: sPayerPhone, postcode: sPayerPostcode)
+                
+        let paymentData = PaymentData()
+            .setAmount(sAmount)
+            .setCurrency(sCurrency)
+            .setApplePayMerchantId(Constants.applePayMerchantID)
+            .setYandexPayMerchantId(Constants.yandexPayMerchantID)
+            .setCardholderName("CP SDK")
+            .setIpAddress("98.21.123.32")
+            .setInvoiceId(sInvoiceId)
+            .setDescription(sDesc)
+            .setAccountId(sAccountId)
+            .setPayer(payer)
+            .setEmail(sEmail)
+            .setJsonData(sJsonData)
+
+        let configuration = PaymentConfiguration.init(
+                            publicId: sPublicId,
+                            paymentData: paymentData,
+                            delegate: self,
+                            uiDelegate: self,
+                            scanner: nil,
+                            showEmailField: true,
+                            useDualMessagePayment: dualMessagePaymentSwitch.isOn,
+                            disableApplePay: true,
+                            disableYandexPay: false,
+                            apiUrl: sApiUrl)
+    
+        PaymentForm.present(with: configuration, from: self)
     }
 }
 
 extension CartViewController: PaymentDelegate {
     func onPaymentFinished(_ transactionId: Int?) {
         self.navigationController?.popViewController(animated: true)
-        CartManager.shared.products.removeAll()
         
         if let transactionId = transactionId {
             print("finished with transactionId: \(transactionId)")

@@ -44,9 +44,8 @@ public class PaymentCardForm: PaymentForm {
         self.receiptButton.onAction = {
             self.receiptButton.isSelected = !self.receiptButton.isSelected
             self.emailTextField.isHidden = !self.receiptButton.isSelected
-            
+
             if !self.receiptButton.isSelected {
-                //self.emailTextField.text = ""
                 self.emailTextField.isErrorMode = false
             }
         }
@@ -67,19 +66,25 @@ public class PaymentCardForm: PaymentForm {
         
         let paymentData = self.configuration.paymentData
         
-        self.payButton.setTitle("Оплатить \(paymentData.amount) \(paymentData.currency.currencySign())", for: .normal)
+        self.payButton.setTitle("Оплатить \(paymentData.amount) \(Currency.getCurrencySign(code: paymentData.currency))", for: .normal)
         self.payButton.onAction = { [weak self] in
             guard let self = self else {
                 return
             }
-            if self.isValid(), let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: paymentData.publicId) {
+            if self.isValid(), let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.text!, cvv: self.cardCvcTextField.text!, merchantPublicID: self.configuration.publicId) {
                 self.dismiss(animated: true) { [weak self] in
                     guard let self = self else {
                         return
                     }
-                    self.onPayClicked?(cryptogram, self.emailTextField.text)
+                    if self.receiptButton.isSelected {
+                        self.onPayClicked?(cryptogram, self.emailTextField.text)
+                    } else {
+                        self.onPayClicked?(cryptogram, nil)
+                    }
+                    
                 }
             }
+            
         }
         
         if self.configuration.scanner == nil {
@@ -109,7 +114,7 @@ public class PaymentCardForm: PaymentForm {
             self.emailTextField.isHidden = false
         }
         
-        self.emailTextField.text = self.configuration.email
+        self.emailTextField.text = self.configuration.paymentData.email
         
         self.configureTextFields()
         self.hideKeyboardWhenTappedAround()

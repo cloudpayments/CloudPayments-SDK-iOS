@@ -22,7 +22,7 @@ public class PaymentForm: BaseViewController {
     
     var configuration: PaymentConfiguration!
     
-    lazy var network: CloudpaymentsApi = CloudpaymentsApi.init(publicId: self.configuration.paymentData.publicId, source: .cpForm)
+    lazy var network: CloudpaymentsApi = CloudpaymentsApi.init(publicId: self.configuration.publicId, apiUrl: self.configuration.apiUrl, source: .cpForm)
     lazy var customTransitionDelegateInstance = FormTransitioningDelegate(viewController: self)
     
     private lazy var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
@@ -191,14 +191,16 @@ extension PaymentForm: ThreeDsDelegate {
                 guard let self = self else {
                     return
                 }
-                self.threeDsCompletion?(response.success, false, self.transaction, response.cardHolderMessage)
+                
+                self.transaction?.reasonCode = Int(response.reasonCode!) ?? 5204
+                
+                self.threeDsCompletion?(response.success, false, self.transaction, response.reasonCode!)
             }
         }
     }
 
     public func onAuthorizationFailed(with html: String) {
         self.threeDsCompletion?(false, false, nil, html)
-        print("error: \(html)")
     }
 
     public func willPresentWebView(_ webView: WKWebView) {

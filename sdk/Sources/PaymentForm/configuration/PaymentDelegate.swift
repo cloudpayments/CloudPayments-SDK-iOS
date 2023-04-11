@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol PaymentDelegate: class {
+public protocol PaymentDelegate: AnyObject {
     func onPaymentFinished(_ transactionId: Int?)
     func onPaymentFailed(_ errorMessage: String?)
 }
 
-public protocol PaymentUIDelegate: class {
+public protocol PaymentUIDelegate: AnyObject {
     func paymentFormWillDisplay()
     func paymentFormDidDisplay()
     func paymentFormWillHide()

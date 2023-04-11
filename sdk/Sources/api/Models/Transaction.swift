@@ -34,7 +34,7 @@ public struct Transaction: Codable {
     public private(set) var status: String?
     public private(set) var statusCode: Int?
     public private(set) var reason: String?
-    public private(set) var reasonCode: Int?
+    public var reasonCode: Int?
     public private(set) var cardHolderMessage: String?
     public private(set) var name: String?
     public private(set) var paReq: String?
