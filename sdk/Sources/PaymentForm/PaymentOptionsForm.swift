@@ -253,53 +253,13 @@ class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControllerDeleg
             // Оплата была совершена успешно
             if let decodedData = Data(base64Encoded: paymentInfo.paymentToken),
                let decodedToken = String(data: decodedData, encoding: .utf8) {
-                if (configuration.useDualMessagePayment) {
-                    self.auth(cardCryptogramPacket: decodedToken, email: nil) { [weak self] status, canceled, transaction, errorMessage in
-                        guard let self = self else {
-                            return
-                        }
-                        
-                        let state: PaymentProcessForm.State
-                        
-                        if status {
-                            state = .succeeded(self.resultTransaction)
-                        } else {
-                            state = .failed(self.errorMessage)
-                        }
-                        
-                        let parent = self.presentingViewController
-                        self.dismiss(animated: true) { [weak self] in
-                            guard let self = self else {
-                                return
-                            }
-                            if parent != nil {
-                                PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!, completion: nil)
-                            }
-                        }
+                let parent = self.presentingViewController
+                self.dismiss(animated: true) { [weak self] in
+                    guard let self = self else {
+                        return
                     }
-                } else {
-                    self.charge(cardCryptogramPacket: decodedToken, email: nil) { [weak self] status, canceled, transaction, errorMessage in
-                        guard let self = self else {
-                            return
-                        }
-                        
-                        let state: PaymentProcessForm.State
-                        
-                        if status {
-                            state = .succeeded(self.resultTransaction)
-                        } else {
-                            state = .failed(self.errorMessage)
-                        }
-                        
-                        let parent = self.presentingViewController
-                        self.dismiss(animated: true) { [weak self] in
-                            guard let self = self else {
-                                return
-                            }
-                            if parent != nil {
-                                PaymentProcessForm.present(with: self.configuration, cryptogram: nil, email: nil, state: state, from: parent!, completion: nil)
-                            }
-                        }
+                    if parent != nil {
+                        PaymentProcessForm.present(with: self.configuration, cryptogram: decodedToken, email: nil, state: .inProgress, from: parent!, completion: nil)
                     }
                 }
             }
