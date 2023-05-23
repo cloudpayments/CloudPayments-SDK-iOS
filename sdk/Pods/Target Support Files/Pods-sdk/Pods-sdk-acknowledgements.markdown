@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## YandexLoginSDK
 
-2017 © Yandex. All rights reserved.
+2023 © Yandex. All rights reserved.
 
 ## YandexMobileMetrica
 

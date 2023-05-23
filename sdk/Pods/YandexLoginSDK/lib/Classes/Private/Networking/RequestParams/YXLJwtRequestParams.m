@@ -1,4 +1,5 @@
 #import "YXLJwtRequestParams.h"
+#import "YXLSdk+Protected.h"
 
 @interface YXLJwtRequestParams ()
 
@@ -20,7 +21,11 @@
 
 - (NSString *)path
 {
-    return @"https://login.yandex.ru/info";
+    if (YXLSdk.shared.shouldUseTestEnvironment) {
+        return @"https://login-test.yandex.ru/info";
+    } else {
+        return @"https://login.yandex.ru/info";
+    }
 }
 
 - (NSDictionary<NSString *, NSString *> *)params

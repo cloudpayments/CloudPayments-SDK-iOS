@@ -1,4 +1,5 @@
 #import "YXLHostProvider.h"
+#import "YXLSdk+Protected.h"
 
 static NSString *const kYXLDefaultLanguage = @"en";
 
@@ -9,11 +10,35 @@ static NSString *const kYXLDefaultLanguage = @"en";
     return self.oauthHosts[self.currentLanguage] ?: self.oauthHosts[[self follbackLanguageForLanguage:self.currentLanguage]];
 }
 
++ (NSString *)universalLinksHost
+{
+    return self.universalLinksHosts[self.currentLanguage] ?: self.universalLinksHosts[[self follbackLanguageForLanguage:self.currentLanguage]];
+}
+
 + (NSDictionary<NSString *, NSString *> *)oauthHosts
 {
-    return @{@"ru": @"oauth.yandex.ru",
-             @"en": @"oauth.yandex.com",
-             @"tr": @"oauth.yandex.com.tr"};
+    if (YXLSdk.shared.shouldUseTestEnvironment) {
+        return @{@"ru": @"oauth-test.yandex.ru",
+                 @"en": @"oauth-test.yandex.ru",
+                 @"tr": @"oauth-test.yandex.ru"};
+    } else {
+        return @{@"ru": @"oauth.yandex.ru",
+                 @"en": @"oauth.yandex.ru",
+                 @"tr": @"oauth.yandex.ru"};
+    }
+}
+
++ (NSDictionary<NSString *, NSString *> *)universalLinksHosts
+{
+    if (YXLSdk.shared.shouldUseTestEnvironment) {
+        return @{@"ru": @"passport-rc.yandex.ru",
+                 @"en": @"passport-rc.yandex.ru",
+                 @"tr": @"passport-rc.yandex.ru"};
+    } else {
+        return @{@"ru": @"passport.yandex.ru",
+                 @"en": @"passport.yandex.ru",
+                 @"tr": @"passport.yandex.ru"};
+    }
 }
 
 + (NSString *)follbackLanguageForLanguage:(NSString *)language

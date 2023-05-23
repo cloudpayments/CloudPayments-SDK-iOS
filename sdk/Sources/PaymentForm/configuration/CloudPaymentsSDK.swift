@@ -26,7 +26,7 @@ final public class CloudPaymentsSDK {
 
         let configuration = YandexPaySDKConfiguration(environment: (yandexPaySandboxMode ?? false) ? .sandbox : .production,
                                                       merchant: YandexPaySDKMerchant.init(id: yandexPayAppId ?? "",
-                                                      name: "Cloud", url: "https://cp.ru"), locale: .ru)
+                                                                                          name: "Cloud", origin: "https://cp.ru", url: "https://cp.ru"), locale: .ru)
         try YandexPaySDKApi.initialize(configuration: configuration)
 
         initialized = true
