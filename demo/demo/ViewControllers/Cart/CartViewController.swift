@@ -9,33 +9,33 @@
 import UIKit
 import Cloudpayments
 
-class CartViewController: BaseViewController {
-
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var apiUrl: UITextField!
-    @IBOutlet weak var publicId: UITextField!
-    @IBOutlet weak var amount: UITextField!
-    @IBOutlet weak var currency: UITextField!
-    @IBOutlet weak var invoiceId: UITextField!
-    @IBOutlet weak var desc: UITextField!
-    @IBOutlet weak var accountId: UITextField!
-    @IBOutlet weak var email: UITextField!
-    @IBOutlet weak var jsonData: UITextField!
-    @IBOutlet weak var payerFirstName: UITextField!
-    @IBOutlet weak var payerLastName: UITextField!
-    @IBOutlet weak var payerMiddleName: UITextField!
-    @IBOutlet weak var payerBirthday: UITextField!
-    @IBOutlet weak var payerAddress: UITextField!
-    @IBOutlet weak var payerStreet: UITextField!
-    @IBOutlet weak var payerCity: UITextField!
-    @IBOutlet weak var payerCountry: UITextField!
-    @IBOutlet weak var payerPhone: UITextField!
-    @IBOutlet weak var payerPostcode: UITextField!
-    @IBOutlet weak var dualMessagePaymentSwitch: UISwitch!
+final class CartViewController: BaseViewController {
+    // MARK: - Private properties
+    @IBOutlet private weak var scrollView: UIScrollView!
+    @IBOutlet private weak var apiUrl: UITextField!
+    @IBOutlet private weak var publicId: UITextField!
+    @IBOutlet private weak var amount: UITextField!
+    @IBOutlet private weak var currency: UITextField!
+    @IBOutlet private weak var invoiceId: UITextField!
+    @IBOutlet private weak var desc: UITextField!
+    @IBOutlet private weak var accountId: UITextField!
+    @IBOutlet private weak var email: UITextField!
+    @IBOutlet private weak var jsonData: UITextField!
+    @IBOutlet private weak var payerFirstName: UITextField!
+    @IBOutlet private weak var payerLastName: UITextField!
+    @IBOutlet private weak var payerMiddleName: UITextField!
+    @IBOutlet private weak var payerBirthday: UITextField!
+    @IBOutlet private weak var payerAddress: UITextField!
+    @IBOutlet private weak var payerStreet: UITextField!
+    @IBOutlet private weak var payerCity: UITextField!
+    @IBOutlet private weak var payerCountry: UITextField!
+    @IBOutlet private weak var payerPhone: UITextField!
+    @IBOutlet private weak var payerPostcode: UITextField!
+    @IBOutlet private weak var dualMessagePaymentSwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         registerForKeyboardNotifications()
     }
     
@@ -43,25 +43,48 @@ class CartViewController: BaseViewController {
         removeKeyboardNotifications()
     }
     
-    func registerForKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(kbWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    private func registerForKeyboardNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow(_:)),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
-    func removeKeyboardNotifications() {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    private func removeKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.removeObserver(
+            self,
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
-    @objc func kbWillShow(_ notification: Notification) {
-        let userInfo = notification.userInfo
-        let kbFrameSize = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
-        scrollView.contentInset.bottom = kbFrameSize.height
-    }
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        else {
+            return
+        }
         
-    @objc func kbWillHide() {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        let bottomInset = keyboardFrame.cgRectValue.height
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
         scrollView.contentInset = contentInset
+    }
+    
+    @objc private func keyboardWillHide() {
+        scrollView.contentInset = .zero
     }
     
     @IBAction func run(_ sender: Any) {
@@ -86,8 +109,19 @@ class CartViewController: BaseViewController {
         let sPayerPostcode = payerPostcode.text ?? ""
         let sJsonData = jsonData.text ?? ""
         
-        let payer = PaymentDataPayer(firstName: sPayerFirstName, lastName: sPayerLastName, middleName: sPayerMiddleName, birth: sPayerBirthday, address: sPayerAddress, street: sPayerStreet, city: sPayerCity, country: sPayerCountry, phone: sPayerPhone, postcode: sPayerPostcode)
-                
+        let payer = PaymentDataPayer(
+            firstName: sPayerFirstName,
+            lastName: sPayerLastName,
+            middleName: sPayerMiddleName,
+            birth: sPayerBirthday,
+            address: sPayerAddress,
+            street: sPayerStreet,
+            city: sPayerCity,
+            country: sPayerCountry,
+            phone: sPayerPhone,
+            postcode: sPayerPostcode
+        )
+        
         let paymentData = PaymentData()
             .setAmount(sAmount)
             .setCurrency(sCurrency)
@@ -101,53 +135,55 @@ class CartViewController: BaseViewController {
             .setPayer(payer)
             .setEmail(sEmail)
             .setJsonData(sJsonData)
-
-        let configuration = PaymentConfiguration.init(
-                            publicId: sPublicId,
-                            paymentData: paymentData,
-                            delegate: self,
-                            uiDelegate: self,
-                            scanner: nil,
-                            showEmailField: true,
-                            useDualMessagePayment: dualMessagePaymentSwitch.isOn,
-                            disableApplePay: true,
-                            disableYandexPay: false,
-                            apiUrl: sApiUrl)
-    
+        
+        let configuration = PaymentConfiguration(
+            publicId: sPublicId,
+            paymentData: paymentData,
+            delegate: self,
+            uiDelegate: self,
+            scanner: nil,
+            requireEmail: false,
+            useDualMessagePayment: dualMessagePaymentSwitch.isOn,
+            disableApplePay: false,
+            disableYandexPay: false,
+            apiUrl: sApiUrl,
+            changedEmail: nil
+        )
+        
         PaymentForm.present(with: configuration, from: self)
     }
 }
 
 extension CartViewController: PaymentDelegate {
     func onPaymentFinished(_ transactionId: Int?) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
         
         if let transactionId = transactionId {
-            print("finished with transactionId: \(transactionId)")
+            print("Transaction finished with ID: \(transactionId)")
         }
     }
     
     func onPaymentFailed(_ errorMessage: String?) {
-        if let error = errorMessage {
-            print("finished with error: \(error)")
+        if let errorMessage = errorMessage {
+            print("Transaction failed with error: \(errorMessage)")
         }
     }
 }
 
 extension CartViewController: PaymentUIDelegate {
     func paymentFormWillDisplay() {
-        print("paymentFormWillDisplay")
+        print("Payment form will display")
     }
     
     func paymentFormDidDisplay() {
-        print("paymentFormDidDisplay")
+        print("Payment form did display")
     }
     
     func paymentFormWillHide() {
-        print("paymentFormWillHide")
+        print("Payment form will hide")
     }
     
     func paymentFormDidHide() {
-        print("paymentFormDidHide")
+        print("Payment form did hide")
     }
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2022 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import YandexPaySDK
 
 final public class CloudPaymentsSDK {
@@ -24,9 +23,13 @@ final public class CloudPaymentsSDK {
     public static func initialize(yandexPayAppId: String?, yandexPaySandboxMode: Bool? = false) throws {
         Self.yandexPayAppId = yandexPayAppId
 
-        let configuration = YandexPaySDKConfiguration(environment: (yandexPaySandboxMode ?? false) ? .sandbox : .production,
-                                                      merchant: YandexPaySDKMerchant.init(id: yandexPayAppId ?? "",
-                                                                                          name: "Cloud", origin: "https://cp.ru", url: "https://cp.ru"), locale: .ru)
+        let environment: YandexPaySDKEnvironment = (yandexPaySandboxMode ?? false) ? .sandbox : .production
+       
+        let id = yandexPayAppId ?? ""
+        let merchant = YandexPaySDKMerchant(id: id, name: "Cloud", url: "https://cp.ru")
+        
+        let configuration = YandexPaySDKConfiguration(environment: environment, merchant: merchant, locale: YandexPaySDKLocale.ru)
+        
         try YandexPaySDKApi.initialize(configuration: configuration)
 
         initialized = true

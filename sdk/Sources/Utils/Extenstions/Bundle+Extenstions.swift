@@ -6,7 +6,7 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension Bundle {
     class var mainSdk: Bundle {
@@ -15,3 +15,5 @@ extension Bundle {
         return Bundle.init(url: bundleUrl!)!
     }
 }
+
+

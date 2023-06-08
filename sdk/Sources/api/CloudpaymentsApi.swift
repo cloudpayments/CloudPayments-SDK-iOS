@@ -152,7 +152,7 @@ public class CloudpaymentsApi {
             "InvoiceId" : paymentData.invoiceId ?? "", // Номер счета или заказа в вашей системе (Необязательный)
             "Description" : paymentData.description ?? "", // Описание оплаты в свободной форме (Необязательный)
             "AccountId" : paymentData.accountId ?? "", // Идентификатор пользователя в вашей системе (Необязательный)
-            "Payer" : paymentData.payer?.dictionary, // Доп. поле, куда передается информация о плательщике. (Необязательный)
+            "Payer" : paymentData.payer?.dictionary as Any, // Доп. поле, куда передается информация о плательщике. (Необязательный)
             "JsonData" : paymentData.jsonData ?? "", // Любые другие данные, которые будут связаны с транзакцией, в том числе инструкции для создания подписки или формирования онлайн-чека (Необязательный)
             "scenario" : 7
         ]

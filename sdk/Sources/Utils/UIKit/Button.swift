@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class Button: UIButton {
@@ -27,6 +26,10 @@ class Button: UIButton {
             layer.cornerRadius = cornerRadius
             layer.masksToBounds = cornerRadius > 0
         }
+    }
+    
+    func setAlpha(_ alpha: CGFloat) {
+        self.alpha = alpha
     }
     
     override init(frame: CGRect) {

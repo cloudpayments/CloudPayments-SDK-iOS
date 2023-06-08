@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  demo
 //
-//  Created by Anton Ignatov on 26/03/2019.
+//  Created by СloudPayments on 26/03/2019.
 //  Copyright © 2019 Cloudpayments. All rights reserved.
 //
 

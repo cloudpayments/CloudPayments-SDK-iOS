@@ -6,8 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
-
 public class CloudpaymentsError: Error {
     public static let defaultCardError = CloudpaymentsError.init(message: "Unable to determine bank")
     

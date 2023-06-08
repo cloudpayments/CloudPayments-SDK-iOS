@@ -118,8 +118,8 @@ public struct Card {
 //        guard aNewDate.compare(dateNow) == .orderedDescending else {
 //            return false
 //        }
-
-        return true
+//
+//        return true
     }
     
     public static func isCvvValid(_ cardNumber: String?, _ cvv: String?) -> Bool {
@@ -127,7 +127,7 @@ public struct Card {
             return false
         }
         
-        if (cvv.count == 3) {
+        if (cvv.count == 3) || cvv.count == 4 {
             return true
         }
         

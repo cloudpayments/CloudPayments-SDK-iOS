@@ -8,5 +8,5 @@ target 'demo' do
 
   pod 'Cloudpayments', :path => "../sdk"
   pod 'CloudpaymentsNetworking', :path => "../networking"
-
+  
 end

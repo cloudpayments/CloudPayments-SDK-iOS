@@ -36,7 +36,7 @@ class MainViewController: BaseViewController, UICollectionViewDataSource, UIColl
             
             print("Ошибка при запросе данных \(String(describing: error))")
         }
-          
+        
         self.createCartButton()
     }
     

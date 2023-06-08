@@ -74,7 +74,11 @@ public class ApiError {
     
     public static func getFullErrorDescription(code: String) -> String {
         
-        return getErrorDescription(code: code) + ". " + getErrorDescriptionExtra(code: code)
+        //"String1 # String2"
+        
+        let error = "\(getErrorDescription(code: code))#\(getErrorDescriptionExtra(code: code))"
+        
+        return error
     }
     
     static func getErrorDescription(code: String) -> String {

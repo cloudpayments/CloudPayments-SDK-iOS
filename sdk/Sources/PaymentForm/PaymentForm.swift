@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import PassKit
 import WebKit
@@ -14,23 +13,26 @@ import WebKit
 typealias PaymentCallback = (_ status: Bool, _ canceled: Bool, _ trasaction: Transaction?, _ errorMessage: String?) -> ()
 
 public class PaymentForm: BaseViewController {
+    // MARK: - Public Properties
     @IBOutlet weak var containerView: UIView!
-    @IBOutlet var containerBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var threeDsCloseButton: Button?
-    @IBOutlet weak var threeDsFormView: UIView?
-    @IBOutlet weak var threeDsContainerView: UIView?
+    @IBOutlet weak var containerBottomConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var threeDsCloseButton: Button?
+    @IBOutlet private weak var threeDsFormView: UIView?
+    @IBOutlet private weak var threeDsContainerView: UIView?
     
     var configuration: PaymentConfiguration!
     
     lazy var network: CloudpaymentsApi = CloudpaymentsApi.init(publicId: self.configuration.publicId, apiUrl: self.configuration.apiUrl, source: .cpForm)
     lazy var customTransitionDelegateInstance = FormTransitioningDelegate(viewController: self)
     
+    // MARK: - Private Properties
     private lazy var threeDsProcessor: ThreeDsProcessor = ThreeDsProcessor.init()
     private var threeDsCallbackId: String = ""
     
     private var threeDsCompletion: PaymentCallback?
     private var transaction: Transaction?
     
+    // MARK: - Public Methods
     @discardableResult
     public class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
         let completion = {
@@ -38,10 +40,10 @@ public class PaymentForm: BaseViewController {
         }
         configuration.paymentUIDelegate.paymentFormWillDisplay()
         
-        if configuration.disableApplePay && configuration.disableYandexPay {
-            return self.showCardForm(with: configuration, from: from, completion: completion)
-        }
-        
+//        if configuration.disableApplePay && configuration.disableYandexPay {
+//            return self.showCardForm(with: configuration, from: from, completion: completion)
+//        }
+
         if PKPaymentAuthorizationViewController.canMakePayments() || !configuration.disableYandexPay {
             let controller = PaymentOptionsForm.present(with: configuration, from: from, completion: completion) as! PaymentOptionsForm
             controller.onCardOptionSelected = {
@@ -49,19 +51,22 @@ public class PaymentForm: BaseViewController {
             }
             return controller
         } else {
+            
             return self.showCardForm(with: configuration, from: from, completion: completion)
         }
     }
     
+    // MARK: - Private methods
     @discardableResult
     private class func showCardForm(with configuration: PaymentConfiguration, from: UIViewController, completion: (() -> ())?) -> PaymentForm {
         let controller = PaymentCardForm.present(with: configuration, from: from, completion: completion) as! PaymentCardForm
+        
         controller.onPayClicked = { cryptogram, email in
             PaymentProcessForm.present(with: configuration, cryptogram: cryptogram, email: email, from: from, completion: nil)
         }
         return controller
     }
-    
+    // MARK: - Internal methods
     internal func show(inViewController controller: UIViewController, completion: (() -> ())?) {
         self.transitioningDelegate = customTransitionDelegateInstance
         self.modalPresentationStyle = .custom
@@ -74,22 +79,18 @@ public class PaymentForm: BaseViewController {
         }
     }
     
+    // MARK: - Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.threeDsCloseButton?.onAction = { [weak self] in
-            self?.closeThreeDs { [weak self] in
-                self?.threeDsCompletion?(false, true, nil, nil)
-            }
-        }
+        configureThreeDsCloseButton()
     }
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         self.makeContainerCorners()
     }
     
+    // MARK: - Close button method on PaymentForm
     @IBAction private func onClose(_ sender: UIButton) {
         self.configuration.paymentUIDelegate.paymentFormWillHide()
         self.hide { [weak self] in
@@ -104,6 +105,7 @@ public class PaymentForm: BaseViewController {
         self.containerView.layer.mask = mask
     }
     
+    // MARK: - One stage payment
     internal func charge(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
         network.charge(cardCryptogramPacket: cardCryptogramPacket,
                        email: email,
@@ -115,7 +117,7 @@ public class PaymentForm: BaseViewController {
             }
         }
     }
-    
+    // MARK: - Two stage payment
     internal func auth(cardCryptogramPacket: String, email: String?, completion: PaymentCallback?) {
         network.auth(cardCryptogramPacket: cardCryptogramPacket,
                      email: email,
@@ -160,7 +162,8 @@ public class PaymentForm: BaseViewController {
     internal func post3ds(transactionId: String, paRes: String, completion: @escaping ((_ response: ThreeDsResponse) -> ())) {
         network.post3ds(transactionId: transactionId, threeDsCallbackId: self.threeDsCallbackId, paRes: paRes, completion: completion)
     }
-
+    
+    // MARK: - Private methods closeThreeds and configureThreeDsCloseButton
     private func closeThreeDs(completion: (() -> ())?) {
         if let form = self.threeDsFormView {
             UIView.animate(withDuration: 0.25) {
@@ -178,9 +181,17 @@ public class PaymentForm: BaseViewController {
         }
     }
     
+    private func configureThreeDsCloseButton() {
+        self.threeDsCloseButton?.onAction = { [weak self] in
+            self?.closeThreeDs { [weak self] in
+                self?.threeDsCompletion?(false, true, nil, nil)
+            }
+        }
+    }
+    
     
 }
-
+// MARK: - Extensions
 extension PaymentForm: ThreeDsDelegate {
     public func onAuthorizationCompleted(with md: String, paRes: String) {
         self.closeThreeDs { [weak self] in
@@ -219,6 +230,7 @@ extension PaymentForm: ThreeDsDelegate {
     }
 }
 
+// MARK: - UIViewControllerTransitioningDelegate
 class FormTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
     weak var formController: PaymentForm!
 

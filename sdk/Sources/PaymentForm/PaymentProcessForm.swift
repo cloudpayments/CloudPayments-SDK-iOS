@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import WebKit
 
@@ -30,11 +29,11 @@ public class PaymentProcessForm: PaymentForm {
         func getMessage() -> String? {
             switch self {
             case .inProgress:
-                return "Оплата выполняется..."
+                return "Оплата в процессе"
             case .succeeded:
-                return "Оплата завершена"
+                return "Оплата прошла успешно"
             case .failed(let message):
-                return message ?? "Произошла ошибка!"
+                return message ?? "Операция отклонена"
             }
         }
         
@@ -49,10 +48,15 @@ public class PaymentProcessForm: PaymentForm {
             }
         }
     }
-    
+    // MARK: - Private properties 
     @IBOutlet private weak var progressIcon: UIImageView!
     @IBOutlet private weak var messageLabel: UILabel!
     @IBOutlet private weak var actionButton: Button!
+    @IBOutlet private weak var secondDescriptionLabel: UILabel!
+    @IBOutlet private weak var progressView: View!
+    @IBOutlet private weak var errorView: View!
+    @IBOutlet private weak var buttonView: View!
+    @IBOutlet private weak var progressStackView: UIStackView!
     
     private var state: State = .inProgress
     private var cryptogram: String?
@@ -126,7 +130,7 @@ public class PaymentProcessForm: PaymentForm {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.startAnimation()
+        //self.startAnimation()
     }
     
     public override func viewDidDisappear(_ animated: Bool) {
@@ -139,17 +143,29 @@ public class PaymentProcessForm: PaymentForm {
         self.state = state
         self.stopAnimation()
         
+        if let message = self.state.getMessage(), message.contains("#") {
+            let messages: [String] = message.components(separatedBy: "#")
+            self.messageLabel.text = messages[0]
+            self.secondDescriptionLabel.text = messages[1]
+            self.errorView.isHidden = false
+        } else {
+            self.messageLabel.text = self.state.getMessage()
+            self.secondDescriptionLabel.text = nil
+            self.errorView.isHidden = true
+        }
+        
         self.progressIcon.image = self.state.getImage()
-        self.messageLabel.text = self.state.getMessage()
         self.actionButton.setTitle(self.state.getActionButtonTitle(), for: .normal)
         
         if case .inProgress = self.state {
-            self.actionButton.isHidden = true
+            buttonView.isHidden = true
+            errorView.isHidden = true
         } else {
-            self.actionButton.isHidden = false
+            buttonView.isHidden = false
         }
         
         if case .succeeded(let transaction) = self.state {
+            
             self.configuration.paymentDelegate.paymentFinished(transaction)
             self.actionButton.onAction = { [weak self] in
                 self?.hide()

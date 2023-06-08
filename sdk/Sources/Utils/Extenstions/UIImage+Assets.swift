@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIImage {
@@ -25,4 +24,6 @@ extension UIImage {
     public class var iconFailed: UIImage {
         return self.named("ic_failed")
     }
+    
+    
 }

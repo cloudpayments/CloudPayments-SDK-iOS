@@ -6,8 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
-
 extension String {
     static let bundleName = "CloudpaymentsSdkResources"
     static let errorWord = "Ошибка"
@@ -19,6 +17,7 @@ extension String {
 }
 
 extension String {
+
     func formattedCardNumber() -> String {
         let mask = "XXXX XXXX XXXX XXXX XXX"
         return self.onlyNumbers().formattedString(mask: mask, ignoredSymbols: nil)
@@ -38,7 +37,7 @@ extension String {
     }
     
     func formattedCardCVV() -> String {
-        let mask = "XXX"
+        let mask = "XXXX"
         return self.onlyNumbers().formattedString(mask: mask, ignoredSymbols: nil)
     }
 
@@ -74,5 +73,11 @@ extension String {
     func onlyNumbers() -> String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()
+    }
+}
+
+extension Optional where Wrapped == String {
+    var isNilOrEmpty: Bool {
+        return self?.isEmpty ?? true
     }
 }

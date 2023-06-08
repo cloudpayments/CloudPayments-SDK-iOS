@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIColor {
@@ -26,7 +25,21 @@ extension UIColor {
         return color(named: "color_border")
     }
     
+    public class var inputCardView: UIColor! {
+        return color(named: "color_text_button")
+    }
+    
+    public class var errorBorder: UIColor {
+        return color(named: "color_red")
+    }
+    
     private class func color(named colorName: String) -> UIColor! {
         return UIColor.init(named: colorName, in: Bundle.mainSdk, compatibleWith: .none)
+    }
+}
+
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int, alpha: CGFloat) {
+        self.init(red: CGFloat(red)/255.0, green: CGFloat(green)/255.0, blue: CGFloat(blue)/255.0, alpha: alpha)
     }
 }

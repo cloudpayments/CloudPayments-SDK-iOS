@@ -6,8 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
-
 public struct PaymentDataPayer: Codable {
     let firstName: String
     let lastName: String
@@ -147,13 +145,13 @@ public class PaymentData {
             return self
         }
         
-        if let data = try? JSONSerialization.data(withJSONObject: map, options: .sortedKeys) {
+        if let data = try? JSONSerialization.data(withJSONObject: map as Any, options: .sortedKeys) {
             let jsonString = String(data: data, encoding: .utf8)
             self.jsonData = jsonString
         }
         
         print("JSONDATA")
-        print(self.jsonData)
+        print(self.jsonData as Any)
         
         return self
     }

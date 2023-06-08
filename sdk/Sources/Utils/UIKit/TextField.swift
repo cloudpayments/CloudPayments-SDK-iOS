@@ -6,7 +6,6 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class TextField: UITextField, UITextFieldDelegate {
@@ -16,6 +15,25 @@ class TextField: UITextField, UITextFieldDelegate {
     @IBInspectable var activeColor: UIColor = UIColor.mainBlue
     @IBInspectable var passiveColor: UIColor = UIColor.border
     @IBInspectable var errorColor: UIColor = UIColor.border
+    @IBInspectable var insetX: CGFloat = 0
+    @IBInspectable var insetY: CGFloat = 0
+    
+    // placeholder position on textfield
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: insetX, dy: insetY)
+    }
+    
+    // text position on textfield
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: insetX, dy: insetY)
+    }
+    
+    var isEmpty: Bool {
+        if let text = self.text, !text.isEmpty {
+            return false
+        }
+        return true
+    }
     
     var isErrorMode = false {
         didSet {
@@ -43,7 +61,7 @@ class TextField: UITextField, UITextFieldDelegate {
             delegateIfNeeded()
         }
     }
-    var shouldChangeCharactersInRange : ((_ range: NSRange, _ replacement: String) -> Bool)?{
+    var shouldChangeCharactersInRange : ((_ range: NSRange, _ replacement: String) -> Bool)? {
         didSet{
             delegateIfNeeded()
         }
@@ -181,7 +199,6 @@ class TextField: UITextField, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.underlineView?.backgroundColor = getActiveColor()
         didBeginEditing?()
     }
     
@@ -211,18 +228,20 @@ class TextField: UITextField, UITextFieldDelegate {
         self.clipsToBounds = false
         self.delegateIfNeeded()
         
-        self.underlineView = UIView.init(frame: CGRect.init(x: 0, y: self.frame.height, width: self.frame.width, height: 1))
-        if let underlineView = self.underlineView {
-            self.addSubview(underlineView)
-            underlineView.translatesAutoresizingMaskIntoConstraints = false
-            underlineView.backgroundColor = self.getPassiveColor()
-            
-            NSLayoutConstraint.activate([
-                underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-                underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-                underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 1),
-                underlineView.heightAnchor.constraint(equalToConstant: 1)
-            ])
-        }
+//        self.underlineView = UIView.init(frame: CGRect.init(x: 0, y: self.frame.height, width: self.frame.width, height: 1))
+//        if let underlineView = self.underlineView {
+//            self.addSubview(underlineView)
+//            underlineView.translatesAutoresizingMaskIntoConstraints = false
+//            underlineView.backgroundColor = self.getPassiveColor()
+//            
+//            NSLayoutConstraint.activate([
+//                underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
+//                underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
+//                underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 1),
+//                underlineView.heightAnchor.constraint(equalToConstant: 1)
+//            ])
+//        }
     }
 }
+
+

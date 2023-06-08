@@ -4,8 +4,6 @@
 //  Created by Sergey Iskhakov on 02.06.2021.
 //
 
-import Foundation
-
 public struct CloudpaymentsRequest {
     public let path: String
     public let method: HTTPMethod
