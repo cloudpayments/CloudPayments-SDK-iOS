@@ -55,6 +55,7 @@
 		134298D52339F6A7009C744C /* sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		134298D92339F6A7009C744C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4D087D1FDD99F862A4303FD7 /* Pods-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.release.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.release.xcconfig"; sourceTree = "<group>"; };
+		6335E77656683C2C5E194B39 /* Pods_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83171F002512490800ACE6B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83171F012512490800ACE6B1 /* PaymentForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PaymentForm.storyboard; sourceTree = "<group>"; };
 		8341E43F268E65ED007561FF /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -101,6 +102,7 @@
 		83507D3B2525DF5300637BB6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/iOSSupport/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		83507D3D2525DFA000637BB6 /* sdk-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "sdk-Bridging-Header.h"; sourceTree = "<group>"; };
 		83507D3F2525DFDD00637BB6 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		AC0E80D2DAB37E69F4B26B02 /* Pods-sdk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sdk.release.xcconfig"; path = "Target Support Files/Pods-sdk/Pods-sdk.release.xcconfig"; sourceTree = "<group>"; };
 		B1473A2728D8894900A8EDFE /* CloudPaymentsSDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudPaymentsSDK.swift; sourceTree = "<group>"; };
 		B1F117382938868B00DBBCC3 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		BD28E9CA812C2B7156AE9D86 /* Pods_sdk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sdk.framework; sourceTree = BUILT_PRODUCTS_DIR; };

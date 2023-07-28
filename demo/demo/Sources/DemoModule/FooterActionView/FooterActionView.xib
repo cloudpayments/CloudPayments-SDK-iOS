@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FooterActionView" customModule="demo" customModuleProvider="target">
+            <connections>
+                <outlet property="demoActionButton" destination="4G9-Lz-u5L" id="B4k-wK-c4a"/>
+                <outlet property="demoActionSwitch" destination="MvI-PE-XfX" id="rC4-Ca-p6R"/>
+                <outlet property="demoLabel" destination="HFx-Qt-LGR" id="Xpp-bR-5BI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4G9-Lz-u5L">
+                    <rect key="frame" x="90" y="55" width="300" height="50"/>
+                    <color key="backgroundColor" name="color_black"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EZE-jc-R8w"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="dHs-Oq-40V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Запустить">
+                        <color key="titleColor" name="color_text_white"/>
+                    </state>
+                </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="MvI-PE-XfX">
+                    <rect key="frame" x="15" y="15" width="51" height="25"/>
+                </switch>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Включить двухстадийную оплату" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFx-Qt-LGR">
+                    <rect key="frame" x="79" y="17" width="386" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HFx-Qt-LGR" secondAttribute="trailing" constant="15" id="0Fs-kc-TrS"/>
+                <constraint firstItem="MvI-PE-XfX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="5w0-dz-vpT"/>
+                <constraint firstAttribute="bottom" secondItem="4G9-Lz-u5L" secondAttribute="bottom" constant="15" id="OIT-1d-ZJK"/>
+                <constraint firstItem="4G9-Lz-u5L" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Uka-Kh-g0U"/>
+                <constraint firstItem="HFx-Qt-LGR" firstAttribute="leading" secondItem="MvI-PE-XfX" secondAttribute="trailing" constant="15" id="dWA-Hg-AsY"/>
+                <constraint firstItem="4G9-Lz-u5L" firstAttribute="top" secondItem="MvI-PE-XfX" secondAttribute="bottom" constant="15" id="oyg-GX-AKL"/>
+                <constraint firstItem="HFx-Qt-LGR" firstAttribute="centerY" secondItem="MvI-PE-XfX" secondAttribute="centerY" id="pIR-R6-ePF"/>
+                <constraint firstItem="MvI-PE-XfX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="vO3-Yp-fHt"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="77.862595419847324" y="-88.028169014084511"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="color_black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="color_text_white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -9,6 +9,7 @@
 extension String {
     static let bundleName = "CloudpaymentsSdkResources"
     static let errorWord = "Ошибка"
+    static let errorCreatingCryptoPacket = "Ошибка при создании крипто-пакета"
     static let informationWord = "Информация"
     
     static let RUBLE_SIGN = "\u{20BD}"
@@ -73,6 +74,10 @@ extension String {
     func onlyNumbers() -> String {
         return components(separatedBy: CharacterSet.decimalDigits.inverted)
             .joined()
+    }
+    
+    func toInt() -> Int? {
+        return Int(self)
     }
 }
 

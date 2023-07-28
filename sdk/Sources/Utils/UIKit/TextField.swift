@@ -37,7 +37,9 @@ class TextField: UITextField, UITextFieldDelegate {
     
     var isErrorMode = false {
         didSet {
-            self.updateColors()
+            DispatchQueue.main.async {
+                self.updateColors()
+            }
         }
     }
     
@@ -227,20 +229,6 @@ class TextField: UITextField, UITextFieldDelegate {
     private func initialize(){
         self.clipsToBounds = false
         self.delegateIfNeeded()
-        
-//        self.underlineView = UIView.init(frame: CGRect.init(x: 0, y: self.frame.height, width: self.frame.width, height: 1))
-//        if let underlineView = self.underlineView {
-//            self.addSubview(underlineView)
-//            underlineView.translatesAutoresizingMaskIntoConstraints = false
-//            underlineView.backgroundColor = self.getPassiveColor()
-//            
-//            NSLayoutConstraint.activate([
-//                underlineView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0),
-//                underlineView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0),
-//                underlineView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 1),
-//                underlineView.heightAnchor.constraint(equalToConstant: 1)
-//            ])
-//        }
     }
 }
 

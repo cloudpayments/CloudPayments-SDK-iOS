@@ -162,7 +162,14 @@ public class PaymentCardForm: PaymentForm {
             guard let self = self else {
                 return
             }
-            if self.isValid(), let cryptogram = Card.makeCardCryptogramPacket(with: self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.cardExpText!, cvv: self.cardCvvTextField.text!, merchantPublicID: self.configuration.publicId) {
+
+            guard self.isValid(), let cryptogram = Card.makeCardCryptogramPacket(self.cardNumberTextField.text!, expDate: self.cardExpDateTextField.cardExpText!, cvv: self.cardCvvTextField.text!, merchantPublicID: self.configuration.publicId)
+            else {
+                self.showAlert(title: .errorWord, message: String.errorCreatingCryptoPacket)
+                return
+            }
+
+            DispatchQueue.main.async {
                 self.dismiss(animated: true) { [weak self] in
                     guard let self = self else {
                         return
@@ -442,6 +449,8 @@ extension PaymentCardForm {
         }
     }
     
+    /// Did Change
+    /// - Parameter textField:
     @objc private func didChange(_ textField: UITextField) {
         
         switch textField {
@@ -516,6 +525,8 @@ extension PaymentCardForm {
         }
     }
     
+    /// Did End Editing
+    /// - Parameter textField:
     @objc private func didEndEditing(_ textField: UITextField) {
         
         switch textField {
@@ -577,15 +588,15 @@ extension PaymentCardForm {
         default: break
         }
     }
-    
+
     /// Should Return
         /// - Parameter textField:
         @objc private func shouldReturn(_ textField: UITextField) {
-            
+
             switch textField {
-                
+
             case cardNumberTextField:
-                
+
                 if let cardNumber = self.cardNumberTextField.text?.formattedCardNumber() {
                     self.cardNumberTextField.resignFirstResponder()
                     if Card.isCardNumberValid(cardNumber) {
@@ -593,15 +604,15 @@ extension PaymentCardForm {
                     }
                 }
             case cardExpDateTextField:
-                
+
                 if let cardExp = self.cardExpDateTextField.text?.formattedCardExp() {
                     if cardExp.count == 5 {
                         self.cardCvvTextField.becomeFirstResponder()
                     }
                 }
-                
+
             case cardCvvTextField:
-                
+
                 if let text = self.cardCvvTextField.text?.formattedCardCVV() {
                     if text.count == 3 || text.count == 4 {
                         self.cardCvvTextField.resignFirstResponder()

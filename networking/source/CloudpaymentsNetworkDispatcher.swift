@@ -33,6 +33,7 @@ public class CloudpaymentsURLSessionNetworkDispatcher: NSObject, CloudpaymentsNe
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         
+        
         do {
             if !request.params.isEmpty {
                 urlRequest.httpBody = try JSONSerialization.data(withJSONObject: request.params, options: [])
@@ -40,6 +41,11 @@ public class CloudpaymentsURLSessionNetworkDispatcher: NSObject, CloudpaymentsNe
         } catch let error {
             onError(error)
             return
+        }
+        
+        if let data = urlRequest.httpBody {
+            print(url.absoluteString)
+            print(String(data: data, encoding: .utf8)!)
         }
         
         var headers = request.headers

@@ -33,6 +33,18 @@ extension UIColor {
         return color(named: "color_red")
     }
     
+    public class var blackColor: UIColor {
+        return color(named: "color_black")
+    }
+    
+    public class var whiteColor: UIColor {
+        return color(named: "color_text_white")
+    }
+    
+    public class var colorAlertView: UIColor {
+        return color(named: "color_alert_view")
+    }
+    
     private class func color(named colorName: String) -> UIColor! {
         return UIColor.init(named: colorName, in: Bundle.mainSdk, compatibleWith: .none)
     }

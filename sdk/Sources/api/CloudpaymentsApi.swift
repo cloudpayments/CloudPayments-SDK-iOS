@@ -78,7 +78,7 @@ public class CloudpaymentsApi {
                                         paymentData: paymentData)
         AuthRequest(params: patch(params: parameters), headers: getDefaultHeaders(), apiUrl: apiUrl).execute(keyDecodingStrategy: .convertToUpperCamelCase, onSuccess: {
             response in
-            completion(response, nil)
+            completion(response, nil) 
             
         }, onError: { error in
             completion(nil, error)

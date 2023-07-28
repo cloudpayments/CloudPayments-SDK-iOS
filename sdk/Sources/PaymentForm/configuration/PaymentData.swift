@@ -150,9 +150,6 @@ public class PaymentData {
             self.jsonData = jsonString
         }
         
-        print("JSONDATA")
-        print(self.jsonData as Any)
-        
         return self
     }
 
@@ -168,3 +165,5 @@ public class PaymentData {
         return nil
     }
 }
+
+

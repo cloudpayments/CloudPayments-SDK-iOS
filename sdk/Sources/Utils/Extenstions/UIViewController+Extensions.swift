@@ -30,7 +30,8 @@ extension UIViewController {
         }
         
         alertActions.forEach { alert.addAction($0) }
-        
-        present(alert, animated: true)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true)
+        }
     }
 }

@@ -224,7 +224,84 @@ public struct Card {
         return .unknown
     }
     
-    public static func makeCardCryptogramPacket(with cardNumber: String, expDate: String, cvv: String, merchantPublicID: String) -> String? {
+    /// Новый метод создания криптограммы
+    public static func makeCardCryptogramPacket(_ cardNumber: String, expDate: String, cvv: String, merchantPublicID: String) -> String? {
+        guard self.isCardNumberValid(cardNumber) else {
+            return nil
+        }
+        guard self.isExpDateValid(expDate) else {
+            return nil
+        }
+        
+        let cardDateComponents = expDate.components(separatedBy: "/")
+        let year = cardDateComponents[1]
+        let month = cardDateComponents[0]
+        let cardDateString = year + month
+        
+        let cleanCardNumber = self.cleanCreditCardNo(cardNumber)
+        let decryptedCryptogram = String.init(format: "%@@%@@%@@%@", cleanCardNumber, cardDateString, cvv, merchantPublicID)
+        
+        guard let publicKey = dynamicPublicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: publicKey) else {
+            return nil
+        }
+        
+        let cryptogramString = RSAUtils.base64Encode(cryptogramData)
+            .replacingOccurrences(of: "\n", with: "")
+            .replacingOccurrences(of: "\r", with: "")
+        
+        guard let version = PublicKeyData.getValue?.version else { return nil }
+        
+        let first = String(cleanCardNumber.prefix(6))
+        let last = String(cleanCardNumber.suffix(4))
+        
+        let cardInfo = CardInfo(FirstSixDigits: first, LastFourDigits: last, ExpDateMonth: month, ExpDateYear: year)
+        let object = CryptogramType(CardInfo: cardInfo, version: version, value: cryptogramString)
+        guard let encode = try? JSONEncoder().encode(object) else { return nil }
+        let encodeBase64 = RSAUtils.base64Encode(encode)
+        
+        return encodeBase64
+    }
+    
+    /// Метод создания криптограммы с внешним ключом
+    public static func makeCardCryptogramPacket(_ cardNumber: String, expDate: String, cvv: String, merchantPublicID: String, publicKey: String, keyVersion: Int) -> String? {
+        guard self.isCardNumberValid(cardNumber) else {
+            return nil
+        }
+        guard self.isExpDateValid(expDate) else {
+            return nil
+        }
+        
+        let cardDateComponents = expDate.components(separatedBy: "/")
+        let year = cardDateComponents[1]
+        let month = cardDateComponents[0]
+        let cardDateString = year + month
+        
+        let cleanCardNumber = self.cleanCreditCardNo(cardNumber)
+        let decryptedCryptogram = String.init(format: "%@@%@@%@@%@", cleanCardNumber, cardDateString, cvv, merchantPublicID)
+        
+       guard let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: publicKey) else {
+            return nil
+        }
+        
+        let cryptogramString = RSAUtils.base64Encode(cryptogramData)
+            .replacingOccurrences(of: "\n", with: "")
+            .replacingOccurrences(of: "\r", with: "")
+        
+        let first = String(cleanCardNumber.prefix(6))
+        let last = String(cleanCardNumber.suffix(4))
+        
+        let convertKeyVersion = String(keyVersion)
+        
+        let cardInfo = CardInfo(FirstSixDigits: first, LastFourDigits: last, ExpDateMonth: month, ExpDateYear: year)
+        let object = CryptogramType(CardInfo: cardInfo, version: convertKeyVersion, value: cryptogramString)
+        guard let encode = try? JSONEncoder().encode(object) else { return nil }
+        let encodeBase64 = RSAUtils.base64Encode(encode)
+        
+        return encodeBase64
+    }
+    
+    /// depricated
+    private static func makeCardCryptogramPacket(with cardNumber: String, expDate: String, cvv: String, merchantPublicID: String) -> String? {
         guard self.isCardNumberValid(cardNumber) else {
             return nil
         }
@@ -238,7 +315,7 @@ public struct Card {
         let cleanCardNumber = self.cleanCreditCardNo(cardNumber)
         let decryptedCryptogram = String.init(format: "%@@%@@%@@%@", cleanCardNumber, cardDateString, cvv, merchantPublicID)
         
-        guard let publicKey = publicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: publicKey) else {
+        guard let publicKey = oldPublicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: decryptedCryptogram, pubkeyBase64: publicKey) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
@@ -258,7 +335,7 @@ public struct Card {
     }
     
     public static func makeCardCryptogramPacket(with cvv: String) -> String? {
-        guard let publicKey = publicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: publicKey) else {
+        guard let publicKey = oldPublicKey(), let cryptogramData = try? RSAUtils.encryptWithRSAPublicKey(str: cvv, pubkeyBase64: publicKey) else {
             return nil
         }
         let cryptogramString = RSAUtils.base64Encode(cryptogramData)
@@ -271,12 +348,16 @@ public struct Card {
         
         return packetString
     }
-
+    
     public static func cleanCreditCardNo(_ creditCardNo: String) -> String {
         return creditCardNo.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
     }
     
-    private static func publicKey() -> String? {
+    private static func dynamicPublicKey() -> String? {
+        return PublicKeyData.getValue?.Pem
+    }
+    
+    private static func oldPublicKey() -> String? {
         guard let filePath = Bundle.mainSdk.path(forResource: "PublicKey", ofType: "txt") else {
             return nil
         }

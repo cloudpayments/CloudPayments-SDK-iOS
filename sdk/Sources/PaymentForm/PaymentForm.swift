@@ -35,14 +35,12 @@ public class PaymentForm: BaseViewController {
     // MARK: - Public Methods
     @discardableResult
     public class func present(with configuration: PaymentConfiguration, from: UIViewController) -> PaymentForm? {
+        PublicKeyData.apiURL = configuration.apiUrl
+        
         let completion = {
             configuration.paymentUIDelegate.paymentFormDidDisplay()
         }
         configuration.paymentUIDelegate.paymentFormWillDisplay()
-        
-//        if configuration.disableApplePay && configuration.disableYandexPay {
-//            return self.showCardForm(with: configuration, from: from, completion: completion)
-//        }
 
         if PKPaymentAuthorizationViewController.canMakePayments() || !configuration.disableYandexPay {
             let controller = PaymentOptionsForm.present(with: configuration, from: from, completion: completion) as! PaymentOptionsForm
@@ -123,6 +121,7 @@ public class PaymentForm: BaseViewController {
                      email: email,
                      paymentData: self.configuration.paymentData) { [weak self] response, error in
             if let response = response {
+                //TODO: - 1
                 self?.checkTransactionResponse(transactionResponse: response, completion: completion)
             } else if let error = error {
                 completion?(false, false, nil, error.localizedDescription)
@@ -183,6 +182,7 @@ public class PaymentForm: BaseViewController {
     
     private func configureThreeDsCloseButton() {
         self.threeDsCloseButton?.onAction = { [weak self] in
+            self?.threeDsCompletion?(false, true, nil, nil)
             self?.closeThreeDs { [weak self] in
                 self?.threeDsCompletion?(false, true, nil, nil)
             }

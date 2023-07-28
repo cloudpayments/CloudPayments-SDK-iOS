@@ -11,6 +11,20 @@ public protocol CloudpaymentsRequestType {
 }
 
 public extension CloudpaymentsRequestType {
+    
+    
+    func resultDataPrint<T:Decodable>(type: T.Type, _ value: Data) {
+        print("\n\n")
+        print(#file, "\n", #line, #function)
+        print("-----------------------", type.self, "-----------------------")
+        if let string = String(data: value, encoding: .utf8) {
+            print("\n", string, "\n")
+        }
+        print("-----------------------", "end", "-----------------------")
+        print("\n\n")
+    }
+    
+    
     func execute(dispatcher: CloudpaymentsNetworkDispatcher = CloudpaymentsURLSessionNetworkDispatcher.instance,
                  keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
                  onSuccess: @escaping (ResponseType) -> Void,
@@ -20,6 +34,11 @@ public extension CloudpaymentsRequestType {
             request: self.data,
             onSuccess: { (responseData: Data) in
                 do {
+                    
+                    resultDataPrint(type: ResponseType.self, responseData)
+                    
+                    
+                    
                     let jsonDecoder = JSONDecoder()
                     jsonDecoder.keyDecodingStrategy = keyDecodingStrategy
                     let result = try jsonDecoder.decode(ResponseType.self, from: responseData)
