@@ -39,11 +39,6 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
         get { return mainViewInputReceiptButton.emailLabel }
         set { mainViewInputReceiptButton.emailLabel = newValue}
     }
-    
-    // attention View and attentionImage
-//    @IBOutlet private weak var attentionView: UIView!
-//    @IBOutlet private weak var attentionImage: UIImageView!
-//    @IBOutlet private weak var paymentEmailLabel: UILabel!
     // container constraints
     @IBOutlet private weak var containerViewHeightConstraint:NSLayoutConstraint!
     @IBOutlet private weak var bottomContainerViewConstraint: NSLayoutConstraint!
@@ -98,6 +93,7 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
     // MARK: - Lifecycle app
     override func viewDidLoad() {
         super.viewDidLoad()
+        isReceiptButtonEnabled(configuration.requireEmail)
         alertInfoView.isHidden = true
         setupButton()
         configureContainers()
@@ -271,7 +267,6 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
 
         tinkoffButton.semanticContentAttribute = .forceRightToLeft
         tinkoffButton.addTarget(self, action: #selector(tinkoffButtonAction(_:)), for: .touchUpInside)
-        isReceiptButtonEnabled(configuration.requireEmail)
         
 
         if configuration.requireEmail {
@@ -311,16 +306,11 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
     
     private func isReceiptButtonEnabled(_ isEnabled: Bool ) {
         mainViewInputReceiptButton.isHiddenAttentionView = !isEnabled
+        mainViewInputReceiptButton.isHiddenCardView = isEnabled
         
-        switch isEnabled {
-        case true:
-            mainViewInputReceiptButton.isHiddenCardView = true
+        if isEnabled {
             mainViewInputReceiptButton.emailView.isHidden = false
             emailTextField.isHidden = false
-        case false:
-            mainViewInputReceiptButton.isHiddenCardView = false
-//            mainStackView.removeArrangedSubview(mainViewInputReceiptButton.attentionView)
-//            mainStackView.removeArrangedSubview(mainViewInputReceiptButton.attentionImage)
         }
     }
     

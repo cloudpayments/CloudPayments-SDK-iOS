@@ -97,7 +97,7 @@ extension GatewayRequest {
             return completion(false, id)
             
         } onError: { string in
-            GatewayRequest.resultDataPrint(type: GatewayConfiguration.self, string.localizedDescription)
+//            GatewayRequest.resultDataPrint(type: GatewayConfiguration.self, string.localizedDescription)
             return completion(false, nil)
         }
     }
@@ -108,7 +108,7 @@ extension GatewayRequest {
             return completion(value.model)
             
         } onError: { string in
-            GatewayRequest.resultDataPrint(type: TinkoffResultPayData.self, string.localizedDescription)
+//            GatewayRequest.resultDataPrint(type: TinkoffResultPayData.self, string.localizedDescription)
             return completion(nil)
         }
     }
@@ -120,7 +120,7 @@ extension GatewayRequest {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TinkoffStatusPayObserver"), object: value)
 
         } onError: { string in
-            GatewayRequest.resultDataPrint(type: TinkoffRepsonseTransactionModel.self, string.localizedDescription)
+//            GatewayRequest.resultDataPrint(type: TinkoffRepsonseTransactionModel.self, string.localizedDescription)
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TinkoffStatusPayObserver"), object: string)
             return
         }

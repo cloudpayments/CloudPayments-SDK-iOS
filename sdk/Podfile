@@ -1,7 +1,7 @@
-platform :ios, '12.0'
+platform :ios, '13.0'
 use_frameworks!
 
 target 'sdk' do
   pod 'CloudpaymentsNetworking', :path => "../networking"
-  pod 'YandexPaySDK/Dynamic', '1.3.6'
+  pod 'YandexPaySDK/Dynamic', '~>1.3.9'
 end

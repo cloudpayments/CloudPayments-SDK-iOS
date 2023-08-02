@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments"
-  spec.version      = "1.2.14"
+  spec.version      = "1.2.15"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -20,7 +20,7 @@ Pod::Spec.new do |spec|
   spec.author       = { "Anton Ignatov" => "a.ignatov@cp.ru" }
 	
   spec.platform     = :ios
-  spec.ios.deployment_target = "11.0"
+  spec.ios.deployment_target = "13.0"
 
   spec.source       = { :git => "https://github.com/cloudpayments/CloudPayments-SDK-iOS.git", :tag => "#{spec.version}" }
   spec.source_files  = 'Sources/**/*.swift'
@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'CloudpaymentsNetworking'  
   spec.dependency 'YandexLoginSDK'
-  spec.dependency 'YandexPaySDK/Dynamic'
+  spec.dependency 'YandexPaySDK/Dynamic', '1.3.9'
 
   spec.swift_version = '5.0'
 

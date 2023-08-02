@@ -26,7 +26,7 @@ final public class CloudPaymentsSDK {
         let environment: YandexPaySDKEnvironment = (yandexPaySandboxMode ?? false) ? .sandbox : .production
        
         let id = yandexPayAppId ?? ""
-        let merchant = YandexPaySDKMerchant(id: id, name: "Cloud", url: "https://cp.ru")
+        let merchant = YandexPaySDKMerchant(id: id, name: "Cloud",  url: "https://cp.ru")
         
         let configuration = YandexPaySDKConfiguration(environment: environment, merchant: merchant, locale: YandexPaySDKLocale.ru)
         

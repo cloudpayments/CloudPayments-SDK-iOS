@@ -35,7 +35,7 @@ public extension CloudpaymentsRequestType {
             onSuccess: { (responseData: Data) in
                 do {
                     
-                    resultDataPrint(type: ResponseType.self, responseData)
+//                    resultDataPrint(type: ResponseType.self, responseData)
                     
                     
                     

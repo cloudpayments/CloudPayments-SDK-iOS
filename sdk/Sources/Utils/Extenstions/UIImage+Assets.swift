@@ -10,7 +10,12 @@ import UIKit
 
 extension UIImage {
     public class func named(_ name: String) -> UIImage {
-        return UIImage.init(named: name, in: Bundle.mainSdk, compatibleWith: nil) ??  UIImage.init(named: name, in: Bundle.cocoapods, compatibleWith: nil) ?? UIImage()
+        
+        let image2 = UIImage.init(named: name, in: Bundle.cocoapods, compatibleWith: nil)
+        if image2 != nil {
+            return image2!
+        }
+        return UIImage()
     }
     
     public class var iconProgress: UIImage {

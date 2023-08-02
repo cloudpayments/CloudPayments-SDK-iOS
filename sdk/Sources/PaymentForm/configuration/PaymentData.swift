@@ -6,6 +6,8 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
+import Foundation
+
 public struct PaymentDataPayer: Codable {
     let firstName: String
     let lastName: String

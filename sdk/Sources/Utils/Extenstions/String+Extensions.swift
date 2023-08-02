@@ -6,6 +6,8 @@
 //  Copyright © 2020 Cloudpayments. All rights reserved.
 //
 
+import Foundation
+
 extension String {
     static let bundleName = "CloudpaymentsSdkResources"
     static let errorWord = "Ошибка"

@@ -7,6 +7,7 @@
 //
 
 import Security
+import Foundation
 
 class RSAUtils {
     private static let PADDING_FOR_DECRYPT = SecPadding()
