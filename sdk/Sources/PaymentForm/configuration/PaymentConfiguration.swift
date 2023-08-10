@@ -22,7 +22,7 @@ public class PaymentConfiguration {
     
     public init(publicId: String, paymentData: PaymentData, delegate: PaymentDelegate?, uiDelegate: PaymentUIDelegate?, scanner: PaymentCardScanner?,
                 requireEmail: Bool = true, useDualMessagePayment: Bool = false, disableApplePay: Bool = false,
-                disableYandexPay: Bool = false, apiUrl: String = "", changedEmail: String?) {
+                disableYandexPay: Bool = false, apiUrl: String = "https://api.cloudpayments.ru/", changedEmail: String?) {
         self.publicId = publicId
         self.paymentData = paymentData
         self.paymentDelegate = PaymentDelegateImpl.init(delegate: delegate)
