@@ -64,7 +64,7 @@
                                                         <color key="textColor" name="color_text_button"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-IO-Zsi" customClass="TextField" customModule="sdk">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="jQn-IO-Zsi" customClass="TextField" customModule="sdk" customModuleProvider="target">
                                                         <rect key="frame" x="16" y="26" width="243" height="22"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="22" id="evG-77-Oeh"/>
@@ -135,7 +135,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8z6-s9-M8m" userLabel="Expdate view" customClass="View" customModule="sdk" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="168.66666666666666" height="56"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-7O-WBg" customClass="TextField" customModule="sdk">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="u1g-7O-WBg" customClass="TextField" customModule="sdk" customModuleProvider="target">
                                                                 <rect key="frame" x="16" y="26" width="136.66666666666666" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="8SA-qY-tbm"/>
@@ -192,7 +192,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="17Q-q2-SrP" userLabel="Cvv view" customClass="View" customModule="sdk" customModuleProvider="target">
                                                         <rect key="frame" x="184.66666666666663" y="0.0" width="168.33333333333337" height="56"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-3W-BC2" customClass="TextField" customModule="sdk">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="H7z-3W-BC2" customClass="TextField" customModule="sdk" customModuleProvider="target">
                                                                 <rect key="frame" x="14.999999999999993" y="26" width="98.333333333333314" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="22" id="FB0-rR-L78"/>
