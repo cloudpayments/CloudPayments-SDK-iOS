@@ -23,7 +23,7 @@ extension UIView {
     }
     
     func addXib(_ name: String? = nil) {
-        guard let bundle = Bundle(identifier: "org.cocoapods.Cloudpayments") else { return }
+        guard let bundle = Bundle(identifier: "org.cocoapods.CloudpaymentsSDK") else { return }
         let string = name ?? String(describing: Self.self)
         let views = bundle.loadNibNamed(string, owner: self)
         if let view = views?.first as? UIView  {

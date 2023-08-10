@@ -116,10 +116,10 @@ class DemoViewController: BaseViewController {
             delegate: self,
             uiDelegate: self,
             scanner: nil,
-            requireEmail: false,
+            requireEmail: true,
             useDualMessagePayment: footer.demoActionSwitch.isOn,
-            disableApplePay: true,
-            disableYandexPay: true,
+            disableApplePay: false,
+            disableYandexPay: false,
             apiUrl: apiUrl,
             changedEmail: nil
         )

@@ -13,16 +13,16 @@ public protocol CloudpaymentsRequestType {
 public extension CloudpaymentsRequestType {
     
     
-    func resultDataPrint<T:Decodable>(type: T.Type, _ value: Data) {
-        print("\n\n")
-        print(#file, "\n", #line, #function)
-        print("-----------------------", type.self, "-----------------------")
-        if let string = String(data: value, encoding: .utf8) {
-            print("\n", string, "\n")
-        }
-        print("-----------------------", "end", "-----------------------")
-        print("\n\n")
-    }
+//    func resultDataPrint<T:Decodable>(type: T.Type, _ value: Data) {
+//        print("\n\n")
+//        print(#file, "\n", #line, #function)
+//        print("-----------------------", type.self, "-----------------------")
+//        if let string = String(data: value, encoding: .utf8) {
+//            print("\n", string, "\n")
+//        }
+//        print("-----------------------", "end", "-----------------------")
+//        print("\n\n")
+//    }
     
     
     func execute(dispatcher: CloudpaymentsNetworkDispatcher = CloudpaymentsURLSessionNetworkDispatcher.instance,

@@ -24,11 +24,18 @@ final class FooterForPresentCard: UIView {
     @IBOutlet private weak var paymentEmailLabel: UILabel!
     
     var isHiddenCardView: Bool {
-        get { return savingButton.isHidden }
+        get { return receiptButton.superview?.isHidden ?? false }
         set {
-            savingButton.superview?.isHidden = newValue
             receiptButton.superview?.isHidden = newValue
+        }
+    }
+    
+    var saveCardButtonView: Bool {
+        get { return savingButton.superview?.isHidden ?? false }
+        
+        set {
             forcedInformationButton.superview?.isHidden = newValue
+            savingButton.superview?.isHidden = newValue
         }
     }
     

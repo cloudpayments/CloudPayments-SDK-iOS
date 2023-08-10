@@ -118,12 +118,11 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
 
     private func isOnTinkoffPay(configuration: PaymentConfiguration) {
         let terminalPublicId = configuration.publicId
-        let paymentUrl = "https%3A%2F%2Fdemo.cloudpayments.ru"
-        let language = configuration.paymentData.payer?.country
         let baseUrl = configuration.apiUrl
-        GatewayRequest.isOnTinkoffPayAction(baseURL: baseUrl, terminalPublicId: terminalPublicId, paymentUrl: paymentUrl, language: language) { [weak self] isOn, isOnSaveCard in
+        GatewayRequest.isOnTinkoffPayAction(baseURL: baseUrl, terminalPublicId: terminalPublicId) { [weak self] isOn, isOnSaveCard in
             DispatchQueue.main.async {
                 self?.tinkoffButton.superview?.isHidden = !isOn
+                self?.tinkoffButton.isHidden = !isOn
                 self?.setupCheckbox(isOnSaveCard)
             }
         }
@@ -455,7 +454,8 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
     }
     
     private func initializeYandexPay() {
-        
+              
+        mainYandexView.isHidden = false
         yandexPayContainer.isHidden = false
         
         // Укажите тему для кнопки
@@ -484,6 +484,7 @@ final class PaymentOptionsForm: PaymentForm, PKPaymentAuthorizationViewControlle
     
     private func initializeApplePay() {
         
+        mainAppleView.isHidden = false
         applePayContainer.isHidden = false
         
         if let _  = configuration.paymentData.applePayMerchantId, PKPaymentAuthorizationViewController.canMakePayments() {

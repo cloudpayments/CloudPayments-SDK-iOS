@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "Cloudpayments"
-  spec.version      = "1.2.15"
+  spec.version      = "1.3.0"
   spec.summary      = "Core library that allows you to use internet acquiring from CloudPayments in your app"
   spec.description  = "Core library that allows you to use internet acquiring from CloudPayments in your app!"
 
@@ -31,7 +31,7 @@ Pod::Spec.new do |spec|
 
   spec.dependency 'CloudpaymentsNetworking'  
   spec.dependency 'YandexLoginSDK'
-  spec.dependency 'YandexPaySDK/Dynamic', '1.3.9'
+  spec.dependency 'YandexPaySDK/Dynamic', '~>1.3.9'
 
   spec.swift_version = '5.0'
 

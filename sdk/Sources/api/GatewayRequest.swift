@@ -14,7 +14,7 @@ class GatewayRequest {
         typealias ResponseType = Model
         
         //MARK: - connect is on tinkoff pay button
-        fileprivate init(baseURL: String, terminalPublicId: String?, paymentUrl: String?, language: String?) {
+        fileprivate init(baseURL: String, terminalPublicId: String?) {
             let baseURL = baseURL + "merchant/configuration/"
             guard var path = URLComponents(string: baseURL) else {
                 data = .init(path: "")
@@ -23,8 +23,6 @@ class GatewayRequest {
             
             let queryItems: [URLQueryItem] = [
                 .init(name: "terminalPublicId", value: terminalPublicId),
-                .init(name: "paymentUrl", value: paymentUrl),
-                .init(name: "language", value: language),
             ]
             path.queryItems = queryItems
             
@@ -80,9 +78,9 @@ class GatewayRequest {
 
 extension GatewayRequest {
     
-    public static func isOnTinkoffPayAction(baseURL: String, terminalPublicId: String?, paymentUrl: String?, language: String?, completion: @escaping (Bool, Int?) -> Void) {
+    public static func isOnTinkoffPayAction(baseURL: String, terminalPublicId: String?, completion: @escaping (Bool, Int?) -> Void) {
         
-        TinkoffPayRequestData<GatewayConfiguration>(baseURL: baseURL, terminalPublicId: terminalPublicId, paymentUrl: paymentUrl, language: language).execute { value in
+        TinkoffPayRequestData<GatewayConfiguration>(baseURL: baseURL, terminalPublicId: terminalPublicId).execute { value in
            let array = value.model.externalPaymentMethods
             let id = value.model.features?.isSaveCard
             
